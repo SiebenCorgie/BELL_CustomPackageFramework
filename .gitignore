@@ -85,5 +85,9 @@ ENV/
 # Spyder project settings
 .spyderproject
 
+#anjuta
+.anjuta_sym_db.db
+.anjuta/
+
 # Rope project settings
 .ropeproject
