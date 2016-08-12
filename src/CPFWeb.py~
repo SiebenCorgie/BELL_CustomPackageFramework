@@ -1,0 +1,18 @@
+import cpf
+import gi.repository
+gi.require_version('WebKit', '3.0')
+from gi.repository import WebKit
+
+def __init__(self):
+#init Doc Browser
+
+	DefaultURL = 'https://github.com/SiebenCorgie/BELL_CustomPackageFramework/wiki'		
+	global DocBrowser 
+	DocBrowser = WebKit.WebView()	
+	DocBrowser.load_uri(DefaultURL)
+		
+def go_back(self):
+	DocBrowser.go_back()
+
+def go_forwart(self):
+	DocBrowser.go_forward()

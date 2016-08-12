@@ -21,10 +21,11 @@
 #Richtige Gtk Version (3) importieren
 import gi.repository
 gi.require_version('Gtk', '3.0')
+#gi.require_version('WebKit', '3.0')
 
-
-from gi.repository import Gtk, GdkPixbuf, Gdk
+from gi.repository import Gtk, GdkPixbuf, Gdk, WebKit
 import os, sys
+import CPFWeb
 
 
 #Comment the first line and uncomment the second before installing
@@ -35,16 +36,38 @@ UI_FILE = "src/cpf.ui"
 
 class GUI:
 	def __init__(self):
-
+#initialisierung
 		self.builder = Gtk.Builder()
 		self.builder.add_from_file(UI_FILE)
 		self.builder.connect_signals(self)
 
 		window = self.builder.get_object('window')
 
+#Documentation Browser
+		self.DocURL = 'https://github.com/SiebenCorgie/BELL_CustomPackageFramework/wiki'
+		self.DocBrowser = WebKit.WebView()
+		self.DocBrowser.load_uri(self.DocURL)
+		DocHostWin = self.builder.get_object('Docs_View')
+		DocHostWin.add(self.DocBrowser)
+		DocHostWin.show_all()
 
+		
+#init end
 		window.show_all()
 
+
+#StartEvents
+
+#DocBrwoser zu Startseite
+	def on_B_Docs_Home_clicked (self, button):
+		self.DocBrowser.load_uri(self.DocURL)
+#DocBrowser zurueck
+	def on_B_Docs_Back_clicked (self, button):
+		self.DocBrowser.go_back()
+#DocBrowser forwaerts
+	def on_B_Docs_Forward_clicked (self, button):
+		self.DocBrowser.go_forward()
+		
 	def on_window_destroy(self, window):
 		Gtk.main_quit()
 
@@ -54,4 +77,3 @@ def main():
 		
 if __name__ == "__main__":
 	sys.exit(main())
-
