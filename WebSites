@@ -6,3 +6,9 @@ einbindung:  http://stackoverflow.com/questions/24320502/how-to-translate-pygtk-
 
 erstellung ".mo" files: http://www.servin.com/linux/GladeInternationalization.html
 _________________________________________________________________________________
+
+11.08.2016
+
+System eigene Passwortaufforderung über "pkexec" + bash anweisung lösen Quelle:
+http://askubuntu.com/questions/515292/how-to-get-gui-sudo-password-prompt-without-command-line (11.08.2016, 16:30)
+Documentation: https://www.freedesktop.org/software/polkit/docs/0.105/pkexec.1.html
