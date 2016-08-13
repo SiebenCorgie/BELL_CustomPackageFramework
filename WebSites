@@ -12,3 +12,12 @@ ________________________________________________________________________________
 System eigene Passwortaufforderung über "pkexec" + bash anweisung lösen Quelle:
 http://askubuntu.com/questions/515292/how-to-get-gui-sudo-password-prompt-without-command-line (11.08.2016, 16:30)
 Documentation: https://www.freedesktop.org/software/polkit/docs/0.105/pkexec.1.html
+
+__________________________________________________________________________________
+
+13.08.2016
+Software Arten nach "free.desktop"
+https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys
+https://specifications.freedesktop.org/menu-spec/latest/apa.html
+
+kleine datenbanken http://pythoncentral.io/introduction-to-sqlite-in-python/

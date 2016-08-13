@@ -21,11 +21,11 @@
 #Richtige Gtk Version (3) importieren
 import gi.repository
 gi.require_version('Gtk', '3.0')
-#gi.require_version('WebKit', '3.0')
+gi.require_version('WebKit', '3.0')
 
 from gi.repository import Gtk, GdkPixbuf, Gdk, WebKit
 import os, sys
-import CPFWeb
+import CPFWeb CPFConf
 
 
 #Comment the first line and uncomment the second before installing
@@ -51,6 +51,14 @@ class GUI:
 		DocHostWin.add(self.DocBrowser)
 		DocHostWin.show_all()
 
+#InfoBrowser
+		self.InfoURL = 'https://www.lernsax.de/'
+		self.InfoBrowser = WebKit.WebView()
+		self.InfoBrowser.load_uri(self.InfoURL)
+		InfoHostWin = self.builder.get_object('Info_View')
+		InfoHostWin.add(self.InfoBrowser)
+		DocHostWin.show_all()
+
 		
 #init end
 		window.show_all()
@@ -58,6 +66,7 @@ class GUI:
 
 #StartEvents
 
+#DocBrowser
 #DocBrwoser zu Startseite
 	def on_B_Docs_Home_clicked (self, button):
 		self.DocBrowser.load_uri(self.DocURL)
@@ -67,9 +76,22 @@ class GUI:
 #DocBrowser forwaerts
 	def on_B_Docs_Forward_clicked (self, button):
 		self.DocBrowser.go_forward()
-		
+
+#InfoBrowser
+#zu Startseite
+	def on_B_Info_Home_clicked (self, button):
+		self.InfoBrowser.load_uri(self.InfoURL)
+#zurueck
+	def on_B_Info_Back_clicked (self, button):
+		self.InfoBrowser.go_back()
+#forwaerts
+	def on_B_Info_Forward_clicked (self, button):
+		self.InfoBrowser.go_forward()
+
 	def on_window_destroy(self, window):
 		Gtk.main_quit()
+
+
 
 def main():
 	app = GUI()
