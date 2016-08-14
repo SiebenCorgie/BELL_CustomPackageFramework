@@ -25,7 +25,7 @@ gi.require_version('WebKit', '3.0')
 
 from gi.repository import Gtk, GdkPixbuf, Gdk, WebKit
 import os, sys
-import CPFWeb CPFConf
+import CPFWeb, CPFConf
 
 
 #Comment the first line and uncomment the second before installing
@@ -88,6 +88,14 @@ class GUI:
 	def on_B_Info_Forward_clicked (self, button):
 		self.InfoBrowser.go_forward()
 
+
+#Menue
+
+#Quit_File
+	def on_M_File_Quit_activate (self, menuitem):
+		Gtk.main_quit()
+
+#Quit "x" button
 	def on_window_destroy(self, window):
 		Gtk.main_quit()
 
