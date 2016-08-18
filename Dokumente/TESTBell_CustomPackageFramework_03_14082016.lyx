@@ -1,0 +1,582 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extarticle
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 150text%
+\quotes_language german
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Besondere Lernleistung: Custom Package Framework
+\end_layout
+
+\begin_layout Author
+Tendsin Mende
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mentor: Gerd Bobe
+\end_layout
+
+\begin_layout Standard
+Diese Besondere Lernleistung wurde im Schuljahr 2016/2017 geschrieben.
+ Das Program liegt in diesem 
+\begin_inset CommandInset href
+LatexCommand href
+name "Github Repositorium"
+target "https://github.com/SiebenCorgie/BELL_CustomPackageFramework"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Referenzlink: https://github.com/SiebenCorgie/BELL_CustomPackageFramework
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Einführung
+\end_layout
+
+\begin_layout Subsection
+Die Situation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes gld
+\end_inset
+
+Schön! Ich habe ein Linux, aber wie bearbeite ich ein Bild?
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An diesem Problem möchte ich mit meiner Arbeit ansetzen.
+ Ich möchte ein- und Umsteigern das Suchen von Programmen erleichtern.
+ Ich sehe drei haupt Probleme für neueinsteiger.
+\end_layout
+
+\begin_layout Subsection
+Grund 1
+\end_layout
+
+\begin_layout Standard
+Auch wenn es die Programme von Windows und MacOSx nicht gibt, so ist die
+ Auswahl an Programmen zu groß.
+ Als Beispiel: Es gibt kein offizielles Adobe: Photoshop für Linux
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://helpx.adobe.com/photoshop/system-requirements.html, (14.08.2016, 13:57)
+\end_layout
+
+\end_inset
+
+.
+ Es gibt aber Gimp, Krita, MyPaint, und viele mehr.
+ Welches davon soll ich nehmen? Aus meiner erfahrung kann ich sagen: 
+\begin_inset Quotes gld
+\end_inset
+
+Krita für malen und Texturbearbeitung und Gimp für Photos
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Aber diese Erfahrung hat der Normalverbraucher nicht.
+ Meine Lösung ist einfach: Ich gebe dem Nutzer nur Gimp und Krita un eine
+ Beschriebung mit meiner Erfahrung.
+\end_layout
+
+\begin_layout Subsection
+Grund 2
+\end_layout
+
+\begin_layout Standard
+Das nächste Problem ist recht trivial.
+ Wie istalliere ich Software? 
+\end_layout
+
+\begin_layout Standard
+Die meisten Umsteiger kommen von Windows.
+ Sie erwarten, dass man ins internet geht, den richtigen Installer herunterläd
+ und dann installiert.
+ Auf Linux kann man das Installieren aber eher mit einem Appstore vergleichen.
+ Man wählt sein Packet (Programm) und läd es sich von einem Spiegel-Server
+ herunter.
+ Das Packet weis selbst welche anderen Programme es benötigt und installiert
+ diese nach.
+ Der vorteil dieser Methode ist, dass sich viele Programme einzelne Unterprogram
+me teilen können.
+ Ausserdem lässt sich das System so einfach mit dem Server abgleichen.
+ Das Aktualiesieren der Programme ist einfacher.
+ 
+\end_layout
+
+\begin_layout Section
+Vorüberlegungen
+\end_layout
+
+\begin_layout Subsection
+Ziel
+\end_layout
+
+\begin_layout Standard
+Meine ersten Überlegungen galten zwangsläufig meinem Ziel.
+ Wie sollte mein Programm aussehen um einen möglichst einfachen einstieg
+ in Linux zu gewährleisten?
+\end_layout
+
+\begin_layout Standard
+Ich kam zu dem naheliegenden Schluss, dass es das besste sei eine einfache
+ Oberfläche zu konstruieren.
+ Es enstanden die ersten Ideen.
+ 
+\end_layout
+
+\begin_layout Standard
+Meine fertige Idee bestand aus einem Ramen, welcher in drei Teile gegliedert
+ war.
+ Der Programmauswahl, ein Dokumentationsbrowser und einem Informationssystem.
+ Die Programmauswahl sollte Icons für verschiedene Programmarten bekommen
+ (zB.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Video und Foto
+\begin_inset Quotes grd
+\end_inset
+
+, 
+\begin_inset Quotes gld
+\end_inset
+
+Musik
+\begin_inset Quotes grd
+\end_inset
+
+, 
+\begin_inset Quotes gld
+\end_inset
+
+Spiele
+\begin_inset Quotes grd
+\end_inset
+
+).
+ Durch das anklicken der Icons sollte man in eine Feinauswahlen kommen,
+ bis man nach maximal drei Verzeichnissen eine Programmauswahl präsentiert
+ bekommt.
+\end_layout
+
+\begin_layout Standard
+Der Dokumentationsbrowser soll die aufgabe übernehmen, Dokumentation zugänglich
+ zu machen.
+ Dabei denke ich primär an Schul- oder Firmeninterne Dokumentation.
+ 
+\end_layout
+
+\begin_layout Standard
+Der Informationsbrowser wiederrum soll über neue Entwicklungen informieren.
+ Es bietet sich an Blog-Webseiten oder Nachrichten an dieser Stelle zu laden.
+\end_layout
+
+\begin_layout Standard
+Ein nicht zu unterschätzender Teil ist die Administartion eines solchen
+ Programmes.
+ Ich weis aus erfahrung meines ersten größeren Programmes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://github.com/SiebenCorgie/Beta-Launcher , 18.08.2016, 18:30
+\end_layout
+
+\end_inset
+
+, dass man ein gutes Konfigurations-System braucht.
+ Bei CPF (kurz für: Custom Packaging Framework) würde ausserdem noch ein
+ weiteres Problem hinzu kommen.
+ Da es sich um die Installation von Programmen handelt, muss die Sicherheit
+ des System gewährleistet sein.
+ Das heist es muss genau geregelt werden wie man installiert und welche
+ Programme welchen zugriff auf Dateien haben.
+\end_layout
+
+\begin_layout Subsection
+Konfiguration
+\end_layout
+
+\begin_layout Subsubsection
+Programm eigene Konfiguration
+\end_layout
+
+\begin_layout Standard
+Die Programm eigene Konfiguration umschliest die Art, wie CPF reagieren
+ soll.
+ Dazu sollte gehören:
+\end_layout
+
+\begin_layout Itemize
+Umgang mit der Datenbank
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Speicherung von Daten
+\end_layout
+
+\begin_layout Itemize
+Abrufen von Daten
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Umgang mit dem Internet
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Laden der Websiten in Documentation und Info-System
+\end_layout
+
+\begin_layout Itemize
+Herrunterladen von Programmen
+\end_layout
+
+\begin_layout Itemize
+Abgleichen der Datenbank mit online Repositorium
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Verhalten wärend der Installation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Automatisierungsgrad während der Installation
+\end_layout
+
+\begin_layout Itemize
+Passwortabfrage (welcher Benutzer fragt?)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Massenaufträge
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Grafische Rückmeldung
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Die verschiedenen Optionen werden in verscheidenen Registerkarten eines
+ Konfigurationsfensters geändert.
+ Das ist erfahrungsgemäß die übersichtlichste Art.
+\end_layout
+
+\begin_layout Subsubsection
+Datenbank
+\end_layout
+
+\begin_layout Standard
+Die Datenbank soll aus einfachen Datensätzen mit verscheidenen Daten beruhen.
+ zu diesen Daten soll gehören:
+\end_layout
+
+\begin_layout Itemize
+Name des Programms
+\end_layout
+
+\begin_layout Itemize
+Entwicklerbeschreibung
+\end_layout
+
+\begin_layout Itemize
+Eigene Beschreibung
+\end_layout
+
+\begin_layout Itemize
+Programm Type (Grafik, Video, Spiel, etc.)
+\end_layout
+
+\begin_layout Itemize
+Programm Entwickler
+\end_layout
+
+\begin_layout Itemize
+Programm Website
+\end_layout
+
+\begin_layout Itemize
+Pfad zu Screenshot
+\end_layout
+
+\begin_layout Itemize
+Pfad zu eventuellen Programmdateien
+\end_layout
+
+\begin_layout Subsubsection
+Datenbank management
+\end_layout
+
+\begin_layout Standard
+Die Datenbank soll ausserdem erweiterbar sein.
+ Dazu muss auch ein eignes Tool geschrieben werden.
+ Die erweiterung wird aus einer Eingabemaske bestehen sowie der option die
+ lokale Datenbank in das Repositorium hochzuladen.
+\end_layout
+
+\begin_layout Subsection
+Installation
+\end_layout
+
+\begin_layout Subsubsection
+Visualisierung
+\end_layout
+
+\begin_layout Standard
+Das Installieren von Software soll mit minimalem visuellen eindrücken auskommen.
+ Dabei möchte ich nur den Fortschritt, und den Namen der Aktion anzeigen.
+ Die Werte sollen im unteren Teil des Programms angezeigt werden.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Installationsablauf
+\end_layout
+
+\begin_layout Standard
+Die installation soll wie folgt ablaufen:
+\end_layout
+
+\begin_layout Enumerate
+Programm Auswahl
+\end_layout
+
+\begin_layout Enumerate
+Installations-Start
+\end_layout
+
+\begin_layout Enumerate
+Passwortabfrage (benutzer wird aus Konfigurationsdateien gelesen)
+\end_layout
+
+\begin_layout Enumerate
+Bestätigung
+\end_layout
+
+\begin_layout Enumerate
+Instalation
+\end_layout
+
+\begin_layout Enumerate
+Erfolgs/Misserfolgs-Nachricht
+\end_layout
+
+\begin_layout Standard
+Bei einem Misserfolg soll nach möglichkeit der Fehler angezeigt werden.
+ Insofern benötigt soll man auch den Lockbuch-Eintrag sehen können.
+\end_layout
+
+\begin_layout Subsubsection
+Massenaufträge
+\end_layout
+
+\begin_layout Standard
+Das Programm soll Massenaufträge abarbeiten können.
+ Dies soll vorallem Administratoren die Arbeit ersparen.
+ Bei einem Massenauftrag werden viele Programme mit einem mal installiert.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Programmauswahl
+\end_layout
+
+\begin_layout Standard
+Die Programme sollen wie in 2.1 beschrieben durch fein Filtern der Optionen
+ ausgewählt werden.
+ Ich werden versuchen die beschreibungen möglichst neutral zuhalten.
+ Damit soll die entscheidung des Nutzers möglicht neutral bleiben, um zum
+ gewünschten Programm zu gelangen.
+\end_layout
+
+\begin_layout Subsection
+Web-Integration
+\end_layout
+
+\begin_layout Standard
+Die Webintegration soll über PyWebKit
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://webkit.org/ , 14.08.2016, 20:18
+\end_layout
+
+\end_inset
+
+ erfolgen.
+ Das ist eine von Apple entwickelte Umgebung, um relativ einfach Browserfähigkei
+ten in Gtk-Programme einzubauen.
+ Ich werde es verwenden um einfache Websiten anzuzeigen.
+ Die Lizensierung von WebKit
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://webkit.org/licensing-webkit/ , 14.08.2016 , 20:21
+\end_layout
+
+\end_inset
+
+ ermöglicht es mir das Programm kommerziell oder nichtkommerziell zu entwickeln
+ und zu veröffentlichen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Rolfs buch 1
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+teddys buch 2
+\end_layout
+
+\end_body
+\end_document

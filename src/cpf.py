@@ -23,9 +23,20 @@ import gi.repository
 gi.require_version('Gtk', '3.0')
 gi.require_version('WebKit', '3.0')
 
-from gi.repository import Gtk, GdkPixbuf, Gdk, WebKit
+#haupt Biblitheken (module) importieren
+from gi.repository import Gtk, GdkPixbuf, Gdk 
 import os, sys
-import CPFWeb, CPFConf
+
+#Eigene Module Importieren
+import CPFWeb as web
+import CPFConf as conf
+import SystemInteraction as SI
+
+#Je nach einstellung WebKit importieren
+if conf.get_entry('Internet','online') == 'True':
+	from gi.repository import WebKit
+else:
+	print("Start in Offline Mode")
 
 
 #Comment the first line and uncomment the second before installing
@@ -44,21 +55,39 @@ class GUI:
 		window = self.builder.get_object('window')
 
 #Documentation Browser
-		self.DocURL = 'https://github.com/SiebenCorgie/BELL_CustomPackageFramework/wiki'
-		self.DocBrowser = WebKit.WebView()
-		self.DocBrowser.load_uri(self.DocURL)
-		DocHostWin = self.builder.get_object('Docs_View')
-		DocHostWin.add(self.DocBrowser)
-		DocHostWin.show_all()
+		if conf.get_entry('Internet','Online') == 'True':
+			self.DocURL = conf.get_entry('Internet','docurl')
+			self.DocBrowser = WebKit.WebView()
+			self.DocBrowser.load_uri(self.DocURL)
+			DocHostWin = self.builder.get_object('Docs_View')
+			DocHostWin.add(self.DocBrowser)
+			DocHostWin.show_all()
+		else:
+			DocHostWin = self.builder.get_object('Docs_View')
+			SorryIcon1= Gtk.Image.new_from_icon_name('dialog-error' , Gtk.IconSize.DIALOG)
+			DocHostWin.add(SorryIcon1)
+			DocHostWin.show_all()
 
 #InfoBrowser
-		self.InfoURL = 'https://www.lernsax.de/'
-		self.InfoBrowser = WebKit.WebView()
-		self.InfoBrowser.load_uri(self.InfoURL)
-		InfoHostWin = self.builder.get_object('Info_View')
-		InfoHostWin.add(self.InfoBrowser)
-		DocHostWin.show_all()
-
+		if conf.get_entry('Internet','Online') == 'True':
+			self.InfoURL = conf.get_entry('Internet','infourl')
+			self.InfoBrowser = WebKit.WebView()
+			self.InfoBrowser.load_uri(self.InfoURL)
+			InfoHostWin = self.builder.get_object('Info_View')
+			InfoHostWin.add(self.InfoBrowser)
+			DocHostWin.show_all()
+		else:
+			InfoHostWin = self.builder.get_object('Info_View')
+			SorryIcon2= Gtk.Image.new_from_icon_name('dialog-error' , Gtk.IconSize.DIALOG)
+			InfoHostWin.add(SorryIcon2)
+			InfoHostWin.show_all()
+			
+#Verscheidenes
+		self.FastOnlineSwitch = self.builder.get_object('M_File_OfflineMain')
+		if conf.get_entry('Internet','online') == 'True':
+			self.FastOnlineSwitch.set_active(True)
+		else:
+			self.FastOnlineSwitch.set_active(False)
 		
 #init end
 		window.show_all()
@@ -88,9 +117,12 @@ class GUI:
 	def on_B_Info_Forward_clicked (self, button):
 		self.InfoBrowser.go_forward()
 
-
-#Menue
-
+#MainMenu
+#OpenPreferences
+	def on_M_File_Preferences_activate (self, menuitem):
+		self.Preferences = self.builder.get_object('Preferences')
+		conf.load_config(self.builder)
+		self.Preferences.show_all()
 #Quit_File
 	def on_M_File_Quit_activate (self, menuitem):
 		Gtk.main_quit()
@@ -99,6 +131,25 @@ class GUI:
 	def on_window_destroy(self, window):
 		Gtk.main_quit()
 
+#SchnellEinstellung "Online" in File-Menu
+	def on_M_File_OfflineMain_toggled (self, checkmenuitem):
+		#set entry in Conifg
+		self.FastOnlineSwitch = self.builder.get_object('M_File_OfflineMain')
+		if self.FastOnlineSwitch.get_active() == True:
+			conf.set_entry('Internet','Online','True')
+		else:
+			conf.set_entry('Internet','Online','False')
+
+		
+#Preferences
+#Discard
+	def on_Pref_Discard_clicked (self, button):
+		self.Preferences.hide()
+#Save
+	def on_Pref_Save_clicked (self, button):
+		conf.save_config(self.builder)
+		self.Preferences.hide()
+		
 
 
 def main():
