@@ -4,12 +4,10 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass extarticle
+\textclass article
 \use_default_options true
 \begin_modules
-theorems-ams
-eqs-within-sections
-figs-within-sections
+graphicboxes
 \end_modules
 \maintain_unincluded_children false
 \language ngerman
@@ -20,7 +18,7 @@ figs-within-sections
 \font_sans "default" "default"
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
-\font_default_family rmdefault
+\font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -61,12 +59,12 @@ figs-within-sections
 \end_index
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation 150text%
+\paragraph_separation skip
+\defskip smallskip
 \quotes_language german
 \papercolumns 1
 \papersides 1
-\paperpagestyle fancy
+\paperpagestyle default
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -178,7 +176,8 @@ Auch wenn es die Programme von Windows und MacOSx nicht gibt, so ist die
 status open
 
 \begin_layout Plain Layout
-https://helpx.adobe.com/photoshop/system-requirements.html, (14.08.2016, 13:57)
+Vgl.
+ https://helpx.adobe.com/photoshop/system-requirements.html, (14.08.2016, 13:57)
 \end_layout
 
 \end_inset
@@ -301,7 +300,7 @@ Ein nicht zu unterschätzender Teil ist die Administartion eines solchen
 status open
 
 \begin_layout Plain Layout
-https://github.com/SiebenCorgie/Beta-Launcher , 18.08.2016, 18:30
+siehe: https://github.com/SiebenCorgie/Beta-Launcher , 18.08.2016, 18:30
 \end_layout
 
 \end_inset
@@ -528,7 +527,7 @@ Die Webintegration soll über PyWebKit
 status open
 
 \begin_layout Plain Layout
-https://webkit.org/ , 14.08.2016, 20:18
+siehe: https://webkit.org/ , 14.08.2016, 20:18
 \end_layout
 
 \end_inset
@@ -551,11 +550,307 @@ https://webkit.org/licensing-webkit/ , 14.08.2016 , 20:21
  und zu veröffentlichen.
 \end_layout
 
+\begin_layout Subsection
+Programmiersprache
+\end_layout
+
+\begin_layout Standard
+Als Programmiersprache nehme ich Python.Es gibt verschiedene Gründe dafür.
+ 
+\end_layout
+
+\begin_layout Standard
+Der Erste ist, dass ich schon seit Sommer 2015 Programme mit Python schreibe.
+ Ich kann es realtiv 
+\begin_inset Quotes gld
+\end_inset
+
+flüssig
+\begin_inset Quotes grd
+\end_inset
+
+ schreiben.
+ Diese Vorkenntnis ist nötig um in der gegebenen Zeit ein so komplexes Programm
+ zuschreiben.
+ 
+\end_layout
+
+\begin_layout Standard
+Der zweite Grund ist, dass Python eine interpretiere
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Siehe: https://de.wikipedia.org/wiki/Interpreter
+\end_layout
+
+\end_inset
+
+ Sprache ist.
+ Der Vorteil ist, dass ein Python-Programm bei einem Programmfehler nicht
+ abstürzt.
+ Es führt in meinem Fall den Befehl nicht aus und kehrt in die Warte-Position
+ zurück
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Die Charackteristik eines Gtk+ Interfaces wird Später noch geklährt.
+\end_layout
+
+\end_inset
+
+.
+ Dadurch ist das potenzielle Installieren fehlerhafter Software, oder frustriere
+nde abstürze des Programms geringer.
+ Ein Nachteil ist, dass man Programmfehler erst bei der Ausführung findet.
+ Das Testen wird dadurch aufwendiger.
+\end_layout
+
+\begin_layout Standard
+Der Dritte Grund ist Pythons anbindung an das Gtk+ Projekt.
+ Wie ich im nächsten abschnitt beschreiben werde nutze ich das GTK+ um meine
+ grafische Umsetzung zu realisieren.
+ Bei einem so grundlegenden Element ist es wichtig, dass die Anbindung an
+ die Programmiersprache gut ist.
+ Dies ist bei Python glücklicherweise gegeben.
+\end_layout
+
+\begin_layout Subsection
+Interface-Toolkit
+\end_layout
+
+\begin_layout Standard
+Das Interface-Toolkit
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+kurze Erklährung: https://de.wikipedia.org/wiki/Toolkit
+\end_layout
+
+\end_inset
+
+ ist auf Linux zu Verständigung zwischen dem Display-Server (z.B.
+ X11 oder Wayland) und dem Benutzer zuständig.
+ Es stellt verschiedene Elemente bereit, die zusammen das fertige Programm-Inter
+face ergeben (siehe Abb.1).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Quelle: https://webkit.org/licensing-webkit/
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Scalebox
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Bilder/Schema_der_Schichten_der_grafischen_Benutzeroberflaeche.svg
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\shape slanted
+Schematische Darstellung der Beziehungen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ich habe mich für Gtk+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Englisch: http://www.gtk.org/ ,18.08.2016, 21:25
+\end_layout
+
+\end_inset
+
+ entscheiden.
+ Der wichtigste Grund wurde schon in 
+\begin_inset Quotes gld
+\end_inset
+
+2.5 Programmiersprache
+\begin_inset Quotes grd
+\end_inset
+
+ angeführt.
+ Gtk+ hat eine exzellente Pythonanbindung (ab jetzt API , kurz für Application-P
+rogramming-Interface).
+ Allerdings macht sich Gtk+ durch weitere Vorteile prädestiniert für den
+ Einsatz in meinem Programm.
+\end_layout
+
+\begin_layout Standard
+Ein weiterer großer Vorteil ist die Lizensierung.
+ Gtk+ ist unter LGPL
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Englisch: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html , 18.08.2016
+ , 21:32
+\end_layout
+
+\end_inset
+
+ Lizensiert
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Englisch: http://www.gtk.org/ , 18.08.2016, 21:32
+\end_layout
+
+\end_inset
+
+.
+ Diese erlaubt es mir Gtk ohne Restriktionen einzusetzen.
+ Die LGPL Lizens ist eine der am weitesten verbreiteten Lizensen in der
+ OpenSource-Welt.
+ Der erfolg durch die Lizens und die Qualität lässt sich auf Linux leicht
+ erkennen.
+ Es gibt sehr viele Programme die mit dem Gtk erstellt wurden.Desweiteren
+ gibt es sogar eine ganze Desktop-Umgebung die auf Gtk basiert.
+ Genannt 
+\begin_inset Quotes gld
+\end_inset
+
+Gnome
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Englische Referenz: https://www.gnome.org/
+\end_layout
+
+\end_inset
+
+, welche ich selbst benutze.
+ Das Gtk Projekt ist eines der ältesten
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://www.gimp.org/about/ancient_history.html , 08.18.2016 , 21:47
+\end_layout
+
+\end_inset
+
+ und erfolgreichsten Linux-Projekte im grafischen Sekment.
+ Mit dem erfolg kommt eine weite Verbreitung im Linux-Anwenderbereich.
+ Dre kommt mir insofern zugute, als das es auf fast allen Distriubutionen
+ die benötigten Packete für mein Programm gibt.
+\end_layout
+
+\begin_layout Standard
+Der letzte Grund für das Gtk+ ist meine Erfahrung.
+ Wie in 2.5 erwähnt habe ich schon einige Erfahrung auf dem Gebiet von Python.
+ Dazu gehört es auch, dass ich ab Ostern 2016 ein Programm
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+siehe: https://github.com/SiebenCorgie/Beta-Launcher
+\end_layout
+
+\end_inset
+
+ zum Organisieren und Installieren der UnrealEngine 4 auf Linux geschrieben
+ habe.
+ Dieses war auch mit Gtk erstellt worden.
+ Ich habe wärend des Programmierens viel Erfahrung gesammelt.
+ Damals habe ich mehrer Toolkits miteinander verglichen (z.B.
+ Qt und wxWidgets).
+ Am Ende habe ich mich für das Gtk entscheiden.
+ Das Ergebniss ist ein gefestigtes Anfängerwissen über ein Toolkit welches
+ ich mir bewusst gesucht habe.
+ 
+\end_layout
+
+\begin_layout Subsection
+Unterstützung
+\end_layout
+
+\begin_layout Standard
+=> Unterstützung von .deb (debian) und .tar.xz (arch-based) weil RPM keine
+ erfahrung etc.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Anmerkung zum Literaturverzeichnis
+\end_layout
+
+\begin_layout Standard
+Das Literaturverzeichnis kennzeichnet Quellen mit englischen Inhalt mit
+ 
+\begin_inset Quotes gld
+\end_inset
+
+EN
+\begin_inset Quotes grd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Bibliography
@@ -565,7 +860,7 @@ key "key-1"
 
 \end_inset
 
-Rolfs buch 1
+EN: WebKit Hauptseite: https://webkit.org/
 \end_layout
 
 \begin_layout Bibliography
@@ -575,7 +870,61 @@ key "key-2"
 
 \end_inset
 
-teddys buch 2
+EN: WebKit Lizens: https: https://webkit.org/licensing-webkit/ , gesamtes
+ Dokument
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+EN: Gtk Hauptseite: http://www.gtk.org/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+EN.
+ LGPL Lizens Webseite: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+EN: Kurzfassung des Gtk: https://www.gimp.org/about/ancient_history.html
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+EN: Beta-Launcher, Mein erstes Gtk-Projekt: https://github.com/SiebenCorgie/Beta-
+Launcher
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-6"
+
+\end_inset
+
+EN: Unreal-Engine-4 Hauptseite: https://www.unrealengine.com/what-is-unreal-engine
+-4 
 \end_layout
 
 \end_body
