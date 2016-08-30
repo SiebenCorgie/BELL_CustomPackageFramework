@@ -31,6 +31,7 @@ import os, sys
 import CPFWeb as web
 import CPFConf as conf
 import SystemInteraction as SI
+import CPFDatabase as db
 
 #Je nach einstellung WebKit importieren
 if conf.get_entry('Internet','online') == 'True':
@@ -150,6 +151,19 @@ class GUI:
 		conf.save_config(self.builder)
 		self.Preferences.hide()
 		
+#Tools
+#add database entry
+	def on_M_Tools_AddDatabaseEntry_activate (self, menuitem):
+		self.db_add_Dialog = self.builder.get_object('DB_Add_Win')
+		self.db_add_Dialog.show_all()
+#add entry
+	def on_DB_Add_Add_clicked (self, button):
+		db.db_add_entry() ### add all this stuff ================================
+		self.db_add_Dialog.hide()
+
+#close db add entry dialog
+	def on_DB_Add_Close_clicked (self, button):
+		db.db_read()
 
 
 def main():

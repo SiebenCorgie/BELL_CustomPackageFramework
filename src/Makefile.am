@@ -10,7 +10,8 @@ ui_DATA = cpf.ui
 bin_SCRIPTS = cpf.py \
 	CPFWeb.py \
 	CPFConf.py \
-	SystemInteraction.py
+	SystemInteraction.py \
+	CPFDatabase.py
 
 ## Directory where .class files will be installed
 cpfdir = $(pythondir)/cpf
