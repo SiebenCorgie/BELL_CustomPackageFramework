@@ -158,12 +158,19 @@ class GUI:
 		self.db_add_Dialog.show_all()
 #add entry
 	def on_DB_Add_Add_clicked (self, button):
-		db.db_add_entry() ### add all this stuff ================================
+		db.db_add_entry(self.builder)
 		self.db_add_Dialog.hide()
 
 #close db add entry dialog
 	def on_DB_Add_Close_clicked (self, button):
 		db.db_read()
+		self.db_add_Dialog.hide()
+
+#"OK" DB ErrorMessage
+	def on_DB_EM_OK_clicked (self, button):
+		DBerror = self.builder.get_object('DB_ErrorMessage')
+		DBerror.hide()
+
 
 
 def main():

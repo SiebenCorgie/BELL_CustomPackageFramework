@@ -31,3 +31,13 @@ def get_folder_content(directory):
 	print('entrys are: ' + str(content))
 	
 	return content
+
+def execute(command, passoutput):
+	subprocess.call(command, shell=True)
+	if passoutput == True:
+		#convert to UTF
+		returnstring = subprocess.check_output(command, shell=True)
+		#remove \n from last part of string
+		returnstring = returnstring.decode('utf-8')[:-1]
+		print('returnstring: ' + returnstring)
+		return returnstring

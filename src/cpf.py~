@@ -155,15 +155,16 @@ class GUI:
 #add database entry
 	def on_M_Tools_AddDatabaseEntry_activate (self, menuitem):
 		self.db_add_Dialog = self.builder.get_object('DB_Add_Win')
-		db_add_Dialog.show_all()
+		self.db_add_Dialog.show_all()
 #add entry
 	def on_DB_Add_Add_clicked (self, button):
-		db.db_add_entry() ### add all this stuff ================================
+		db.db_add_entry(self.builder)
 		self.db_add_Dialog.hide()
 
 #close db add entry dialog
 	def on_DB_Add_Close_clicked (self, button):
 		db.db_read()
+		self.db_add_Dialog.hide()
 
 
 def main():

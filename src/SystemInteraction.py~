@@ -17,12 +17,12 @@ def get_folder_content(directory):
 		bytelist = output.split()
 		#convertiere byte items zu strin liste
 
-	#muss eigene aufzeilung nehmen
-	for entry in range(len(bytelist)):
-		bytesring = bytelist[entry]
-		EndString = bytesring.decode('utf-8')
-		#zu liste hinzufügen
-		content.append(EndString)
+		#muss eigene aufzeilung nehmen
+		for entry in range(len(bytelist)):
+			bytesring = bytelist[entry]
+			EndString = bytesring.decode('utf-8')
+			#zu liste hinzufügen
+			content.append(EndString)
 			
 	except:
 		content = []
@@ -31,3 +31,13 @@ def get_folder_content(directory):
 	print('entrys are: ' + str(content))
 	
 	return content
+
+def execute(command, passoutput):
+	subprocess.call(command, shell=True)
+	if passoutput == True:
+		#convert to UTF
+		returnstring = subprocess.check_output(command, shell=True)
+		#remove \n from last part of string)
+		returnstring = returnstring.decode('utf-8')[:-1]
+		print('returnstring: ' + returnstring)
+		return returnstring
