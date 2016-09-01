@@ -153,7 +153,7 @@ Betreuer:
 \begin_layout Standard
 \noindent
 \align center
-Herr Dipl.
+Herr Diplom.
  Lehrer Gerd Bobe
 \end_layout
 
@@ -241,7 +241,7 @@ Schön! Ich habe ein Linux, aber wie bearbeite ich ein Bild?
 \begin_layout Standard
 An diesem Problem möchte ich mit meiner Arbeit ansetzen.
  Ich möchte ein- und Umsteigern das Suchen von Programmen erleichtern.
- Ich sehe drei haupt Probleme für neueinsteiger.
+ Ich sehe drei Hauptprobleme für Neueinstieg.
 \end_layout
 
 \begin_layout Subsection
@@ -264,7 +264,7 @@ Vgl.
 
 .
  Es gibt aber Gimp, Krita, MyPaint, und viele mehr.
- Welches davon soll ich nehmen? Aus meiner erfahrung kann ich sagen: 
+ Welches davon soll ich nehmen? Aus meiner Erfahrung kann ich sagen: 
 \begin_inset Quotes gld
 \end_inset
 
@@ -274,8 +274,8 @@ Krita für malen und Texturbearbeitung und Gimp für Photos
 
 .
  Aber diese Erfahrung hat der Normalverbraucher nicht.
- Meine Lösung ist einfach: Ich gebe dem Nutzer nur Gimp und Krita un eine
- Beschriebung mit meiner Erfahrung.
+ Meine Lösung ist einfach: Ich gebe dem Nutzer nur Gimp und Krita und eine
+ Beschreibung mit meiner Erfahrung.
 \end_layout
 
 \begin_layout Subsection
@@ -284,22 +284,29 @@ Grund 2
 
 \begin_layout Standard
 Das nächste Problem ist recht trivial.
- Wie istalliere ich Software? 
+ Wie installiere ich Software? 
 \end_layout
 
 \begin_layout Standard
 Die meisten Umsteiger kommen von Windows.
- Sie erwarten, dass man ins internet geht, den richtigen Installer herunterläd
- und dann installiert.
+ Sie erwarten, dass man ins Internet geht, den richtigen 
+\begin_inset Quotes gld
+\end_inset
+
+Installer
+\begin_inset Quotes grd
+\end_inset
+
+ herunterlädt und dann installiert.
  Auf Linux kann man das Installieren aber eher mit einem Appstore vergleichen.
- Man wählt sein Packet (Programm) und läd es sich von einem Spiegel-Server
+ Man wählt sein Paket (Programm) und lädt es sich von einem Spiegel-Server
  herunter.
- Das Packet weis selbst welche anderen Programme es benötigt und installiert
+ Das Paket weiß selbst welche anderen Programme es benötigt und installiert
  diese nach.
- Der vorteil dieser Methode ist, dass sich viele Programme einzelne Unterprogram
+ Der Vorteil dieser Methode ist, dass sich viele Programme einzelne Unterprogram
 me teilen können.
- Ausserdem lässt sich das System so einfach mit dem Server abgleichen.
- Das Aktualiesieren der Programme ist einfacher.
+ Außerdem lässt sich das System so einfach mit dem Server abgleichen.
+ Das Aktualisieren der Programme ist einfacher.
  
 \end_layout
 
@@ -318,18 +325,19 @@ Meine ersten Überlegungen galten zwangsläufig meinem Ziel.
 \end_layout
 
 \begin_layout Standard
-Ich kam zu dem naheliegenden Schluss, dass es das besste sei eine einfache
+Ich kam zu dem naheliegenden Schluss, dass es das beste sei eine einfache
  Oberfläche zu konstruieren.
- Es enstanden die ersten Ideen.
+ Es entstanden die ersten Ideen.
  
 \end_layout
 
 \begin_layout Standard
-Meine fertige Idee bestand aus einem Ramen, welcher in drei Teile gegliedert
+Meine fertige Idee bestand aus einem Rahmen, welcher in drei Teile gegliedert
  war.
  Der Programmauswahl, ein Dokumentationsbrowser und einem Informationssystem.
- Die Programmauswahl sollte Icons für verschiedene Programmarten bekommen
- (zB.
+ Die Programmauswahl sollte Icons für verschiedene Programm-arten bekommen
+ (z.
+ B.
  
 \begin_inset Quotes gld
 \end_inset
@@ -355,27 +363,27 @@ Spiele
 \end_inset
 
 ).
- Durch das anklicken der Icons sollte man in eine Feinauswahlen kommen,
+ Durch das Anklicken der Icons sollte man in eine Feinauswahlen kommen,
  bis man nach maximal drei Verzeichnissen eine Programmauswahl präsentiert
  bekommt.
 \end_layout
 
 \begin_layout Standard
-Der Dokumentationsbrowser soll die aufgabe übernehmen, Dokumentation zugänglich
+Der Dokumentationsbrowser soll die Aufgabe übernehmen, Dokumentation zugänglich
  zu machen.
- Dabei denke ich primär an Schul- oder Firmeninterne Dokumentation.
+ Dabei denke ich primär an Schul- oder firmeninterne Dokumentation.
  
 \end_layout
 
 \begin_layout Standard
-Der Informationsbrowser wiederrum soll über neue Entwicklungen informieren.
+Der Informationsbrowser wiederum soll über neue Entwicklungen informieren.
  Es bietet sich an Blog-Webseiten oder Nachrichten an dieser Stelle zu laden.
 \end_layout
 
 \begin_layout Standard
-Ein nicht zu unterschätzender Teil ist die Administartion eines solchen
- Programmes.
- Ich weis aus erfahrung meines ersten größeren Programmes
+Ein nicht zu unterschätzender Teil ist die Administration eines solchen
+ Programms.
+ Ich weiß aus Erfahrung meines ersten größeren Programms
 \begin_inset Foot
 status open
 
@@ -386,11 +394,11 @@ siehe: https://github.com/SiebenCorgie/Beta-Launcher , 18.08.2016, 18:30
 \end_inset
 
 , dass man ein gutes Konfigurations-System braucht.
- Bei CPF (kurz für: Custom Packaging Framework) würde ausserdem noch ein
+ Bei CPF (kurz für: Custom Packaging Framework) würde außerdem noch ein
  weiteres Problem hinzu kommen.
  Da es sich um die Installation von Programmen handelt, muss die Sicherheit
  des System gewährleistet sein.
- Das heist es muss genau geregelt werden wie man installiert und welche
+ Das heißt es muss genau geregelt werden wie man installiert und welche
  Programme welchen zugriff auf Dateien haben.
 \end_layout
 
@@ -403,7 +411,7 @@ Programm eigene Konfiguration
 \end_layout
 
 \begin_layout Standard
-Die Programm eigene Konfiguration umschliest die Art, wie CPF reagieren
+Die Programm eigene Konfiguration umschließt die Art, wie CPF reagieren
  soll.
  Dazu sollte gehören:
 \end_layout
@@ -428,11 +436,11 @@ Umgang mit dem Internet
 
 \begin_deeper
 \begin_layout Itemize
-Laden der Websiten in Documentation und Info-System
+Laden der Webseiten in Dokumentation und Info-System
 \end_layout
 
 \begin_layout Itemize
-Herrunterladen von Programmen
+Herunterladen von Programmen
 \end_layout
 
 \begin_layout Itemize
@@ -441,7 +449,7 @@ Abgleichen der Datenbank mit online Repositorium
 
 \end_deeper
 \begin_layout Itemize
-Verhalten wärend der Installation
+Verhalten während der Installation
 \end_layout
 
 \begin_deeper
@@ -450,7 +458,7 @@ Automatisierungsgrad während der Installation
 \end_layout
 
 \begin_layout Itemize
-Passwortabfrage (welcher Benutzer fragt?)
+Passwort-abfrage (welcher Benutzer fragt?)
 \end_layout
 
 \end_deeper
@@ -465,7 +473,7 @@ Grafische Rückmeldung
 
 \end_deeper
 \begin_layout Standard
-Die verschiedenen Optionen werden in verscheidenen Registerkarten eines
+Die verschiedenen Optionen werden in verschiedenen Registerkarten eines
  Konfigurationsfensters geändert.
  Das ist erfahrungsgemäß die übersichtlichste Art.
 \end_layout
@@ -475,7 +483,7 @@ Datenbank
 \end_layout
 
 \begin_layout Standard
-Die Datenbank soll aus einfachen Datensätzen mit verscheidenen Daten beruhen.
+Die Datenbank soll aus einfachen Datensätzen mit verschiedenen Daten beruhen.
  zu diesen Daten soll gehören:
 \end_layout
 
@@ -484,15 +492,15 @@ Name des Programms
 \end_layout
 
 \begin_layout Itemize
-Entwicklerbeschreibung
+Entwicklerbeschreibung (kurzbeschreibung)
 \end_layout
 
 \begin_layout Itemize
-Eigene Beschreibung
+Eigene Beschreibung (lange Beschreibung)
 \end_layout
 
 \begin_layout Itemize
-Programm Type (Grafik, Video, Spiel, etc.)
+Programm Typ (Grafik, Video, Spiel, etc.) (Überkategorie)
 \end_layout
 
 \begin_layout Itemize
@@ -512,14 +520,14 @@ Pfad zu eventuellen Programmdateien
 \end_layout
 
 \begin_layout Subsubsection
-Datenbank management
+Datenbank Management
 \end_layout
 
 \begin_layout Standard
-Die Datenbank soll ausserdem erweiterbar sein.
- Dazu muss auch ein eignes Tool geschrieben werden.
- Die erweiterung wird aus einer Eingabemaske bestehen sowie der option die
- lokale Datenbank in das Repositorium hochzuladen.
+Die Datenbank soll außerdem erweiterbar sein.
+ Dazu muss auch ein eigenes Tool geschrieben werden.
+ Die Erweiterung wird aus einer Eingabemaske bestehen sowie der Option die
+ lokale Datenbank in das Repositorium hoch zu laden.
 \end_layout
 
 \begin_layout Subsection
@@ -542,7 +550,7 @@ Installationsablauf
 \end_layout
 
 \begin_layout Standard
-Die installation soll wie folgt ablaufen:
+Die Installation soll wie folgt ablaufen:
 \end_layout
 
 \begin_layout Enumerate
@@ -554,7 +562,7 @@ Installations-Start
 \end_layout
 
 \begin_layout Enumerate
-Passwortabfrage (benutzer wird aus Konfigurationsdateien gelesen)
+Passwort-abfrage (Benutzer wird aus Konfigurationsdateien gelesen)
 \end_layout
 
 \begin_layout Enumerate
@@ -562,7 +570,7 @@ Bestätigung
 \end_layout
 
 \begin_layout Enumerate
-Instalation
+Installation
 \end_layout
 
 \begin_layout Enumerate
@@ -570,7 +578,7 @@ Erfolgs/Misserfolgs-Nachricht
 \end_layout
 
 \begin_layout Standard
-Bei einem Misserfolg soll nach möglichkeit der Fehler angezeigt werden.
+Bei einem Misserfolg soll nach Möglichkeit der Fehler angezeigt werden.
  Insofern benötigt soll man auch den Lockbuch-Eintrag sehen können.
 \end_layout
 
@@ -580,7 +588,7 @@ Massenaufträge
 
 \begin_layout Standard
 Das Programm soll Massenaufträge abarbeiten können.
- Dies soll vorallem Administratoren die Arbeit ersparen.
+ Dies soll vor allem Administratoren die Arbeit ersparen.
  Bei einem Massenauftrag werden viele Programme mit einem mal installiert.
  
 \end_layout
@@ -592,8 +600,8 @@ Programmauswahl
 \begin_layout Standard
 Die Programme sollen wie in 2.1 beschrieben durch fein Filtern der Optionen
  ausgewählt werden.
- Ich werden versuchen die beschreibungen möglichst neutral zuhalten.
- Damit soll die entscheidung des Nutzers möglicht neutral bleiben, um zum
+ Ich werden versuchen die Beschreibungen möglichst neutral zuhalten.
+ Damit soll die Entscheidung des Nutzers möglichst neutral bleiben, um zum
  gewünschten Programm zu gelangen.
 \end_layout
 
@@ -615,8 +623,8 @@ siehe: https://webkit.org/ , 14.08.2016, 20:18
  erfolgen.
  Das ist eine von Apple entwickelte Umgebung, um relativ einfach Browserfähigkei
 ten in Gtk-Programme einzubauen.
- Ich werde es verwenden um einfache Websiten anzuzeigen.
- Die Lizensierung von WebKit
+ Ich werde es verwenden um einfache Webseiten anzuzeigen.
+ Die Lizenzierung von WebKit
 \begin_inset Foot
 status open
 
@@ -626,7 +634,7 @@ https://webkit.org/licensing-webkit/ , 14.08.2016 , 20:21
 
 \end_inset
 
- ermöglicht es mir das Programm kommerziell oder nichtkommerziell zu entwickeln
+ ermöglicht es mir das Programm kommerziell oder nicht-kommerziell zu entwickeln
  und zu veröffentlichen.
 \end_layout
 
@@ -641,7 +649,7 @@ Als Programmiersprache nehme ich Python.Es gibt verschiedene Gründe dafür.
 
 \begin_layout Standard
 Der Erste ist, dass ich schon seit Sommer 2015 Programme mit Python schreibe.
- Ich kann es realtiv 
+ Ich kann es relativ 
 \begin_inset Quotes gld
 \end_inset
 
@@ -688,7 +696,7 @@ nde abstürze des Programms geringer.
 \end_layout
 
 \begin_layout Standard
-Der Dritte Grund ist Pythons anbindung an das Gtk+ Projekt.
+Der Dritte Grund ist Pythons Anbindung an das GTK+ Projekt.
  Wie ich im nächsten abschnitt beschreiben werde nutze ich das GTK+ um meine
  grafische Umsetzung zu realisieren.
  Bei einem so grundlegenden Element ist es wichtig, dass die Anbindung an
@@ -730,7 +738,7 @@ status open
 
 \begin_layout Plain Layout
 
-\shape slanted
+\shape italic
 Schematische Darstellung der Beziehungen
 \end_layout
 
@@ -777,7 +785,7 @@ C3%A4che.svg , Shmuel Csaba Otto Traian, 29.10.2013
 \end_layout
 
 \begin_layout Standard
-Ich habe mich für Gtk+
+.Ich habe mich für GTK+
 \begin_inset Foot
 status open
 
@@ -797,14 +805,14 @@ Englisch: http://www.gtk.org/ ,18.08.2016, 21:25
 \end_inset
 
  angeführt.
- Gtk+ hat eine exzellente Pythonanbindung (ab jetzt API , kurz für Application-P
+ GTK+ hat eine exzellente Pythonanbindung (ab jetzt API , kurz für Application-P
 rogramming-Interface).
- Allerdings macht sich Gtk+ durch weitere Vorteile prädestiniert für den
+ Allerdings macht sich GTK+ durch weitere Vorteile prädestiniert für den
  Einsatz in meinem Programm.
 \end_layout
 
 \begin_layout Standard
-Ein weiterer großer Vorteil ist die Lizensierung.
+Ein weiterer großer Vorteil ist die Lizenzierung.
  Gtk+ ist unter LGPL
 \begin_inset Foot
 status open
@@ -816,7 +824,7 @@ Englisch: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html , 18.08.2016
 
 \end_inset
 
- Lizensiert
+ Lizenziert
 \begin_inset Foot
 status open
 
@@ -827,13 +835,13 @@ Englisch: http://www.gtk.org/ , 18.08.2016, 21:32
 \end_inset
 
 .
- Diese erlaubt es mir Gtk ohne Restriktionen einzusetzen.
- Die LGPL Lizens ist eine der am weitesten verbreiteten Lizensen in der
+ Diese erlaubt es mir GTK ohne Restriktionen einzusetzen.
+ Die LGPL Lizenz ist eine der am weitesten verbreiteten Lizenzen in der
  OpenSource-Welt.
- Der erfolg durch die Lizens und die Qualität lässt sich auf Linux leicht
+ Der Erfolg durch die Lizenz und die Qualität lässt sich auf Linux leicht
  erkennen.
- Es gibt sehr viele Programme die mit dem Gtk erstellt wurden.Desweiteren
- gibt es sogar eine ganze Desktop-Umgebung die auf Gtk basiert.
+ Es gibt sehr viele Programme die mit dem GTK erstellt wurden.
+ Des weiteren gibt es sogar eine ganze Desktop-Umgebung die auf GTK basiert.
  Genannt 
 \begin_inset Quotes gld
 \end_inset
@@ -853,7 +861,7 @@ Englische Referenz: https://www.gnome.org/
 \end_inset
 
 , welche ich selbst benutze.
- Das Gtk Projekt ist eines der ältesten
+ Das GTK Projekt ist eines der ältesten
 \begin_inset Foot
 status open
 
@@ -863,14 +871,14 @@ https://www.gimp.org/about/ancient_history.html , 08.18.2016 , 21:47
 
 \end_inset
 
- und erfolgreichsten Linux-Projekte im grafischen Sekment.
- Mit dem erfolg kommt eine weite Verbreitung im Linux-Anwenderbereich.
- Dre kommt mir insofern zugute, als das es auf fast allen Distriubutionen
- die benötigten Packete für mein Programm gibt.
+ und erfolgreichsten Linux-Projekte im grafischen Segment.
+ Mit dem Erfolg kommt eine weite Verbreitung im Linux-Anwenderbereich.
+ Der kommt mir insofern zugute, als das es auf fast allen Distributionen
+ die benötigten Pakete für mein Programm gibt.
 \end_layout
 
 \begin_layout Standard
-Der letzte Grund für das Gtk+ ist meine Erfahrung.
+Der letzte Grund für das GTK+ ist meine Erfahrung.
  Wie in 2.5 erwähnt habe ich schon einige Erfahrung auf dem Gebiet von Python.
  Dazu gehört es auch, dass ich ab Ostern 2016 ein Programm
 \begin_inset Foot
@@ -884,12 +892,12 @@ siehe: https://github.com/SiebenCorgie/Beta-Launcher
 
  zum Organisieren und Installieren der UnrealEngine 4 auf Linux geschrieben
  habe.
- Dieses war auch mit Gtk erstellt worden.
- Ich habe wärend des Programmierens viel Erfahrung gesammelt.
- Damals habe ich mehrer Toolkits miteinander verglichen (z.B.
+ Dieses war auch mit GTK erstellt worden.
+ Ich habe während des Programmierens viel Erfahrung gesammelt.
+ Damals habe ich mehrere Toolkits miteinander verglichen (z.B.
  Qt und wxWidgets).
  Am Ende habe ich mich für das Gtk entscheiden.
- Das Ergebniss ist ein gefestigtes Anfängerwissen über ein Toolkit welches
+ Das Ergebnis ist ein gefestigtes Anfängerwissen über ein Toolkit welches
  ich mir bewusst gesucht habe.
  
 \end_layout
@@ -899,12 +907,765 @@ Unterstützung
 \end_layout
 
 \begin_layout Standard
-=> Unterstützung von .deb (debian) und .tar.xz (arch-based) weil RPM keine
- erfahrung etc.
+Ich plane die Unterstützung des .deb Formates und des .tar.xz Formates.
+ Das heist es gibt Unterstützung von Debian und dessen Distributionen sowie
+ Arch-Linux und dessen Distributionen.
+ 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
+Dabei ist zu beachten das Ubuntu eine andere 
+\begin_inset Quotes gld
+\end_inset
+
+naming-convention
+\begin_inset Quotes grd
+\end_inset
+
+ hat als Debian, allerdings trotzdem auf dem .deb Format beruht.
+ Deshalb werde ich in meiner Programmdatenbank zwei verschiedene Speicherplätze
+ für Debian und Ubuntu basierte Systeme einrichten.
+\end_layout
+
+\begin_layout Standard
+In der Linux-Welt gibt es noch ein anderes, sehr weit verbreitetes Format:
+ .rpm
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Kurze Erklährung: https://en.wikipedia.org/wiki/RPM_Package_Manager , 01.09.2016,
+ 16:49
+\end_layout
+
+\end_inset
+
+.
+ Mit diesem Format habe ich allerdings keine Erfahrung.
+ Deshalb werde ich es nicht benutzen.
+ Es wäre möglich sich mit dem Format zu beschäftigen, allerdings hängt es
+ sehr stark von der gewählten Distribution ab wie man das Paket erstellt.
+ Deshalb habe ich mich entschieden das Format vollkommen aus zu lassen.
+ 
+\end_layout
+
+\begin_layout Subsection
+Arbeitsweise
+\end_layout
+
+\begin_layout Subsubsection
+Schreiben
+\end_layout
+
+\begin_layout Standard
+Ich werde das die Dokumentation mit Lyx
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.lyx.org/ , 01.09.2016, 17:37
+\end_layout
+
+\end_inset
+
+ schreiben.
+ Das ist ein grafisches Programm zum LATEX-Framework
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.latex-project.org/ , 01.09.2016, 17:35
+\end_layout
+
+\end_inset
+
+.
+ Der Grund dafür ist vorallem die gute Linux-Unterstützung sowie das exzelente
+ Schriftbild welches durch das LATEX Programm erstellt wird.
+ Desweiteren ist LATEX als Dokumentensprache in wissenschaftlichen Arbeiten
+ weit verbreitet.
+ Die Arbeit damit stellt also auch eine gewissen Vorbereitung für mich dar.
+\end_layout
+
+\begin_layout Subsubsection
+Git-Hub
+\end_layout
+
+\begin_layout Standard
+Das Programm sowie die Dokumentation kommen in eine Programm-Ordnerstruktur.
+ Diese soll mit einem Git-Hub Repositorium abgeglichen werden.
+ Dadurch errreiche ich maximale Transparenz was das Programm und dessen
+ Fortschritt angeht.
+ Außerdem ist das bearbeiten von Programmen über Git-Hub eine sehr weit
+ verbreitete Praxis in der Linux-Welt.
+ 
+\end_layout
+
+\begin_layout Standard
+Git-Hub ist eine Online-Umgebung bei der man Programme hochladen kann.
+ Es hebt sich von normalen Web-Hosts in sofern ab, als das man als Administrator
+ des Repositoriums änderungen anderer annehmen und prüfen kann.
+ Außerdem gibt es einen sehr ausgeklügelten Mechanismus um lokale Versionen
+ eines Programms mit der Onlineversion zu synchronisieren
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr Informationen über Git-Hub: https://de.wikipedia.org/wiki/GitHub , 01.09.2016,
+ 17:46
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Dokumentation der Arbeit
+\end_layout
+
+\begin_layout Subsection
+Voranmerkung
+\end_layout
+
+\begin_layout Standard
+Die Dokumentation ist in der Reihnfolge in der Reihnfolge in der ich das
+ Programm geschrieben habe.
+ Es ist ausserdem gut eine Version des Programm-Listings griffbereit zu
+ haben.
+ Ich werde hin und wieder indirekt bezug auf einzelne Stellen nehmen.
+ Insofer erforderlich baue ich auch Listing-Stellen in den Text ein.
+ 
+\end_layout
+
+\begin_layout Subsection
+Erstellung des Programms
+\end_layout
+
+\begin_layout Standard
+Das Programm selbst lasse ich zuerst durch den Python-GTK wizard von Anjuta
+ erstellen.
+ Das ist schnell durch den Dialog 
+\begin_inset Quotes gld
+\end_inset
+
+Create NEw Project
+\begin_inset Quotes grd
+\end_inset
+
+ mit den Einstellung für ein Python-GTK projekt getan.
+ Dieser Wizard erstellt in einem Ordner die Typische Ordnerstruktur eines
+ Linux-Programms.
+ Nach dem Hinzufügen meiner eigenen Ordner für Dokumentation und Refernzen
+ haben ich die Ordnerstruktur aus Abb.
+ 2.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\shape italic
+Grund Ordnerstruktur
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Bilder/DefaultDirectoryStructure.png
+	lyxscale 75
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dieser Ordnerstruktur soll mit einem Git-Hub Repositorium abgeglichen werden.
+ Dazu kreiere ich zuerst ein leeres Repositorium (ab jetzt Repo.) auf Git-Hub
+ mit meinem Benutzer.
+ Danach klone ich es auf meinen Computer.
+ In den zurzeit leeren Ordner kopiere ich das gerade erstellte Projekt.
+ Danach synchronisiere ich mithilfe der folgenden Kommandos:
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Dateien und Ordner zu Lokalen Repo hinzufügen
+\end_layout
+
+\begin_layout Plain Layout
+
+git add *
+\end_layout
+
+\begin_layout Plain Layout
+
+#Dateien lokal Synchronisieren und Nachricht hinterlassen
+\end_layout
+
+\begin_layout Plain Layout
+
+git commit -a
+\end_layout
+
+\begin_layout Plain Layout
+
+#Lokale neue Version online synchronisieren
+\end_layout
+
+\begin_layout Plain Layout
+
+git push
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jetzt ist die Grundstruktur online Hinterlegt.
+ Ich kann mir jederzeit eine Version der Struktur herunterladen, bearbeiten
+ und die neue Version hochladen.
+ Der erste 
+\begin_inset Quotes gld
+\end_inset
+
+commit
+\begin_inset Quotes grd
+\end_inset
+
+ hat die Nachricht: 
+\begin_inset Quotes gld
+\end_inset
+
+Initial commit
+\begin_inset Quotes grd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Erstellung der Grafischen Oberfläche: Hauptfenster
+\end_layout
+
+\begin_layout Standard
+In Anjuta gibt es den 
+\begin_inset Quotes gld
+\end_inset
+
+Glade
+\begin_inset Quotes grd
+\end_inset
+
+ den UI-Editor für mein GTK-Interface.
+ mit ihm kann ich mithilfe verschiedener vorgegebener UI-Elementen mein
+ Hauptfenster Erstellen.
+ Die einzelnen Schritte beinhalten immer das einfügen des Widgets, die Namensgeb
+ung sowie die einstellung gewünschter Parameter.
+ 
+\end_layout
+
+\begin_layout Standard
+Ich entscheide mich für eine traditionelle 
+\begin_inset Quotes gld
+\end_inset
+
+Taskbar
+\begin_inset Quotes grd
+\end_inset
+
+ am oberen Fensterrand, sowie einem Vertikalen 
+\begin_inset Quotes gld
+\end_inset
+
+Notebook
+\begin_inset Quotes grd
+\end_inset
+
+.
+ In dem Notbook werden auf der ersten Position später die verscheidenen
+ Programm-Kategorien erscheinen.
+ Auf der Zweiten und dritten Position ist der 
+\begin_inset Quotes gld
+\end_inset
+
+Dokokumentation-Browser
+\begin_inset Quotes grd
+\end_inset
+
+ under der 
+\begin_inset Quotes gld
+\end_inset
+
+Informations-Browser
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Das fertige Ergebnis sieht wie in Abb.
+ 3 aus.
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Haupt-Fenster
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Flex Scalebox
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+0.250
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename Bilder/MainWindow_Show.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Browserfenster
+\end_layout
+
+\begin_layout Standard
+Die Browserfenster werden beim Programmstart eingebunden.
+ Dazu erstelle ich in dem Fenster von 
+\begin_inset Quotes gld
+\end_inset
+
+Documentation
+\begin_inset Quotes grd
+\end_inset
+
+ bzw.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Info
+\begin_inset Quotes grd
+\end_inset
+
+ ein WebKit-Browser.
+ Dieser Läd die 
+\begin_inset Quotes gld
+\end_inset
+
+Home
+\begin_inset Quotes grd
+\end_inset
+
+ Url.
+\end_layout
+
+\begin_layout Standard
+Wenn die Interaktion mit dem Internet in den Einstellungen deaktiviert ist
+ wird WebKit garnicht eingebunden und stattdessen ein Fehler-Icon angezeigt.
+\end_layout
+
+\begin_layout Subsection
+Konfiguration
+\end_layout
+
+\begin_layout Subsubsection
+Konfigurationsdatei
+\end_layout
+
+\begin_layout Standard
+Zuerst erstelle ich mir eine eigene Konfigurationsdatei.
+ In ihre werden alle Konfigurationen gespeichert die das Programm über mehrere
+ Läufe hinweg behalten soll.
+ Die Datei ist in Überabschnitte geteilt.
+ Deren Namen sind in eckigen Klammern eingefasst.
+ Die Namen der Werte folgen.
+ Nach einem Gleichheitszeichen folgt der Wert.
+ Eine Überkategorie mit Wertenamen und Wert sähe also wie folgt aus: 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+[Ueberkategorie]
+\end_layout
+
+\begin_layout Plain Layout
+
+Name = Wert
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Diese Syntax kann von einem Modul in Python gelesen werten.
+ Dadurch ist es für mich einfachere die Werte auszulesen und zu ändern.
+\end_layout
+
+\begin_layout Subsubsection
+Lesen und Schreiben
+\end_layout
+
+\begin_layout Paragraph
+Allgemeines
+\end_layout
+
+\begin_layout Standard
+Wie schon angekündigt nehme ich zum lesen und schreiben der Werte ein Modul.
+ Dieses heißt 
+\begin_inset Quotes gld
+\end_inset
+
+Configparser
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Dokumentation: https://docs.python.org/3.5/library/configparser.html , 01.09.2016,
+ 18:35
+\end_layout
+
+\end_inset
+
+.
+ Mit der in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-7"
+
+\end_inset
+
+ beschriebenen API kann ich nun Dateien ein und auslesen, sowie Einträge
+ ändern.
+ Der Pfad zur Konfiguationsdatei ist im Programmierstatus noch lokal direkt
+ im verzeichnis.
+ Im installierte zustand wird die konfigurationsdatei immer im Home-Verzeichnis
+ des Nutzers liegen.
+\end_layout
+
+\begin_layout Standard
+Für die Konfiguration legen ich eine neue Pythondatei mit dem Namen CPFConfig
+ an.
+ Diese importiere ich in das Hauptprogramm under dem Pseudonym 
+\begin_inset Quotes gld
+\end_inset
+
+conf
+\begin_inset Quotes grd
+\end_inset
+
+.
+ In der neuen Datei erstelle ich die Funktionen:
+\end_layout
+
+\begin_layout Enumerate
+set_entry (auslesen eines Wertes)
+\end_layout
+
+\begin_layout Enumerate
+get_entry (einlesen eines Wertes)
+\end_layout
+
+\begin_layout Enumerate
+load_config (laden der Werte des Konfigurationsmenus)
+\end_layout
+
+\begin_layout Enumerate
+save_config (schreiben der Werte des Konfigurationsmenus)
+\end_layout
+
+\begin_layout Standard
+Außerdem kommen vor die funktionen noch die Befehle um die Konfigurationsdatei
+ ein zulesen.
+ Dabei wird die datei in die variable 
+\begin_inset Quotes gld
+\end_inset
+
+config
+\begin_inset Quotes grd
+\end_inset
+
+ als ConfigParser Objekt gespeichert.
+ damit kann ich auf 
+\begin_inset Quotes gld
+\end_inset
+
+config
+\begin_inset Quotes grd
+\end_inset
+
+ alle Funktionen des ConfigParser Objekts anwenden.
+ Danach lese ich mit dem Befehl 
+\begin_inset Quotes gld
+\end_inset
+
+read
+\begin_inset Quotes grd
+\end_inset
+
+ die Konfigurationsdatei ein.
+\end_layout
+
+\begin_layout Paragraph
+Die Funktion set_entry
+\end_layout
+
+\begin_layout Standard
+Die Funktion nimmt Werte für die Variablen 
+\begin_inset Quotes gld
+\end_inset
+
+section
+\begin_inset Quotes grd
+\end_inset
+
+, 
+\begin_inset Quotes gld
+\end_inset
+
+entry
+\begin_inset Quotes grd
+\end_inset
+
+ und 
+\begin_inset Quotes gld
+\end_inset
+
+newentry
+\begin_inset Quotes grd
+\end_inset
+
+ entgegen.
+ Danach wendet sie 
+\begin_inset Quotes gld
+\end_inset
+
+set
+\begin_inset Quotes grd
+\end_inset
+
+ auf das 
+\begin_inset Quotes gld
+\end_inset
+
+config
+\begin_inset Quotes grd
+\end_inset
+
+ objekt an.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Set
+\begin_inset Quotes grd
+\end_inset
+
+ bekommt als Argumente die Kategorie des neuen Wertes (
+\begin_inset Quotes gld
+\end_inset
+
+section
+\begin_inset Quotes grd
+\end_inset
+
+) den Namen (
+\begin_inset Quotes gld
+\end_inset
+
+entry
+\begin_inset Quotes grd
+\end_inset
+
+) und den neuen Wert (
+\begin_inset Quotes gld
+\end_inset
+
+newentry
+\begin_inset Quotes grd
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Danach schreibt sie die neuen Werte in die Konfigurationsdatei.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Die Funktion get_entry
+\end_layout
+
+\begin_layout Standard
+Die Funktion nimmt zwei Werte entgegen: 
+\begin_inset Quotes gld
+\end_inset
+
+section
+\begin_inset Quotes grd
+\end_inset
+
+ und 
+\begin_inset Quotes gld
+\end_inset
+
+entry
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Ähnllich wie bei set_entry werden die werte auf das 
+\begin_inset Quotes gld
+\end_inset
+
+conf
+\begin_inset Quotes grd
+\end_inset
+
+ Objekt angewendet um mit den argumenten 
+\begin_inset Quotes gld
+\end_inset
+
+section
+\begin_inset Quotes grd
+\end_inset
+
+ udn 
+\begin_inset Quotes gld
+\end_inset
+
+entry
+\begin_inset Quotes grd
+\end_inset
+
+ den Korospondierenden Wert wieder zugeben.
+ Dabei steht diese anweisung in der 
+\begin_inset Quotes gld
+\end_inset
+
+return
+\begin_inset Quotes grd
+\end_inset
+
+ Anweisung.
+ Dies sorgt dafür, dass der Aufrufer der Funktion den Wert in der Konfigurations
+datei zurück bekommt.
+ Dieser Wert wird meist in einer Variable gespeichert.
+\end_layout
+
+\begin_layout Paragraph
+Die Funktion load_config
+\end_layout
+
+\begin_layout Standard
+Die Funktion ist dazu da den Inhalt des Konfigurations-Dialogs fest zu legen.
+ Sie nimmt als Argument nur den Konztrukter des GTK-Fensters (builder).
+ Dadurch kann man in der Funktion auch das grafische Interface aus der Klasse
+ 
+\begin_inset Quotes gld
+\end_inset
+
+GUI
+\begin_inset Quotes grd
+\end_inset
+
+ bearbeiten.
+ Dabei wird für jedes Widget der Wert aus der Konfigurationsdatei geladen.
+ Es handelt sich in fast allen fällen um einen Text der geladen wird.
+ Das ist relativ einfach:
+\end_layout
+
+\begin_layout Standard
+Zuerst legt man eine Variable mit dem Objekt an.
+ Anschließend wird der alte Wert des Textes mit dem neuen überschrieben.
+ Der neue Wert wird über die get_entry Funktion aus der Konfigurationsdatei
+ gelesen.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Paragraph
+Die Funktion save_config
+\end_layout
+
+\begin_layout Subsubsection
+Konfigurationsmenu
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -974,7 +1735,7 @@ key "key-3"
 \end_inset
 
 EN.
- LGPL Lizens Webseite: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+ LGPL Lizenz Webseite: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
 \end_layout
 
 \begin_layout Bibliography
@@ -984,7 +1745,7 @@ key "key-4"
 
 \end_inset
 
-EN: Kurzfassung des Gtk: https://www.gimp.org/about/ancient_history.html
+EN: Kurzfassung des GTK: https://www.gimp.org/about/ancient_history.html
 \end_layout
 
 \begin_layout Bibliography
@@ -994,7 +1755,7 @@ key "key-5"
 
 \end_inset
 
-EN: Beta-Launcher, Mein erstes Gtk-Projekt: https://github.com/SiebenCorgie/Beta-
+EN: Beta-Launcher, Mein erstes GTK-Projekt: https://github.com/SiebenCorgie/Beta-
 Launcher
 \end_layout
 
@@ -1007,6 +1768,17 @@ key "key-6"
 
 EN: Unreal-Engine-4 Hauptseite: https://www.unrealengine.com/what-is-unreal-engine
 -4 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-7"
+
+\end_inset
+
+EN: Configparser Dokumentation: https://docs.python.org/3.5/library/configparser.htm
+l
 \end_layout
 
 \end_body
