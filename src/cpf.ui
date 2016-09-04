@@ -4,12 +4,13 @@
   <requires lib="gtk+" version="3.14"/>
   <object class="GtkDialog" id="DB_ErrorMessage">
     <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Please Check Your Entrys!</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="DB_EM_Box">
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
+        <property name="spacing">5</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="DB_EM_ButtonBox">
             <property name="can_focus">False</property>
@@ -39,7 +40,7 @@
           <object class="GtkLabel" id="DB_EM_Titel">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">There Is A Problem With Your Entrys</property>
+            <property name="label" translatable="yes">Sorry!</property>
             <attributes>
               <attribute name="scale" value="2"/>
             </attributes>
@@ -51,12 +52,25 @@
           </packing>
         </child>
         <child>
+          <object class="GtkImage" id="DB_EM_ErrorIcon">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="stock">gtk-dialog-error</property>
+            <property name="icon_size">6</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
           <object class="GtkLabel" id="DB_EM_Text">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Please make shure that every field has a entry.
 
-Make sure as well, that you dont 
+Make sure as well, that you don't 
 use a item from the "favorits" list in you
 filemanager. This can cause bugs.</property>
             <property name="justify">center</property>

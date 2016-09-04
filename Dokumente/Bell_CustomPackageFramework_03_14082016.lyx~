@@ -1621,11 +1621,255 @@ return
  Dies sorgt dafür, dass der Aufrufer der Funktion den Wert in der Konfigurations
 datei zurück bekommt.
  Dieser Wert wird meist in einer Variable gespeichert.
+\end_layout
+
+\begin_layout Paragraph
+Die Funktion load_config
+\end_layout
+
+\begin_layout Standard
+Die Funktion ist dazu da den Inhalt des Konfigurations-Dialogs fest zu legen.
+ Sie nimmt als Argument nur den Konztruktor des GTK-Fensters (builder).
+ Dadurch kann man in der Funktion auch das grafische Interface aus der Klasse
  
+\begin_inset Quotes gld
+\end_inset
+
+GUI
+\begin_inset Quotes grd
+\end_inset
+
+ bearbeiten.
+ Dabei wird für jedes Widget der Wert aus der Konfigurationsdatei geladen.
+ Es handelt sich in fast allen fällen um einen Text der geladen wird.
+ Das ist relativ einfach:
+\end_layout
+
+\begin_layout Standard
+Zuerst legt man eine Variable mit dem Objekt an.
+ Anschließend wird der alte Wert des Textes mit dem neuen überschrieben.
+ Der neue Wert wird über die get_entry Funktion aus der Konfigurationsdatei
+ gelesen.
+\end_layout
+
+\begin_layout Standard
+Es gibt allerdings auch zwei sonderfälle.
+ Einmal Verzeichnis-Auswahlen und eine 
+\begin_inset Quotes gld
+\end_inset
+
+Ja/Nein
+\begin_inset Quotes grd
+\end_inset
+
+-Auswahl durch eine 
+\begin_inset Quotes gld
+\end_inset
+
+Tick-Box
+\begin_inset Quotes grd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Beid der Verzeichnis-Auswahl liest das Programm den gespeicherten Pfad aus
+ der Konfiguationsdatei.
+ Danach wird die Datei über 
+\begin_inset Quotes gld
+\end_inset
+
+set_filename
+\begin_inset Quotes grd
+\end_inset
+
+ ausgewählt.
+\end_layout
+
+\begin_layout Standard
+Bei den Tickboxen hat man nur die auswahl zwischen gesetztem Hacken oder
+ leerem Feld.
+ Deshalb liest das Programm die Konfigurationsdatei ein.
+ Wenn an der stelle 
+\begin_inset Quotes gld
+\end_inset
+
+True
+\begin_inset Quotes grd
+\end_inset
+
+ gespeichert ist wird der Hacken aktiviert.
+ Ansonsten wird er deaktiviert.
+\end_layout
+
+\begin_layout Paragraph
+Die Funktion save_config
+\end_layout
+
+\begin_layout Standard
+Diese Funktion Ist die Umkehrung der 
+\begin_inset Quotes gld
+\end_inset
+
+load_config
+\begin_inset Quotes grd
+\end_inset
+
+ Funktion.
+\end_layout
+
+\begin_layout Standard
+Sie liest über den 
+\begin_inset Quotes gld
+\end_inset
+
+Builder
+\begin_inset Quotes grd
+\end_inset
+
+ alle Texte ein und speichert sie an ihrem Platz in der Konfigurationsdatei.
+ 
+\end_layout
+
+\begin_layout Standard
+Texte werden dabei eingelesen, indem das Objekt also Variable gespeichert
+ wird.
+ Danach wird dessen Textobjekt ausgelesen und dessen Wert gespeichert.
+\end_layout
+
+\begin_layout Standard
+Bei der Auwahl eines Verzeichnises gibt es ein eigenes Widget.
+ Bei diesem erfährt man den Pfad zum gewählten Verzeichnis durch die Methode
+ 
+\begin_inset Quotes gld
+\end_inset
+
+get_filename
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Diese gibt den Pfad als String aus.
+\end_layout
+
+\begin_layout Standard
+Wenn keine Veränderung vorgenommen wurde ist allerdings der Wert der von
+ 
+\begin_inset Quotes gld
+\end_inset
+
+get_filename
+\begin_inset Quotes grd
+\end_inset
+
+ ausgeben wird 
+\begin_inset Quotes gld
+\end_inset
+
+None
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Um zu verhindern, dass in der Konfigurationsdatei 
+\begin_inset Quotes gld
+\end_inset
+
+None
+\begin_inset Quotes grd
+\end_inset
+
+ als Pfad gespeichert wird, liest das Programm den Pfad ein.
+ Wenn der Pfad 
+\begin_inset Quotes gld
+\end_inset
+
+None
+\begin_inset Quotes grd
+\end_inset
+
+ ist wird die Konfigurationsdatei nicht geändert.
+ Ansonsten wird der neue Wert von 
+\begin_inset Quotes gld
+\end_inset
+
+get_filename
+\begin_inset Quotes grd
+\end_inset
+
+ eingespeichert.
+\end_layout
+
+\begin_layout Standard
+Bei der Tick-Box hat man nur die Möglichkeit einen Hacken zusetzen, oder
+ ihn nicht zusetzen.
+ Dabei ist die schwierigkeit nur, dass wenn der Hacken gesetzt wird der
+ String 
+\begin_inset Quotes gld
+\end_inset
+
+True
+\begin_inset Quotes grd
+\end_inset
+
+ eingespeicher wird.
+ Wenn er nicht gesetzt ist, wird 
+\begin_inset Quotes gld
+\end_inset
+
+False
+\begin_inset Quotes grd
+\end_inset
+
+ eingespeichert.
 \end_layout
 
 \begin_layout Subsubsection
 Konfigurationsmenu
+\end_layout
+
+\begin_layout Standard
+Das grafische Menu habe ich nach den Kategorien der Konfigurationsdatei
+ gegliedert:
+\end_layout
+
+\begin_layout Itemize
+Internet
+\end_layout
+
+\begin_layout Itemize
+Datenbank
+\end_layout
+
+\begin_layout Itemize
+Istallation
+\end_layout
+
+\begin_layout Itemize
+MassInstall
+\end_layout
+
+\begin_layout Standard
+In den Kategorien gibt es eine Zwei-Spalten-Liste.
+ Jeweils mit links der Beschreibung der Einstellung und rechts dem Wert.
+ Also Text oder Auswahl-Dialog.
+\end_layout
+
+\begin_layout Standard
+Auf der untersten Leiste liegen die Knöpfe zum Speichern und Verwerfen.
+\end_layout
+
+\begin_layout Subsection
+Datenbank
+\end_layout
+
+\begin_layout Subsubsection
+Technisches über die Datenbank
+\end_layout
+
+\begin_layout Subsubsection
+Datenbankiteraktion
 \end_layout
 
 \begin_layout Standard
