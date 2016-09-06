@@ -6,25 +6,82 @@ import SystemInteraction as SI
 #database sql
 import sqlite3
 
-def db_connect(bCustomName, name):
+def db_connect():
 	
 	global c
 	global db
 
-	#connect to new database if specified
-	if bCustomName == True:
-		dblocation = name
-	else:
-		dblocation = conf.get_entry('DB','currentdb')
+
+	dblocation = conf.get_entry('DB','currentdb')
 
 	#Datenbank
 	db = sqlite3.connect(dblocation)
 		#Zeiger
 	c = db.cursor()
 
-def add_db(Name):
-	global c
-	db_connect(True, Name)
+
+	
+def db_add_Init(builder):
+	
+	MainCat = builder.get_object('DB_A_Main')
+	if conf.get_entry('main','language') == 'GER':
+		MainStringList = conf.get_entry('DB','GERMain')
+	else:
+		MainStringList = conf.get_entry('DB','ENMain')
+
+	MainStringList = MainStringList.split(',')
+	MainCategoryList = []
+	
+	for CatName in MainStringList:
+		MainCategoryList.append(CatName)
+
+	MainCat.remove_all()
+	#add to Main Window
+	for i in MainCategoryList:
+		MainCat.append_text(i)
+
+
+		
+def update_sub_category(builder):
+	SubCat = builder.get_object('DB_Sub')
+	maincategory = builder.get_object('DB_A_Main')
+	maincat = maincategory.get_active_text()
+
+	if conf.get_entry('main','language') == 'GER':
+		SubCategoryList = conf.get_entry('DBSub','ger' + maincat.lower())
+	else:
+		SubCategoryList = conf.get_entry('DBSub','en' + maincat.lower())
+	#convertToList
+	SubCategoryList = SubCategoryList.split(',')
+	#AddToLists
+	SubCat.remove_all()
+	for subindex in SubCategoryList:
+		SubCat.append_text(subindex)
+	
+
+
+	
+def add_db(builder):
+
+	locationL = builder.get_object('CND_Locatio')
+	nameL = builder.get_object('CND_Name')
+	dblocation = locationL.get_filename() + '/' + nameL.get_text()
+	print(dblocation)
+
+	#create and read db
+
+	db = sqlite3.connect(dblocation)
+	c = db.cursor()
+	
+	#create Folders in location
+	locationstruct = locationL.get_filename()
+	try:
+		SI.execute('cd ' + locationstruct + ' && mkdir Screenshots && mkdir Symbols', False)
+	except:
+		print("there was a problem when creating the database file structure")
+
+	
+	#create Table
 	c.execute('''create table CPFDB
 	(id INTEGER PRIMARY KEY, 
 	name text,
@@ -36,16 +93,25 @@ def add_db(Name):
 	arch_id text, 
 	symbol text, 
 	maincategory text, 
-	subcategory text)''')
+	subcategory text
+	URL text)''')
 
 	db.commit()
 	db.close()
+
+	#useNewDb if ticked
+	bUseB = builder.get_object('CND_bUseNew')
+	bUse = bUseB.get_active()
+
+	if bUse == True:
+		conf.set_entry('DB','currentdb', dblocation)
+	
 
 #Daten einfügen
 def db_add_entry(builder):
 	global c
 	global db
-	db_connect(False, 'none')
+	db_connect()
 
 	nameL = builder.get_object('DB_A_NameEdit')
 	name =  nameL.get_text()
@@ -61,7 +127,7 @@ def db_add_entry(builder):
 	screenshotchooser = builder.get_object('DB_A_ScreenChooser')
 	LocalScreenLocation = screenshotchooser.get_filename()
 	if LocalScreenLocation == None:
-		ErrorMessage()
+		ErrorMessage(builder)
 		return
 		
 	LocalScreenName = LocalScreenLocation[len(screenshotchooser.get_current_folder())+1:]
@@ -88,7 +154,7 @@ def db_add_entry(builder):
 	SymbolChooser = builder.get_object('DB_A_SymbolChooser')
 	LocalSymbolLocation = SymbolChooser.get_filename()
 	if LocalSymbolLocation == None:
-		ErrorMessage()
+		ErrorMessage(builder)
 		return
 		
 	LocalSymbolName = LocalSymbolLocation[len(SymbolChooser.get_current_folder())+1:]
@@ -117,17 +183,20 @@ def db_add_entry(builder):
 	ArchID_L = builder.get_object('DB_A_ArchName')
 	arch_id  = ArchID_L.get_text()
 
-	MainCategory_L = builder.get_object('DB_A_MainCat')
-	maincategory =MainCategory_L.get_text()
+	MainCategory_L = builder.get_object('DB_A_Main')
+	maincategory =MainCategory_L.get_active_text()
 
-	SubCategory_L = builder.get_object('DB_A_SubCat')
-	subcategory = SubCategory_L.get_text()
+	SubCategory_L = builder.get_object('DB_Sub')
+	subcategory = SubCategory_L.get_active_text()
+
+	URLL = builder.get_object('DB_A_URL')
+	url = URLL.get_text()
 
 
 	#Check if all credentials are filled in
 
-	if name == None or desc_s == None or desc_l == None or screenshotloc == None or ubuntu_id == None or debian_id == None or arch_id == None or symbol == None or maincategory == None or subcategory == None:
-		ErrorMessage()
+	if name == None or desc_s == None or desc_l == None or screenshotloc == None or ubuntu_id == None or debian_id == None or arch_id == None or symbol == None or maincategory == None or subcategory == None or url == None:
+		ErrorMessage(builder)
 		return
 
 	c.execute('''INSERT INTO CPFDB(
@@ -139,12 +208,10 @@ def db_add_entry(builder):
 				debian_id, 
 				arch_id, 
 				symbol, 
-
-				
 				maincategory, 
-				
-				subcategory)
-                VALUES(?,?,?,?,?,?,?,?,?,?)''', (name, desc_s, desc_l, screenshotloc, ubuntu_id, debian_id, arch_id, symbol, maincategory, subcategory))
+				subcategory,
+				URL)
+                VALUES(?,?,?,?,?,?,?,?,?,?,?)''', (name, desc_s, desc_l, screenshotloc, ubuntu_id, debian_id, arch_id, symbol, maincategory, subcategory, url))
 	db.commit()
 	db.close()
 	print('Added DatabaseEntry')
@@ -153,9 +220,13 @@ def db_add_entry(builder):
 def db_read():
 	global c
 	global db
-	db_connect(False, 'none')
+	db_connect()
 	for row in c.execute('SELECT * FROM CPFDB ORDER BY name'):
 		print(row)
+
+def ErrorMessage(builder):
+	Message = builder.get_object('DB_ErrorMessage')
+	Message.show_all()
 
 	
 

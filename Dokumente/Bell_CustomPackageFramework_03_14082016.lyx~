@@ -504,7 +504,7 @@ Programm Typ (Grafik, Video, Spiel, etc.) (Überkategorie)
 \end_layout
 
 \begin_layout Itemize
-Programm Entwickler
+Unterkategory
 \end_layout
 
 \begin_layout Itemize
@@ -513,10 +513,6 @@ Programm Website
 
 \begin_layout Itemize
 Pfad zu Screenshot
-\end_layout
-
-\begin_layout Itemize
-Pfad zu eventuellen Programmdateien
 \end_layout
 
 \begin_layout Subsubsection
@@ -1843,7 +1839,7 @@ Datenbank
 \end_layout
 
 \begin_layout Itemize
-Istallation
+Installation
 \end_layout
 
 \begin_layout Itemize
@@ -1860,6 +1856,61 @@ In den Kategorien gibt es eine Zwei-Spalten-Liste.
 Auf der untersten Leiste liegen die Knöpfe zum Speichern und Verwerfen.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Einstellungsdialog
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Scalebox
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+0.25
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Bilder/PrefWin.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Datenbank
 \end_layout
@@ -1868,8 +1919,125 @@ Datenbank
 Technisches über die Datenbank
 \end_layout
 
+\begin_layout Standard
+Die Datenbank schreibe ich über das Modul 
+\begin_inset Quotes gld
+\end_inset
+
+sqlite3
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Das ist eine einfachere Version der beliebten SQL-Datebank mit Pythonitegration
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://docs.python.org/2/library/sqlite3.html, 06.09.2016, 19:06
+\end_layout
+
+\end_inset
+
+.
+ Mit diesem Modul kreiert oder läd man eine Datenbank-Datei.
+ Diese kann man anschließend über der 
+\begin_inset Quotes gld
+\end_inset
+
+Curser
+\begin_inset Quotes grd
+\end_inset
+
+ also eine Art Pfeil manipulieren.
+ Nach der Manipulation werden die änderungen ähnlich wie bei Git-Hub gesammelt
+ und die Datei mit den Änderungen aktualisiert.
+ 
+\end_layout
+
 \begin_layout Subsubsection
 Datenbankiteraktion
+\end_layout
+
+\begin_layout Standard
+Die Interaktion besteht aus mehreren Aktionen:
+\end_layout
+
+\begin_layout Enumerate
+Erstellen einer Datenbank und einer Liste
+\end_layout
+
+\begin_layout Enumerate
+Erstellen neuer Einträge
+\end_layout
+
+\begin_layout Enumerate
+Lesen der Einträge nach verschiedenen Aspekten
+\end_layout
+
+\begin_layout Standard
+Die Datenbank enthält nur eine Liste: 
+\begin_inset Quotes gld
+\end_inset
+
+CPFDB
+\begin_inset Quotes grd
+\end_inset
+
+.
+ In dieser Liste steht:
+\end_layout
+
+\begin_layout Enumerate
+Name
+\end_layout
+
+\begin_layout Enumerate
+Kurzbeschreibung
+\end_layout
+
+\begin_layout Enumerate
+Lange Beschreibung
+\end_layout
+
+\begin_layout Enumerate
+Name in den Ubuntu Repositorien
+\end_layout
+
+\begin_layout Enumerate
+Name in den Debian Repositorien
+\end_layout
+
+\begin_layout Enumerate
+Name in den Arch Repositorien
+\end_layout
+
+\begin_layout Enumerate
+Pfad zu einem Bildschirmfoto des Programms
+\end_layout
+
+\begin_layout Enumerate
+Pfad zu einem Symbol
+\end_layout
+
+\begin_layout Enumerate
+Überkategorie
+\end_layout
+
+\begin_layout Enumerate
+Unterkategorie
+\end_layout
+
+\begin_layout Enumerate
+Webseiten URL des entwicklers
+\end_layout
+
+\begin_layout Subsection
+App-Anzeige
+\end_layout
+
+\begin_layout Subsection
+Installation
 \end_layout
 
 \begin_layout Standard

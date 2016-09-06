@@ -32,6 +32,7 @@ import CPFWeb as web
 import CPFConf as conf
 import SystemInteraction as SI
 import CPFDatabase as db
+import Install_UI as InstUI
 
 #Je nach einstellung WebKit importieren
 if conf.get_entry('Internet','online') == 'True':
@@ -89,12 +90,23 @@ class GUI:
 			self.FastOnlineSwitch.set_active(True)
 		else:
 			self.FastOnlineSwitch.set_active(False)
+
+#class variables
+		InstUI.set_to_start(self.builder)
 		
 #init end
 		window.show_all()
 
 
 #StartEvents
+#MainWindow_IconView____________________________________________________________
+
+
+
+
+
+
+
 
 #DocBrowser
 #DocBrwoser zu Startseite
@@ -152,10 +164,16 @@ class GUI:
 		self.Preferences.hide()
 		
 #Tools
+#_______________________________________________________________________________
 #add database entry
 	def on_M_Tools_AddDatabaseEntry_activate (self, menuitem):
 		self.db_add_Dialog = self.builder.get_object('DB_Add_Win')
+		db.db_add_Init(self.builder)
 		self.db_add_Dialog.show_all()
+#update Sub Category
+	def on_DB_A_Main_changed (self, combobox):
+		db.update_
+
 #add entry
 	def on_DB_Add_Add_clicked (self, button):
 		db.db_add_entry(self.builder)
@@ -166,7 +184,29 @@ class GUI:
 		db.db_read()
 		self.db_add_Dialog.hide()
 
+#"OK" DB ErrorMessage
+	def on_DB_EM_OK_clicked (self, button):
+		DBerror = self.builder.get_object('DB_ErrorMessage')
+		DBerror.hide()
+#_______________________________________________________________________________
+#CreateDatabase
+	def on_M_Tools_AddDB_activate (self, menuitem):
+		self.NewDBWin = self.builder.get_object('CreateNewDatabase')
+		self.NewDBWin.show_all()
 
+#close without adding
+	def on_CND_Close_clicked (self, button):
+		self.NewDBWin.hide()
+
+#Add new Database
+	def on_CND_Add_clicked (self, button):
+		db.add_db(self.builder)
+		db.db_read()
+		self.NewDBWin.hide()
+
+
+
+		
 def main():
 	app = GUI()
 	Gtk.main()
