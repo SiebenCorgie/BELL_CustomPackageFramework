@@ -100,6 +100,9 @@ class GUI:
 
 #StartEvents
 #MainWindow_IconView____________________________________________________________
+#On IconActivation
+	def on_PS_IconList_item_activated (self, iconview, treepath):
+		InstUI.Go_Down(self.builder,iconview,treepath)
 
 
 
@@ -181,7 +184,7 @@ class GUI:
 
 #close db add entry dialog
 	def on_DB_Add_Close_clicked (self, button):
-		db.db_read()
+		db.db_read('*',True)
 		self.db_add_Dialog.hide()
 
 #"OK" DB ErrorMessage

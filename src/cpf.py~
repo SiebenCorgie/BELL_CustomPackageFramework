@@ -100,6 +100,9 @@ class GUI:
 
 #StartEvents
 #MainWindow_IconView____________________________________________________________
+#On IconActivation
+	def on_PS_IconList_item_activated (self, iconview, treepath):
+		InstUI.Go_Down(self.builder,iconview,treepath)
 
 
 
@@ -172,7 +175,7 @@ class GUI:
 		self.db_add_Dialog.show_all()
 #update Sub Category
 	def on_DB_A_Main_changed (self, combobox):
-		db.update_
+		db.update_sub_category(self.builder)
 
 #add entry
 	def on_DB_Add_Add_clicked (self, button):
@@ -181,7 +184,7 @@ class GUI:
 
 #close db add entry dialog
 	def on_DB_Add_Close_clicked (self, button):
-		db.db_read()
+		db.db_read('Video',True)
 		self.db_add_Dialog.hide()
 
 #"OK" DB ErrorMessage

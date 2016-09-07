@@ -1299,7 +1299,8 @@ filemanager. This can cause bugs.</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="margin">6</property>
-                        <property name="reorderable">True</property>
+                        <property name="activate_on_single_click">True</property>
+                        <signal name="item-activated" handler="on_PS_IconList_item_activated" swapped="no"/>
                       </object>
                     </child>
                   </object>

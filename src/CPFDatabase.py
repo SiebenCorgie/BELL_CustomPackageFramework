@@ -59,8 +59,7 @@ def update_sub_category(builder):
 		SubCat.append_text(subindex)
 	
 
-
-	
+#CreateNewDatabase
 def add_db(builder):
 
 	locationL = builder.get_object('CND_Locatio')
@@ -217,13 +216,25 @@ def db_add_entry(builder):
 	print('Added DatabaseEntry')
 
 #read entrys
-def db_read():
+def db_read(subcategory, bAll):
 	global c
 	global db
 	db_connect()
-	for row in c.execute('SELECT * FROM CPFDB ORDER BY name'):
-		print(row)
+	if bAll != True:
+		c.execute('SELECT name FROM CPFDB WHERE subcategory=?', (str(subcategory),))
+	else: 		
+		c.execute('SELECT * FROM CPFDB WHERE subcategory=?', (str(subcategory),))
 
+	CleanOutput = []
+	output = c.fetchall()
+	for i in output:
+		i = str(i)[2:]
+		i = str(i)[:-3]
+		print('out: ' + str(i))
+		CleanOutput.append(i)
+	
+	return CleanOutput
+		
 def ErrorMessage(builder):
 	Message = builder.get_object('DB_ErrorMessage')
 	Message.show_all()

@@ -30,7 +30,9 @@ add_entry('geht','true','Loooks')
 
 print('get all with false')
 
-curser.execute('''SELECT name, net, screenlocation FROM program WHERE net='false' ''')
+teddy = ('true',)
+
+curser.execute('''SELECT name, net, screenlocation FROM program WHERE net=? ''', teddy)
 res = curser.fetchall()
 
 print(res)
