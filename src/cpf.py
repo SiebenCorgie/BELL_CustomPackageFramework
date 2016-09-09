@@ -104,9 +104,21 @@ class GUI:
 	def on_PS_IconList_item_activated (self, iconview, treepath):
 		InstUI.Go_Down(self.builder,iconview,treepath)
 
+#Go To Root
+	def on_MN_PS_Home_clicked (self, button):
+		print('Go Home!')
 
+#Go Back
+	def on_MN_PS_Back_clicked (self, button):
+		print('Go back!')
 
+#Close ViewError
+	def on_ADAV_OK_clicked (self, button):
+		InstUI.CloseView(self.builder)
 
+#CloseAppView
+	def on_AD_Close_clicked (self, button):
+		InstUI.CloseAppView(self.builder)
 
 
 

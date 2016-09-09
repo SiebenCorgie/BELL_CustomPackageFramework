@@ -227,6 +227,7 @@ def db_read(subcategory, bAll):
 
 	CleanOutput = []
 	output = c.fetchall()
+	#make clean output
 	for i in output:
 		i = str(i)[2:]
 		i = str(i)[:-3]
@@ -239,6 +240,28 @@ def ErrorMessage(builder):
 	Message = builder.get_object('DB_ErrorMessage')
 	Message.show_all()
 
+def read_atributes(name,atribute):
+	global c
+	global db
+	db_connect()
+
+	sqlpass = (str(name), str(atribute),)
+	print('SQLpass: ' + str(sqlpass))
+
+	c.execute('SELECT ? FROM CPFDB WHERE name='?' ', sqlpass)
+	#c.execute(''' SELECT name FROM CPFDB WHERE name= ''')
+	ReturnValue = str(c.fetchone())
+	print('Return:::: ' + ReturnValue)
+	
+
+
+	#try:
+
+		
+#	except:
+#		ReturnValue = ('Could not read',)
+		
+	return ReturnValue
 	
 
 		
