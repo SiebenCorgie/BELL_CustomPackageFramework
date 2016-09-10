@@ -7,165 +7,48 @@ import gi
 gi.require_version('Gtk','3.0')
 from gi.repository import Gtk
 from gi.repository.GdkPixbuf import Pixbuf
+import configparser
 
-global stage
+#Read A ProgramFile
 
-#clear shown View
+def read_program_file(path, entry):
+	ProgramFile = configparser.ConfigParser()
+	ProgramFile.read(path)
+	return ProgramFile['main'][str(entry)]
+	
 
 #Set to root
 def set_to_start(builder):
+
 	#close App-View
 	CloseView(builder)
+	
 	global ProgramViewOpen
 	ProgramViewOpen = False
 	
 	global stage
 	stage = 'root'
 
-	global Plist
+	global MainList
+	global liststore
+	global view
 
 	#give log output
 	print('OpeningMain')
-	
-	if conf.get_entry('main','language') == 'GER':
-		Plist = conf.get_entry('DB','germain')
-	else:
-		Plist = conf.get_entry('DB','enmain')
 
-	Plist=Plist.split(',')
+	MainList = SI.get_folder_content(conf.get_entry('DB','currentdb'))
+
 	liststore = Gtk.ListStore(Pixbuf, str)
 	view = builder.get_object('PS_IconList')	
 	view.set_model(liststore)
 	view.set_pixbuf_column(0)
 	view.set_text_column(1)
 
-	for icon in (Plist):
+	for icon in MainList:
 		pixbuf = Gtk.IconTheme.get_default().load_icon('gtk-dialog-error', 64, 0)
 		liststore.append([pixbuf, icon])
 
 	view.show_all()
-
-
-def Go_Down(builder,iconview,treepath):
-
-	global stage
-	global SelectedItem
-
-	#get list
-	global Plist
-	global SubCategoryList
-
-
-	#get index of seleted List Item
-	SelectedItem = Plist[treepath.get_indices()[0]]
-
-	if stage !='Prog':
-		#removing Icon View
-		liststore = iconview.get_model()
-		liststore.clear()
-
-	if stage == 'root':
-		#get list of all SubKategories
-		if conf.get_entry('main','language') == 'GER':
-			SubCategoryList = conf.get_entry('DBSub','ger' + SelectedItem.lower())
-		else:
-			SubCategoryList = conf.get_entry('DBSub','en' + SelectedItem.lower())
-			
-		SubCategoryList = SubCategoryList.split(',')
-
-		for entry in SubCategoryList:
-			pixbuf = Gtk.IconTheme.get_default().load_icon('gtk-dialog-error', 64, 0)
-			liststore.append([pixbuf, entry])
-		stage = 'Sub'
-		iconview.show_all()
-		print('Showing Subcategorie')
-
-	#Upadte to Programs in Database on Click if in Subcategorie
-	elif stage == 'Sub':
-		print('Start Trying To Show Programs')
-		go_Sub(builder,iconview,treepath, SelectedItem)
-
-	elif stage == 'Prog':
-		#Hide View and show template with filled in Stuff
-		print('Showing App Window')
-		show_app(builder,iconview,treepath)
-
-	
-
-def go_Sub(builder,iconview,treepath,main):
-	
-	global stage
-	global SubCategoryList
-	global ProgramList
-	
-	global SelectedSubCat
-	
-	SelectedSubCat = SubCategoryList[treepath.get_indices()[0]]
-	print('Selected Subcategorie: ' + SelectedSubCat)
-	
-	print('Main: ' + main)
-	#Clear Icons
-	liststore = iconview.get_model()
-	liststore.clear()
-	print('Cleared!')
-
-	#get list from selected main
-	ProgramList = db.db_read(SelectedSubCat, False)
-
-	for i in ProgramList:
-		print('Programmlist: ' + str(i))
-		pixbuf = Gtk.IconTheme.get_default().load_icon('gtk-dialog-error', 64, 0)
-		liststore.append([pixbuf, i])
-	iconview.show_all()
-	print('Showing Apps Now!') 
-
-	stage = 'Prog'
-
-def show_app(builder,iconview,treepath):
-
-	global stage
-	global SubCategoryList
-	global ProgramList
-
-	#Is AlreadyOpen Bool
-	global ProgramViewOpen
-	#Which Subcategory
-
-
-
-	
-	#ShowDialog if not already open
-	if ProgramViewOpen != True:
-		print('Show Application Chooser')
-		AppWin = builder.get_object('ApplicationDialog_Install')
-
-		ProgramName = ProgramList[treepath.get_indices()[0]]
-		print('Selected Program: ' + str(ProgramName))
-
-		#Set Name, Short and Long description, Symbol, Screenshot
-		Title = builder.get_object('AD_App_Label')
-		Title.set_text(str(db.read_atributes(ProgramName, 'name')))
-
-		#Short Description
-		ShortDescription = builder.get_object('AD_ShortDescription')
-		ShortDescription.set_text(str(db.read_atributes(ProgramName, 'description_short')))
-
-		#Long Description
-		LongDescription = builder.get_object('AD_LongDescription')
-		LongDescription.set_text(str(db.read_atributes(ProgramName, 'description_long')))
-
-		#Symbol
-		Symbol = builder.get_object('AD_Symbol')
-
-
-		#Screenshot
-		
-		
-		AppWin.show_all()
-		ProgramViewOpen = True
-	else:
-		ErrorWinAppView = builder.get_object('AD_AVIsOpen')
-		ErrorWinAppView.show_all()
 		
 def CloseView(builder):
 	ErrorWinAppView = builder.get_object('AD_AVIsOpen')
@@ -176,3 +59,141 @@ def CloseAppView(builder):
 	AppView = builder.get_object('ApplicationDialog_Install')
 	AppView.hide()
 	ProgramViewOpen = False
+
+
+def Go_Down(builder,iconview,treepath):
+
+	#Common
+	global stage
+	global liststore
+	global view
+	global ProgramViewOpen
+	
+	#MainList
+	global MainList
+	global SelectedCategory
+
+	#SubCategory
+	global SelectedSubCategory
+	global SubCategoryList
+
+	#Program
+	global ProgramList
+	global ProgramFile
+	global SelectedProgram
+
+	#Show Main Categorys in DB-Struct
+	if stage == 'root':
+		SelectedCategory = MainList[treepath.get_indices()[0]]
+		print('SELCTED MAIN: ' + SelectedCategory)
+
+		liststore.clear()
+
+		SubCategoryList = SI.get_folder_content(conf.get_entry('DB','currentdb') + '/' + SelectedCategory)
+
+		for subitem in SubCategoryList:
+			pixbuf = Gtk.IconTheme.get_default().load_icon('gtk-dialog-error', 64, 0)
+			liststore.append([pixbuf, subitem])
+
+		stage = 'SubCategory'
+		view.show_all()
+		
+	#show sub categorys in DB_Struct
+	elif stage == 'SubCategory':
+		print('GoingToShowPrograms')
+		SelectedSubCategory = SubCategoryList[treepath.get_indices()[0]]
+		ProgramList = SI.get_folder_content(conf.get_entry('DB','currentdb') + '/' + SelectedCategory + '/' + SelectedSubCategory + '/' )
+
+		liststore.clear()
+
+		if ProgramList != []:
+			for program in ProgramList:
+				pixbuf = Gtk.IconTheme.get_default().load_icon('gtk-dialog-error', 64, 0)
+				liststore.append([pixbuf,program])
+		else:
+				pixbuf = Gtk.IconTheme.get_default().load_icon('gtk-dialog-error', 64, 0)
+				liststore.append([pixbuf,'NothingFound :('])	
+				print('There are no entries in this Category')
+		stage = 'ProgramView'
+		view.show_all()
+
+	#Show Selected Program
+	elif stage  == 'ProgramView':
+		print('Showing Program Now')
+		try:
+			SelectedProgram = ProgramList[treepath.get_indices()[0]]
+		except:
+			SelectedProgram = 'NoProgramFileFound'
+			
+		ProgramFile = str(conf.get_entry('DB','currentdb') + '/' + SelectedCategory + '/' + SelectedSubCategory + '/' + SelectedProgram + '/' + SelectedProgram + '.info')
+		print('ProgramFile: ' + ProgramFile)
+
+
+
+
+
+		if ProgramViewOpen == False:
+
+			if SelectedProgram == 'NoProgramFileFound':
+				print('No Program Selected')
+				return
+
+			#Title
+			name = read_program_file(ProgramFile, 'name')
+			nameWidget = builder.get_object('AD_App_Label')
+			nameWidget.set_text(name)
+
+			#Short Description
+			ShortDescription = read_program_file(ProgramFile, 'shortdescription')
+			SDWidget = builder.get_object('AD_ShortDescription')
+			SDWidget.set_text(ShortDescription)
+
+			#long Description
+			LongDescription = read_program_file(ProgramFile, 'longdescription')
+			LDWidget = builder.get_object('AD_LongDescription')
+			LDWidget.set_text(LongDescription)
+
+			#Screenshot
+			if read_program_file(ProgramFile, 'screenshot') == 'True':
+				Screenshot = str(conf.get_entry('DB','currentdb') + '/' + SelectedCategory + '/' + SelectedSubCategory + '/' + SelectedProgram + '/Screenshot.image')
+				ImageWidget = builder.get_object('AD_Screenshot')
+				ScreenPixBuf = Pixbuf.new_from_file_at_size(Screenshot,1024 ,1024)
+				ImageWidget.set_from_pixbuf(ScreenPixBuf)
+			else:
+				ImageWidget = builder.get_object('AD_Screenshot')
+				ImageWidget.set_from_icon_name('applications-system', 64)
+
+			#Symbol
+			if read_program_file(ProgramFile, 'symbol') == 'True':
+				Symbol = str(conf.get_entry('DB','currentdb') + '/' + SelectedCategory + '/' + SelectedSubCategory + '/' + SelectedProgram + '/Symbol.image')
+				SymbolWidget = builder.get_object('AD_Symbol')
+				SymbolPixbuf = Pixbuf.new_from_file_at_size(Symbol,64 ,64)
+				SymbolWidget.set_from_pixbuf(SymbolPixbuf)
+			else:
+				SymbolWidget = builder.get_object('AD_Symbol')
+				SymbolWidget.set_from_icon_name('applications-system', 64)
+				
+			
+
+			
+			ProgramView = builder.get_object('ApplicationDialog_Install')
+			ProgramViewOpen = True
+			ProgramView.show_all()
+			
+		else:
+			ErrorView = builder.get_object('AD_AVIsOpen')
+			ErrorView.show_all()
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

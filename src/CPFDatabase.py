@@ -2,266 +2,160 @@ import cpf
 import CPFConf as conf
 import CPFWeb as web
 import SystemInteraction as SI
-
-#database sql
-import sqlite3
-
-def db_connect():
-	
-	global c
-	global db
+import configparser
 
 
-	dblocation = conf.get_entry('DB','currentdb')
-
-	#Datenbank
-	db = sqlite3.connect(dblocation)
-		#Zeiger
-	c = db.cursor()
-
-
-	
-def db_add_Init(builder):
-	
-	MainCat = builder.get_object('DB_A_Main')
-	if conf.get_entry('main','language') == 'GER':
-		MainStringList = conf.get_entry('DB','GERMain')
+def create_new_DB(builder):
+	nameEntry = builder.get_object('CND_Name')
+	NewDBName = nameEntry.get_text()
+	if NewDBName == None:
+		print('NoName')
+		return
 	else:
-		MainStringList = conf.get_entry('DB','ENMain')
+		LocationDialog = builder.get_object('CND_Locatio')
+		NewDBLocation = LocationDialog.get_filename()
+		print('________________________________________________________________')
+		print(NewDBLocation)
+		UpdateConfTick = builder.get_object('CND_bUseNew')
+		if UpdateConfTick.get_active() == True:
+			conf.set_entry('DB','currentdb', NewDBLocation)
+			print('Updated')
 
-	MainStringList = MainStringList.split(',')
-	MainCategoryList = []
+		MainCategoryList = conf.get_entry('DB','enmain')
+		MainCategoryList = MainCategoryList.split(',')
+
+		for MainCat in MainCategoryList:
+			SI.execute('cd ' + NewDBLocation + ' && mkdir ' + MainCat,False)
+			CurrentSubCatList = conf.get_entry('DBSub','en' + MainCat.lower())
+			CurrentSubCatList = CurrentSubCatList.split(',')
+			for SubCatItem in CurrentSubCatList:
+				SI.execute('cd ' + NewDBLocation + '/' + MainCat + '&& mkdir ' + SubCatItem,False)
+			print('Wrote ' + MainCat)
+
+def Create_New_Entry(builder):	
 	
-	for CatName in MainStringList:
-		MainCategoryList.append(CatName)
-
-	MainCat.remove_all()
-	#add to Main Window
-	for i in MainCategoryList:
-		MainCat.append_text(i)
-
-
-		
-def update_sub_category(builder):
-	SubCat = builder.get_object('DB_Sub')
-	maincategory = builder.get_object('DB_A_Main')
-	maincat = maincategory.get_active_text()
-
-	if conf.get_entry('main','language') == 'GER':
-		SubCategoryList = conf.get_entry('DBSub','ger' + maincat.lower())
-	else:
-		SubCategoryList = conf.get_entry('DBSub','en' + maincat.lower())
-	#convertToList
-	SubCategoryList = SubCategoryList.split(',')
-	#AddToLists
-	SubCat.remove_all()
-	for subindex in SubCategoryList:
-		SubCat.append_text(subindex)
-	
-
-#CreateNewDatabase
-def add_db(builder):
-
-	locationL = builder.get_object('CND_Locatio')
-	nameL = builder.get_object('CND_Name')
-	dblocation = locationL.get_filename() + '/' + nameL.get_text()
-	print(dblocation)
-
-	#create and read db
-
-	db = sqlite3.connect(dblocation)
-	c = db.cursor()
-	
-	#create Folders in location
-	locationstruct = locationL.get_filename()
 	try:
-		SI.execute('cd ' + locationstruct + ' && mkdir Screenshots && mkdir Symbols', False)
+		#name
+		NameEntry = builder.get_object('DB_A_NameEdit')
+		Name = NameEntry.get_text()
+
+		#Short Desc
+		SDEntry = builder.get_object('DB_A_DescS_Edit')
+		ShortDesciption = SDEntry.get_text()
+
+		#Long Desc
+		LDEntry = builder.get_object('DB_A_DescL_Edit')
+		LongDescription = LDEntry.get_text()
+
+		#ubuntu
+		ubuntuEntry = builder.get_object('DB_A_UbuntuName')
+		Ubuntu = ubuntuEntry.get_text()
+
+		#debian
+		debianEntry = builder.get_object('DB_A_DebianName')
+		Debian = debianEntry.get_text()
+
+		#arch
+		archEntry = builder.get_object('DB_A_ArchName')
+		Arch = archEntry.get_text()
+
+		#MainCategory
+		MainCategorynEntry = builder.get_object('DB_A_Main')
+		MainCategory = MainCategorynEntry.get_active_text()
+
+		#SubCategory
+		SubCategoryEntry = builder.get_object('DB_Sub')
+		SubCategory = SubCategoryEntry.get_active_text()
+
+		#URl
+		urlEntry = builder.get_object('DB_A_URL')
+		URL = urlEntry.get_text()
+
+		if URL == None or SubCategory == None or MainCategory == None or Arch == None or Debian == None or Ubuntu == None or LongDescription == None or ShortDesciption == None or Name == None:
+			ErrorDialog = builder.get_object('DB_ErrorMessage')
+			ErrorDialog.show_all()
+			return
+		#create Program Directory ________________________________________________________________
+
+		SI.execute('cd ' + conf.get_entry('DB','currentdb') + '/' + MainCategory + '/' + SubCategory + '/ && mkdir ' + Name, False)
+
+
+
+		#screenshot
+		ScreenshotEntry = builder.get_object('DB_A_ScreenChooser')
+		ScreenshotLocation = ScreenshotEntry.get_filename()
+		if ScreenshotLocation == None:
+			ScreenshotStatus = 'False'
+		else:
+			SI.execute('cp ' + ScreenshotLocation + ' ' + conf.get_entry('DB','currentdb') + '/' + MainCategory + '/' + SubCategory + '/' + Name + '/Screenshot.image', False)
+			ScreenshotStatus = 'True'
+			
+		#symbol
+		SymbolEntry = builder.get_object('DB_A_SymbolChooser')
+		SymbolLocation = SymbolEntry.get_filename()
+		if SymbolLocation == None:
+			SymbolStatus = 'False'
+		else:
+			SymbolStatus = 'True'
+			SI.execute('cp ' + SymbolLocation + ' ' + conf.get_entry('DB','currentdb') + '/' + MainCategory + '/' + SubCategory + '/' + Name + '/Symbol.image', False)
+
+		#CreateEntryFile
+		programConf = configparser.ConfigParser()
+		programConf['main'] = {'name': str(Name),
+								'shortdescription' : str(ShortDesciption),
+								'longdescription' : str(LongDescription),
+								'ubuntu' : str(Ubuntu),
+								'debian' : str(Debian),
+								'arch' : str(Arch),
+								'maincategory' : MainCategory,
+								'subcategory' : SubCategory,
+								'URL' : URL,
+								'Screenshot' : ScreenshotStatus,
+								'Symbol' : SymbolStatus}
+								
+		with open(conf.get_entry('DB','currentdb') + '/' + MainCategory + '/' + SubCategory + '/' + Name + '/' + Name + '.info' , 'w') as configFile:
+			programConf.write(configFile)
+	#exit if anythong happens
 	except:
-		print("there was a problem when creating the database file structure")
-
-	
-	#create Table
-	c.execute('''create table CPFDB
-	(id INTEGER PRIMARY KEY, 
-	name text,
-	description_short text, 
-	description_long text, 
-	screenshotloc text, 
-	ubuntu_id text,
-	debian_id text, 
-	arch_id text, 
-	symbol text, 
-	maincategory text, 
-	subcategory text,
-	URL text)''')
-
-	db.commit()
-	db.close()
-
-	#useNewDb if ticked
-	bUseB = builder.get_object('CND_bUseNew')
-	bUse = bUseB.get_active()
-
-	if bUse == True:
-		conf.set_entry('DB','currentdb', dblocation)
-	
-
-#Daten einfügen
-def db_add_entry(builder):
-	global c
-	global db
-	db_connect()
-
-	nameL = builder.get_object('DB_A_NameEdit')
-	name =  nameL.get_text()
-
-	desc_sL = builder.get_object('DB_A_DescS_Edit')
-	desc_s = desc_sL.get_text()
-
-	desc_lL = builder.get_object('DB_A_DescL_Edit')
-	desc_l = desc_lL.get_text()
-
-	#ScreenshotFile_____________________________________________________________
-	#copy picture in custom FileFolder
-	screenshotchooser = builder.get_object('DB_A_ScreenChooser')
-	LocalScreenLocation = screenshotchooser.get_filename()
-	if LocalScreenLocation == None:
-		ErrorMessage(builder)
-		return
-		
-	LocalScreenName = LocalScreenLocation[len(screenshotchooser.get_current_folder())+1:]
-	#print('Screenfilename: ' + LocalScreenName)
-
-	#make final name
-	screenshotloc = '/Screenshots/' + LocalScreenName
-
-	#copy to local git repo
-	DatabaseLocation = SI.execute('dirname ' + conf.get_entry('DB','currentdb'), True)
-	#print('DatabaseLoc = ' + DatabaseLocation )
-	ScreenshotLocations = DatabaseLocation + '/Screenshots/'
-	#print('ScreenLocation: ' + ScreenshotLocations)
-	try:
-		SI.execute('cp ' + LocalScreenLocation + ' ' + ScreenshotLocations, False) 
-		#print('Screen command: ' + 'cp -r ' + LocalScreenLocation + ' ' + ScreenshotLocations)
-	except:
-		SI.execute('cd ' + DatabaseLocation + ' && mkdir Screenshots')
-		SI.execute('cp -r ' + LocalScreenLocation + ' ' + ScreenshotLocations, False) 	
-	print('Copied Screenshot file')
-
-	#SymbolFile_________________________________________________________________
-	#copy to git folder
-	SymbolChooser = builder.get_object('DB_A_SymbolChooser')
-	LocalSymbolLocation = SymbolChooser.get_filename()
-	if LocalSymbolLocation == None:
-		ErrorMessage(builder)
-		return
-		
-	LocalSymbolName = LocalSymbolLocation[len(SymbolChooser.get_current_folder())+1:]
-	#print('SymbolFilename: ' + LocalScreenName)
-
-	#make final symbol name
-	symbol = '/Symbols/' + LocalSymbolName
-
-	#copy symbol to git repo
-	try:
-		SI.execute('cp -r ' + LocalSymbolLocation + ' ' + DatabaseLocation + '/Symbols/', False)
-		#print('Symbol command: ' + 'cp ' + LocalSymbolLocation + ' ' + DatabaseLocation + '/Symbols/')
-	except:
-		SI.execute('cd ' + DatabaseLocation + ' && mkdir Symbols')
-		SI.execute('cp -r ' + LocalSymbolLocation + ' ' + DatabaseLocation + '/Symbols/', False)	
-	print('Copied Symbol file')
-	#___________________________________________________________________________
-		
-	UbuntuID_L = builder.get_object('DB_A_UbuntuName')
-	ubuntu_id = UbuntuID_L.get_text()
-
-	
-	DebianID_L = builder.get_object('DB_A_DebianName')
-	debian_id  = DebianID_L.get_text()
-
-	ArchID_L = builder.get_object('DB_A_ArchName')
-	arch_id  = ArchID_L.get_text()
-
-	MainCategory_L = builder.get_object('DB_A_Main')
-	maincategory =MainCategory_L.get_active_text()
-
-	SubCategory_L = builder.get_object('DB_Sub')
-	subcategory = SubCategory_L.get_active_text()
-
-	URLL = builder.get_object('DB_A_URL')
-	url = URLL.get_text()
-
-
-	#Check if all credentials are filled in
-
-	if name == None or desc_s == None or desc_l == None or screenshotloc == None or ubuntu_id == None or debian_id == None or arch_id == None or symbol == None or maincategory == None or subcategory == None or url == None:
-		ErrorMessage(builder)
+		ErrorDialog = builder.get_object('DB_ErrorMessage')
+		ErrorDialog.show_all()
 		return
 
-	c.execute('''INSERT INTO CPFDB(
-				name, 
-				description_short, 
-				description_long, 
-				screenshotloc, 
-				ubuntu_id, 
-				debian_id, 
-				arch_id, 
-				symbol, 
-				maincategory, 
-				subcategory,
-				URL)
-                VALUES(?,?,?,?,?,?,?,?,?,?,?)''', (name, desc_s, desc_l, screenshotloc, ubuntu_id, debian_id, arch_id, symbol, maincategory, subcategory, url))
-	db.commit()
-	db.close()
-	print('Added DatabaseEntry')
 
-#read entrys
-def db_read(subcategory, bAll):
-	global c
-	global db
-	db_connect()
-	if bAll != True:
-		c.execute('SELECT name FROM CPFDB WHERE subcategory=?', (str(subcategory),))
-	else: 		
-		c.execute('SELECT * FROM CPFDB WHERE subcategory=?', (str(subcategory),))
-
-	CleanOutput = []
-	output = c.fetchall()
-	#make clean output
-	for i in output:
-		i = str(i)[2:]
-		i = str(i)[:-3]
-		print('out: ' + str(i))
-		CleanOutput.append(i)
+#Update The Main Category Box
+def InitAddDialog(builder):
 	
-	return CleanOutput
-		
-def ErrorMessage(builder):
-	Message = builder.get_object('DB_ErrorMessage')
-	Message.show_all()
+	#UpdateMainCategorys
+	MainCategorysEntryBox = builder.get_object('DB_A_Main')
+	MainCategorysEntryBox.remove_all()
 
-def read_atributes(name,atribute):
-	global c
-	global db
-	db_connect()
+	MainCategoryList = conf.get_entry('DB','enmain')
+	MainCategoryList = MainCategoryList.split(',')
 
-	sqlpass = (str(name), str(atribute),)
-	print('SQLpass: ' + str(sqlpass))
+	for mainItem in MainCategoryList:
+		MainCategorysEntryBox.append_text(mainItem)
 
-	c.execute('SELECT ? FROM CPFDB WHERE name='?' ', sqlpass)
-	#c.execute(''' SELECT name FROM CPFDB WHERE name= ''')
-	ReturnValue = str(c.fetchone())
-	print('Return:::: ' + ReturnValue)
+#Update The SubCategory Box
+def update_SubList(builder):
+
+	MainCategorysEntryBox = builder.get_object('DB_A_Main')
+	CurrentEntry = MainCategorysEntryBox.get_active_text()
+
+	CurrentSubList = conf.get_entry('DBSub','en' + CurrentEntry.lower())
+	CurrentSubList = CurrentSubList.split(',')
+
+	SubCategoryBox = builder.get_object('DB_Sub')
+	SubCategoryBox.remove_all()
+
+	for subItem in CurrentSubList:
+		SubCategoryBox.append_text(subItem)
+
+
+
+
+
+
+
 	
-
-
-	#try:
-
-		
-#	except:
-#		ReturnValue = ('Could not read',)
-		
-	return ReturnValue
 	
-
-		
+	

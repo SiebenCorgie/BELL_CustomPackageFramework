@@ -81,6 +81,7 @@ Please close it to open a new one</property>
               <object class="GtkGrid" id="AD_Title_Grid">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="column_homogeneous">True</property>
                 <child>
                   <object class="GtkLabel" id="AD_App_Label">
                     <property name="visible">True</property>
@@ -99,6 +100,7 @@ Please close it to open a new one</property>
                   <object class="GtkImage" id="AD_Symbol">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="stock">gtk-unindent</property>
                     <property name="icon_size">6</property>
                   </object>
                   <packing>
@@ -119,7 +121,6 @@ Please close it to open a new one</property>
                 <property name="can_focus">False</property>
                 <property name="row_spacing">6</property>
                 <property name="column_spacing">6</property>
-                <property name="column_homogeneous">True</property>
                 <child>
                   <object class="GtkBox" id="AD_Descriptions">
                     <property name="visible">True</property>
@@ -177,11 +178,9 @@ Please close it to open a new one</property>
                       <object class="GtkImage" id="AD_Screenshot">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-connect</property>
-                        <property name="icon_size">3</property>
                       </object>
                       <packing>
-                        <property name="expand">True</property>
+                        <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="position">0</property>
                       </packing>
@@ -258,7 +257,7 @@ Please close it to open a new one</property>
                 </child>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">1</property>
               </packing>
@@ -1045,6 +1044,7 @@ filemanager. This can cause bugs.</property>
                   <object class="GtkFileChooserButton" id="Pref_NB_DB_CurrentDirFC">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="action">select-folder</property>
                     <property name="title" translatable="yes">Choose Data-Base Location</property>
                   </object>
                   <packing>
@@ -1078,7 +1078,7 @@ filemanager. This can cause bugs.</property>
                   <object class="GtkLabel" id="Pref_NB_DB_CurrentDirL">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Select FIle</property>
+                    <property name="label" translatable="yes">Select Folder</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>

@@ -131,7 +131,7 @@ def save_config(builder):
 
 	#Datenbank Ordner
 	DBFileChooser = builder.get_object('Pref_NB_DB_CurrentDirFC')
-	print("Current FOlder: " + DBFileChooser.get_filename())
+	print("Current File: " + DBFileChooser.get_filename())
 	if DBFileChooser.get_filename() == None:
 		print('DontWriteFolder')
 	else:

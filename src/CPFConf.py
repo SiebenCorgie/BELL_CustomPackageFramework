@@ -58,9 +58,10 @@ def load_config(builder):
 	GitURL = builder.get_object('Pref_NB_DB_GitUrlEdit')
 	GitURL.set_text(str(get_entry('DB','DataBaseGitURL')))
 
-	#Datenbank Ordner
+	#Datenbank Datei
 	DBFileChooser = builder.get_object('Pref_NB_DB_CurrentDirFC')
 	DBFileChooser.set_filename(str(get_entry('DB','currentdb')))
+
 
 	#Setzte wert ob nicht-GitHub Quelle genutzt wird
 	NoGitSource = builder.get_object('Pref_NB_DB_NotGitCB')
@@ -136,6 +137,8 @@ def save_config(builder):
 		print('DontWriteFolder')
 	else:
 		set_entry('DB','currentdb', str(DBFileChooser.get_filename()))
+
+	
 	
 	#Setzte wert ob nicht-GitHub Quelle genutzt wird
 	NoGitSource = builder.get_object('Pref_NB_DB_NotGitCB')

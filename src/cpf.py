@@ -115,13 +115,13 @@ class GUI:
 #Close ViewError
 	def on_ADAV_OK_clicked (self, button):
 		InstUI.CloseView(self.builder)
-
+#
 #CloseAppView
 	def on_AD_Close_clicked (self, button):
 		InstUI.CloseAppView(self.builder)
 
 
-
+#_______________________________________________________________________________
 
 #DocBrowser
 #DocBrwoser zu Startseite
@@ -183,20 +183,20 @@ class GUI:
 #add database entry
 	def on_M_Tools_AddDatabaseEntry_activate (self, menuitem):
 		self.db_add_Dialog = self.builder.get_object('DB_Add_Win')
-		db.db_add_Init(self.builder)
+		db.InitAddDialog(self.builder)
 		self.db_add_Dialog.show_all()
+		
 #update Sub Category
 	def on_DB_A_Main_changed (self, combobox):
-		db.update_sub_category(self.builder)
+		db.update_SubList(self.builder)
 
 #add entry
 	def on_DB_Add_Add_clicked (self, button):
-		db.db_add_entry(self.builder)
+		db.Create_New_Entry(self.builder)
 		self.db_add_Dialog.hide()
 
 #close db add entry dialog
 	def on_DB_Add_Close_clicked (self, button):
-		db.db_read('*',True)
 		self.db_add_Dialog.hide()
 
 #"OK" DB ErrorMessage
@@ -215,8 +215,7 @@ class GUI:
 
 #Add new Database
 	def on_CND_Add_clicked (self, button):
-		db.add_db(self.builder)
-		db.db_read()
+		db.create_new_DB(self.builder)
 		self.NewDBWin.hide()
 
 
