@@ -197,6 +197,7 @@ Please close it to open a new one</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="on_AD_DevLink_clicked" swapped="no"/>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -217,6 +218,7 @@ Please close it to open a new one</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">True</property>
+                                <signal name="clicked" handler="on_AD_B_Install_clicked" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="left_attach">0</property>
@@ -229,6 +231,7 @@ Please close it to open a new one</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">True</property>
+                                <signal name="clicked" handler="on_AD_B_Uninstall_clicked" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>

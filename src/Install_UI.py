@@ -184,9 +184,22 @@ def Go_Down(builder,iconview,treepath):
 			ErrorView = builder.get_object('AD_AVIsOpen')
 			ErrorView.show_all()
 
+def OpenDeveloperURL():
+	global ProgramFile
+	try:
+		if ProgramFile != None:
+			SI.execute('xdg-open ' + read_program_file(ProgramFile,'url') ,False)
+		else:
+			print('Could Not Open URL, No Program Specified')
+	except:
+		print('Could Not Open URL, is xdg-open installed?')
+	
+def Installing(builder):
+	print('installing')
 
 
-
+def Uninstalling(builder):
+	print('Uninstalling')
 
 
 

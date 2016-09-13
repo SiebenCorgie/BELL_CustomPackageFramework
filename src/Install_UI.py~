@@ -167,7 +167,7 @@ def Go_Down(builder,iconview,treepath):
 			if read_program_file(ProgramFile, 'symbol') == 'True':
 				Symbol = str(conf.get_entry('DB','currentdb') + '/' + SelectedCategory + '/' + SelectedSubCategory + '/' + SelectedProgram + '/Symbol.image')
 				SymbolWidget = builder.get_object('AD_Symbol')
-				SymbolPixbuf = Pixbuf.new_from_file_at_size(Symbol,1024 ,1024)
+				SymbolPixbuf = Pixbuf.new_from_file_at_size(Symbol,64 ,64)
 				SymbolWidget.set_from_pixbuf(SymbolPixbuf)
 			else:
 				SymbolWidget = builder.get_object('AD_Symbol')
@@ -184,9 +184,20 @@ def Go_Down(builder,iconview,treepath):
 			ErrorView = builder.get_object('AD_AVIsOpen')
 			ErrorView.show_all()
 
+def OpenDeveloperURL():
+	global ProgramFile
+
+	if ProgramFile != None:
+		SI.execute('xdg-open ' + read_program_file(ProgramFile,'url') ,False)
+	else:
+		print('Could Not Open URL, No Program Specified')
+
+def Installing(builder):
+	print('installing')
 
 
-
+def Uninstalling(builder):
+	print('Uninstalling')
 
 
 

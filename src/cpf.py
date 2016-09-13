@@ -120,7 +120,17 @@ class GUI:
 	def on_AD_Close_clicked (self, button):
 		InstUI.CloseAppView(self.builder)
 
+#OpenDeveoper URL in default browser
+	def on_AD_DevLink_clicked (self, button):
+		InstUI.OpenDeveloperURL()
 
+#InstallButton
+	def on_AD_B_Install_clicked (self, button):
+		InstUI.Installing(self.builder)
+
+#uninstallButton
+	def on_AD_B_Uninstall_clicked (self, button):
+		InstUI.Uninstalling(self.builder)
 #_______________________________________________________________________________
 
 #DocBrowser
