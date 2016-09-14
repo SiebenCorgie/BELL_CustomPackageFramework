@@ -240,28 +240,18 @@ def ErrorMessage(builder):
 	Message = builder.get_object('DB_ErrorMessage')
 	Message.show_all()
 
-def read_atributes(name,atribute):
+def read_atributes(name):
 	global c
 	global db
 	db_connect()
-
-	sqlpass = (str(name), str(atribute),)
-	print('SQLpass: ' + str(sqlpass))
-
-	c.execute('SELECT ? FROM CPFDB WHERE name='?' ', sqlpass)
-	#c.execute(''' SELECT name FROM CPFDB WHERE name= ''')
-	ReturnValue = str(c.fetchone())
-	print('Return:::: ' + ReturnValue)
 	
+	returnvalue = None
+	c.execute('SELECT * FROM CPFDB WHERE name=?', (name,))
+	returnvalue = c.fetchone()
 
+	print('returnvalue: ' + str(returnvalue))	
+	return returnvalue
 
-	#try:
-
-		
-#	except:
-#		ReturnValue = ('Could not read',)
-		
-	return ReturnValue
 	
 
 		

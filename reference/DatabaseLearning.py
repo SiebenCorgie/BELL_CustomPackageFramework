@@ -28,14 +28,18 @@ add_entry('rolf2', 'false','home/rolf/screen.png')
 add_entry('lol', 'false','/ich/war/hier')
 add_entry('geht','true','Loooks')
 
-print('get all with false')
+print('get all with teddy')
 
-teddy = ('true',)
+teddy = ('teddy',)
 
-curser.execute('''SELECT name, net, screenlocation FROM program WHERE net=? ''', teddy)
-res = curser.fetchall()
+curser.execute('''SELECT ? FROM program WHERE name=? ''',( 'screenlocation', 'teddy'))
+out = curser.fetchone()
 
-print(res)
+print(out[0])
 
+#for row in curser.execute('''SELECT screenlocation FROM program WHERE name=? ''', teddy):
+#    for i in row:
+#        print(i)
+#    break
 
 db.close()

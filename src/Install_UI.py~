@@ -40,7 +40,45 @@ def set_to_start(builder):
 	view.set_text_column(1)
 
 	for icon in (Plist):
-		pixbuf = Gtk.IconTheme.get_default().load_icon('gtk-dialog-error', 64, 0)
+		if conf.get_entry('main','language') == 'GER':
+			if icon == 'Video/Foto':
+				medianame = 'multimedia'
+			elif icon == 'Entwicklung':
+				medianame = 'development'
+			elif icon == 'Bildung':
+				medianame = 'education'
+			elif icon == 'Spiele':
+				medianame = 'games'
+			elif icon == 'Grafik':
+				medianame = 'graphics'
+			elif icon == 'Internet':
+				medianame = 'internet'
+			elif icon == 'Arbeit':
+				medianame = 'office'
+			elif icon == 'Wissenschaft':
+				medianame == 'science'
+			elif icon == 'System':
+				medianame = 'system'
+			elif icon == 'Werkzeuge':
+				medianame = 'tools'
+			elif icon == 'Verschiedenes':
+				medianame = 'other'
+			else:
+				medianame = 'other'
+
+		else:
+			if icon == 'Video/Photo':
+				medianame = 'multimedia'
+			elif icon == 'Misc':
+				medianame = 'other'
+			else:
+				medianame = icon.lower()
+
+		#load icon of category
+		try:
+			pixbuf = Gtk.IconTheme.get_default().load_icon('applications-'+ medianame, 64, 0)
+		except:
+			pixbuf = Gtk.IconTheme.get_default().load_icon('applications-other', 64, 0)
 		liststore.append([pixbuf, icon])
 
 	view.show_all()
@@ -49,7 +87,7 @@ def set_to_start(builder):
 def Go_Down(builder,iconview,treepath):
 
 	global stage
-	global SelectedItem
+	global SelectedMain
 
 	#get list
 	global Plist
@@ -57,42 +95,45 @@ def Go_Down(builder,iconview,treepath):
 
 
 	#get index of seleted List Item
-	SelectedItem = Plist[treepath.get_indices()[0]]
-
+	SelectedMain = Plist[treepath.get_indices()[0]]
+		
 	if stage !='Prog':
 		#removing Icon View
 		liststore = iconview.get_model()
 		liststore.clear()
 
+	#If in root, show Main Categorys
 	if stage == 'root':
-		#get list of all SubKategories
+		#get list of all Categories
 		if conf.get_entry('main','language') == 'GER':
-			SubCategoryList = conf.get_entry('DBSub','ger' + SelectedItem.lower())
+			SubCategoryList = conf.get_entry('DBSub','ger' + SelectedMain.lower())
 		else:
-			SubCategoryList = conf.get_entry('DBSub','en' + SelectedItem.lower())
+			SubCategoryList = conf.get_entry('DBSub','en' + SelectedMain.lower())
 			
 		SubCategoryList = SubCategoryList.split(',')
 
 		for entry in SubCategoryList:
-			pixbuf = Gtk.IconTheme.get_default().load_icon('gtk-dialog-error', 64, 0)
+			
+			pixbuf = Gtk.IconTheme.get_default().load_icon('applications-other', 64, 0)
 			liststore.append([pixbuf, entry])
 		stage = 'Sub'
 		iconview.show_all()
 		print('Showing Subcategorie')
 
-	#Upadte to Programs in Database on Click if in Subcategorie
+	#Update to Programs in Database on Click if in Subcategorie
 	elif stage == 'Sub':
-		print('Start Trying To Show Programs')
-		go_Sub(builder,iconview,treepath, SelectedItem)
+		print('Showing Programs')
+		go_Sub(builder,iconview,treepath, SelectedMain)
 
 	elif stage == 'Prog':
 		#Hide View and show template with filled in Stuff
 		print('Showing App Window')
 		show_app(builder,iconview,treepath)
 
+
 	
 
-def go_Sub(builder,iconview,treepath,main):
+def go_Sub(builder,iconview,treepath,SelectedMain):
 	
 	global stage
 	global SubCategoryList
@@ -101,23 +142,19 @@ def go_Sub(builder,iconview,treepath,main):
 	global SelectedSubCat
 	
 	SelectedSubCat = SubCategoryList[treepath.get_indices()[0]]
-	print('Selected Subcategorie: ' + SelectedSubCat)
 	
-	print('Main: ' + main)
 	#Clear Icons
 	liststore = iconview.get_model()
 	liststore.clear()
-	print('Cleared!')
 
 	#get list from selected main
 	ProgramList = db.db_read(SelectedSubCat, False)
 
 	for i in ProgramList:
-		print('Programmlist: ' + str(i))
-		pixbuf = Gtk.IconTheme.get_default().load_icon('gtk-dialog-error', 64, 0)
+		pixbuf = Pixbuf.new_from_file_at_size(str(conf.get_entry('DB','dblocation') + db.read_atributes(i)[8]),64,64)
 		liststore.append([pixbuf, i])
 	iconview.show_all()
-	print('Showing Apps Now!') 
+
 
 	stage = 'Prog'
 
@@ -136,29 +173,41 @@ def show_app(builder,iconview,treepath):
 	
 	#ShowDialog if not already open
 	if ProgramViewOpen != True:
-		print('Show Application Chooser')
 		AppWin = builder.get_object('ApplicationDialog_Install')
 
 		ProgramName = ProgramList[treepath.get_indices()[0]]
-		print('Selected Program: ' + str(ProgramName))
+
+		Data = db.read_atributes(ProgramName)
 
 		#Set Name, Short and Long description, Symbol, Screenshot
 		Title = builder.get_object('AD_App_Label')
-		Title.set_text(str(db.read_atributes(ProgramName, 'name'))
+		Title.set_text(Data[1])
 
 		#Short Description
 		ShortDescription = builder.get_object('AD_ShortDescription')
-		ShortDescription.set_text(str(db.read_atributes(ProgramName, 'description_short'))
+		ShortDescription.set_text(Data[2])
 
 		#Long Description
 		LongDescription = builder.get_object('AD_LongDescription')
-		LongDescription.set_text(str(db.read_atributes(ProgramName, 'description_long'))
+		LongDescription.set_text(Data[3])
 
 		#Symbol
 		Symbol = builder.get_object('AD_Symbol')
-
+		try:
+			SymbolPixbuf = Pixbuf.new_from_file_at_size(conf.get_entry('DB','dblocation') + Data[8],64 ,64)
+			Symbol.set_from_pixbuf(SymbolPixbuf)
+		except:
+			Symbol.set_from_icon_name('error-dialog',10)
+			print('Failed To Load Symbol')
 
 		#Screenshot
+		Screenshot = builder.get_object('AD_Screenshot')
+		try:
+			ScreenshotPixbuf = Pixbuf.new_from_file_at_size(conf.get_entry('DB','dblocation') + Data[4],512 ,512)
+			Screenshot.set_from_pixbuf(ScreenshotPixbuf)
+		except:
+			Screenshot.set_from_icon_name('error-dialog',10)
+			print('Failed to load Screenshot')
 		
 		
 		AppWin.show_all()

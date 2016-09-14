@@ -216,7 +216,6 @@ class GUI:
 #Add new Database
 	def on_CND_Add_clicked (self, button):
 		db.add_db(self.builder)
-		db.db_read()
 		self.NewDBWin.hide()
 
 

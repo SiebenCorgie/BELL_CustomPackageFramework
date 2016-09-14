@@ -64,6 +64,8 @@ Please close it to open a new one</property>
   <object class="GtkApplicationWindow" id="ApplicationDialog_Install">
     <property name="can_focus">False</property>
     <property name="window_position">center</property>
+    <property name="default_width">780</property>
+    <property name="default_height">640</property>
     <property name="deletable">False</property>
     <child>
       <object class="GtkBox" id="AD_MainBox">
@@ -81,6 +83,7 @@ Please close it to open a new one</property>
               <object class="GtkGrid" id="AD_Title_Grid">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="column_homogeneous">True</property>
                 <child>
                   <object class="GtkLabel" id="AD_App_Label">
                     <property name="visible">True</property>
@@ -119,7 +122,6 @@ Please close it to open a new one</property>
                 <property name="can_focus">False</property>
                 <property name="row_spacing">6</property>
                 <property name="column_spacing">6</property>
-                <property name="column_homogeneous">True</property>
                 <child>
                   <object class="GtkBox" id="AD_Descriptions">
                     <property name="visible">True</property>
@@ -177,7 +179,7 @@ Please close it to open a new one</property>
                       <object class="GtkImage" id="AD_Screenshot">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-connect</property>
+                        <property name="icon_name">applications-other</property>
                         <property name="icon_size">3</property>
                       </object>
                       <packing>

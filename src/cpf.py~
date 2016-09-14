@@ -118,6 +118,7 @@ class GUI:
 
 #CloseAppView
 	def on_AD_Close_clicked (self, button):
+		InstUI.CloseAppView(self.builder)
 
 
 
