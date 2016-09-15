@@ -2032,6 +2032,63 @@ Unterkategorie
 Webseiten URL des Entwicklers
 \end_layout
 
+\begin_layout Subsubsection
+Erstellen einer neuen Datenbank
+\end_layout
+
+\begin_layout Standard
+Die Datenbank im Dateiensystem umfasst nur eine Datei und zwei Ordner.
+ Die Datei ist die Datenbank und die Ordner beinhalten Symbole und Screenshots
+ der Programme.
+\end_layout
+
+\begin_layout Standard
+Beim Erstellen werden die Ordner sowie die Datei erstellt.
+ Dabei kann bei bedarf die neue Datenbank direkt in die Konfigurationsdatei
+ eingetragen werden und damit aktiv werden.
+ Der angebene Name in dem Erstellungs-Dialog enstpricht dem Name der erstellten
+ Datenbank.
+\end_layout
+
+\begin_layout Standard
+Es ist zu beachten, dass Namen auf Linux nicht die Art der Datei beinhalten
+ müssen.
+ Der Name: 
+\begin_inset Quotes gld
+\end_inset
+
+Datenabnk.sh
+\begin_inset Quotes grd
+\end_inset
+
+ ist genauso zulässig wie 
+\begin_inset Quotes gld
+\end_inset
+
+Datenbank.txt
+\begin_inset Quotes grd
+\end_inset
+
+ oder einfach nur 
+\begin_inset Quotes gld
+\end_inset
+
+Datenbank
+\begin_inset Quotes grd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Erstellen neuer Einträge
+\end_layout
+
+\begin_layout Subsubsection
+Lesen der Einträge
+\end_layout
+
 \begin_layout Subsection
 App-Anzeige
 \end_layout

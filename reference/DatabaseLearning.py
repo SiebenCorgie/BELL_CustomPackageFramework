@@ -32,7 +32,7 @@ print('get all with teddy')
 
 teddy = ('teddy',)
 
-curser.execute('''SELECT ? FROM program WHERE name=? ''',( 'screenlocation', 'teddy'))
+curser.execute('''SELECT ? FROM program WHERE name=? ''',('screenlocation', 'teddy'))
 out = curser.fetchone()
 
 print(out[0])

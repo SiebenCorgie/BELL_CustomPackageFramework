@@ -107,10 +107,11 @@ class GUI:
 #Go To Root
 	def on_MN_PS_Home_clicked (self, button):
 		print('Go Home!')
+		InstUI.go_home(self.builder)
 
 #Go Back
 	def on_MN_PS_Back_clicked (self, button):
-		print('Go back!')
+		InstUI.go_back(self.builder)
 
 #Close ViewError
 	def on_ADAV_OK_clicked (self, button):
@@ -119,6 +120,10 @@ class GUI:
 #CloseAppView
 	def on_AD_Close_clicked (self, button):
 		InstUI.CloseAppView(self.builder)
+
+#Start Installing
+	def on_AD_B_Install_clicked (self, button):
+		InstUI.StartInstalling()
 
 
 

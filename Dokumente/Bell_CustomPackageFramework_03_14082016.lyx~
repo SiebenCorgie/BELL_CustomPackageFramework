@@ -2029,7 +2029,31 @@ Unterkategorie
 \end_layout
 
 \begin_layout Enumerate
-Webseiten URL des entwicklers
+Webseiten URL des Entwicklers
+\end_layout
+
+\begin_layout Subsubsection
+Erstellen einer neuen Datenbank
+\end_layout
+
+\begin_layout Standard
+Die Datenbank im Dateiensystem umfasst nur eine Datei und zwei Ordner.
+ Die Datei ist die Datenbank und die Ordner beinhalten Symbole und Screenshots
+ der Programme.
+\end_layout
+
+\begin_layout Standard
+Beim Erstellen werden die Ordner sowie die Datei erstellt.
+ Dabei kann bei bedarf die neue Datenbank direkt in die Konfigurationsdatei
+ eingetragen werden und damit aktiv werden.
+\end_layout
+
+\begin_layout Subsubsection
+Erstellen neuer Einträge
+\end_layout
+
+\begin_layout Subsubsection
+Lesen der Einträge
 \end_layout
 
 \begin_layout Subsection

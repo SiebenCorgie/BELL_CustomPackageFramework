@@ -2,6 +2,7 @@ import cpf
 import SystemInteraction as SI
 import CPFConf as conf
 import CPFDatabase as db
+import Install_System as install
 
 import gi
 gi.require_version('Gtk','3.0')
@@ -140,6 +141,7 @@ def go_Sub(builder,iconview,treepath,SelectedMain):
 	global stage
 	global SubCategoryList
 	global ProgramList
+	global liststore
 	
 	global SelectedSubCat
 	
@@ -169,7 +171,7 @@ def show_app(builder,iconview,treepath):
 	#Is AlreadyOpen Bool
 	global ProgramViewOpen
 	#Which Subcategory
-
+	global ProgramName
 
 
 	
@@ -217,13 +219,27 @@ def show_app(builder,iconview,treepath):
 	else:
 		ErrorWinAppView = builder.get_object('AD_AVIsOpen')
 		ErrorWinAppView.show_all()
-		
+
+#Close Error Window
 def CloseView(builder):
 	ErrorWinAppView = builder.get_object('AD_AVIsOpen')
 	ErrorWinAppView.hide()
 
+#Close ProgramView
 def CloseAppView(builder):
 	global ProgramViewOpen
 	AppView = builder.get_object('ApplicationDialog_Install')
 	AppView.hide()
 	ProgramViewOpen = False
+
+#reset View
+def go_home(builder):
+	set_to_start(builder)
+
+def go_back(builder):
+	print('GoingBack')
+
+def StartInstalling():
+	global ProgramName
+	install.Install(ProgramName)
+	

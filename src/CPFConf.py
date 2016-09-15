@@ -142,7 +142,6 @@ def save_config(builder):
 		print('DontWriteFile')
 	else:
 		set_entry('DB','dblocation', str(DBFileChooser.get_current_folder()))
-		print('CurrentFolderIs::::: ' + str(DBFileChooser.get_current_folder()))
 		
 	#Setzte wert ob nicht-GitHub Quelle genutzt wird
 	NoGitSource = builder.get_object('Pref_NB_DB_NotGitCB')

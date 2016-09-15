@@ -65,6 +65,7 @@ def add_db(builder):
 	locationL = builder.get_object('CND_Locatio')
 	nameL = builder.get_object('CND_Name')
 	dblocation = locationL.get_filename() + '/' + nameL.get_text()
+	dbfolderlocation = locationL.get_current_folder()
 	print(dblocation)
 
 	#create and read db
@@ -104,6 +105,7 @@ def add_db(builder):
 
 	if bUse == True:
 		conf.set_entry('DB','currentdb', dblocation)
+		conf.set_entry('DB','dblocation', dbfolderlocation)
 	
 
 #Daten einfügen
@@ -142,10 +144,13 @@ def db_add_entry(builder):
 	#print('ScreenLocation: ' + ScreenshotLocations)
 	try:
 		SI.execute('cp ' + LocalScreenLocation + ' ' + ScreenshotLocations, False) 
-		#print('Screen command: ' + 'cp -r ' + LocalScreenLocation + ' ' + ScreenshotLocations)
 	except:
 		SI.execute('cd ' + DatabaseLocation + ' && mkdir Screenshots')
-		SI.execute('cp -r ' + LocalScreenLocation + ' ' + ScreenshotLocations, False) 	
+		try:
+			SI.execute('cp -r ' + LocalScreenLocation + ' ' + ScreenshotLocations, False) 	
+		except:
+			ErrorMessage(builder)
+			
 	print('Copied Screenshot file')
 
 	#SymbolFile_________________________________________________________________
@@ -157,7 +162,6 @@ def db_add_entry(builder):
 		return
 		
 	LocalSymbolName = LocalSymbolLocation[len(SymbolChooser.get_current_folder())+1:]
-	#print('SymbolFilename: ' + LocalScreenName)
 
 	#make final symbol name
 	symbol = '/Symbols/' + LocalSymbolName
@@ -165,10 +169,12 @@ def db_add_entry(builder):
 	#copy symbol to git repo
 	try:
 		SI.execute('cp -r ' + LocalSymbolLocation + ' ' + DatabaseLocation + '/Symbols/', False)
-		#print('Symbol command: ' + 'cp ' + LocalSymbolLocation + ' ' + DatabaseLocation + '/Symbols/')
 	except:
 		SI.execute('cd ' + DatabaseLocation + ' && mkdir Symbols')
-		SI.execute('cp -r ' + LocalSymbolLocation + ' ' + DatabaseLocation + '/Symbols/', False)	
+		try:
+			SI.execute('cp -r ' + LocalSymbolLocation + ' ' + DatabaseLocation + '/Symbols/', False)	
+		except:
+			ErrorMessage(builder)
 	print('Copied Symbol file')
 	#___________________________________________________________________________
 		

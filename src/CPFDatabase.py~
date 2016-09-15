@@ -142,10 +142,13 @@ def db_add_entry(builder):
 	#print('ScreenLocation: ' + ScreenshotLocations)
 	try:
 		SI.execute('cp ' + LocalScreenLocation + ' ' + ScreenshotLocations, False) 
-		#print('Screen command: ' + 'cp -r ' + LocalScreenLocation + ' ' + ScreenshotLocations)
 	except:
 		SI.execute('cd ' + DatabaseLocation + ' && mkdir Screenshots')
-		SI.execute('cp -r ' + LocalScreenLocation + ' ' + ScreenshotLocations, False) 	
+		try:
+			SI.execute('cp -r ' + LocalScreenLocation + ' ' + ScreenshotLocations, False) 	
+		except:
+			ErrorMessage(builder)
+			
 	print('Copied Screenshot file')
 
 	#SymbolFile_________________________________________________________________
@@ -157,7 +160,6 @@ def db_add_entry(builder):
 		return
 		
 	LocalSymbolName = LocalSymbolLocation[len(SymbolChooser.get_current_folder())+1:]
-	#print('SymbolFilename: ' + LocalScreenName)
 
 	#make final symbol name
 	symbol = '/Symbols/' + LocalSymbolName
@@ -165,10 +167,12 @@ def db_add_entry(builder):
 	#copy symbol to git repo
 	try:
 		SI.execute('cp -r ' + LocalSymbolLocation + ' ' + DatabaseLocation + '/Symbols/', False)
-		#print('Symbol command: ' + 'cp ' + LocalSymbolLocation + ' ' + DatabaseLocation + '/Symbols/')
 	except:
 		SI.execute('cd ' + DatabaseLocation + ' && mkdir Symbols')
-		SI.execute('cp -r ' + LocalSymbolLocation + ' ' + DatabaseLocation + '/Symbols/', False)	
+		try:
+			SI.execute('cp -r ' + LocalSymbolLocation + ' ' + DatabaseLocation + '/Symbols/', False)	
+		except:
+			ErrorMessage(builder)
 	print('Copied Symbol file')
 	#___________________________________________________________________________
 		
@@ -249,7 +253,7 @@ def read_atributes(name):
 	c.execute('SELECT * FROM CPFDB WHERE name=?', (name,))
 	returnvalue = c.fetchone()
 
-	print('returnvalue: ' + str(returnvalue[1]))	
+	print('returnvalue: ' + str(returnvalue))	
 	return returnvalue
 
 	
