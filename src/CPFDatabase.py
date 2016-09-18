@@ -3,27 +3,35 @@ import CPFConf as conf
 import CPFWeb as web
 import SystemInteraction as SI
 
+import gi.repository
+gi.require_version('Gtk', '3.0')
+
+from gi.repository import Gtk
+
 #database sql
 import sqlite3
 
+
+#Verbindung Herstellen
 def db_connect():
 	
 	global c
 	global db
 
-
 	dblocation = conf.get_entry('DB','currentdb')
 
 	#Datenbank
 	db = sqlite3.connect(dblocation)
-		#Zeiger
+	#Zeiger
 	c = db.cursor()
 
+#MainCategory anzeige im Datensatz Dialog	
+def db_add_Init(builder):
 
 	
-def db_add_Init(builder):
-	
+	#laden der liste aus konfiguration
 	MainCat = builder.get_object('DB_A_Main')
+	#basierend auf sprache
 	if conf.get_entry('main','language') == 'GER':
 		MainStringList = conf.get_entry('DB','GERMain')
 	else:
@@ -31,7 +39,8 @@ def db_add_Init(builder):
 
 	MainStringList = MainStringList.split(',')
 	MainCategoryList = []
-	
+
+	#Einfügen in Box
 	for CatName in MainStringList:
 		MainCategoryList.append(CatName)
 
@@ -41,7 +50,7 @@ def db_add_Init(builder):
 		MainCat.append_text(i)
 
 
-		
+#SubCategory Anzeige iim Datensatz-Dialog
 def update_sub_category(builder):
 	SubCat = builder.get_object('DB_Sub')
 	maincategory = builder.get_object('DB_A_Main')
@@ -59,7 +68,7 @@ def update_sub_category(builder):
 		SubCat.append_text(subindex)
 	
 
-#CreateNewDatabase
+#Datenbankerstellung
 def add_db(builder):
 
 	locationL = builder.get_object('CND_Locatio')
@@ -73,7 +82,7 @@ def add_db(builder):
 	db = sqlite3.connect(dblocation)
 	c = db.cursor()
 	
-	#create Folders in location
+	#Erstellung Der Ordner für Screenshots und Symbole
 	locationstruct = locationL.get_filename()
 	try:
 		SI.execute('cd ' + locationstruct + ' && mkdir Screenshots && mkdir Symbols', False)
@@ -81,7 +90,7 @@ def add_db(builder):
 		print("there was a problem when creating the database file structure")
 
 	
-	#create Table
+	#Erstellung Tabelle, Fester Name
 	c.execute('''create table CPFDB
 	(id INTEGER PRIMARY KEY, 
 	name text,
@@ -99,7 +108,7 @@ def add_db(builder):
 	db.commit()
 	db.close()
 
-	#useNewDb if ticked
+	#Wenn aktiviert eintragung der Neuen Datebank in Konfigurationsdatei
 	bUseB = builder.get_object('CND_bUseNew')
 	bUse = bUseB.get_active()
 
@@ -124,7 +133,7 @@ def db_add_entry(builder):
 	desc_l = desc_lL.get_text()
 
 	#ScreenshotFile_____________________________________________________________
-	#copy picture in custom FileFolder
+	#Kopieren des Screenshots in Datenbank
 	screenshotchooser = builder.get_object('DB_A_ScreenChooser')
 	LocalScreenLocation = screenshotchooser.get_filename()
 	if LocalScreenLocation == None:
@@ -132,7 +141,6 @@ def db_add_entry(builder):
 		return
 		
 	LocalScreenName = LocalScreenLocation[len(screenshotchooser.get_current_folder())+1:]
-	#print('Screenfilename: ' + LocalScreenName)
 
 	#make final name
 	screenshotloc = '/Screenshots/' + LocalScreenName
@@ -154,7 +162,7 @@ def db_add_entry(builder):
 	print('Copied Screenshot file')
 
 	#SymbolFile_________________________________________________________________
-	#copy to git folder
+	#Kopieren des Symbol in Datenbank
 	SymbolChooser = builder.get_object('DB_A_SymbolChooser')
 	LocalSymbolLocation = SymbolChooser.get_filename()
 	if LocalSymbolLocation == None:
@@ -198,7 +206,7 @@ def db_add_entry(builder):
 	url = URLL.get_text()
 
 
-	#Check if all credentials are filled in
+	#Prüfen ob alle Daten angegeben sind
 
 	if name == None or desc_s == None or desc_l == None or screenshotloc == None or ubuntu_id == None or debian_id == None or arch_id == None or symbol == None or maincategory == None or subcategory == None or url == None:
 		ErrorMessage(builder)
@@ -221,7 +229,7 @@ def db_add_entry(builder):
 	db.close()
 	print('Added DatabaseEntry')
 
-#read entrys
+#Lesen eines ganzen Datensatzes oder des namens
 def db_read(subcategory, bAll):
 	global c
 	global db
@@ -233,7 +241,7 @@ def db_read(subcategory, bAll):
 
 	CleanOutput = []
 	output = c.fetchall()
-	#make clean output
+	#Kuerzen der ausgabe
 	for i in output:
 		i = str(i)[2:]
 		i = str(i)[:-3]
@@ -241,11 +249,8 @@ def db_read(subcategory, bAll):
 		CleanOutput.append(i)
 	
 	return CleanOutput
-		
-def ErrorMessage(builder):
-	Message = builder.get_object('DB_ErrorMessage')
-	Message.show_all()
-
+	
+#Lesen eines ganzen Datensatzes
 def read_atributes(name):
 	global c
 	global db
@@ -258,6 +263,98 @@ def read_atributes(name):
 	print('returnvalue: ' + str(returnvalue))	
 	return returnvalue
 
-	
 
-		
+
+#Loeschen eines Datensatzes__________________________________________________________________
+
+#Laden hauptkategorie
+def remove_entry(builder):
+	Window = builder.get_object('Remove_Entry')
+
+	#populate Main Categorys
+	if conf.get_entry('main','language') == 'GER':
+		MainList = conf.get_entry('DB','germain')
+	else:
+		MainList = conf.get_entry('DB','enmain')
+
+	MainList = MainList.split(',')
+	MainCategoryChooser = builder.get_object('GE_Main_Choose')
+	MainCategoryChooser.remove_all()
+	for i in MainList:
+		MainCategoryChooser.append_text(i)
+	
+	
+	Window.show_all()
+
+#Laden Unterkategorie basierend auf Hauptkategorie
+def Remove_Update_SubList(builder):
+	MainChooser = builder.get_object('GE_Main_Choose')
+	MainCategory = MainChooser.get_active_text()
+
+	if conf.get_entry('main','language') == 'GER':
+		SubList = conf.get_entry('DBSub','ger' + MainCategory.lower())
+	else:
+		SubList = conf.get_entry('DBSub','en' + MainCategory.lower())
+
+	SubList = SubList.split(',')
+	print('SubList is: ' + str(SubList))
+
+	SubChooser = builder.get_object('GE_SubChoose')
+	SubChooser.remove_all()
+
+	for i in SubList:
+		SubChooser.append_text(i)
+
+#Laden der Programme basierend auf Kategorien
+def UpdateProgramList(builder):
+	global c
+	global db
+	db_connect()
+	
+	MainChooser = builder.get_object('GE_Main_Choose')
+	MainCategory = MainChooser.get_active_text()
+
+	SubChooser = builder.get_object('GE_SubChoose')
+	SubCategory = SubChooser.get_active_text()
+
+	MatchingProgram = []
+	
+	for row in c.execute('SELECT name FROM CPFDB WHERE subcategory=? AND maincategory=?',(SubCategory,MainCategory)):
+		MatchingProgram.append(row[0])
+
+
+
+	ProgramChooser = builder.get_object('GE_ProgramName')
+	ProgramChooser.remove_all()
+
+	for i in MatchingProgram:
+		ProgramChooser.append_text(i)
+
+#Entfernen basiernd auf haupt und Unterkategorie sowie namen
+def RemoveExecute(builder):
+	global c
+	global db
+	db_connect()
+	
+	
+	MainChooser = builder.get_object('GE_Main_Choose')
+	MainCategory = MainChooser.get_active_text()
+
+	SubChooser = builder.get_object('GE_SubChoose')
+	SubCategory = SubChooser.get_active_text()	
+
+	ProgramChooser = builder.get_object('GE_ProgramName')
+	ProgramName = ProgramChooser.get_active_text()
+	try:
+		c.execute('DELETE FROM CPFDB WHERE name=? AND subcategory=? AND maincategory=?',(ProgramName, SubCategory, MainCategory))
+		db.commit()
+	except:
+		print('Could not delete entry')
+		return
+	print('Remove Successfull')
+
+#Fehler Dialog		
+def ErrorMessage(builder):
+	Message = builder.get_object('DB_ErrorMessage')
+	Message.show_all()
+	

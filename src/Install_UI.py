@@ -11,9 +11,8 @@ from gi.repository.GdkPixbuf import Pixbuf
 
 global stage
 
-#clear shown View
 
-#Set to root
+#Category Umgebung auf Wurzel setzen
 def set_to_start(builder):
 	#close App-View
 	CloseView(builder)
@@ -85,6 +84,7 @@ def set_to_start(builder):
 	view.show_all()
 
 
+#Funktion wenn Icon geklickt wird
 def Go_Down(builder,iconview,treepath):
 
 	global stage
@@ -103,7 +103,7 @@ def Go_Down(builder,iconview,treepath):
 		liststore = iconview.get_model()
 		liststore.clear()
 
-	#If in root, show Main Categorys
+	#Umgebung mit Untekategorie Laden
 	if stage == 'root':
 		#get list of all Categories
 		if conf.get_entry('main','language') == 'GER':
@@ -123,19 +123,20 @@ def Go_Down(builder,iconview,treepath):
 		iconview.show_all()
 		print('Showing Subcategorie')
 
-	#Update to Programs in Database on Click if in Subcategorie
+	#Umgebung mit Programmen der Unterkategorie Laden
 	elif stage == 'Sub':
 		print('Showing Programs')
 		go_Sub(builder,iconview,treepath, SelectedMain)
 
+	#Zeigen des Programmfensters wenn Programm gewählt ist
 	elif stage == 'Prog':
-		#Hide View and show template with filled in Stuff
 		print('Showing App Window')
 		show_app(builder,iconview,treepath)
 
 
 	
 
+#Zeigen der Programme der Unterkategorie, passierend auf der Ueberkategorie
 def go_Sub(builder,iconview,treepath,SelectedMain):
 	
 	global stage
@@ -162,6 +163,7 @@ def go_Sub(builder,iconview,treepath,SelectedMain):
 
 	stage = 'Prog'
 
+#Zeigen des Programmfensters mit allen informationen
 def show_app(builder,iconview,treepath):
 
 	global stage
@@ -220,26 +222,46 @@ def show_app(builder,iconview,treepath):
 		ErrorWinAppView = builder.get_object('AD_AVIsOpen')
 		ErrorWinAppView.show_all()
 
-#Close Error Window
+#PassCommandsToInstallSystem____________________________________________________
+#InstallierAnweisung fuer "Install_System"
+
+def StartInstalling():
+	global ProgramName
+	install.Install(ProgramName,False)
+
+def StartUnistalling():
+	global ProgramName
+	install.Install(ProgramName,True)
+
+
+
+#InstallWindowVarious___________________________________________________________
+
+#Schliessen des Error-Dialog
 def CloseView(builder):
 	ErrorWinAppView = builder.get_object('AD_AVIsOpen')
 	ErrorWinAppView.hide()
 
-#Close ProgramView
+#Schließen des Programm-View
 def CloseAppView(builder):
 	global ProgramViewOpen
 	AppView = builder.get_object('ApplicationDialog_Install')
 	AppView.hide()
 	ProgramViewOpen = False
 
-#reset View
+#Laden der Wurzel
 def go_home(builder):
 	set_to_start(builder)
 
+#ZurückGehen
 def go_back(builder):
 	print('GoingBack')
 
-def StartInstalling():
+#WebSeite anzeigen
+def show_web_page():
 	global ProgramName
-	install.Install(ProgramName)
+	webpage = db.read_atributes(ProgramName)
+	webpage = webpage[11]
+	SI.execute('xdg-open ' + webpage, False)
+	
 	

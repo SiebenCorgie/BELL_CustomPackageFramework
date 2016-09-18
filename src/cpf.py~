@@ -123,8 +123,15 @@ class GUI:
 
 #Start Installing
 	def on_AD_B_Install_clicked (self, button):
-		InstUI.install()
+		InstUI.StartInstalling()
 
+#Start Removing
+	def on_AD_B_Uninstall_clicked (self, button):
+		InstUI.StartUnistalling()
+
+#Show Developer Page in Browser
+	def on_AD_DevLink_clicked (self, button):
+		InstUI.show_web_page()
 
 
 
@@ -208,6 +215,32 @@ class GUI:
 	def on_DB_EM_OK_clicked (self, button):
 		DBerror = self.builder.get_object('DB_ErrorMessage')
 		DBerror.hide()
+
+#Remove Database Entry 'Show Window'
+	def on_M_Tools_Remove_Entry_activate (self, menuitem):
+		db.remove_entry(self.builder)
+
+#Remove Database Entry 'Update View Main'
+	def on_GE_Main_Choose_changed (self, combobox):
+		db.Remove_Update_SubList(self.builder)
+
+#Remove Database Entry 'Update View Sub'
+	def on_GE_SubChoose_changed (self, combobox):
+		db.UpdateProgramList(self.builder)
+
+#Remove Database Entry 'Remove'
+	def on_GE_Remove_clicked (self, button):
+		db.RemoveExecute(self.builder)
+		
+#Remove Database Entry 'Close'
+	def on_GE_Close_clicked (self, button):
+		window = self.builder.get_object('Remove_Entry')
+		window.hide()
+
+
+
+
+
 #_______________________________________________________________________________
 #CreateDatabase
 	def on_M_Tools_AddDB_activate (self, menuitem):
