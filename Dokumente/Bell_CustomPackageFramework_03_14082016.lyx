@@ -2085,8 +2085,254 @@ Datenbank
 Erstellen neuer Einträge
 \end_layout
 
+\begin_layout Standard
+Das Erstellen neuer Einträge ist denkbar einfach.
+ Man bekommt den Dialog präsentiert.
+ In dem Dialog kann man für jeden Eintrag eines Datensatzes in der Datenbank
+ einen Wert angeben.
+ Vom Name, bis zur URL der Entwickler-Homepage.
+\end_layout
+
+\begin_layout Standard
+Eine kleine Außnahme machen hier die Auswahlen des Screenshots und des Symbols.
+ Bei der aktivierung kann man hier eine Datei auswählen.
+\end_layout
+
+\begin_layout Standard
+Eine weitere Besonderheit ist das Klappmenü der Unterkategorie.
+ Dieses wird über die Funktion:
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+update_sub_category
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+in dem Modul 
+\begin_inset Quotes gld
+\end_inset
+
+CPFDatabase.py
+\begin_inset Quotes grd
+\end_inset
+
+ anhand des ausgewählten Eintrags in dem Klappmenü der Hauptkategorie aktualieis
+ert.
+ Dabei wird der aktive Eintrag gelesen.
+ Danach wird mithilfe des Eintrages in der Konfigurationsdatei nach allen
+ möglichen Unterkategorien gesucht.
+ Diese List an Unterkategorien wird dann in dem Menü dargestellt.
+ Es ist zubeachten, dass das Menü vor dieser Prozedur geleert wird, um Mehrfache
+inträge bzw.
+ falsche Einträge auszuschließen
+\end_layout
+
+\begin_layout Standard
+Nachdem alle Einträge in dem Dialog einen Wert haben, kann man diesen Datensatz
+ der Datenbank hinzufügen.
+ Die Funktion hierfür heißt: 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+db_add_entry
+\end_layout
+
+\end_inset
+
+ in dem Modul 
+\begin_inset Quotes gld
+\end_inset
+
+CPFDatabase.py
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Sie ließt alle Werte im Dialog aus, speichert sie in Variablen und fügt
+ diese über die SQL-Funktion 
+\begin_inset Quotes gld
+\end_inset
+
+INSERT
+\begin_inset Quotes grd
+\end_inset
+
+ in die Datenbank ein.
+ Die ID in der Datenbank wird automatisch eingefügt.
+\end_layout
+
+\begin_layout Standard
+Auch hier gibt es wieder zwei Besonderheiten.
+ Die erste ist, dass die Funktion versucht den Screenshot und das Symbol
+ in ihren jeweiligen Ordner zu verschieben.
+ Wenn dies schief läuft wird ein Fehler-Dialog angezeigt.
+ 
+\end_layout
+
+\begin_layout Standard
+Wenn versucht wird einen Eintrag hinzu zu fügen, allerdings ein Wert nicht
+ Spezifiziert ist, wird auch ein Fehler-Dialog angeziegt.
+\end_layout
+
 \begin_layout Subsubsection
 Lesen der Einträge
+\end_layout
+
+\begin_layout Standard
+Beim Lesen von Einträgen habe ich mich dafür entschieden mehrere Funktionen
+ zu schreiben.
+ Die erste ist:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+db_read
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+die Zweite ist:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+read_attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Funktion 
+\begin_inset Quotes gld
+\end_inset
+
+db_read
+\begin_inset Quotes grd
+\end_inset
+
+ gibt alle Namen aller Programme wieder die eine spezifizierte Unterkategorie
+ besitzen.
+ Diese Funktion wird nur in der Anzeige der Unterkategorien und ihrer Programme
+ benötigt.
+ Dazu später mehr in der App-Anzeige.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Funktion 
+\begin_inset Quotes gld
+\end_inset
+
+read_attributes
+\begin_inset Quotes grd
+\end_inset
+
+ hingegen ließt einen Gesamten Datensatz anhand seines Names aus.
+ Diese wird für alle übrigen Operationen genutzt.
+ Der zurück gegebene Wert ist eine Liste.
+ Der Index andem sich eine Information befindet ist dabei gleich der Reihnfolge
+ der Speicherplätze bei der Datenbankerstellung.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[0.]
+\backslash
+setcounter{enumi}{0}
+\end_layout
+
+\end_inset
+
+ID
+\end_layout
+
+\begin_layout Enumerate
+Name
+\end_layout
+
+\begin_layout Enumerate
+Kurze Beschreibung
+\end_layout
+
+\begin_layout Enumerate
+Lange Beschreibung
+\end_layout
+
+\begin_layout Enumerate
+Screenshot Ort
+\end_layout
+
+\begin_layout Enumerate
+Ubuntu-Name
+\end_layout
+
+\begin_layout Enumerate
+Debian-Name
+\end_layout
+
+\begin_layout Enumerate
+Arch-Name
+\end_layout
+
+\begin_layout Enumerate
+Symbol Ort
+\end_layout
+
+\begin_layout Enumerate
+Haupt-Kategorie
+\end_layout
+
+\begin_layout Enumerate
+Unter-Kategorie
+\end_layout
+
+\begin_layout Enumerate
+Entwickler-URL
+\end_layout
+
+\begin_layout Standard
+Achtung: Bei der Funktion 
+\begin_inset Quotes gld
+\end_inset
+
+db_add_entry
+\begin_inset Quotes grd
+\end_inset
+
+ werden die Daten in einer Anderen Reihnfolge angesteuert.
+ Die Reihnfolge innerhalb der Datenbank bleibt aber wie oben beschrieben.
 \end_layout
 
 \begin_layout Subsection

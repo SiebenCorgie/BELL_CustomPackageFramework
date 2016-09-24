@@ -237,6 +237,14 @@ class GUI:
 		window = self.builder.get_object('Remove_Entry')
 		window.hide()
 
+#Open CPF Documentation
+	def on_M_Help_OpenCPFDocs_activate (self, menuitem):
+		SI.execute('xdg-open ' + conf.get_entry('Internet','cpf_docurl') , False)
+
+#Open Custom Documentation
+	def on_M_Help_OpenCustomDocs_activate (self, menuitem):
+		SI.execute('xdg-open ' + conf.get_entry('Internet','docurl'), False)
+
 
 
 

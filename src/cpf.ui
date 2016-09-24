@@ -1676,6 +1676,7 @@ filemanager. This can cause bugs.</property>
                         <property name="tooltip_text" translatable="yes">Opens custom documentation in the default browser</property>
                         <property name="label" translatable="yes">Open Custom Documentation</property>
                         <property name="use_underline">True</property>
+                        <signal name="activate" handler="on_M_Help_OpenCustomDocs_activate" swapped="no"/>
                       </object>
                     </child>
                     <child>
@@ -1685,6 +1686,7 @@ filemanager. This can cause bugs.</property>
                         <property name="tooltip_text" translatable="yes">Opens CPF documentation in the default browser</property>
                         <property name="label" translatable="yes">Open CPF Documentation</property>
                         <property name="use_underline">True</property>
+                        <signal name="activate" handler="on_M_Help_OpenCPFDocs_activate" swapped="no"/>
                       </object>
                     </child>
                   </object>

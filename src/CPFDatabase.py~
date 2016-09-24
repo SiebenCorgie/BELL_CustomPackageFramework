@@ -228,9 +228,30 @@ def db_add_entry(builder):
 	db.commit()
 	db.close()
 	print('Added DatabaseEntry')
+
+#Lesen eines ganzen Datensatzes oder des namens
+def db_read(subcategory, bAll):
+	global c
+	global db
+	db_connect()
+	if bAll != True:
+		c.execute('SELECT name FROM CPFDB WHERE subcategory=?', (str(subcategory),))
+	else: 		
+		c.execute('SELECT * FROM CPFDB WHERE subcategory=?', (str(subcategory),))
+
+	CleanOutput = []
+	output = c.fetchall()
+	#Kuerzen der ausgabe
+	for i in output:
+		i = str(i)[2:]
+		i = str(i)[:-3]
+		print('out: ' + str(i))
+		CleanOutput.append(i)
+	
+	return CleanOutput
 	
 #Lesen eines ganzen Datensatzes
-def read_atributes(name):
+def read_attributes(name):
 	global c
 	global db
 	db_connect()
@@ -244,9 +265,9 @@ def read_atributes(name):
 
 
 
-#Löschen eines Datensatzes
+#Loeschen eines Datensatzes__________________________________________________________________
 
-#Update Laden der Hauptkategorien
+#Laden hauptkategorie
 def remove_entry(builder):
 	Window = builder.get_object('Remove_Entry')
 
@@ -265,7 +286,7 @@ def remove_entry(builder):
 	
 	Window.show_all()
 
-#Laden Unterkategorien 
+#Laden Unterkategorie basierend auf Hauptkategorie
 def Remove_Update_SubList(builder):
 	MainChooser = builder.get_object('GE_Main_Choose')
 	MainCategory = MainChooser.get_active_text()
@@ -284,7 +305,7 @@ def Remove_Update_SubList(builder):
 	for i in SubList:
 		SubChooser.append_text(i)
 
-#Laden des der Programme
+#Laden der Programme basierend auf Kategorien
 def UpdateProgramList(builder):
 	global c
 	global db
@@ -309,7 +330,7 @@ def UpdateProgramList(builder):
 	for i in MatchingProgram:
 		ProgramChooser.append_text(i)
 
-#Entfernen basierend auf haupt- und Unterkategorie sowie namen
+#Entfernen basiernd auf haupt und Unterkategorie sowie namen
 def RemoveExecute(builder):
 	global c
 	global db

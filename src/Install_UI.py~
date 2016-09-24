@@ -162,10 +162,17 @@ def go_Sub(builder,iconview,treepath,SelectedMain):
 	liststore.clear()
 
 	#get list from selected main
-	ProgramList = db.db_read(SelectedSubCat, False)
+	ProgramListDirty = db.read_attributes('*')
+	ProgramList = []
+	for Program in ProgramListDirty:
+		if SelectedSubCat == Program[10]:
+			ProgramList.append(Program[1])
+			print('Add Entry to SUb List: ' + Program[1])
+	
+	#ProgramList = db.db_read(SelectedSubCat, False)
 
 	for i in ProgramList:
-		pixbuf = Pixbuf.new_from_file_at_size(str(conf.get_entry('DB','dblocation') + db.read_atributes(i)[8]),64,64)
+		pixbuf = Pixbuf.new_from_file_at_size(str(conf.get_entry('DB','dblocation') + db.read_attributes(i)[8]),64,64)
 		liststore.append([pixbuf, i])
 	iconview.show_all()
 
@@ -192,7 +199,7 @@ def show_app(builder,iconview,treepath):
 
 		ProgramName = ProgramList[treepath.get_indices()[0]]
 
-		Data = db.read_atributes(ProgramName)
+		Data = db.read_attributes(ProgramName)
 
 		#Set Name, Short and Long description, Symbol, Screenshot
 		Title = builder.get_object('AD_App_Label')
@@ -289,18 +296,23 @@ def go_back(builder):
 		liststore = ProgIconview.get_model()
 		liststore.clear()
 
+		#Lade Icons der vorher angeklickten SubCategory
 		for entry in SubCategoryList:
 			try:
 				pixbuf = Gtk.IconTheme.get_default().load_icon('applications-' + entry, 64, 0)				
 			except:
 				pixbuf = Gtk.IconTheme.get_default().load_icon('applications-other', 64, 0)
 			liststore.append([pixbuf, entry])
+
 		
+		stage = 'Sub'
+		ProgIconview.show_all()
+		print('Showing Subcategorie')		
 
 #WebSeite anzeigen
 def show_web_page():
 	global ProgramName
-	webpage = db.read_atributes(ProgramName)
+	webpage = db.read_attributes(ProgramName)
 	webpage = webpage[11]
 	SI.execute('xdg-open ' + webpage, False)
 	

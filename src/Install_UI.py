@@ -160,12 +160,11 @@ def go_Sub(builder,iconview,treepath,SelectedMain):
 	#Clear Icons
 	liststore = iconview.get_model()
 	liststore.clear()
-
-	#get list from selected main
-	ProgramList = db.db_read(SelectedSubCat, False)
+	
+	ProgramList = db.db_read(SelectedSubCat)
 
 	for i in ProgramList:
-		pixbuf = Pixbuf.new_from_file_at_size(str(conf.get_entry('DB','dblocation') + db.read_atributes(i)[8]),64,64)
+		pixbuf = Pixbuf.new_from_file_at_size(str(conf.get_entry('DB','dblocation') + db.read_attributes(i)[8]),64,64)
 		liststore.append([pixbuf, i])
 	iconview.show_all()
 
@@ -192,7 +191,7 @@ def show_app(builder,iconview,treepath):
 
 		ProgramName = ProgramList[treepath.get_indices()[0]]
 
-		Data = db.read_atributes(ProgramName)
+		Data = db.read_attributes(ProgramName)
 
 		#Set Name, Short and Long description, Symbol, Screenshot
 		Title = builder.get_object('AD_App_Label')
@@ -299,13 +298,13 @@ def go_back(builder):
 
 		
 		stage = 'Sub'
-		iconview.show_all()
+		ProgIconview.show_all()
 		print('Showing Subcategorie')		
 
 #WebSeite anzeigen
 def show_web_page():
 	global ProgramName
-	webpage = db.read_atributes(ProgramName)
+	webpage = db.read_attributes(ProgramName)
 	webpage = webpage[11]
 	SI.execute('xdg-open ' + webpage, False)
 	

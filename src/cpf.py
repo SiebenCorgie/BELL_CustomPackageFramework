@@ -208,7 +208,6 @@ class GUI:
 
 #close db add entry dialog
 	def on_DB_Add_Close_clicked (self, button):
-		db.db_read('*',True)
 		self.db_add_Dialog.hide()
 
 #"OK" DB ErrorMessage
@@ -236,6 +235,14 @@ class GUI:
 	def on_GE_Close_clicked (self, button):
 		window = self.builder.get_object('Remove_Entry')
 		window.hide()
+
+#Open CPF Documentation
+	def on_M_Help_OpenCPFDocs_activate (self, menuitem):
+		SI.execute('xdg-open ' + conf.get_entry('Internet','cpf_docurl') , False)
+
+#Open Custom Documentation
+	def on_M_Help_OpenCustomDocs_activate (self, menuitem):
+		SI.execute('xdg-open ' + conf.get_entry('Internet','docurl'), False)
 
 
 
