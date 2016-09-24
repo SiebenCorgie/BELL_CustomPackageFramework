@@ -94,7 +94,16 @@ def Go_Down(builder,iconview,treepath):
 	global Plist
 	global SubCategoryList
 
+	
+	#global IconView und treepath für das Zurueckgehen
+	global ProgIconview
+	ProgIconview = iconview
 
+	global ProgTreepath
+	ProgTreepath = treepath
+
+
+	
 	#get index of seleted List Item
 	SelectedMain = Plist[treepath.get_indices()[0]]
 		
@@ -255,7 +264,43 @@ def go_home(builder):
 
 #ZurückGehen
 def go_back(builder):
-	print('GoingBack')
+	global stage
+	global SubCategoryList
+	global ProgramList
+
+	#Is AlreadyOpen Bool
+	global ProgramViewOpen
+	#Which Subcategory
+	global ProgramName
+
+	#global IconView und treepath für das Zurueckgehen
+	global ProgIconview
+
+	global ProgTreepath
+
+	if stage == 'root':
+		print('Already Root')
+
+	elif stage == 'Sub':
+		set_to_start(builder)	
+
+
+	elif stage == 'Prog':
+		liststore = ProgIconview.get_model()
+		liststore.clear()
+
+		#Lade Icons der vorher angeklickten SubCategory
+		for entry in SubCategoryList:
+			try:
+				pixbuf = Gtk.IconTheme.get_default().load_icon('applications-' + entry, 64, 0)				
+			except:
+				pixbuf = Gtk.IconTheme.get_default().load_icon('applications-other', 64, 0)
+			liststore.append([pixbuf, entry])
+
+		
+		stage = 'Sub'
+		iconview.show_all()
+		print('Showing Subcategorie')		
 
 #WebSeite anzeigen
 def show_web_page():

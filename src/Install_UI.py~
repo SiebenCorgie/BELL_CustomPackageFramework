@@ -94,7 +94,16 @@ def Go_Down(builder,iconview,treepath):
 	global Plist
 	global SubCategoryList
 
+	
+	#global IconView und treepath für das Zurueckgehen
+	global ProgIconview
+	ProgIconview = iconview
 
+	global ProgTreepath
+	ProgTreepath = treepath
+
+
+	
 	#get index of seleted List Item
 	SelectedMain = Plist[treepath.get_indices()[0]]
 		
@@ -163,6 +172,7 @@ def go_Sub(builder,iconview,treepath,SelectedMain):
 
 	stage = 'Prog'
 
+#Zeigen des Programmfensters mit allen informationen
 def show_app(builder,iconview,treepath):
 
 	global stage
@@ -222,6 +232,7 @@ def show_app(builder,iconview,treepath):
 		ErrorWinAppView.show_all()
 
 #PassCommandsToInstallSystem____________________________________________________
+#InstallierAnweisung fuer "Install_System"
 
 def StartInstalling():
 	global ProgramName
@@ -231,27 +242,62 @@ def StartUnistalling():
 	global ProgramName
 	install.Install(ProgramName,True)
 
+
+
 #InstallWindowVarious___________________________________________________________
 
-#Close Error Window
+#Schliessen des Error-Dialog
 def CloseView(builder):
 	ErrorWinAppView = builder.get_object('AD_AVIsOpen')
 	ErrorWinAppView.hide()
 
-#Close ProgramView
+#Schließen des Programm-View
 def CloseAppView(builder):
 	global ProgramViewOpen
 	AppView = builder.get_object('ApplicationDialog_Install')
 	AppView.hide()
 	ProgramViewOpen = False
 
-#reset View
+#Laden der Wurzel
 def go_home(builder):
 	set_to_start(builder)
 
+#ZurückGehen
 def go_back(builder):
-	print('GoingBack')
+	global stage
+	global SubCategoryList
+	global ProgramList
 
+	#Is AlreadyOpen Bool
+	global ProgramViewOpen
+	#Which Subcategory
+	global ProgramName
+
+	#global IconView und treepath für das Zurueckgehen
+	global ProgIconview
+
+	global ProgTreepath
+
+	if stage == 'root':
+		print('Already Root')
+
+	elif stage == 'Sub':
+		set_to_start(builder)	
+
+
+	elif stage == 'Prog':
+		liststore = ProgIconview.get_model()
+		liststore.clear()
+
+		for entry in SubCategoryList:
+			try:
+				pixbuf = Gtk.IconTheme.get_default().load_icon('applications-' + entry, 64, 0)				
+			except:
+				pixbuf = Gtk.IconTheme.get_default().load_icon('applications-other', 64, 0)
+			liststore.append([pixbuf, entry])
+		
+
+#WebSeite anzeigen
 def show_web_page():
 	global ProgramName
 	webpage = db.read_atributes(ProgramName)
