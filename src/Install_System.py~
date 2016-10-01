@@ -57,8 +57,9 @@ def Install(ProgramName, Uninstall):
 		bInstall = False
 		print('Not Supported Distribution') 
 
+	#Debug Nachrricht
 	if bInstall == True:
-		print('Finished Installing!')
+		print('Start Installing!')
 	else:
 		print('Something went wrong')
 

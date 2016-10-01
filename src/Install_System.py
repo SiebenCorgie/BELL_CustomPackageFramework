@@ -14,7 +14,7 @@ SupportDebian = ('debian','deepin')
 #Starten des installier odre deinstalliervorgangs
 def Install(ProgramName, Uninstall):
 	#Get all ProgramData from DatabaseEntry
-	ProgramData = db.read_atributes(ProgramName)
+	ProgramData = db.read_attributes(ProgramName)
 	#read release information
 	Distribution = SI.execute('cat /etc/*-release',True)
 	#Distribution[1]

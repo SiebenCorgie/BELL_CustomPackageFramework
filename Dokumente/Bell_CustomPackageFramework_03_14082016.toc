@@ -1,0 +1,47 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Einf\"uhrung}{2}
+\contentsline {subsection}{\numberline {1.1}Die Situation}{2}
+\contentsline {subsection}{\numberline {1.2}Grund 1}{2}
+\contentsline {subsection}{\numberline {1.3}Grund 2}{2}
+\contentsline {section}{\numberline {2}Vor\"uberlegungen}{2}
+\contentsline {subsection}{\numberline {2.1}Ziel}{2}
+\contentsline {subsection}{\numberline {2.2}Konfiguration}{3}
+\contentsline {subsubsection}{\numberline {2.2.1}Programm eigene Konfiguration}{3}
+\contentsline {subsubsection}{\numberline {2.2.2}Datenbank}{4}
+\contentsline {subsubsection}{\numberline {2.2.3}Datenbank Management}{4}
+\contentsline {subsection}{\numberline {2.3}Installation}{4}
+\contentsline {subsubsection}{\numberline {2.3.1}Visualisierung}{4}
+\contentsline {subsubsection}{\numberline {2.3.2}Installationsablauf}{5}
+\contentsline {subsubsection}{\numberline {2.3.3}Massenauftr\"age}{5}
+\contentsline {subsubsection}{\numberline {2.3.4}Programmauswahl}{5}
+\contentsline {subsection}{\numberline {2.4}Web-Integration}{5}
+\contentsline {subsection}{\numberline {2.5}Programmiersprache}{6}
+\contentsline {subsection}{\numberline {2.6}Interface-Toolkit}{6}
+\contentsline {subsection}{\numberline {2.7}Unterst\"utzung}{8}
+\contentsline {subsection}{\numberline {2.8}Arbeitsweise}{8}
+\contentsline {subsubsection}{\numberline {2.8.1}Schreiben}{8}
+\contentsline {subsubsection}{\numberline {2.8.2}Git-Hub}{8}
+\contentsline {section}{\numberline {3}Dokumentation der Arbeit}{9}
+\contentsline {subsection}{\numberline {3.1}Voranmerkung}{9}
+\contentsline {subsection}{\numberline {3.2}Erstellung des Programms}{9}
+\contentsline {subsection}{\numberline {3.3}Erstellung der Grafischen Oberfl\"ache: Hauptfenster}{10}
+\contentsline {subsection}{\numberline {3.4}Browserfenster}{10}
+\contentsline {subsection}{\numberline {3.5}Konfiguration}{11}
+\contentsline {subsubsection}{\numberline {3.5.1}Konfigurationsdatei}{11}
+\contentsline {subsubsection}{\numberline {3.5.2}Lesen und Schreiben}{11}
+\contentsline {paragraph}{Allgemeines}{11}
+\contentsline {paragraph}{Die Funktion set\_entry}{12}
+\contentsline {paragraph}{Die Funktion get\_entry}{12}
+\contentsline {paragraph}{Die Funktion load\_config}{12}
+\contentsline {paragraph}{Die Funktion save\_config}{12}
+\contentsline {subsubsection}{\numberline {3.5.3}Konfigurationsmenu}{13}
+\contentsline {subsection}{\numberline {3.6}Datenbank}{14}
+\contentsline {subsubsection}{\numberline {3.6.1}Technisches \"uber die Datenbank}{14}
+\contentsline {subsubsection}{\numberline {3.6.2}Datenbankiteraktion}{14}
+\contentsline {subsubsection}{\numberline {3.6.3}Erstellen einer neuen Datenbank}{15}
+\contentsline {subsubsection}{\numberline {3.6.4}Erstellen neuer Eintr\"age}{15}
+\contentsline {subsubsection}{\numberline {3.6.5}Lesen der Eintr\"age}{16}
+\contentsline {subsection}{\numberline {3.7}App-Anzeige}{17}
+\contentsline {subsection}{\numberline {3.8}Installation}{17}
+\contentsline {section}{\numberline {4}Anmerkung zum Literaturverzeichnis}{18}
+\contentsfinish 
