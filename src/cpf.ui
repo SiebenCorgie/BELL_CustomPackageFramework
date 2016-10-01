@@ -1473,6 +1473,15 @@ filemanager. This can cause bugs.</property>
                         <signal name="activate" handler="on_M_Tools_UploadDatabase_activate" swapped="no"/>
                       </object>
                     </child>
+                    <child>
+                      <object class="GtkMenuItem" id="M_Tools_DownloadNewDatabase">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Download New Database</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="on_M_Tools_DownloadNewDatabase_activate" swapped="no"/>
+                      </object>
+                    </child>
                   </object>
                 </child>
               </object>

@@ -116,6 +116,7 @@ class GUI:
 		InstUI.go_back(self.builder)
 #Refresh
 	def on_MN_PS_Reload_clicked (self, button):
+		vte.download_database(self.builder)
 
 
 #Close ViewError
@@ -244,6 +245,11 @@ class GUI:
 #UploadDatabase
 	def on_M_Tools_UploadDatabase_activate (self, menuitem):
 		vte.upload_database(self.builder)
+
+#Download Database
+	def on_M_Tools_DownloadNewDatabase_activate (self, menuitem):
+		vte.download_database(self.builder)
+
 
 #Close VTE View
 	def on_VTE_Close_clicked (self, button):

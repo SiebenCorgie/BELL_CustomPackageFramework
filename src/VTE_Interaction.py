@@ -95,6 +95,23 @@ def upload_database(builder):
 	VTE_execute('cd ' + conf.get_entry('DB','dblocation') + ' && git add * && git commit -a && git push')
 
 
+#Refresh from git
+def refresh_database(builder):
+	global VTEStatus
+	if conf.get_entry('DB','notgitbased') == 'True':
+		return
+	
+	if VTEStatus == False:
+		Init_VTE(builder)
+	else:
+		VTEDialog = builder.get_object('VTE_Dialog')
+		VTEDialog.show_all()
+
+	SI.execute('cd ~/.local/share/ && mkdir cpf',False)
+
+	VTE_execute('cd ' + conf.get_entry('DB','dblocation') + ' && git pull')
+
+
 #Download from git
 def download_database(builder):
 	global VTEStatus
@@ -107,10 +124,6 @@ def download_database(builder):
 		VTEDialog = builder.get_object('VTE_Dialog')
 		VTEDialog.show_all()
 		
-	#try:
-	#	SI.execute('cd ~/.local/share/cpf/',False)
-	#except:
 	SI.execute('cd ~/.local/share/ && mkdir cpf',False)
 
 	VTE_execute('cd ~/.local/share/cpf/' + ' && git clone ' + conf.get_entry('DB','databasegiturl'))
-	
