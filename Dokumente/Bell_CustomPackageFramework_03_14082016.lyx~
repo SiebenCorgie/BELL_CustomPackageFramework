@@ -5,6 +5,9 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+\usepackage{titletoc}
+\end_preamble
 \use_default_options true
 \begin_modules
 graphicboxes
@@ -78,6 +81,56 @@ graphicboxes
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dottedcontents{section}[2.5em]{
+\backslash
+bfseries}{2.9em}{1pc}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dottedcontents{subsection}[2.5em]{}{3.3em}{1pc}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dottedcontents{subsubsection}[2.5em]{}{3.3em}{1pc}
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Title
 Besondere Lernleistung: 
@@ -181,22 +234,6 @@ thispagestyle{empty}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -206,6 +243,22 @@ status open
 \backslash
 setcounter{page}{1}
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
 
 \end_inset
 
@@ -1025,10 +1078,9 @@ Voranmerkung
 \end_layout
 
 \begin_layout Standard
-Die Dokumentation ist in der Reihnfolge in der Reihnfolge in der ich das
- Programm geschrieben habe.
- Es ist ausserdem gut eine Version des Programm-Listings griffbereit zu
- haben.
+Die Dokumentation ist in der Reihnfolge in der ich das Programm geschrieben
+ habe.
+ Es ist außerdem gut eine Version des Programm-Listings griffbereit zu haben.
  Ich werde hin und wieder indirekt bezug auf einzelne Stellen nehmen.
  Insofer erforderlich baue ich auch Listing-Stellen in den Text ein.
  
@@ -1039,17 +1091,17 @@ Erstellung des Programms
 \end_layout
 
 \begin_layout Standard
-Das Programm selbst lasse ich zuerst durch den Python-GTK wizard von Anjuta
+Das Programm selbst lasse ich zuerst durch den Python-GTK-Wizard von Anjuta
  erstellen.
  Das ist schnell durch den Dialog 
 \begin_inset Quotes gld
 \end_inset
 
-Create NEw Project
+Create New Project
 \begin_inset Quotes grd
 \end_inset
 
- mit den Einstellung für ein Python-GTK projekt getan.
+ mit den Einstellung für ein Python-GTK-Projekt getan.
  Dieser Wizard erstellt in einem Ordner die Typische Ordnerstruktur eines
  Linux-Programms.
  Nach dem Hinzufügen meiner eigenen Ordner für Dokumentation und Refernzen
@@ -1112,7 +1164,7 @@ status open
 
 \begin_layout Plain Layout
 
-# Dateien und Ordner zu Lokalen Repo hinzufügen
+# Dateien und Ordner zu lokalen Repo hinzufügen
 \end_layout
 
 \begin_layout Plain Layout
@@ -1122,7 +1174,7 @@ git add *
 
 \begin_layout Plain Layout
 
-#Dateien lokal Synchronisieren und Nachricht hinterlassen
+# Dateien lokal Synchronisieren und Nachricht hinterlassen
 \end_layout
 
 \begin_layout Plain Layout
@@ -1132,7 +1184,7 @@ git commit -a
 
 \begin_layout Plain Layout
 
-#Lokale neue Version online synchronisieren
+# Lokale neue Version online synchronisieren
 \end_layout
 
 \begin_layout Plain Layout
@@ -1173,7 +1225,7 @@ Erstellung der Grafischen Oberfläche: Hauptfenster
 \end_layout
 
 \begin_layout Standard
-In Anjuta gibt es den 
+In Anjuta gibt es 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1182,10 +1234,10 @@ Glade
 \end_inset
 
  den UI-Editor für mein GTK-Interface.
- mit ihm kann ich mithilfe verschiedener vorgegebener UI-Elementen mein
- Hauptfenster Erstellen.
+ Mit ihm kann ich mithilfe verschiedener vorgegebener UI-Elementen mein
+ Hauptfenster erstellen.
  Die einzelnen Schritte beinhalten immer das einfügen des Widgets, die Namensgeb
-ung sowie die einstellung gewünschter Parameter.
+ung sowie die Einstellung gewünschter Parameter.
  
 \end_layout
 
@@ -1198,7 +1250,7 @@ Taskbar
 \begin_inset Quotes grd
 \end_inset
 
- am oberen Fensterrand, sowie einem Vertikalen 
+ am oberen Fensterrand, sowie einem vertikalen 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1208,8 +1260,8 @@ Notebook
 
 .
  In dem Notbook werden auf der ersten Position später die verscheidenen
- Programm-Kategorien erscheinen.
- Auf der Zweiten und dritten Position ist der 
+ Programmkategorien erscheinen.
+ Auf der zweiten und dritten Position ist der 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1217,7 +1269,7 @@ Dokokumentation-Browser
 \begin_inset Quotes grd
 \end_inset
 
- under der 
+ und der 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1305,7 +1357,7 @@ Info
 \end_inset
 
  ein WebKit-Browser.
- Dieser Läd die 
+ Dieser läd die 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1335,8 +1387,8 @@ Zuerst erstelle ich mir eine eigene Konfigurationsdatei.
  Läufe hinweg behalten soll.
  Die Datei ist in Überabschnitte geteilt.
  Deren Namen sind in eckigen Klammern eingefasst.
- Die Namen der Werte folgen.
- Nach einem Gleichheitszeichen folgt der Wert.
+ Es folgen die Namen.
+ Nach einem Gleichheitszeichen kommt der Wert.
  Eine Überkategorie mit Wertenamen und Wert sähe also wie folgt aus: 
 \begin_inset listings
 inline false
@@ -1402,8 +1454,8 @@ key "key-7"
  beschriebenen API kann ich nun Dateien ein und auslesen, sowie Einträge
  ändern.
  Der Pfad zur Konfiguationsdatei ist im Programmierstatus noch lokal direkt
- im verzeichnis.
- Im installierte zustand wird die konfigurationsdatei immer im Home-Verzeichnis
+ im Verzeichnis.
+ Im installierte zustand wird die Konfigurationsdatei immer im Home-Verzeichnis
  des Nutzers liegen.
 \end_layout
 
@@ -1439,9 +1491,9 @@ save_config (schreiben der Werte des Konfigurationsmenus)
 \end_layout
 
 \begin_layout Standard
-Außerdem kommen vor die funktionen noch die Befehle um die Konfigurationsdatei
- ein zulesen.
- Dabei wird die datei in die variable 
+Außerdem kommen vor die Funktionen noch die Befehle um die Konfigurationsdatei
+ einzulesen.
+ Dabei wird die Datei in die Variable 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1449,8 +1501,8 @@ config
 \begin_inset Quotes grd
 \end_inset
 
- als ConfigParser Objekt gespeichert.
- damit kann ich auf 
+ als ConfigParser-Objekt gespeichert.
+ Damit kann ich auf 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1468,6 +1520,9 @@ read
 \end_inset
 
  die Konfigurationsdatei ein.
+ Dadurch das die Befehle am Anfang der Datei stehen werden sie ausgeführt
+ sobald dieses Modul gesartet wird.
+ Erst danach werden die Funktionen gelesen und bei Aufrufen ausgeführt.
 \end_layout
 
 \begin_layout Paragraph
@@ -1588,7 +1643,7 @@ conf
 \begin_inset Quotes grd
 \end_inset
 
- Objekt angewendet um mit den argumenten 
+ Objekt angewendet um mit den Argumenten 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1596,7 +1651,7 @@ section
 \begin_inset Quotes grd
 \end_inset
 
- udn 
+ und 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1604,8 +1659,8 @@ entry
 \begin_inset Quotes grd
 \end_inset
 
- den Korospondierenden Wert wieder zugeben.
- Dabei steht diese anweisung in der 
+ den korospondierenden Wert wieder zugeben.
+ Dabei steht diese Anweisung in der 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1670,7 +1725,7 @@ Tick-Box
 \end_layout
 
 \begin_layout Standard
-Beid der Verzeichnis-Auswahl liest das Programm den gespeicherten Pfad aus
+Bei der Verzeichnis-Auswahl liest das Programm den gespeicherten Pfad aus
  der Konfiguationsdatei.
  Danach wird die Datei über 
 \begin_inset Quotes gld
@@ -1684,7 +1739,7 @@ set_filename
 \end_layout
 
 \begin_layout Standard
-Bei den Tickboxen hat man nur die auswahl zwischen gesetztem Hacken oder
+Bei den Tickboxen hat man nur die Auswahl zwischen gesetztem Hacken oder
  leerem Feld.
  Deshalb liest das Programm die Konfigurationsdatei ein.
  Wenn an der stelle 
@@ -2322,8 +2377,65 @@ Unter-Kategorie
 Entwickler-URL
 \end_layout
 
+\begin_layout Standard
+Achtung: Bei der Funktion 
+\begin_inset Quotes gld
+\end_inset
+
+db_add_entry
+\begin_inset Quotes grd
+\end_inset
+
+ werden die Daten in einer Anderen Reihnfolge angesteuert.
+ Die Reihnfolge innerhalb der Datenbank bleibt aber wie oben beschrieben.
+\end_layout
+
 \begin_layout Subsection
 App-Anzeige
+\end_layout
+
+\begin_layout Subsubsection
+Anmerkung
+\end_layout
+
+\begin_layout Standard
+Die App-Anzeige soll an der Wurzel die Hauptkategorien anzeigen.
+ Angezigt werden Icons und ihre Namen.
+ Das Icon soll nativ aus dem System ausgelesen werden.
+ Die Namen werden aus der Konfigurationsdatei ausgelesen.
+\end_layout
+
+\begin_layout Subsubsection
+Menü Ebenen
+\end_layout
+
+\begin_layout Standard
+Wie schon erwähnt wird das Programm in der Hauptkategorie anfangen.
+ Durch einen Klick auf die gewünschte Kategorie werden die Unterkategorien
+ angezeigt.
+\end_layout
+
+\begin_layout Standard
+Die Unterkategorien sind wie die Hauptkategorien in der Konfigurationsdatei
+ festgelegt.
+ Der Grund dafür ist das erstens die Übersetzung einfacher wird.
+ Zum zweiten kann man selbst einfacher die Kategorien abändern wenn man
+ eine eigene Datenbank aufbauen möchte.
+ Der Nachteil ist, dass man zu einer Datenbank die richtige Konfigurationsdatei
+ benötigt.
+ Wenn man die falsche Konfigurationsdatei hat, werden nicht alle Kategorien
+ bzw.
+ die falschen angezeigt.
+ 
+\end_layout
+
+\begin_layout Standard
+Wenn man die gewünschte Unterkategorie gewählt hat werden einem die Programme
+ die mit dieser Kategorie und Unterkategorie in der Datenbank übereinstimmen
+ angezeigt.
+ Auch der Name und Pfad des Icons werden aus der Datenbank ausgelesen und
+ als Icon des Programms verwendet.
+ Ebenso der angezeigte Name.
 \end_layout
 
 \begin_layout Subsection

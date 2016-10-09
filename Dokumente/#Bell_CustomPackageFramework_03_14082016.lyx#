@@ -2464,8 +2464,7 @@ read_attributes
 alle Programm-Attribute aus und gibt sie an die vorgesehenen Textboxen bzw.
  Bildboxen weiter.
  Der Vorteil von diesem Vorgehen ist, dass ich nur einen Dialog-Maske erstellen
- muss, die in jedem Programm gleich angewandt wird.
- 
+ muss, die in jedem Programm gleich ange
 \end_layout
 
 \begin_layout Subsection
