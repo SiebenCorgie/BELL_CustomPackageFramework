@@ -2465,7 +2465,12 @@ alle Programm-Attribute aus und gibt sie an die vorgesehenen Textboxen bzw.
  Bildboxen weiter.
  Der Vorteil von diesem Vorgehen ist, dass ich nur einen Dialog-Maske erstellen
  muss, die in jedem Programm gleich angewandt wird.
- 
+ Ein weiterer Vorteil ist, dass der Benutzer immer das gleiche Layout sieht
+ und sich so nicht immer wieder neu orientieren muss.
+\end_layout
+
+\begin_layout Standard
+Wenn der 
 \end_layout
 
 \begin_layout Subsection

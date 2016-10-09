@@ -1784,13 +1784,13 @@ Builder
 \end_layout
 
 \begin_layout Standard
-Texte werden dabei eingelesen, indem das Objekt also Variable gespeichert
+Texte werden dabei eingelesen, indem das Objekt als Variable gespeichert
  wird.
- Danach wird dessen Textobjekt ausgelesen und dessen Wert gespeichert.
+ Danach wird dessen Textobjekt ausgelesen und der Wert gespeichert.
 \end_layout
 
 \begin_layout Standard
-Bei der Auwahl eines Verzeichnises gibt es ein eigenes Widget.
+Bei der Auwahl eines Verzeichnisses gibt es ein eigenes Widget.
  Bei diesem erfährt man den Pfad zum gewählten Verzeichnis durch die Methode
  
 \begin_inset Quotes gld
@@ -1855,7 +1855,7 @@ get_filename
 \begin_layout Standard
 Bei der Tick-Box hat man nur die Möglichkeit einen Hacken zusetzen, oder
  ihn nicht zusetzen.
- Dabei ist die schwierigkeit nur, dass wenn der Hacken gesetzt wird der
+ Dabei ist die Schwierigkeit nur, dass wenn der Hacken gesetzt wird der
  String 
 \begin_inset Quotes gld
 \end_inset
@@ -2005,7 +2005,7 @@ Curser
 \end_inset
 
  also eine Art Pfeil manipulieren.
- Nach der Manipulation werden die änderungen ähnlich wie bei Git-Hub gesammelt
+ Nach der Manipulation werden die Änderungen ähnlich wie bei Git-Hub gesammelt
  und die Datei mit den Änderungen aktualisiert.
  
 \end_layout
@@ -2028,6 +2028,10 @@ Erstellen neuer Einträge
 
 \begin_layout Enumerate
 Lesen der Einträge nach verschiedenen Aspekten
+\end_layout
+
+\begin_layout Enumerate
+Löschen einzelner Einträge
 \end_layout
 
 \begin_layout Standard
@@ -2100,7 +2104,7 @@ Die Datenbank im Dateiensystem umfasst nur eine Datei und zwei Ordner.
 \begin_layout Standard
 Beim Erstellen werden die Ordner sowie die Datei erstellt.
  Dabei kann bei bedarf die neue Datenbank direkt in die Konfigurationsdatei
- eingetragen werden und damit aktiv werden.
+ eingetragen und damit aktiviert werden.
  Der angebene Name in dem Erstellungs-Dialog enstpricht dem Name der erstellten
  Datenbank.
 \end_layout
@@ -2112,7 +2116,7 @@ Es ist zu beachten, dass Namen auf Linux nicht die Art der Datei beinhalten
 \begin_inset Quotes gld
 \end_inset
 
-Datenabnk.sh
+Datenbank.sh
 \begin_inset Quotes grd
 \end_inset
 
@@ -2150,7 +2154,7 @@ Das Erstellen neuer Einträge ist denkbar einfach.
 
 \begin_layout Standard
 Eine kleine Außnahme machen hier die Auswahlen des Screenshots und des Symbols.
- Bei der aktivierung kann man hier eine Datei auswählen.
+ Bei der Aktivierung kann man hier eine Datei auswählen.
 \end_layout
 
 \begin_layout Standard
@@ -2179,8 +2183,8 @@ CPFDatabase.py
 \begin_inset Quotes grd
 \end_inset
 
- anhand des ausgewählten Eintrags in dem Klappmenü der Hauptkategorie aktualieis
-ert.
+ anhand des ausgewählten Eintrags in dem Klappmenü der Hauptkategorie aktualisie
+rt.
  Dabei wird der aktive Eintrag gelesen.
  Danach wird mithilfe des Eintrages in der Konfigurationsdatei nach allen
  möglichen Unterkategorien gesucht.
@@ -2229,15 +2233,15 @@ INSERT
 
 \begin_layout Standard
 Auch hier gibt es wieder zwei Besonderheiten.
- Die erste ist, dass die Funktion versucht den Screenshot und das Symbol
+ Die Erste ist, dass die Funktion versucht den Screenshot und das Symbol
  in ihren jeweiligen Ordner zu verschieben.
  Wenn dies schief läuft wird ein Fehler-Dialog angezeigt.
  
 \end_layout
 
 \begin_layout Standard
-Wenn versucht wird einen Eintrag hinzu zu fügen, allerdings ein Wert nicht
- Spezifiziert ist, wird auch ein Fehler-Dialog angeziegt.
+Wird einen Eintrag hinzu gefügen und ein Wert nicht Spezifiziert ist, wird
+ auch ein Fehler-Dialog angeziegt.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2387,7 +2391,7 @@ db_add_entry
 \end_inset
 
  werden die Daten in einer Anderen Reihnfolge angesteuert.
- Die Reihnfolge innerhalb der Datenbank bleibt aber wie oben beschrieben.
+ Die Reihnfolge innerhalb der Datenbank bleibt aber wie in der Liste beschrieben.
 \end_layout
 
 \begin_layout Subsection
@@ -2436,6 +2440,32 @@ Wenn man die gewünschte Unterkategorie gewählt hat werden einem die Programme
  Auch der Name und Pfad des Icons werden aus der Datenbank ausgelesen und
  als Icon des Programms verwendet.
  Ebenso der angezeigte Name.
+\end_layout
+
+\begin_layout Standard
+Wenn man eines der angezeigten Programme anklickt öffnet sich der Programm-Dialo
+g.
+ Bevor er angezeigt wird ließt er über 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+read_attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+alle Programm-Attribute aus und gibt sie an die vorgesehenen Textboxen bzw.
+ Bildboxen weiter.
+ Der Vorteil von diesem Vorgehen ist, dass ich nur einen Dialog-Maske erstellen
+ muss, die in jedem Programm gleich angewandt wird.
+ 
 \end_layout
 
 \begin_layout Subsection
