@@ -229,15 +229,13 @@ def db_add_entry(builder):
 	db.close()
 	print('Added DatabaseEntry')
 
-#Lesen eines ganzen Datensatzes oder des namens
-def db_read(subcategory, bAll):
+#Lesen aller programm einer Unterkategorie
+def db_read(subcategory):
 	global c
 	global db
 	db_connect()
-	if bAll != True:
-		c.execute('SELECT name FROM CPFDB WHERE subcategory=?', (str(subcategory),))
-	else: 		
-		c.execute('SELECT * FROM CPFDB WHERE subcategory=?', (str(subcategory),))
+	
+	c.execute('SELECT name FROM CPFDB WHERE subcategory=?', (str(subcategory),))
 
 	CleanOutput = []
 	output = c.fetchall()

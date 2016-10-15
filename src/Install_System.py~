@@ -14,7 +14,7 @@ SupportDebian = ('debian','deepin')
 #Starten des installier odre deinstalliervorgangs
 def Install(ProgramName, Uninstall):
 	#Get all ProgramData from DatabaseEntry
-	ProgramData = db.read_atributes(ProgramName)
+	ProgramData = db.read_attributes(ProgramName)
 	#read release information
 	Distribution = SI.execute('cat /etc/*-release',True)
 	#Distribution[1]
@@ -67,6 +67,8 @@ def Install(ProgramName, Uninstall):
 #Installation oder deinstallation anhand der Parameter
 def execute_install(Name, Distribution,Uninstall):
 
+	username = conf.get_entry("Installation","installusername")
+
 	#nachrricht wenn deinstallieren
 	if Uninstall == True:
 		print('Uninstalling: '  + Name)
@@ -75,10 +77,10 @@ def execute_install(Name, Distribution,Uninstall):
 	print('Name: ' + Name + ' AND Distribution is: ' + Distribution)
 	if Distribution == 'debian':
 		if Distribution == 'debian' and Uninstall == False:
-			output = SI.execute('pkexec apt-get install -y ' + Name, True)
+			output = SI.execute('pkexec --user ' + username +  ' apt-get install -y ' + Name, True)
 		
 		elif Distribution == 'debian' and Uninstall == True:
-			output = SI.execute('pkexec apt-get remove -y ' + Name, True)
+			output = SI.execute('pkexec --user ' + username + ' apt-get remove -y ' + Name, True)
 		
 		else:
 			print('Dont uninstall or install')
@@ -86,10 +88,10 @@ def execute_install(Name, Distribution,Uninstall):
 	#Ubuntu
 	elif Distribution == 'ubuntu':
 		if Distribution == 'ubuntu' and Uninstall == False:
-			output = SI.execute('pkexec apt-get install -y ' + Name, True)
+			output = SI.execute('pkexec --user ' + username + ' apt-get install -y ' + Name, True)
 		
 		elif Distribution == 'ubuntu' and Uninstall == True:
-			output = SI.execute('pkexec apt-get remove -y ' + Name, True)	
+			output = SI.execute('pkexec --user ' + username + ' apt-get remove -y ' + Name, True)	
 		
 		else:
 			print('Dont uninstall or install')
@@ -97,9 +99,9 @@ def execute_install(Name, Distribution,Uninstall):
 	#Arch
 	elif Distribution == 'arch':
 		if Distribution == 'arch' and Uninstall == False:
-			output = SI.execute('pkexec pacman -S ' + Name + ' --noconfirm' , True)
+			output = SI.execute('pkexec --user ' + username + ' pacman -S ' + Name + ' --noconfirm' , True)
 		elif Distribution == 'arch' and Uninstall == True:
-			output = SI.execute('pkexec pacman -Rs ' + Name + ' --noconfirm' , True)			
+			output = SI.execute('pkexec --user ' + username + ' pacman -Rs ' + Name + ' --noconfirm' , True)			
 
 			
 	else:

@@ -96,6 +96,7 @@ class GUI:
 		InstUI.set_to_start(self.builder)
 		
 #init end
+		print("init end")
 		window.show_all()
 
 
@@ -196,7 +197,7 @@ class GUI:
 		conf.save_config(self.builder)
 		self.Preferences.hide()
 		
-#Tools
+#Tools Database
 #_______________________________________________________________________________
 #add database entry
 	def on_M_Tools_AddDatabaseEntry_activate (self, menuitem):
@@ -256,22 +257,6 @@ class GUI:
 		VTEDialog = self.builder.get_object('VTE_Dialog')
 		VTEDialog.hide()
 
-
-		
-#Help___________________________________________________________________________		
-#Open CPF Documentation
-	def on_M_Help_OpenCPFDocs_activate (self, menuitem):
-		SI.execute('xdg-open ' + conf.get_entry('Internet','cpf_docurl') , False)
-
-#Open Custom Documentation
-	def on_M_Help_OpenCustomDocs_activate (self, menuitem):
-		SI.execute('xdg-open ' + conf.get_entry('Internet','docurl'), False)
-
-
-
-
-
-#_______________________________________________________________________________
 #CreateDatabase
 	def on_M_Tools_AddDB_activate (self, menuitem):
 		self.NewDBWin = self.builder.get_object('CreateNewDatabase')
@@ -285,6 +270,32 @@ class GUI:
 	def on_CND_Add_clicked (self, button):
 		db.add_db(self.builder)
 		self.NewDBWin.hide()
+		
+		
+#Help___________________________________________________________________________		
+#Open CPF Documentation
+	def on_M_Help_OpenCPFDocs_activate (self, menuitem):
+		SI.execute('xdg-open ' + conf.get_entry('Internet','cpf_docurl') , False)
+
+#Open Custom Documentation
+	def on_M_Help_OpenCustomDocs_activate (self, menuitem):
+		SI.execute('xdg-open ' + conf.get_entry('Internet','docurl'), False)
+
+
+
+
+#Else
+#_______________________________________________________________________________
+#Show AboutDialog
+
+	def on_AboutDialogButton_activate (self, menuitem):
+		AboutDialog = self.builder.get_object('AboutDialog')
+		AboutDialog.show_all()
+
+#CloseAboutDialog
+	def on_AboutOK_clicked (self, button):
+		AboutDialog = self.builder.get_object('AboutDialog')
+		AboutDialog.hide()
 
 
 

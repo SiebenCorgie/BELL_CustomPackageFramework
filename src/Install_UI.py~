@@ -105,6 +105,7 @@ def Go_Down(builder,iconview,treepath):
 
 	
 	#get index of seleted List Item
+
 	SelectedMain = Plist[treepath.get_indices()[0]]
 		
 	if stage !='Prog':
@@ -160,16 +161,8 @@ def go_Sub(builder,iconview,treepath,SelectedMain):
 	#Clear Icons
 	liststore = iconview.get_model()
 	liststore.clear()
-
-	#get list from selected main
-	ProgramListDirty = db.read_attributes('*')
-	ProgramList = []
-	for Program in ProgramListDirty:
-		if SelectedSubCat == Program[10]:
-			ProgramList.append(Program[1])
-			print('Add Entry to SUb List: ' + Program[1])
 	
-	#ProgramList = db.db_read(SelectedSubCat, False)
+	ProgramList = db.db_read(SelectedSubCat)
 
 	for i in ProgramList:
 		pixbuf = Pixbuf.new_from_file_at_size(str(conf.get_entry('DB','dblocation') + db.read_attributes(i)[8]),64,64)

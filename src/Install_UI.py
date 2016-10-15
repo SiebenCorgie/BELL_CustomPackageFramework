@@ -105,6 +105,7 @@ def Go_Down(builder,iconview,treepath):
 
 	
 	#get index of seleted List Item
+
 	SelectedMain = Plist[treepath.get_indices()[0]]
 		
 	if stage !='Prog':
@@ -299,7 +300,7 @@ def go_back(builder):
 		
 		stage = 'Sub'
 		ProgIconview.show_all()
-		print('Showing Subcategorie')		
+		print('Showing Subcategorie from back')		
 
 #WebSeite anzeigen
 def show_web_page():

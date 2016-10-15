@@ -243,7 +243,6 @@ def db_read(subcategory):
 	for i in output:
 		i = str(i)[2:]
 		i = str(i)[:-3]
-		print('out: ' + str(i))
 		CleanOutput.append(i)
 	
 	return CleanOutput
@@ -257,8 +256,6 @@ def read_attributes(name):
 	returnvalue = None
 	c.execute('SELECT * FROM CPFDB WHERE name=?', (name,))
 	returnvalue = c.fetchone()
-
-	print('returnvalue: ' + str(returnvalue))	
 	return returnvalue
 
 
