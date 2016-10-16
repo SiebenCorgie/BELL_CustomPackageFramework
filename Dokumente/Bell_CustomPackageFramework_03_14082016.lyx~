@@ -35,7 +35,16 @@ graphicboxes
 \float_placement b
 \paperfontsize 12
 \spacing onehalf
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize a4paper
 \use_geometry true
 \use_package amsmath 1
@@ -771,7 +780,19 @@ kurze Erklärung: https://de.wikipedia.org/wiki/Toolkit
  ist auf Linux zu Verständigung zwischen dem Display-Server (z.B.
  X11 oder Wayland) und dem Benutzer zuständig.
  Es stellt verschiedene Elemente bereit, die zusammen das fertige Programm-Inter
-face ergeben (siehe Abb.1).
+face ergeben (siehe Abb.1)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Quelle: https://en.wikipedia.org/wiki/File:Schema_of_the_layers_of_the_graphical_u
+ser_interface.svg#/media/File:Schema_der_Schichten_der_grafischen_Benutzeroberfl%
+C3%A4che.svg , Shmuel Csaba Otto Traian, 29.10.2013
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -822,19 +843,13 @@ status open
 
 \end_layout
 
-\begin_layout Plain Layout
-Quelle: https://en.wikipedia.org/wiki/File:Schema_of_the_layers_of_the_graphical_u
-ser_interface.svg#/media/File:Schema_der_Schichten_der_grafischen_Benutzeroberfl%
-C3%A4che.svg , Shmuel Csaba Otto Traian, 29.10.2013
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-.Ich habe mich für GTK+
+Ich habe mich für GTK+
 \begin_inset Foot
 status open
 
@@ -2887,7 +2902,7 @@ Data
 \end_layout
 
 \begin_layout Standard
-Die Werte weden dann an die vorgesehen Stellen in der Programm-Dialog Maske
+Die Werte werden dann an die vorgesehen Stellen in der Programm-Dialog Maske
  eingesetzt.
  Der Vorteil von diesem Vorgehen ist, dass ich nur einen Dialog-Maske erstellen
  muss, die in jedem Programm gleich angewandt wird.
@@ -2913,11 +2928,11 @@ True
 \end_inset
 
  gesetzt.
- Dadur verhindert das Programm, dass die eine Mask mit anderem Inhalt nocheinmal
- geladen wird.
+ Dadurch verhindert das Programm, dass die eine Maske mit anderem Inhalt
+ noch einmal geladen wird.
  Man kann sich noch durch die Kategorien klicken.
- Wenn man allerdings versucht ein Programm-Dialog zuöffnen bekommt man einen
- Error-Dialog angezeigt.
+ Wenn man allerdings versucht ein Programm-Dialog zu öffnen bekommt man
+ einen Error-Dialog angezeigt.
  
 \end_layout
 
@@ -2990,7 +3005,7 @@ set_to_start
 \begin_inset Quotes grd
 \end_inset
 
- ausführen um damit die Wurze zu laden.
+ ausführen um damit die Wurzel zu laden.
  Also die Ansicht der Hauptkategorien.
 \end_layout
 

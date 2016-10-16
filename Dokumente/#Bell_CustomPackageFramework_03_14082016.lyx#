@@ -780,19 +780,7 @@ kurze Erklärung: https://de.wikipedia.org/wiki/Toolkit
  ist auf Linux zu Verständigung zwischen dem Display-Server (z.B.
  X11 oder Wayland) und dem Benutzer zuständig.
  Es stellt verschiedene Elemente bereit, die zusammen das fertige Programm-Inter
-face ergeben (siehe Abb.1)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Quelle: https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Schema_der_Schic
-hten_der_grafischen_Benutzeroberfl%C3%A4che.svg/560px-Schema_der_Schichten_der_gr
-afischen_Benutzeroberfl%C3%A4che.svg.png , Shmuel Csaba Otto Traian, 29.10.2013
-\end_layout
-
-\end_inset
-
-.
+face ergeben (siehe Abb.1).
  
 \end_layout
 
@@ -849,7 +837,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Ich habe mich für GTK+
+.Ich habe mich für GTK+
 \begin_inset Foot
 status open
 
