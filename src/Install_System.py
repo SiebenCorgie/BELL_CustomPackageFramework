@@ -23,7 +23,6 @@ def Install(ProgramName, Uninstall):
 		if 'ID=' in name:
 			
 			IDName = name
-			break
 			
 	IDName = IDName[3:]
 	print('ID IS: ' + IDName)
