@@ -20,10 +20,25 @@ def Install(ProgramName, Uninstall):
 	#Distribution[1]
 	Distribution = Distribution.split('\n')
 	for name in Distribution:
-		if 'ID=' in name:
+		for a in SupportArch:
+			if 'ID=' + a in name:
+				IDName = name
+				print("We are Arch based")
+
+		for u in SupportUbuntu:
+			if 'ID=' + u in SupportUbuntu:
+				IDName = u
+				print("We are Ubuntu based")
+
+		for d in SupportDebian:
+			if 'ID=' + d in name:
+				IDName = name
+				print("We are Debian based")
+
+		
+		#if 'ID=' + in name:
 			
 			IDName = name
-			break
 			
 	IDName = IDName[3:]
 	print('ID IS: ' + IDName)
