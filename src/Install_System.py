@@ -5,7 +5,7 @@ import CPFDatabase as db
 import CPFFeedback as feedback
 
 SupportArch = ('arch','manjaro','antergos')
-SupportUbuntu = ('ubuntu','"elementary"','lubuntu','xubuntu','kubuntu')
+SupportUbuntu = ('ubuntu','elementary','lubuntu','xubuntu','kubuntu')
 SupportDebian = ('debian','deepin')
 
 
@@ -13,12 +13,17 @@ SupportDebian = ('debian','deepin')
 #Herausfinden der Distribution, aufrufen des richtigen eintrags in der Datenbank
 #Starten des installier odre deinstalliervorgangs
 def Install(ProgramName, Uninstall):
+	
 	#Get all ProgramData from DatabaseEntry
 	ProgramData = db.read_attributes(ProgramName)
+
+	
 	#read release information
 	Distribution = SI.execute('cat /etc/*-release',True)
-	#Distribution[1]
 	Distribution = Distribution.split('\n')
+
+	#Teste in welchem der eintraege  'ID=' + Name einer supporteten Distribution
+	#stehe.
 	for name in Distribution:
 		for a in SupportArch:
 			if 'ID=' + a in name:
@@ -34,11 +39,6 @@ def Install(ProgramName, Uninstall):
 			if 'ID=' + d in name:
 				IDName = name
 				print("We are Debian based")
-
-		
-		#if 'ID=' + in name:
-			
-		#	IDName = name
 			
 	IDName = IDName[3:]
 	print('ID IS: ' + IDName)
