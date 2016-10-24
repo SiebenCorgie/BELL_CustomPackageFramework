@@ -130,6 +130,13 @@ class GUI:
 	def on_ADAV_OK_clicked (self, button):
 		InstUI.CloseView(self.builder)
 
+#Destroy App-View
+	def on_ApplicationDialog_Install_destroy (self, widget):
+		print("Destroy Appview")
+		InstUI.CloseAppView(self.builder)
+
+
+		
 #CloseAppView
 	def on_AD_Close_clicked (self, button):
 		InstUI.CloseAppView(self.builder)

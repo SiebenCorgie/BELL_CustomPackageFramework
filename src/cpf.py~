@@ -130,6 +130,12 @@ class GUI:
 	def on_ADAV_OK_clicked (self, button):
 		InstUI.CloseView(self.builder)
 
+#Destroy App-View
+	def on_ApplicationDialog_Install_destroy (self, widget):
+		InstUI.CloseAppView(self.builder)
+
+
+		
 #CloseAppView
 	def on_AD_Close_clicked (self, button):
 		InstUI.CloseAppView(self.builder)
@@ -205,7 +211,7 @@ class GUI:
 		
 #Tools Database
 #_______________________________________________________________________________
-#add database entry
+#add database entry 'show window'
 	def on_M_Tools_AddDatabaseEntry_activate (self, menuitem):
 		self.db_add_Dialog = self.builder.get_object('DB_Add_Win')
 		feedback.status_push(conf.get_entry("Status","dbadd"))
