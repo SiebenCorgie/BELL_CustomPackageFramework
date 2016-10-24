@@ -15,12 +15,13 @@ def get_folder_content(directory):
 		output = subprocess.check_output('ls ' + directory, shell=True)
 		#trenne byte-string stream an leerzeichen
 		bytelist = output.split()
+		
 		#convertiere byte items zu strin liste
-
 		#muss eigene aufzeilung nehmen
 		for entry in range(len(bytelist)):
 			bytesring = bytelist[entry]
 			EndString = bytesring.decode('utf-8')
+			
 			#zu liste hinzufügen
 			content.append(EndString)
 			
@@ -35,8 +36,10 @@ def get_folder_content(directory):
 def execute(command, passoutput):
 	subprocess.call(command, shell=True)
 	if passoutput == True:
+		
 		#convert to UTF
 		returnstring = subprocess.check_output(command, shell=True)
+		
 		#remove \n from last part of string
 		returnstring = returnstring.decode('utf-8')[:-1]
 		print('returnstring: ' + returnstring)

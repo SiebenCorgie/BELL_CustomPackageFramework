@@ -2,7 +2,7 @@ import cpf
 import SystemInteraction as SI
 import CPFConf as conf
 import CPFDatabase as db
-
+import CPFFeedback as feedback
 
 SupportArch = ('arch','manjaro','antergos')
 SupportUbuntu = ('ubuntu','"elementary"','lubuntu','xubuntu','kubuntu')
@@ -22,6 +22,8 @@ def Install(ProgramName, Uninstall):
 	for name in Distribution:
 		if 'ID=' in name:
 			IDName = name
+		else:
+			IDName = "Not Found"
 			
 	IDName = IDName[3:]
 	print('ID IS: ' + IDName)
@@ -100,8 +102,11 @@ def execute_install(Name, Distribution,Uninstall):
 	elif Distribution == 'arch':
 		if Distribution == 'arch' and Uninstall == False:
 			output = SI.execute('pkexec --user ' + username + ' pacman -S ' + Name + ' --noconfirm' , True)
+
+			
 		elif Distribution == 'arch' and Uninstall == True:
-			output = SI.execute('pkexec --user ' + username + ' pacman -Rs ' + Name + ' --noconfirm' , True)			
+			output = SI.execute('pkexec --user ' + username + ' pacman -Rs ' + Name + ' --noconfirm' , True)
+
 
 			
 	else:

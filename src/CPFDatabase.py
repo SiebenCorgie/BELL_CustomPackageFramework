@@ -2,6 +2,7 @@ import cpf
 import CPFConf as conf
 import CPFWeb as web
 import SystemInteraction as SI
+import CPFFeedback as feedback
 
 import gi.repository
 gi.require_version('Gtk', '3.0')

@@ -1,5 +1,6 @@
 #Vte interaction for CPF
 
+import CPFFeedback as feedback
 
 #Set VTE Status
 VTEStatus = False
@@ -91,6 +92,8 @@ def upload_database(builder):
 	else:
 		VTEDialog = builder.get_object('VTE_Dialog')
 		VTEDialog.show_all()
+
+	feedback.status_push(conf.get_entry("Status","uploaddb"))
 	
 	VTE_execute('cd ' + conf.get_entry('DB','dblocation') + ' && git add * && git commit -a && git push')
 
@@ -109,6 +112,8 @@ def refresh_database(builder):
 
 	SI.execute('cd ~/.local/share/ && mkdir cpf',False)
 
+	feedback.status_push(conf.get_entry("Status","refreshdb"))
+
 	VTE_execute('cd ' + conf.get_entry('DB','dblocation') + ' && git pull')
 
 
@@ -126,4 +131,9 @@ def download_database(builder):
 		
 	SI.execute('cd ~/.local/share/ && mkdir cpf',False)
 
+	feedback.status_push(conf.get_entry("Status","downloaddb"))
+
 	VTE_execute('cd ~/.local/share/cpf/' + ' && git clone ' + conf.get_entry('DB','databasegiturl'))
+
+
+	

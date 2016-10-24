@@ -63,6 +63,9 @@ Please close it to open a new one</property>
         </child>
       </object>
     </child>
+    <child>
+      <placeholder/>
+    </child>
   </object>
   <object class="GtkAboutDialog" id="AboutDialog">
     <property name="can_focus">False</property>
@@ -117,6 +120,9 @@ Please close it to open a new one</property>
           <placeholder/>
         </child>
       </object>
+    </child>
+    <child>
+      <placeholder/>
     </child>
   </object>
   <object class="GtkDialog" id="CreateNewDatabase">
@@ -253,6 +259,9 @@ Please close it to open a new one</property>
         </child>
       </object>
     </child>
+    <child>
+      <placeholder/>
+    </child>
   </object>
   <object class="GtkDialog" id="DB_ErrorMessage">
     <property name="can_focus">False</property>
@@ -335,6 +344,9 @@ filemanager. This can cause bugs.</property>
           </packing>
         </child>
       </object>
+    </child>
+    <child>
+      <placeholder/>
     </child>
   </object>
   <object class="GtkFileFilter" id="ImageFilter">
@@ -659,6 +671,9 @@ filemanager. This can cause bugs.</property>
           </packing>
         </child>
       </object>
+    </child>
+    <child>
+      <placeholder/>
     </child>
   </object>
   <object class="GtkWindow" id="Preferences">
@@ -1194,6 +1209,9 @@ filemanager. This can cause bugs.</property>
         </child>
       </object>
     </child>
+    <child type="titlebar">
+      <placeholder/>
+    </child>
   </object>
   <object class="GtkDialog" id="Remove_Entry">
     <property name="can_focus">False</property>
@@ -1329,6 +1347,9 @@ filemanager. This can cause bugs.</property>
         </child>
       </object>
     </child>
+    <child>
+      <placeholder/>
+    </child>
   </object>
   <object class="GtkDialog" id="VTE_Dialog">
     <property name="can_focus">False</property>
@@ -1387,6 +1408,9 @@ filemanager. This can cause bugs.</property>
           </packing>
         </child>
       </object>
+    </child>
+    <child>
+      <placeholder/>
     </child>
   </object>
   <object class="GtkWindow" id="window">
@@ -1928,8 +1952,8 @@ filemanager. This can cause bugs.</property>
             <property name="margin_end">10</property>
             <property name="margin_top">6</property>
             <property name="margin_bottom">6</property>
-            <property name="orientation">vertical</property>
             <property name="spacing">2</property>
+            <property name="homogeneous">True</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -1938,6 +1962,9 @@ filemanager. This can cause bugs.</property>
           </packing>
         </child>
       </object>
+    </child>
+    <child type="titlebar">
+      <placeholder/>
     </child>
   </object>
   <object class="GtkApplicationWindow" id="ApplicationDialog_Install">
@@ -1984,6 +2011,7 @@ filemanager. This can cause bugs.</property>
                   <object class="GtkImage" id="AD_Symbol">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="stock">gtk-cdrom</property>
                     <property name="icon_size">6</property>
                   </object>
                   <packing>
@@ -2063,7 +2091,7 @@ filemanager. This can cause bugs.</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="icon_name">applications-other</property>
-                        <property name="icon_size">3</property>
+                        <property name="icon_size">6</property>
                       </object>
                       <packing>
                         <property name="expand">True</property>
@@ -2181,6 +2209,9 @@ filemanager. This can cause bugs.</property>
           </packing>
         </child>
       </object>
+    </child>
+    <child type="titlebar">
+      <placeholder/>
     </child>
   </object>
 </interface>

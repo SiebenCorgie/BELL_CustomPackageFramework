@@ -34,6 +34,7 @@ import SystemInteraction as SI
 import CPFDatabase as db
 import Install_UI as InstUI
 import VTE_Interaction as vte
+import CPFFeedback as feedback
 
 #Je nach einstellung WebKit importieren
 if conf.get_entry('Internet','online') == 'True':
@@ -57,6 +58,9 @@ class GUI:
 
 		window = self.builder.get_object('window')
 
+#Zeige CPFFeedback builder Objekt for der UI initialisierung
+		feedback.set_builder(self.builder)
+		
 #Documentation Browser
 		if conf.get_entry('Internet','Online') == 'True':
 			self.DocURL = conf.get_entry('Internet','docurl')
@@ -92,6 +96,8 @@ class GUI:
 		else:
 			self.FastOnlineSwitch.set_active(False)
 
+
+		
 #class variables
 		InstUI.set_to_start(self.builder)
 		
@@ -202,8 +208,10 @@ class GUI:
 #add database entry
 	def on_M_Tools_AddDatabaseEntry_activate (self, menuitem):
 		self.db_add_Dialog = self.builder.get_object('DB_Add_Win')
+		feedback.status_push(conf.get_entry("Status","dbadd"))
 		db.db_add_Init(self.builder)
 		self.db_add_Dialog.show_all()
+		
 #update Sub Category
 	def on_DB_A_Main_changed (self, combobox):
 		db.update_sub_category(self.builder)
@@ -211,6 +219,7 @@ class GUI:
 #add entry
 	def on_DB_Add_Add_clicked (self, button):
 		db.db_add_entry(self.builder)
+		feedback.status_push(conf.get_entry("Status","dbadded"))
 		self.db_add_Dialog.hide()
 
 #close db add entry dialog
@@ -288,6 +297,7 @@ class GUI:
 #_______________________________________________________________________________
 #Show AboutDialog
 
+	def on_AboutDialogButton_activate (self, menuitem):
 		AboutDialog = self.builder.get_object('AboutDialog')
 		AboutDialog.show_all()
 

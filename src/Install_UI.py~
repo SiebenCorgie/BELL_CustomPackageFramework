@@ -3,6 +3,7 @@ import SystemInteraction as SI
 import CPFConf as conf
 import CPFDatabase as db
 import Install_System as install
+import CPFFeedback as feedback
 
 import gi
 gi.require_version('Gtk','3.0')
@@ -82,6 +83,7 @@ def set_to_start(builder):
 		liststore.append([pixbuf, icon])
 
 	view.show_all()
+	feedback.status_push(conf.get_entry("Status","menutop"))
 
 
 #Funktion wenn Icon geklickt wird
@@ -131,6 +133,7 @@ def Go_Down(builder,iconview,treepath):
 			liststore.append([pixbuf, entry])
 		stage = 'Sub'
 		iconview.show_all()
+		feedback.status_push(conf.get_entry("Status","menusub"))
 		print('Showing Subcategorie')
 
 	#Umgebung mit Programmen der Unterkategorie Laden
@@ -171,6 +174,8 @@ def go_Sub(builder,iconview,treepath,SelectedMain):
 
 
 	stage = 'Prog'
+
+	feedback.status_push(conf.get_entry("Status","menuprogram"))
 
 #Zeigen des Programmfensters mit allen informationen
 def show_app(builder,iconview,treepath):
@@ -300,7 +305,8 @@ def go_back(builder):
 		
 		stage = 'Sub'
 		ProgIconview.show_all()
-		print('Showing Subcategorie')		
+		feedback.status_push(conf.get_entry("Status","menusub"))
+		print('Showing Subcategorie from back')		
 
 #WebSeite anzeigen
 def show_web_page():
