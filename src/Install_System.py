@@ -16,23 +16,24 @@ def Install(ProgramName, Uninstall):
 	#Get all ProgramData from DatabaseEntry
 	ProgramData = db.read_attributes(ProgramName)
 	#read release information
-	Distribution = SI.execute('cat /etc/*-release',True)
+	Distribution = SI.execute('cat /etc/os-release',True)
 	#Distribution[1]
 	Distribution = Distribution.split('\n')
+	IDName = "notfound"
 	for name in Distribution:
 		for a in SupportArch:
 			if 'ID=' + a in name:
-				IDName = name
+				IDName = a
 				print("We are Arch based")
 
 		for u in SupportUbuntu:
-			if 'ID=' + u in SupportUbuntu:
+			if 'ID=' + u in name:
 				IDName = u
 				print("We are Ubuntu based")
 
 		for d in SupportDebian:
 			if 'ID=' + d in name:
-				IDName = name
+				IDName = d
 				print("We are Debian based")
 
 		
@@ -40,7 +41,7 @@ def Install(ProgramName, Uninstall):
 			
 		#	IDName = name
 			
-	IDName = IDName[3:]
+	#IDName = IDName[3:]
 	print('ID IS: ' + IDName)
 
 	#Suche nach Support
