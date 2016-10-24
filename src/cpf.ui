@@ -267,6 +267,7 @@ Please close it to open a new one</property>
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Please Check Your Entrys!</property>
     <property name="type_hint">dialog</property>
+    <property name="deletable">False</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="DB_EM_Box">
         <property name="can_focus">False</property>
