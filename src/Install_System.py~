@@ -21,7 +21,11 @@ def Install(ProgramName, Uninstall):
 	Distribution = Distribution.split('\n')
 	for name in Distribution:
 		if 'ID=' in name:
+			
 			IDName = name
+			break
+		else:
+			IDName = "NotFound"
 			
 	IDName = IDName[3:]
 	print('ID IS: ' + IDName)
