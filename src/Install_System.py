@@ -19,18 +19,17 @@ def Install(ProgramName, Uninstall):
 
 	
 	#read release information
-<<<<<<< HEAD
+
 	Distribution = SI.execute('cat /etc/*-release',True)
 	Distribution = Distribution.split('\n')
 
 	#Teste in welchem der eintraege  'ID=' + Name einer supporteten Distribution
 	#stehe.
-=======
 	Distribution = SI.execute('cat /etc/os-release',True)
 	#Distribution[1]
 	Distribution = Distribution.split('\n')
 	IDName = "notfound"
->>>>>>> 3a9cf275bf9f854fdbac6688a6bbb1f027ae76b4
+
 	for name in Distribution:
 		for a in SupportArch:
 			if 'ID=' + a in name:
@@ -47,7 +46,6 @@ def Install(ProgramName, Uninstall):
 				IDName = d
 				print("We are Debian based")
 			
-	#IDName = IDName[3:]
 	print('ID IS: ' + IDName)
 
 	#Suche nach Support
