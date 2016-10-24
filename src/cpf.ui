@@ -694,6 +694,7 @@ Please close it to open a new one</property>
     <property name="window_position">center</property>
     <property name="default_width">780</property>
     <property name="default_height">640</property>
+    <property name="deletable">False</property>
     <property name="attached_to">window</property>
     <property name="show_menubar">False</property>
     <signal name="destroy" handler="on_ApplicationDialog_Install_destroy" swapped="no"/>
