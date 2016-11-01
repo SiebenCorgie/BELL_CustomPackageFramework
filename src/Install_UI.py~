@@ -27,11 +27,8 @@ def set_to_start(builder):
 
 	#give log output
 	print('OpeningMain')
-	
-	if conf.get_entry('main','language') == 'GER':
-		Plist = conf.get_entry('DB','germain')
-	else:
-		Plist = conf.get_entry('DB','enmain')
+
+	Plist = conf.get_entry('DB','main')
 
 	Plist=Plist.split(',')
 	liststore = Gtk.ListStore(Pixbuf, str)
@@ -41,39 +38,13 @@ def set_to_start(builder):
 	view.set_text_column(1)
 
 	for icon in (Plist):
-		if conf.get_entry('main','language') == 'GER':
-			if icon == 'Video/Foto':
-				medianame = 'multimedia'
-			elif icon == 'Entwicklung':
-				medianame = 'development'
-			elif icon == 'Bildung':
-				medianame = 'education'
-			elif icon == 'Spiele':
-				medianame = 'games'
-			elif icon == 'Grafik':
-				medianame = 'graphics'
-			elif icon == 'Internet':
-				medianame = 'internet'
-			elif icon == 'Arbeit':
-				medianame = 'office'
-			elif icon == 'Wissenschaft':
-				medianame == 'science'
-			elif icon == 'System':
-				medianame = 'system'
-			elif icon == 'Werkzeuge':
-				medianame = 'tools'
-			elif icon == 'Verschiedenes':
-				medianame = 'other'
-			else:
-				medianame = 'other'
-
+		
+		if icon == 'Video/Photo':
+			medianame = 'multimedia'
+		elif icon == 'Misc':
+			medianame = 'other'
 		else:
-			if icon == 'Video/Photo':
-				medianame = 'multimedia'
-			elif icon == 'Misc':
-				medianame = 'other'
-			else:
-				medianame = icon.lower()
+			medianame = icon.lower()
 
 		#load icon of category
 		try:
@@ -93,7 +64,6 @@ def Go_Down(builder,iconview,treepath):
 	global SelectedMain
 
 	#get list
-	global Plist
 	global SubCategoryList
 
 	
@@ -117,11 +87,7 @@ def Go_Down(builder,iconview,treepath):
 
 	#Umgebung mit Untekategorie Laden
 	if stage == 'root':
-		#get list of all Categories
-		if conf.get_entry('main','language') == 'GER':
-			SubCategoryList = conf.get_entry('DBSub','ger' + SelectedMain.lower())
-		else:
-			SubCategoryList = conf.get_entry('DBSub','en' + SelectedMain.lower())
+		SubCategoryList = conf.get_entry('DBSub'SelectedMain.lower())
 			
 		SubCategoryList = SubCategoryList.split(',')
 
@@ -313,6 +279,7 @@ def show_web_page():
 	global ProgramName
 	webpage = db.read_attributes(ProgramName)
 	webpage = webpage[11]
+	feedback.status_push(conf.get_entry("Status","showinternet"))
 	SI.execute('xdg-open ' + webpage, False)
 	
 	
