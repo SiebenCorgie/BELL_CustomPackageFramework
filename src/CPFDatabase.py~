@@ -72,8 +72,6 @@ def update_sub_category(builder):
 #Datenbankerstellung
 def add_db(builder):
 
-	feedback.status_push(conf.get_entry("Status","dbadd"))
-
 	locationL = builder.get_object('CND_Locatio')
 	nameL = builder.get_object('CND_Name')
 	dblocation = locationL.get_filename() + '/' + nameL.get_text()

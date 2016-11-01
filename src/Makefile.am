@@ -15,7 +15,8 @@ bin_SCRIPTS = cpf.py \
 	Install_UI.py \
 	Install_System.py \
 	VTE_Interaction.py \
-	CPFFeedback.py
+	CPFFeedback.py \
+	CPFMassInstall.py
 
 ## Directory where .class files will be installed
 cpfdir = $(pythondir)/cpf

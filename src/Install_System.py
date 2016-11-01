@@ -33,22 +33,25 @@ def Install(ProgramName, Uninstall):
 	for name in Distribution:
 		for a in SupportArch:
 			if 'ID=' + a in name:
-				IDName = a
+				IDName = 'arch'
 				print("We are Arch based")
 
 		for u in SupportUbuntu:
 			if 'ID=' + u in name:
-				IDName = u
+				IDName = 'ubuntu'
 				print("We are Ubuntu based")
 
 		for d in SupportDebian:
 			if 'ID=' + d in name:
-				IDName = d
+				IDName = 'debian'
 				print("We are Debian based")
 			
-	print('ID IS: ' + IDName)
+	print('We Are On: ' + IDName + '-like system')
 
-	#Suche nach Support
+#	if type(ProgramName) == list:
+#		print('We Got a MassInstall')
+#	else:
+		
 
 	#Arch
 	if IDName in SupportArch:

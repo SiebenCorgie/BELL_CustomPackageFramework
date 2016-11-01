@@ -19,73 +19,74 @@ def Install(ProgramName, Uninstall):
 
 	
 	#read release information
-<<<<<<< HEAD
+
 	Distribution = SI.execute('cat /etc/*-release',True)
 	Distribution = Distribution.split('\n')
 
 	#Teste in welchem der eintraege  'ID=' + Name einer supporteten Distribution
 	#stehe.
-=======
 	Distribution = SI.execute('cat /etc/os-release',True)
 	#Distribution[1]
 	Distribution = Distribution.split('\n')
 	IDName = "notfound"
->>>>>>> 3a9cf275bf9f854fdbac6688a6bbb1f027ae76b4
+
 	for name in Distribution:
 		for a in SupportArch:
 			if 'ID=' + a in name:
-				IDName = a
+				IDName = 'arch'
 				print("We are Arch based")
 
 		for u in SupportUbuntu:
 			if 'ID=' + u in name:
-				IDName = u
+				IDName = 'ubuntu'
 				print("We are Ubuntu based")
 
 		for d in SupportDebian:
 			if 'ID=' + d in name:
-				IDName = d
+				IDName = 'debian'
 				print("We are Debian based")
 			
-	#IDName = IDName[3:]
-	print('ID IS: ' + IDName)
+	print('We Are On: ' + IDName + '-like system')
 
-	#Suche nach Support
+	if type(ProgramName) == list:
+		print('We Got a MassInstall')
+	else:
+		
 
 	#Arch
-	if IDName in SupportArch:
-		bInstall = True
-		print('StartInstalling on: Arch')
-		Name = ProgramData[7]
-		print('Installing as: ' + Name)
-		execute_install(Name, 'arch',Uninstall)
+#	if IDName in SupportArch:
+#		bInstall = True
+#		print('StartInstalling on: Arch')
+#		Name = ProgramData[7]
+#		print('Installing as: ' + Name)
+#		execute_install(Name, 'arch',Uninstall)
 
 	#Ubuntu
-	elif IDName in SupportUbuntu:
-		bInstall = True
-		print('StartInstalling on Ubuntu')
-		Name = ProgramData[5]
-		print('Installing as: ' + Name)
-		execute_install(Name, 'ubuntu',Uninstall)
+#	elif IDName in SupportUbuntu:
+#		bInstall = True
+#		print('StartInstalling on Ubuntu')
+#		Name = ProgramData[5]
+#		print('Installing as: ' + Name)
+#		execute_install(Name, 'ubuntu',Uninstall)
 
 	#Debian
-	elif IDName in SupportDebian:
-		bInstall = True
-		print('StartInstalling on Debian')
-		Name = ProgramData[6]
-		execute_install(Name, 'debian', Uninstall)
-		print('Installing as: ' + Name)
+#	elif IDName in SupportDebian:
+#		bInstall = True
+#		print('StartInstalling on Debian')
+#		Name = ProgramData[6]
+#		execute_install(Name, 'debian', Uninstall)
+#		print('Installing as: ' + Name)
 
 	#Nachrricht wenn auf nicht unterstützter Distribution
-	else:
-		bInstall = False
-		print('Not Supported Distribution') 
+#	else:
+#		bInstall = False
+#		print('Not Supported Distribution') 
 
 	#Debug Nachrricht
-	if bInstall == True:
-		print('Start Installing!')
-	else:
-		print('Something went wrong')
+#	if bInstall == True:
+#		print('Start Installing!')
+#	else:
+#		print('Something went wrong')
 
 
 #Installation oder deinstallation anhand der Parameter

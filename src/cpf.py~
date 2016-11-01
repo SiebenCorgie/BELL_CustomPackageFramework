@@ -35,6 +35,7 @@ import CPFDatabase as db
 import Install_UI as InstUI
 import VTE_Interaction as vte
 import CPFFeedback as feedback
+import CPFMassInstall as MI
 
 #Je nach einstellung WebKit importieren
 if conf.get_entry('Internet','online') == 'True':
@@ -132,6 +133,7 @@ class GUI:
 
 #Destroy App-View
 	def on_ApplicationDialog_Install_destroy (self, widget):
+		print("Destroy Appview")
 		InstUI.CloseAppView(self.builder)
 
 
@@ -211,6 +213,30 @@ class GUI:
 		
 #Tools Database
 #_______________________________________________________________________________
+#Create A Mass Install File
+
+	#init AddDialog
+	def on_M_Tools_CreateMass_activate (self, menuitem):
+		MI.AddDialogInit(self.builder)
+		
+	#UpdateSubCategorys
+	def on_MIADD_LChooseMain_changed (self, combobox):
+		MI.AddDialogUpdateSub(self.builder)
+
+	#UpdateProgramms
+	def on_MIADD_LChooserSubCategor_changed (self, combobox):
+		MI.AddDialogUpdateProgram(self.builder)
+
+	#Aktuelles Programm Hinzufügen
+	def on_MIADD_LAdd_clicked (self, button):
+		MI.AddEntry(self.builder)
+	
+	def on_MIADD_Close_clicked (self, button):
+		MassAddDialog = self.builder.get_object('MIADD')
+		MassAddDialog.hide()
+	
+
+
 #add database entry 'show window'
 	def on_M_Tools_AddDatabaseEntry_activate (self, menuitem):
 		self.db_add_Dialog = self.builder.get_object('DB_Add_Win')

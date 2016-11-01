@@ -144,12 +144,8 @@ dottedcontents{subsubsection}[2.5em]{}{3.3em}{1pc}
 
 \end_layout
 
-\begin_layout Standard
-\noindent
-\align center
-
-\size larger
-Besondere Lernleistung mit dem Thema
+\begin_layout Title
+Besondere Lernleistung: 
 \end_layout
 
 \begin_layout Title
@@ -537,8 +533,15 @@ Programm eigene Konfiguration
 \end_layout
 
 \begin_layout Standard
-Die Programm eigene Konfiguration umschließt die Art, wie CPF reagieren
- soll.
+Die Programm eigene Konfiguration umschließt die Art, wie 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CPF"
+description "Kurz für Custom-Package-Framework. Ist der Name für das Programm, welches im Rahmen dieser Arbeit entsteht."
+
+\end_inset
+
+ reagieren soll.
  Dazu sollte gehören:
 \end_layout
 
@@ -3612,6 +3615,58 @@ Wie in der Vorüberlgung schon angeführt, soll das Programm auf mehreren
  Linux es läuft, und dann den richtigen Datensatz verwendet um das Programm
  zu installieren.
  Desweiteren soll der gesamte Prozess grafisch ablaufen.
+\end_layout
+
+\begin_layout Subsubsection
+Erkennen der Distribution
+\end_layout
+
+\begin_layout Subsubsection
+Auswahl des Pakets
+\end_layout
+
+\begin_layout Subsubsection
+Installation und Passwort abfrage
+\end_layout
+
+\begin_layout Subsubsection
+Deinstallation
+\end_layout
+
+\begin_layout Subsection
+Masseninstallation
+\end_layout
+
+\begin_layout Subsubsection
+Erstellen einer Masseninstallations-Anweisung
+\end_layout
+
+\begin_layout Subsubsection
+Ausführen einer Masseninstallation
+\end_layout
+
+\begin_layout Subsection
+Interaktion mit Github
+\end_layout
+
+\begin_layout Subsubsection
+Hochladen von Datenbankänderungen
+\end_layout
+
+\begin_layout Subsubsection
+Herunterladen von Datenbanken
+\end_layout
+
+\begin_layout Subsubsection
+Aktualisieren von Datenbanken
+\end_layout
+
+\begin_layout Section
+Weitere Gedanken
+\end_layout
+
+\begin_layout Section
+Einschätzung
 \end_layout
 
 \begin_layout Standard

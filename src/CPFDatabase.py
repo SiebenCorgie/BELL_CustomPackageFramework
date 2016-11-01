@@ -268,10 +268,7 @@ def remove_entry(builder):
 	Window = builder.get_object('Remove_Entry')
 
 	#populate Main Categorys
-	if conf.get_entry('main','language') == 'GER':
-		MainList = conf.get_entry('DB','germain')
-	else:
-		MainList = conf.get_entry('DB','enmain')
+	MainList = conf.get_entry('DB','main')
 
 	MainList = MainList.split(',')
 	MainCategoryChooser = builder.get_object('GE_Main_Choose')
@@ -287,10 +284,7 @@ def Remove_Update_SubList(builder):
 	MainChooser = builder.get_object('GE_Main_Choose')
 	MainCategory = MainChooser.get_active_text()
 
-	if conf.get_entry('main','language') == 'GER':
-		SubList = conf.get_entry('DBSub','ger' + MainCategory.lower())
-	else:
-		SubList = conf.get_entry('DBSub','en' + MainCategory.lower())
+	SubList = conf.get_entry('DBSub',MainCategory.lower())
 
 	SubList = SubList.split(',')
 	print('SubList is: ' + str(SubList))
