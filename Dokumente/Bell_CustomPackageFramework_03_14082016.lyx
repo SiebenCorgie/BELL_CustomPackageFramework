@@ -7,9 +7,8 @@
 \textclass article
 \begin_preamble
 \usepackage{titletoc}
-\addto\captionsngerman{ 
-\renewcommand{\nomname}{Abkürzungsverzeichnis}
-}
+\usepackage{tocbibind}
+\addto\captionsngerman{\renewcommand{\nomname}{Abkürzungsverzeichnis}}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -3677,6 +3676,22 @@ Einschätzung
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset FloatList figure
 
 \end_inset
@@ -3693,19 +3708,6 @@ Einschätzung
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand lstlistoflistings
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Abkürzungsverzeichnis
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset nomencl_print
 LatexCommand printnomenclature
 set_width "auto"
@@ -3715,7 +3717,7 @@ set_width "auto"
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection*
 Anmerkung zum Literaturverzeichnis
 \end_layout
 
