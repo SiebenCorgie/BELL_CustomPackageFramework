@@ -19,10 +19,23 @@ def AddEntry(builder):
 
 	
 
-def Execute(File):
+def Execute(builder):
 	#Installationsanweisung ausführen
 	print('exe')
+	FileChooser = builder.get_object('MIInstall_Chooser')
+	File = FileChooser.get_filename()
+	print('MassFile is: ' + File)
+	MassFile = open(File, 'r')
+	MassLine = MassFile.readline()
+	print('FileContent: ' + MassLine)
+	MassNames = MassLine.split(',')
+	MassNames.pop(len(MassNames) - 1)
+	print(MassNames)
+	install.Install(MassNames, False, True)
+	print('Finished MassInstall')
 
+	DialogWindow = builder.get_object('MIInsall')
+	DialogWindow.hide()
 
 
 
@@ -34,6 +47,7 @@ def AddDialogInit(builder):
 
 	MainList = conf.get_entry('DB','main')
 	MainList = MainList.split(',')
+	MainList
 
 	MainCooser.remove_all()
 	

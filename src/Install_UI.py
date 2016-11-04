@@ -207,11 +207,11 @@ def show_app(builder,iconview,treepath):
 
 def StartInstalling():
 	global ProgramName
-	install.Install(ProgramName,False)
+	install.Install(ProgramName,False, False)
 
 def StartUnistalling():
 	global ProgramName
-	install.Install(ProgramName,True)
+	install.Install(ProgramName,True, False)
 
 
 

@@ -87,7 +87,7 @@ def Go_Down(builder,iconview,treepath):
 
 	#Umgebung mit Untekategorie Laden
 	if stage == 'root':
-		SubCategoryList = conf.get_entry('DBSub'SelectedMain.lower())
+		SubCategoryList = conf.get_entry('DBSub', SelectedMain.lower())
 			
 		SubCategoryList = SubCategoryList.split(',')
 

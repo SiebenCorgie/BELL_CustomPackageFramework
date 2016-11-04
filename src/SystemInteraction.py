@@ -34,9 +34,7 @@ def get_folder_content(directory):
 	return content
 
 def execute(command, passoutput):
-	subprocess.call(command, shell=True)
 	if passoutput == True:
-		
 		#convert to UTF
 		returnstring = subprocess.check_output(command, shell=True)
 		
@@ -44,3 +42,5 @@ def execute(command, passoutput):
 		returnstring = returnstring.decode('utf-8')[:-1]
 		print('returnstring: ' + returnstring)
 		return returnstring
+	else:
+		subprocess.call(command, shell=True)

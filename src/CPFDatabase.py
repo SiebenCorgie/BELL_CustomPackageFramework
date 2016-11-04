@@ -33,10 +33,8 @@ def db_add_Init(builder):
 	#laden der liste aus konfiguration
 	MainCat = builder.get_object('DB_A_Main')
 	#basierend auf sprache
-	if conf.get_entry('main','language') == 'GER':
-		MainStringList = conf.get_entry('DB','GERMain')
-	else:
-		MainStringList = conf.get_entry('DB','ENMain')
+
+	MainStringList = conf.get_entry('DB','main')
 
 	MainStringList = MainStringList.split(',')
 	MainCategoryList = []
@@ -57,10 +55,7 @@ def update_sub_category(builder):
 	maincategory = builder.get_object('DB_A_Main')
 	maincat = maincategory.get_active_text()
 
-	if conf.get_entry('main','language') == 'GER':
-		SubCategoryList = conf.get_entry('DBSub','ger' + maincat.lower())
-	else:
-		SubCategoryList = conf.get_entry('DBSub','en' + maincat.lower())
+	SubCategoryList = conf.get_entry('DBSub',maincat.lower())
 	#convertToList
 	SubCategoryList = SubCategoryList.split(',')
 	#AddToLists

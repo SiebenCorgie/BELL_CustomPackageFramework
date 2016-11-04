@@ -15,8 +15,8 @@ def get_folder_content(directory):
 		output = subprocess.check_output('ls ' + directory, shell=True)
 		#trenne byte-string stream an leerzeichen
 		bytelist = output.split()
+		
 		#convertiere byte items zu strin liste
-
 		#muss eigene aufzeilung nehmen
 		for entry in range(len(bytelist)):
 			bytesring = bytelist[entry]

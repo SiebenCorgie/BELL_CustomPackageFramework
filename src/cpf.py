@@ -235,7 +235,23 @@ class GUI:
 	def on_MIADD_Close_clicked (self, button):
 		MassAddDialog = self.builder.get_object('MIADD')
 		MassAddDialog.hide()
+
+	#Installieren von MassInstall Datei
+	#Oeffnen des Dialogs
+	def on_M_Tools_MassInstall_activate (self, menuitem):
+		MassInstallDialog = self.builder.get_object('MIInsall')
+		MassInstallDialog.show_all()
+
+	#Schließen
+	def on_MIInstall_Close_clicked (self, button):
+		MassInstallDialog = self.builder.get_object('MIInsall')
+		MassInstallDialog.hide()		
 	
+
+	#Installieren
+	def on_MIInstall_Install_clicked (self, button):
+		MI.Execute(self.builder)
+
 
 
 #add database entry 'show window'

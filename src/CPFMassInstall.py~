@@ -13,16 +13,26 @@ def AddEntry(builder):
 	ProgramChooser = builder.get_object('MIADD_LChooseProgram')
 	
 	print('Add')
-	File = open(conf.get_entry('DB','dblocation') + FilenName + '.mass', 'a')
+	File = open(conf.get_entry('DB','dblocation') + '/' + FilenName + '.mass', 'a')
 	File.write(ProgramChooser.get_active_text() + ',')
 	File.close()
 
 	
 
-def Execute(File):
+def Execute(builder):
 	#Installationsanweisung ausführen
 	print('exe')
-
+	FileChooser = builder.get_object('MIInstall_Chooser')
+	File = FileChooser.get_filename()
+	print('MassFile is: ' + File)
+	MassFile = open(File, 'r')
+	MassLine = MassFile.readline()
+	print('FileContent: ' + MassLine)
+	MassNames = MassLine.split(',')
+	MassNames.pop(len(MassNames) - 1)
+	print(MassNames)
+	install.Install(MassNames, False, True)
+	print('Finished MassInstall')
 
 
 
@@ -34,6 +44,7 @@ def AddDialogInit(builder):
 
 	MainList = conf.get_entry('DB','main')
 	MainList = MainList.split(',')
+	MainList
 
 	MainCooser.remove_all()
 	

@@ -12,10 +12,7 @@ SupportDebian = ('debian','deepin')
 
 #Herausfinden der Distribution, aufrufen des richtigen eintrags in der Datenbank
 #Starten des installier odre deinstalliervorgangs
-def Install(ProgramName, Uninstall):
-	
-	#Get all ProgramData from DatabaseEntry
-	ProgramData = db.read_attributes(ProgramName)
+def Install(ProgramName, Uninstall, Massinstall):
 
 	
 	#read release information
@@ -47,46 +44,99 @@ def Install(ProgramName, Uninstall):
 				print("We are Debian based")
 			
 	print('We Are On: ' + IDName + '-like system')
-
-	if type(ProgramName) == list:
-		print('We Got a MassInstall')
+		
+	if Massinstall == False:
+		PrepareSingleInstall(ProgramName, Uninstall, IDName)
+	elif Massinstall == True:
+		MakeMassInstall(ProgramName, IDName)
 	else:
+		print("Wrong parameter")
+
+
+#Masseninstallation
+def MakeMassInstall(ProgramName, IDName):
+
+	print('Starting MassInstall')
+	#Zusammenstellen der richtigen Programm namen 
+	DistributionNameList = []
+	#ubuntu
+	if IDName == 'ubuntu':
+		for u in ProgramName:
+			ProgramData = db.read_attributes(u)
+			DistributionNameList.append(ProgramData[5])
+			
+	#debian
+	elif IDName == 'debian':
+		for d in ProgramName:
+			ProgramData = db.read_attributes(d)
+			DistributionNameList.append(ProgramData[6])
+
+	#arch
+	elif IDName == 'arch':
+		for a in ProgramName:
+			ProgramData = db.read_attributes(a)
+			DistributionNameList.append(ProgramData[7])
+
+	InstallString = ' '.join(DistributionNameList)
+
+	#Jetzt wird anhand der richtigen Liste installiert
+	username = conf.get_entry("Installation","installusername")
+	
+	if IDName == 'ubuntu' or IDName == 'debian':
+		output = SI.execute('pkexec --user ' + username +  ' apt-get install -y ' + InstallString, True)
+		
+	elif IDName == 'arch':
+		output = SI.execute('pkexec --user ' + username + ' pacman -S ' + InstallString + ' --noconfirm' , True)
+
 		
 
+
+		
+		
+#Raussuchen des des richigen Parameters 
+#und dann installieren bzw. deinstallieren
+def PrepareSingleInstall(ProgramName, Uninstall, IDName):
+
+	ProgramData = db.read_attributes(ProgramName)
+	
 	#Arch
-#	if IDName in SupportArch:
-#		bInstall = True
-#		print('StartInstalling on: Arch')
-#		Name = ProgramData[7]
-#		print('Installing as: ' + Name)
-#		execute_install(Name, 'arch',Uninstall)
+	if IDName == 'arch':
+		bInstall = True
+		print('StartInstalling on: Arch')
+		Name = ProgramData[7]
+		print('Installing as: ' + Name)
+		execute_install(Name, 'arch',Uninstall)
 
 	#Ubuntu
-#	elif IDName in SupportUbuntu:
-#		bInstall = True
-#		print('StartInstalling on Ubuntu')
-#		Name = ProgramData[5]
-#		print('Installing as: ' + Name)
-#		execute_install(Name, 'ubuntu',Uninstall)
+	elif IDName == 'ubuntu':
+		bInstall = True
+		print('StartInstalling on Ubuntu')
+		Name = ProgramData[5]
+		print('Installing as: ' + Name)
+		execute_install(Name, 'ubuntu',Uninstall)
 
 	#Debian
-#	elif IDName in SupportDebian:
-#		bInstall = True
-#		print('StartInstalling on Debian')
-#		Name = ProgramData[6]
-#		execute_install(Name, 'debian', Uninstall)
-#		print('Installing as: ' + Name)
+	elif IDName == 'debian':
+		bInstall = True
+		print('StartInstalling on Debian')
+		Name = ProgramData[6]
+		execute_install(Name, 'debian', Uninstall)
+		print('Installing as: ' + Name)
 
 	#Nachrricht wenn auf nicht unterstützter Distribution
-#	else:
-#		bInstall = False
-#		print('Not Supported Distribution') 
+	else:
+		bInstall = False
+		print('Not Supported Distribution') 
 
 	#Debug Nachrricht
-#	if bInstall == True:
-#		print('Start Installing!')
-#	else:
-#		print('Something went wrong')
+	if bInstall == False:
+		print('Something went wrong')
+
+
+
+def MassInstall(Name, IDName):
+	print('installing ' + Name + ' on ' + IDName)
+
 
 
 #Installation oder deinstallation anhand der Parameter
@@ -133,7 +183,7 @@ def execute_install(Name, Distribution,Uninstall):
 
 			
 	else:
-		print('dont do anythong, there was a problem')
+		print('dont do anything, there was a problem')
 
 	#Interner Pacman Error auf Arch
 	if 'error: failed to init transaction (unable to lock database)' in output:
