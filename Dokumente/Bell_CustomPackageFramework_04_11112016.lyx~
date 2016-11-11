@@ -15,6 +15,11 @@
 \renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
 \tocloftpagestyle{plain}
 \renewcommand{\cftdot}{}
+
+\setlength{\skip\footins}{1cm}
+
+
+\usepackage[ marginal ]{ footmisc }
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -229,28 +234,28 @@ status open
 
 
 \backslash
-cftsetindents{section}{2.5cm}{2.5cm} 
+cftsetindents{section}{0cm}{1.2cm} 
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-cftsetindents{subsection}{2.5cm}{2.5cm} 
+cftsetindents{subsection}{1.2cm}{1.2cm} 
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-cftsetindents{subsubsection}{2.5cm}{2.5cm} 
+cftsetindents{subsubsection}{1.2cm}{1.2cm} 
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-cftsetindents{paragraph}{2.5cm}{2.5cm}
+cftsetindents{paragraph}{1.2cm}{1.2cm}
 \end_layout
 
 \end_inset
@@ -288,6 +293,8 @@ Wenn ein einsteiger das erste mal an einem Linux System arbeitet stellt
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 \begin_inset Quotes gld
 \end_inset
 
@@ -307,9 +314,9 @@ description "Linux ist eine freie Variante des Unix-Kernels. Umgangssprachlich w
 \end_layout
 
 \begin_layout Standard
-An diesem Problem möchte ich mit meiner Arbeit ansetzen.
- Ich möchte ein- und Umsteigern das Suchen von Programmen erleichtern.
- Ich sehe zwei Hauptprobleme für den Neueinstieg.
+An diesem Problem möchte die Arbeit ansetzen.
+ Es soll ein- und Umsteigern das Suchen von Programmen erleichtert werden.
+ Es gibt nach Meinung des Authors zwei Hauptprobleme für den Neueinstieg.
 \end_layout
 
 \begin_layout Subsection
@@ -332,7 +339,19 @@ Vgl.
 
 .
  Es gibt aber Gimp, Krita, MyPaint, und viele mehr.
- Welches davon soll ich nehmen? Aus meiner Erfahrung kann ich sagen: 
+ 
+\series bold
+
+\begin_inset Quotes gld
+\end_inset
+
+Welches davon soll ich nehmen?
+\begin_inset Quotes grd
+\end_inset
+
+
+\series default
+ Aus der Erfahrung kann man sagen: 
 \begin_inset Quotes gld
 \end_inset
 
@@ -342,8 +361,8 @@ Krita für malen und Texturbearbeitung und Gimp für Photos
 
 .
  Aber diese Erfahrung hat der Einsteiger nicht.
- Meine Lösung für das beschriebene Problem ist einfach: Ich gebe dem Nutzer
- nur Gimp und Krita und eine Beschreibung mit meiner Erfahrung.
+ Die Lösung für das beschriebene Problem ist einfach: Man gibt dem Nutzer
+ nur Gimp und Krita und eine Beschreibung mit eigenen Erfahrungen.
 \end_layout
 
 \begin_layout Subsection
@@ -352,7 +371,20 @@ Problem 2
 
 \begin_layout Standard
 Das nächste Problem ist recht trivial.
- Wie installiere ich Software? 
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Quotes gld
+\end_inset
+
+Wie installiere ich Software?
+\begin_inset Quotes grd
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -404,20 +436,20 @@ Ziel
 \end_layout
 
 \begin_layout Standard
-Meine ersten Überlegungen galten zwangsläufig meinem Ziel.
- Wie sollte mein Programm aussehen um einen möglichst einfachen Einstieg
+Die ersten Überlegungen galten zwangsläufig dem Ziel.
+ Wie sollte das Programm aussehen um einen möglichst einfachen Einstieg
  in Linux zu sichern?
 \end_layout
 
 \begin_layout Standard
-Ich kam zu dem naheliegenden Schluss, dass es das Beste sei, eine einfache
- Oberfläche zu konstruieren.
+Der Author kam zu dem naheliegenden Schluss, dass es das Beste sei, eine
+ einfache Oberfläche zu konstruieren.
  Es entstanden die ersten Ideen.
  
 \end_layout
 
 \begin_layout Standard
-Meine 
+Die 
 \begin_inset Quotes gld
 \end_inset
 
@@ -429,14 +461,20 @@ fertige Idee
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 der Programmauswahl
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 der Dokumentationsbrowser 
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 das Informationssystem
 \end_layout
 
@@ -476,7 +514,7 @@ Spiele
 \begin_layout Standard
 Der Dokumentationsbrowser wird eine voreingestellte Internetseite zeigen.
  Diese sollte Dokumnetation anzeigen.
- Dabei denke ich primär an Schul- oder firmeninterne Dokumentation.
+ Dabei denke der Author primär an Schul- oder firmeninterne Dokumentation.
 \end_layout
 
 \begin_layout Standard
@@ -502,7 +540,7 @@ Massenaufträgen
 \begin_layout Standard
 Ein nicht zu unterschätzender Teil ist die Administration eines solchen
  Auswahltools/Programms.
- Ich weiß aus Erfahrung meines ersten größeren Programms
+ Der Author weiß aus Erfahrung seines ersten größeren Programms
 \begin_inset Foot
 status open
 
@@ -543,53 +581,75 @@ description "Kurz für Custom-Package-Framework. Ist der Name für das Programm,
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Umgang mit der Datenbank
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Speicherung von Daten
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Abrufen von Daten
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Umgang mit dem Internet
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Laden der Webseiten in Dokumentation und Info-System
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Herunterladen von Programmen
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Abgleichen der Datenbank mit online Repositorium
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Verhalten während der Installation
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Passwort-abfrage (welcher Benutzer fragt?)
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Massenaufträge
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Grafische Rückmeldung
 \end_layout
 
@@ -610,46 +670,68 @@ Die Datenbank soll auf einfachen Datensätzen beruhen.
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Name des Programms
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Eigene Beschreibung mit meinen Erfahrungswerten (Kurzbeschreibung)
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Entwicklerbeschreibung (lange Beschreibung)
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Programmtyp (Grafik, Video, Spiel, etc.) (Überkategorie)
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Unterkategory
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Programm Website
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Pfad zu Screenshot
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Pfad zu Icon
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Name auf Debina-Spiegel-Server
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Name auf Ubuntu-Spiegel-Server
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing single
+\noindent
 Name auf Arch-Spiegel-Server
 \end_layout
 
@@ -676,7 +758,7 @@ Visualisierung
 
 \begin_layout Standard
 Das Installieren von Software soll mit minimalem visuellen Eindrücken auskommen.
- Dabei möchte ich nur den Fortschritt der Installation, und den Namen der
+ Dabei möchte man nur den Fortschritt der Installation, und den Namen der
  derzeitig ausgeführten Aktion anzeigen.
  Diese Informationen werden im unteren Teil des Programms gut sichtbar angezeigt.
  
@@ -691,37 +773,37 @@ Die Installation eines Programms soll wie folgt ablaufen:
 \end_layout
 
 \begin_layout Enumerate
-\paragraph_spacing other 0.5
+\paragraph_spacing single
 \noindent
 Programm Auswahl (manuel)
 \end_layout
 
 \begin_layout Enumerate
-\paragraph_spacing other 0.5
+\paragraph_spacing single
 \noindent
 Installations-Start (manuel)
 \end_layout
 
 \begin_layout Enumerate
-\paragraph_spacing other 0.5
+\paragraph_spacing single
 \noindent
 Passwort-abfrage (Benutzer wird aus Konfigurationsdateien gelesen) (automatisch)
 \end_layout
 
 \begin_layout Enumerate
-\paragraph_spacing other 0.5
+\paragraph_spacing single
 \noindent
 Bestätigung (manuel)
 \end_layout
 
 \begin_layout Enumerate
-\paragraph_spacing other 0.5
+\paragraph_spacing single
 \noindent
 Installation (automatisch)
 \end_layout
 
 \begin_layout Enumerate
-\paragraph_spacing other 0.5
+\paragraph_spacing single
 \noindent
 Erfolgs/Misserfolgsnachricht (automatisch)
 \end_layout
@@ -752,7 +834,7 @@ Programmauswahl
 \begin_layout Standard
 Die Programme sollen wie in 2.1 beschrieben durch Fein-Filtern der Optionen
  ausgewählt werden.
- Ich werden versuchen die Beschreibungen möglichst neutral zuhalten.
+ Man sollte versuchen die Beschreibungen möglichst neutral zuhalten.
  Damit soll die Entscheidung des Nutzers unvoreingenommen bleiben, um zum
  gewünschten Programm zu gelangen.
 \end_layout
@@ -782,7 +864,7 @@ siehe: https://webkit.org/ , 14.08.2016, 20:18
  erfolgen.
  Das ist eine von Apple entwickelte Umgebung, um relativ einfach Browserfähigkei
 ten in Gtk-Programme einzubauen.
- Ich verwenden es um einfache Webseiten anzuzeigen.
+ Das Programm verwenden es um einfache Webseiten anzuzeigen.
  Die Lizenzierung von WebKit
 \begin_inset Foot
 status open
@@ -793,8 +875,8 @@ https://webkit.org/licensing-webkit/ , 14.08.2016 , 20:21
 
 \end_inset
 
- ermöglicht es mir das Programm kommerziell oder nicht-kommerziell zu entwickeln
- und zu veröffentlichen.
+ ermöglicht es dem Author das Programm kommerziell oder nicht-kommerziell
+ zu entwickeln und zu veröffentlichen.
 \end_layout
 
 \begin_layout Subsubsection
@@ -802,7 +884,7 @@ Programmiersprache
 \end_layout
 
 \begin_layout Standard
-Als Programmiersprache nehme ich Python
+Als Programmiersprache nimmt der Author Python
 \begin_inset Foot
 status open
 
@@ -818,9 +900,9 @@ Homepage: https://www.python.org/ , 23,10,2016, 19:48
 \end_layout
 
 \begin_layout Standard
-Der Erste Grund ist, dass ich schon seit Sommer 2015 Programme mit Python
- schreibe.
- Ich kann es relativ 
+Der Erste Grund ist, dass der Author schon seit Sommer 2015 Programme mit
+ Python schreibt.
+ Er kann es relativ 
 \begin_inset Quotes gld
 \end_inset
 
@@ -867,8 +949,8 @@ nde abstürze des Programms geringer.
 \end_layout
 
 \begin_layout Standard
-Der Dritte Grund ist Pythons Anbindung an das GTK+ Projekt.
- Wie ich im nächsten Abschnitt beschreiben werde, nutze ich das GTK+
+Der dritte Grund ist Pythons Anbindung an das GTK+ Projekt.
+ Wie im nächsten Abschnitt beschreiben wird, nutze man das GTK+
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "GTK+"
@@ -895,7 +977,7 @@ description "kurz für \"integrierte Entwicklungsumgebung\" ist ein Hilfsprogram
 
 \end_inset
 
-) nutze ich 
+) nutzt der Author 
 \begin_inset Quotes gld
 \end_inset
 
@@ -914,7 +996,7 @@ Homepage: http://anjuta.org/ , 23.10.2016 , 19:46
 \end_inset
 
 .
- Diese IDE habe ich schon zuvor für verschiedene grafische Programme genutzt.
+ Diese IDE hat er schon zuvor für verschiedene grafische Programme genutzt.
  Einer der größten Vorteile ist die sehr gute Anbindung des 
 \begin_inset Quotes gld
 \end_inset
@@ -959,7 +1041,6 @@ afischen_Benutzeroberfl%C3%A4che.svg.png , Shmuel Csaba Otto Traian, 29.10.2013
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -970,17 +1051,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\shape italic
-Schematische Darstellung der Beziehungen
-\end_layout
-
-\end_inset
-
-
 \begin_inset Flex Scalebox
 status open
 
@@ -1009,13 +1079,27 @@ status open
 
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\shape italic
+Schematische Darstellung der Beziehungen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Ich habe mich für GTK+
+Der Author hatt sich für GTK+
 \begin_inset Foot
 status open
 
@@ -1064,7 +1148,7 @@ Englisch: http://www.gtk.org/ , 18.08.2016, 21:32
 \end_inset
 
 .
- Diese erlaubt es mir GTK+ ohne Restriktionen einzusetzen.
+ Diese erlaubt es dem Author GTK+ ohne Restriktionen einzusetzen.
  Die LGPL Lizenz ist eine der am weitesten verbreiteten Lizenzen in der
  OpenSource-Welt.
  Der Erfolg durch die Lizenz und die Qualität lässt sich auf Linux leicht
@@ -1089,7 +1173,7 @@ Englische Referenz: https://www.gnome.org/
 
 \end_inset
 
-, welche ich selbst benutze.
+, welche der Autor selbst benutz.
  Das GTK Projekt ist eines der ältesten
 \begin_inset Foot
 status open
@@ -1102,14 +1186,15 @@ https://www.gimp.org/about/ancient_history.html , 08.18.2016 , 21:47
 
  und erfolgreichsten Linux-Projekte im grafischen Segment.
  Mit dem Erfolg kommt eine weite Verbreitung im Linux-Anwenderbereich.
- Der kommt mir insofern zugute, als das es auf fast allen Distributionen
- die benötigten Pakete für mein Programm gibt.
+ Der kommt dem Author insofern zugute, als das es auf fast allen Distributionen
+ die benötigten Pakete für das Programm gibt.
 \end_layout
 
 \begin_layout Standard
-Der letzte Grund für das GTK+ ist meine Erfahrung.
- Wie in 2.5 erwähnt habe ich schon einige Erfahrung auf dem Gebiet von Python.
- Dazu gehört auch, dass ich Ostern 2016 ein Programm
+Der letzte Grund für das GTK+ ist seine Erfahrung.
+ Wie in 2.5 erwähnt hat der Author schon einige Erfahrung auf dem Gebiet
+ von Python.
+ Dazu gehört auch, dass er Ostern 2016 ein Programm
 \begin_inset Foot
 status open
 
@@ -1120,14 +1205,14 @@ siehe: https://github.com/SiebenCorgie/Beta-Launcher
 \end_inset
 
  zum Organisieren und Installieren der Unreal-Engine 4 auf Linux geschrieben
- habe.
+ hat.
  Dieses war auch mit GTK+ erstellt worden.
- Ich habe während des Programmierens viel Erfahrung gesammelt.
- Damals habe ich mehrere Toolkits miteinander verglichen (z.B.
+ Er hat während des Programmierens viel Erfahrung gesammelt.
+ Damals hat er mehrere Toolkits miteinander verglichen (z.B.
  Qt und wxWidgets).
- Am Ende habe ich mich für das GTK+ entscheiden.
+ Am Ende hat er mich für das GTK+ entscheiden.
  Das Ergebnis ist ein gefestigtes Anfängerwissen über ein Toolkit welches
- ich mir bewusst gesucht habe.
+ er sich bewusst gesucht hat.
  
 \end_layout
 
@@ -1136,7 +1221,7 @@ Distributions Unterstützung des CPF
 \end_layout
 
 \begin_layout Standard
-Ich plane die Unterstützung des 
+Geplant wird die Unterstützung des 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1168,7 +1253,7 @@ naming-convention
 \end_inset
 
  hat als Debian, allerdings trotzdem auf dem .deb Format beruht.
- Deshalb werde ich in meiner Programmdatenbank zwei verschiedene Speicherplätze
+ Deshalb werden in der Programmdatenbank zwei verschiedene Speicherplätze
  in einem Datensatz einrichten.
  Einen für Debian und einen für Ubuntu.
 \end_layout
@@ -1187,12 +1272,12 @@ Kurze Erklärung: https://en.wikipedia.org/wiki/RPM_Package_Manager , 01.09.2016
 \end_inset
 
 .
- Mit diesem Format habe ich allerdings keine Erfahrung.
- Deshalb werde ich es nicht benutzen.
+ Mit diesem Format hat der Author allerdings keine Erfahrung.
+ Deshalb wird es nicht benutzen.
  Es wäre möglich sich mit dem Format zu beschäftigen.
  Allerdings hängt es sehr stark von der gewählten Distribution ab wie man
  das Paket erstellt.
- Deshalb habe ich mich entschieden das Format auszulassen.
+ Deswegen hat er sich entschieden das Format auszulassen.
  
 \end_layout
 
@@ -1205,7 +1290,7 @@ Schreiben
 \end_layout
 
 \begin_layout Standard
-Ich werde die Dokumentation mit Lyx
+Der Author wird die Dokumentation mit Lyx
 \begin_inset Foot
 status open
 
@@ -1240,7 +1325,7 @@ http://www.latex-project.org/ , 01.09.2016, 17:35
  Des weiteren ist LATEX als Dokumentensprache in wissenschaftlichen Arbeiten
  weit verbreitet.
  Damit stellt die Arbeit auch eine gewissen Vorbereitung auf ein Studium
- für mich dar.
+ für ihn dar.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1250,8 +1335,8 @@ Synchroniesierung über Git-Hub
 \begin_layout Standard
 Das Programm sowie die Dokumentation kommen in eine Programm-Ordnerstruktur.
  Diese soll mit einem Git-Hub Repositorium abgeglichen werden.
- Dadurch erreiche ich maximale Transparenz was das Programm und dessen Fortschri
-tt angeht.
+ Dadurch erreicht der Author maximale Transparenz was das Programm und dessen
+ Fortschritt angeht.
  Außerdem ist das bearbeiten von Programmen über Git-Hub eine sehr weit
  verbreitete Praxis in der Linux-Welt.
  
@@ -1300,11 +1385,11 @@ Voranmerkung
 \end_layout
 
 \begin_layout Standard
-Die Dokumentation erfolgt in der Reihenfolge in der ich das Programm geschrieben
- habe.
+Die Dokumentation erfolgt in der Reihenfolge in der der Author das Programm
+ geschrieben hat.
  Es ist außerdem gut eine Version des Programm-Listings griffbereit zu haben.
- Ich werde hin und wieder indirekt Bezug auf einzelne Stellen nehmen.
- Insofern erforderlich baue ich auch Listing-Stellen in den Text ein.
+ Der Author wird hin und wieder indirekt Bezug auf einzelne Stellen nehmen.
+ Insofern erforderlich baue er auch Listing-Stellen in den Text ein.
  
 \end_layout
 
@@ -1313,7 +1398,7 @@ Erstellung des Programms und seiner Verzeichnisstruktur
 \end_layout
 
 \begin_layout Standard
-Das Programm selbst lasse ich zuerst durch den Python-GTK-Wizard von Anjuta
+Das Programm selbst lässt er zuerst durch den Python-GTK-Wizard von Anjuta
  erstellen.
  Das ist schnell durch den Dialog 
 \begin_inset Quotes gld
@@ -1326,8 +1411,8 @@ Create New Project
  mit den Einstellung für ein Python-GTK-Projekt getan.
  Dieser Wizard erstellt in einem Ordner die typische Ordnerstruktur eines
  Linux-Programms.
- Nach dem Hinzufügen meiner eigenen Ordner für Dokumentation und Referenzen
- haben ich die Ordnerstruktur aus Abb.
+ Nach dem Hinzufügen der eigenen Ordner für Dokumentation und Referenzen
+ hat man die Ordnerstruktur aus Abb.
  2.
 \end_layout
 
@@ -1347,6 +1432,19 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset Graphics
+	filename Bilder/DefaultDirectoryStructure.png
+	lyxscale 75
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1354,14 +1452,6 @@ status open
 \shape italic
 Grund Ordnerstruktur
 \end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename Bilder/DefaultDirectoryStructure.png
-	lyxscale 75
-	scale 50
 
 \end_inset
 
@@ -1375,11 +1465,11 @@ Grund Ordnerstruktur
 
 \begin_layout Standard
 Dieser Ordnerstruktur soll mit einem Git-Hub Repositorium abgeglichen werden.
- Dazu kreiere ich zuerst ein leeres Repositorium (ab jetzt Repo.) auf Git-Hub
- mit meinem Benutzer.
- Danach klone ich es auf meinen Computer.
- In den zurzeit leeren Ordner kopiere ich das gerade erstellte Projekt.
- Danach synchronisiere ich mithilfe der folgenden Kommandos:
+ Dazu kreiere man zuerst ein leeres Repositorium (ab jetzt Repo.) auf Git-Hub
+ mit seinem Benutzer.
+ Danach klont man es auf einen Computer.
+ In den zurzeit leeren Ordner kopiere man das gerade erstellte Projekt.
+ Danach synchronisiere man mithilfe der folgenden Kommandos:
 \begin_inset listings
 inline false
 status open
@@ -1421,7 +1511,7 @@ git push
 
 \begin_layout Standard
 Jetzt ist die Grundstruktur online hinterlegt.
- Ich kann mir jederzeit eine Version der Struktur herunterladen, bearbeiten
+ Man kann sich jederzeit eine Version der Struktur herunterladen, bearbeiten
  und die neue Version hochladen.
  Der erste 
 \begin_inset Quotes gld
@@ -1451,7 +1541,8 @@ Initial commit
 \end_inset
 
 .
- Da ich als Administrator die Änderung hochlade, wird sie sofort übernommen.
+ Da der Author als Administrator die Änderung hochläd, wird sie sofort übernomme
+n.
 \end_layout
 
 \begin_layout Subsection
@@ -1468,7 +1559,7 @@ Glade
 \end_inset
 
  den UI-Editor für mein GTK+-Interface.
- Mit ihm kann ich mithilfe verschiedener vorgegebener UI-Elementen (in 
+ Mit ihm kann man mithilfe verschiedener vorgegebener UI-Elementen (in 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1476,9 +1567,10 @@ Palette
 \begin_inset Quotes grd
 \end_inset
 
-) mein Hauptfenster erstellen.
- Die einzelnen Schritte beinhalten immer das einfügen des Widgets, die Namensgeb
-ung sowie die Einstellung gewünschter Parameter (siehe abb 3).
+) ein Hauptfenster erstellen.
+ Die einzelnen Schritte beinhalten immer das einfügen des Widgets (aus der
+ Pallette) in die grafsiche Baufläche, die Namensgebung sowie die Einstellung
+ gewünschter Parameter (im Eigenschaften-Dialog) (siehe abb 3).
  
 \end_layout
 
@@ -1488,18 +1580,6 @@ placement h
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Aufbau Anjuta mit Glade Integration
-\end_layout
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Flex Scalebox
@@ -1531,6 +1611,14 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aufbau Anjuta mit Glade Integration
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -1540,7 +1628,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Ich entscheide mich für eine traditionelle 
+Man entscheidet sich für eine traditionelle 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1586,18 +1674,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Haupt-Fenster
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Flex Scalebox
@@ -1628,6 +1704,18 @@ status open
 
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Haupt-Fenster
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -1639,7 +1727,7 @@ Dokumetations- und Informationsbrowserfenster
 
 \begin_layout Standard
 Die Browserfenster werden beim Programmstart eingebunden.
- Dazu erstelle ich in dem Fenster von 
+ Dazu erstelle man in dem Fenster von 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1692,7 +1780,7 @@ Konfigurationsdatei
 \end_layout
 
 \begin_layout Standard
-Zuerst erstelle ich mir eine eigene Konfigurationsdatei.
+Zuerst erstelle man sich eine eigene Konfigurationsdatei.
  In ihre werden alle Konfigurationen gespeichert die das Programm über mehrere
  Läufe hinweg behalten soll.
  Die Datei ist in Überabschnitte geteilt.
@@ -1725,7 +1813,7 @@ Name = Wert
 
 \begin_layout Standard
 Diese Syntax kann von einem Modul in Python gelesen werten.
- Dadurch ist es für mich einfachere die Werte auszulesen und zu ändern.
+ Dadurch ist es für den Author einfachere die Werte auszulesen und zu ändern.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1737,7 +1825,8 @@ Allgemeines
 \end_layout
 
 \begin_layout Standard
-Wie schon angekündigt, nehme ich zum Lesen und Schreiben der Werte ein Modul.
+Wie schon angekündigt, nimmt der Auhor zum Lesen und Schreiben der Werte
+ ein Modul.
  Dieses heißt 
 \begin_inset Quotes gld
 \end_inset
@@ -1765,7 +1854,7 @@ key "key-7"
 
 \end_inset
 
- beschriebenen API kann ich nun Dateien ein und auslesen, sowie Einträge
+ beschriebenen API kann man nun Dateien ein und auslesen, sowie Einträge
  ändern.
  Der Pfad zur Konfigurationsdatei ist im Programmierstatus noch lokal direkt
  im Verzeichnis.
@@ -1774,9 +1863,9 @@ key "key-7"
 \end_layout
 
 \begin_layout Standard
-Für die Konfiguration legen ich eine neue Pythondatei mit dem Namen CPFConfig
+Für die Konfiguration legt man eine neue Pythondatei mit dem Namen CPFConfig
  an.
- Diese importiere ich in das Hauptprogramm unter dem Pseudonym 
+ Diese importiert man in das Hauptprogramm unter dem Pseudonym 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1785,7 +1874,7 @@ conf
 \end_inset
 
 .
- In der neuen Datei erstelle ich die Funktionen:
+ In der neuen Datei erstelle man die Funktionen:
 \end_layout
 
 \begin_layout Enumerate
@@ -1831,7 +1920,7 @@ config
 \end_inset
 
  als ConfigParser-Objekt gespeichert.
- Damit kann ich auf 
+ Damit kann man auf 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1840,7 +1929,7 @@ config
 \end_inset
 
  alle Funktionen des ConfigParser Objekts anwenden.
- Danach lese ich mit dem Befehl 
+ Danach ließt man mit dem Befehl 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1851,7 +1940,7 @@ read
  die Konfigurationsdatei ein.
  Die Reihnfolge stellt sicher, dass die Befehle am Anfang ausgeführt werden,
  sobald dieses Modul gestartet wird.
- Erst danach werden meine Funktionen gelesen und bei Aktivierung ausgeführt.
+ Erst danach werden die Funktionen gelesen und bei Aktivierung ausgeführt.
 \end_layout
 
 \begin_layout Subparagraph
@@ -2231,7 +2320,7 @@ Konfigurationsmenu
 \end_layout
 
 \begin_layout Standard
-Das grafische Menü habe ich nach den Kategorien der Konfigurationsdatei
+Das grafische Menü hat der Auhtor nach den Kategorien der Konfigurationsdatei
  gegliedert:
 \end_layout
 
@@ -2277,21 +2366,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \noindent
 \align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Einstellungsdialog
-\end_layout
-
-\end_inset
-
-
 \begin_inset Flex Scalebox
 status open
 
@@ -2320,6 +2396,20 @@ status open
 
 \end_layout
 
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Einstellungsdialog
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -2334,7 +2424,7 @@ Algemeines über die Datenbank
 \end_layout
 
 \begin_layout Standard
-Die Datenbank schreibe ich über das Modul 
+Die Datenbank schreibt der Author über das Modul 
 \begin_inset Quotes gld
 \end_inset
 
@@ -2343,7 +2433,7 @@ sqlite3
 \end_inset
 
 .
- Das ist eine einfachere Version der beliebten SQL-Datenbank mit Pythonitegratio
+ Das ist eine einfachere Version der bekannten SQL-Datenbank mit Pythonitegratio
 n
 \begin_inset Foot
 status open
@@ -2643,8 +2733,8 @@ Lesen der Einträge
 \end_layout
 
 \begin_layout Standard
-Beim Lesen von Einträgen habe ich mich dafür entschieden mehrere Funktionen
- zu schreiben.
+Beim Lesen von Einträgen hat sich der Author dafür entschieden mehrere Funktione
+n zu schreiben.
  Die erste ist:
 \end_layout
 
@@ -3522,7 +3612,7 @@ Data
 \begin_layout Standard
 Die Werte werden dann an die vorgesehen Stellen in der Programm-Dialog Maske
  eingesetzt.
- Der Vorteil von diesem Vorgehen ist, dass ich nur einen Dialog-Maske erstellen
+ Der Vorteil von diesem Vorgehen ist, dass man nur einen Dialog-Maske erstellen
  muss, die in jedem Programm gleich angewandt wird.
  Ein weiterer Vorteil ist, dass der Benutzer immer das gleiche Layout sieht
  und sich so nicht immer wieder neu orientieren muss.
@@ -3676,6 +3766,201 @@ Sub
 \end_layout
 
 \begin_layout Subsection
+Visulle Rückmeldung
+\end_layout
+
+\begin_layout Subsubsection
+Einführung
+\end_layout
+
+\begin_layout Standard
+Um dem Benutzer eine Rückmeldung zu geben was gerade passiert gibt es eine
+ sogenante Statusbar.
+ Diese ist die unterste Leiste im Hauptfenster.
+ Die Statusbar kann Text anzeigen.
+ In der gleichen unteren Leiste gibt es auch einen sogenannten 
+\begin_inset Quotes gld
+\end_inset
+
+Spinner
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Diese das ist ein kleines zeichen welches sich dreht um einen Vortschritt
+ oder eine Aktion anzuzeigen.
+\end_layout
+
+\begin_layout Subsubsection
+Initialisierung
+\end_layout
+
+\begin_layout Standard
+Um die Meldung auf der UI anzuzeigen braucht das Feedback Modul wieder das
+ Builderobjekt von GTK.
+ Dieses wird bei der Initialsierung des Programms durch die Funktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def set_builder(OffBuilder):
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+an eine Global Variable weitergegeben werden.
+ Danach kann jede Funktion in diesem Modul das Builderobjekt durch die globale
+ Variable 
+\begin_inset Quotes gld
+\end_inset
+
+builder
+\begin_inset Quotes grd
+\end_inset
+
+ aufrufen.
+\end_layout
+
+\begin_layout Subsubsection
+Anzeigen einer Meldung
+\end_layout
+
+\begin_layout Standard
+Um eine Meldung anzuzeigen kann die Funktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def status_push(text):
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+in dem Modul CPFFeedback ausgeführt werden.
+\end_layout
+
+\begin_layout Standard
+Diese wird dann über die Funktion 
+\begin_inset Quotes gld
+\end_inset
+
+push
+\begin_inset Quotes grd
+\end_inset
+
+ einen Text anzeigen.
+ Argumente ist die ID der Meldung, in diesemfall einfach hochzählend und
+ der Text.
+\end_layout
+
+\begin_layout Subsubsection
+Ändern des Spinners
+\end_layout
+
+\begin_layout Standard
+Wie schon erwähnt gibt es ein Spinner-Objekt.
+ Dieses kann mit den Funktionen
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+start()
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+stop()
+\end_layout
+
+\begin_layout Standard
+aus und an geschaltet werden.
+ Um den Aufwand zum aus und Anschalten gering zu halten gitb es die Funktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def set_progress(ammount):
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+wobei 
+\begin_inset Quotes gld
+\end_inset
+
+ammount
+\begin_inset Quotes grd
+\end_inset
+
+ entweder 
+\begin_inset Quotes gld
+\end_inset
+
+True
+\begin_inset Quotes grd
+\end_inset
+
+ oder 
+\begin_inset Quotes gld
+\end_inset
+
+False
+\begin_inset Quotes grd
+\end_inset
+
+ sein kann.
+\end_layout
+
+\begin_layout Standard
+Wenn der Wert 
+\begin_inset Quotes gld
+\end_inset
+
+True
+\begin_inset Quotes grd
+\end_inset
+
+ ist wird der Spinner angeschaltet, wenn er 
+\begin_inset Quotes gld
+\end_inset
+
+False
+\begin_inset Quotes grd
+\end_inset
+
+ ist wird er ausgeschaltet.
+\end_layout
+
+\begin_layout Subsection
 Installation
 \end_layout
 
@@ -3696,6 +3981,18 @@ Wie in der Vorüberlgung schon angeführt, soll das Programm auf mehreren
  Linux es läuft, und dann den richtigen Datensatz verwendet um das Programm
  zu installieren.
  Desweiteren soll der gesamte Prozess grafisch ablaufen.
+\end_layout
+
+\begin_layout Standard
+Die installation ist in das Modul 
+\begin_inset Quotes gld
+\end_inset
+
+Install_System
+\begin_inset Quotes grd
+\end_inset
+
+ ausgelagert.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3875,8 +4172,8 @@ key "key-6"
 
 \end_inset
 
-EN: Beta-Launcher, Mein erstes GTK-Projekt: https://github.com/SiebenCorgie/Beta-
-Launcher
+EN: Beta-Launcher, Erstes Programm des Authors unter verwendung von GTK:
+ https://github.com/SiebenCorgie/Beta-Launcher
 \end_layout
 
 \begin_layout Bibliography
