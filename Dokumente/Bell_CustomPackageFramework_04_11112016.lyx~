@@ -1,0 +1,3905 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+
+\addto\captionsngerman{\renewcommand{\nomname}{Abkürzungsverzeichnis}}
+
+\usepackage{tocloft}
+
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
+\tocloftpagestyle{plain}
+\renewcommand{\cftdot}{}
+\end_preamble
+\use_default_options true
+\begin_modules
+graphicboxes
+\end_modules
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement b
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language german
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Besondere Lernleistung: 
+\end_layout
+
+\begin_layout Title
+Custom Package Framework
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Ein Programm zum einfachen finden und Installieren von Programmen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 50bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+an der
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Freie Montessori Schule Huckepack e.
+ V.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 30bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+vorgelegt von: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Tendsin Mende
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Pohlandstraße 5
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+01309 Dresden
+\end_layout
+
+\begin_layout Standard
+Abgabetermin: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+27.02.2016
+\end_layout
+
+\begin_layout Standard
+Betreuer:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Herr Diplom-Lehrer Gerd Bobe
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cftsetindents{section}{2.5cm}{2.5cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cftsetindents{subsection}{2.5cm}{2.5cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cftsetindents{subsubsection}{2.5cm}{2.5cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cftsetindents{paragraph}{2.5cm}{2.5cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Einführung
+\end_layout
+
+\begin_layout Subsection
+Die Situation
+\end_layout
+
+\begin_layout Standard
+Wenn ein einsteiger das erste mal an einem Linux System arbeitet stellt
+ sich früher oder später eine ähnliche Fragen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes gld
+\end_inset
+
+Ich habe ein Linux
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Linux"
+description "Linux ist eine freie Variante des Unix-Kernels. Umgangssprachlich wird mit \"Linux\" aber meist das Gesamte Betriebssystem bezeichnet."
+
+\end_inset
+
+ System installiert, aber wie bearbeite ich ein Bild?
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An diesem Problem möchte ich mit meiner Arbeit ansetzen.
+ Ich möchte ein- und Umsteigern das Suchen von Programmen erleichtern.
+ Ich sehe zwei Hauptprobleme für den Neueinstieg.
+\end_layout
+
+\begin_layout Subsection
+Problem 1
+\end_layout
+
+\begin_layout Standard
+Auch wenn es die Programme von Windows und MacOSx nicht gibt, so ist die
+ Auswahl an Programmen sehr groß.
+ Als Beispiel: Es gibt kein offizielles Adobe: Photoshop für Linux
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Vgl.
+ https://helpx.adobe.com/photoshop/system-requirements.html, (14.08.2016, 13:57)
+\end_layout
+
+\end_inset
+
+.
+ Es gibt aber Gimp, Krita, MyPaint, und viele mehr.
+ Welches davon soll ich nehmen? Aus meiner Erfahrung kann ich sagen: 
+\begin_inset Quotes gld
+\end_inset
+
+Krita für malen und Texturbearbeitung und Gimp für Photos
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Aber diese Erfahrung hat der Einsteiger nicht.
+ Meine Lösung für das beschriebene Problem ist einfach: Ich gebe dem Nutzer
+ nur Gimp und Krita und eine Beschreibung mit meiner Erfahrung.
+\end_layout
+
+\begin_layout Subsection
+Problem 2
+\end_layout
+
+\begin_layout Standard
+Das nächste Problem ist recht trivial.
+ Wie installiere ich Software? 
+\end_layout
+
+\begin_layout Standard
+Die meisten Umsteiger kommen von Windows.
+ Sie erwarten, dass man ins Internet geht, den richtigen 
+\begin_inset Quotes gld
+\end_inset
+
+Installer
+\begin_inset Quotes grd
+\end_inset
+
+ herunterlädt und dann installiert.
+ Auf Linux kann man das Installieren aber eher mit einem Appstore vergleichen.
+ Man wählt sein Paket (Programm) und lädt es sich von einem Spiegel-Server
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Kurze Erklährung: https://de.wikipedia.org/wiki/Spiegelserver , 23.10.2016 ,
+ 16,33
+\end_layout
+
+\end_inset
+
+ herunter.
+ Das Paket 
+\begin_inset Quotes gld
+\end_inset
+
+weiß
+\begin_inset Quotes grd
+\end_inset
+
+ selbst welche anderen Programme es benötigt und installiert diese nach.
+ Der Vorteil dieser Methode ist, dass sich viele Programme einzelne Unterprogram
+me teilen können.
+ Außerdem lässt sich das System so einfach mit dem Server abgleichen.
+ Das Aktualisieren der Programme ist dadurch einfacher.
+ 
+\end_layout
+
+\begin_layout Section
+Vorüberlegungen
+\end_layout
+
+\begin_layout Subsection
+Ziel
+\end_layout
+
+\begin_layout Standard
+Meine ersten Überlegungen galten zwangsläufig meinem Ziel.
+ Wie sollte mein Programm aussehen um einen möglichst einfachen Einstieg
+ in Linux zu sichern?
+\end_layout
+
+\begin_layout Standard
+Ich kam zu dem naheliegenden Schluss, dass es das Beste sei, eine einfache
+ Oberfläche zu konstruieren.
+ Es entstanden die ersten Ideen.
+ 
+\end_layout
+
+\begin_layout Standard
+Meine 
+\begin_inset Quotes gld
+\end_inset
+
+fertige Idee
+\begin_inset Quotes grd
+\end_inset
+
+ bestand aus einem Rahmen, welcher in drei Teile gegliedert war: 
+\end_layout
+
+\begin_layout Itemize
+der Programmauswahl
+\end_layout
+
+\begin_layout Itemize
+der Dokumentationsbrowser 
+\end_layout
+
+\begin_layout Itemize
+das Informationssystem
+\end_layout
+
+\begin_layout Standard
+Die Programmauswahl sollte Icons für verschiedene Programm-Arten bekommen
+ (z.
+ B.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Video und Foto
+\begin_inset Quotes grd
+\end_inset
+
+, 
+\begin_inset Quotes gld
+\end_inset
+
+Musik
+\begin_inset Quotes grd
+\end_inset
+
+, 
+\begin_inset Quotes gld
+\end_inset
+
+Spiele
+\begin_inset Quotes grd
+\end_inset
+
+).
+ Durch das Anklicken der Icons sollte man in eine Feinauswahlen kommen.
+ Nach der Feinauswahl wird einem eine Programmauswahl präsentiert.
+\end_layout
+
+\begin_layout Standard
+Der Dokumentationsbrowser wird eine voreingestellte Internetseite zeigen.
+ Diese sollte Dokumnetation anzeigen.
+ Dabei denke ich primär an Schul- oder firmeninterne Dokumentation.
+\end_layout
+
+\begin_layout Standard
+Der Informationsbrowser wiederum soll über neue Entwicklungen informieren.
+ Es bietet sich an Blog-Webseiten oder Nachrichten an dieser Stelle zu laden.
+\end_layout
+
+\begin_layout Standard
+Es soll möglich sein mithilfe von 
+\begin_inset Quotes gld
+\end_inset
+
+Massenaufträgen
+\begin_inset Quotes grd
+\end_inset
+
+ mehrere Programme der Datenbank gleichzeitig zu Installieren.
+ Dadurch soll es einfacher sein bestehende Programmauswahlen auf einem anderen
+ linuxbasierten Betriebsystem nach zuinstalieren.
+ Zu den Massenaufträgen gehört deren Erstellung, sowie deren Ausführung.
+\end_layout
+
+\begin_layout Standard
+Ein nicht zu unterschätzender Teil ist die Administration eines solchen
+ Auswahltools/Programms.
+ Ich weiß aus Erfahrung meines ersten größeren Programms
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+siehe: https://github.com/SiebenCorgie/Beta-Launcher , 18.08.2016, 18:30
+\end_layout
+
+\end_inset
+
+, dass man ein gutes Konfigurations-System braucht.
+ Bei CPF (kurz für: Custom Packaging Framework) würde außerdem noch ein
+ weiteres Problem hinzu kommen.
+ Da es sich um die Installation von Programmen handelt, muss die Sicherheit
+ des System gewährleistet sein.
+ Das heißt es muss genau geregelt werden wie man installiert und welche
+ Programme welchen zugriff auf Dateien haben.
+\end_layout
+
+\begin_layout Subsection
+Konfiguration für den Anwender
+\end_layout
+
+\begin_layout Subsubsection
+Programm eigene Konfiguration
+\end_layout
+
+\begin_layout Standard
+Die Programm eigene Konfiguration umschließt die Art, wie 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CPF"
+description "Kurz für Custom-Package-Framework. Ist der Name für das Programm, welches im Rahmen dieser Arbeit entsteht."
+
+\end_inset
+
+ reagieren soll.
+ Dazu sollte gehören:
+\end_layout
+
+\begin_layout Itemize
+Umgang mit der Datenbank
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Speicherung von Daten
+\end_layout
+
+\begin_layout Itemize
+Abrufen von Daten
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Umgang mit dem Internet
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Laden der Webseiten in Dokumentation und Info-System
+\end_layout
+
+\begin_layout Itemize
+Herunterladen von Programmen
+\end_layout
+
+\begin_layout Itemize
+Abgleichen der Datenbank mit online Repositorium
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Verhalten während der Installation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Passwort-abfrage (welcher Benutzer fragt?)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Massenaufträge
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Grafische Rückmeldung
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Die verschiedenen Optionen werden in verschiedenen Registerkarten eines
+ Konfigurationsfensters geändert.
+ Das ist erfahrungsgemäß die übersichtlichste Art.
+\end_layout
+
+\begin_layout Subsubsection
+Datenbank
+\end_layout
+
+\begin_layout Standard
+Die Datenbank soll auf einfachen Datensätzen beruhen.
+ Ein Datensatz besteht aus:
+\end_layout
+
+\begin_layout Itemize
+Name des Programms
+\end_layout
+
+\begin_layout Itemize
+Eigene Beschreibung mit meinen Erfahrungswerten (Kurzbeschreibung)
+\end_layout
+
+\begin_layout Itemize
+Entwicklerbeschreibung (lange Beschreibung)
+\end_layout
+
+\begin_layout Itemize
+Programmtyp (Grafik, Video, Spiel, etc.) (Überkategorie)
+\end_layout
+
+\begin_layout Itemize
+Unterkategory
+\end_layout
+
+\begin_layout Itemize
+Programm Website
+\end_layout
+
+\begin_layout Itemize
+Pfad zu Screenshot
+\end_layout
+
+\begin_layout Itemize
+Pfad zu Icon
+\end_layout
+
+\begin_layout Itemize
+Name auf Debina-Spiegel-Server
+\end_layout
+
+\begin_layout Itemize
+Name auf Ubuntu-Spiegel-Server
+\end_layout
+
+\begin_layout Itemize
+Name auf Arch-Spiegel-Server
+\end_layout
+
+\begin_layout Subsubsection
+Datenbank Management
+\end_layout
+
+\begin_layout Standard
+Die Datenbank soll lokal Veränderbar sein.
+ Das heißt es soll möglich sein neue Datensätze zu speichern oder Datensätze
+ zuerstellen.
+ Desweiteren soll die lokale Datenbank mit einem eigenen Repositorium abgleichba
+r sein.
+ Dazu gehört das Abrufen neuer Updates und das Hochladen eigener Änderungen.
+\end_layout
+
+\begin_layout Subsection
+Installation von Programmen durch das CPF
+\end_layout
+
+\begin_layout Subsubsection
+Visualisierung
+\end_layout
+
+\begin_layout Standard
+Das Installieren von Software soll mit minimalem visuellen Eindrücken auskommen.
+ Dabei möchte ich nur den Fortschritt der Installation, und den Namen der
+ derzeitig ausgeführten Aktion anzeigen.
+ Diese Informationen werden im unteren Teil des Programms gut sichtbar angezeigt.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Installationsablauf
+\end_layout
+
+\begin_layout Standard
+Die Installation eines Programms soll wie folgt ablaufen:
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing other 0.5
+\noindent
+Programm Auswahl (manuel)
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing other 0.5
+\noindent
+Installations-Start (manuel)
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing other 0.5
+\noindent
+Passwort-abfrage (Benutzer wird aus Konfigurationsdateien gelesen) (automatisch)
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing other 0.5
+\noindent
+Bestätigung (manuel)
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing other 0.5
+\noindent
+Installation (automatisch)
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing other 0.5
+\noindent
+Erfolgs/Misserfolgsnachricht (automatisch)
+\end_layout
+
+\begin_layout Standard
+Bei einem Misserfolg soll nach Möglichkeit der Fehler angezeigt werden.
+ Insofern benötigt soll man auch den Logbuch-Eintrag sehen können.
+\end_layout
+
+\begin_layout Subsubsection
+Massenaufträge
+\end_layout
+
+\begin_layout Standard
+Das Programm soll Massenaufträge abarbeiten können.
+ Dies soll vor allem Administratoren die Arbeit ersparen.
+ Bei einem Massenauftrag werden viele Programme mit einem mal installiert.
+ Dies Auswahl wurde dabei vorher von einer anderen Person getroffen und
+ gespeichert.
+ Die installation der Programm-Auswahl wird dann nur noch vom Benutzer autorisie
+rt.
+\end_layout
+
+\begin_layout Subsubsection
+Programmauswahl
+\end_layout
+
+\begin_layout Standard
+Die Programme sollen wie in 2.1 beschrieben durch Fein-Filtern der Optionen
+ ausgewählt werden.
+ Ich werden versuchen die Beschreibungen möglichst neutral zuhalten.
+ Damit soll die Entscheidung des Nutzers unvoreingenommen bleiben, um zum
+ gewünschten Programm zu gelangen.
+\end_layout
+
+\begin_layout Subsection
+Benutze Programm und Module
+\end_layout
+
+\begin_layout Subsubsection
+Webintegration
+\end_layout
+
+\begin_layout Standard
+Der Dokumetationsbrowser und der Informationsbrowser werden kleine Webumgebungen
+ sein.
+ Diese funktionieren wie eigene Browser.
+ Die Webintegration soll über PyWebKit
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+siehe: https://webkit.org/ , 14.08.2016, 20:18
+\end_layout
+
+\end_inset
+
+ erfolgen.
+ Das ist eine von Apple entwickelte Umgebung, um relativ einfach Browserfähigkei
+ten in Gtk-Programme einzubauen.
+ Ich verwenden es um einfache Webseiten anzuzeigen.
+ Die Lizenzierung von WebKit
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://webkit.org/licensing-webkit/ , 14.08.2016 , 20:21
+\end_layout
+
+\end_inset
+
+ ermöglicht es mir das Programm kommerziell oder nicht-kommerziell zu entwickeln
+ und zu veröffentlichen.
+\end_layout
+
+\begin_layout Subsubsection
+Programmiersprache
+\end_layout
+
+\begin_layout Standard
+Als Programmiersprache nehme ich Python
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Homepage: https://www.python.org/ , 23,10,2016, 19:48
+\end_layout
+
+\end_inset
+
+.
+ Es gibt verschiedene Gründe dafür.
+ 
+\end_layout
+
+\begin_layout Standard
+Der Erste Grund ist, dass ich schon seit Sommer 2015 Programme mit Python
+ schreibe.
+ Ich kann es relativ 
+\begin_inset Quotes gld
+\end_inset
+
+flüssig
+\begin_inset Quotes grd
+\end_inset
+
+ schreiben.
+ Diese Vorkenntnis ist nötig um in der gegebenen Zeit ein so komplexes Programm
+ zuschreiben.
+ 
+\end_layout
+
+\begin_layout Standard
+Der zweite Grund ist, dass Python eine interpretiere
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Siehe: https://de.wikipedia.org/wiki/Interpreter
+\end_layout
+
+\end_inset
+
+ Sprache ist.
+ Der Vorteil ist, dass ein Python-Programm bei einem Programmfehler nicht
+ abstürzt.
+ Es führt in meinem Fall den Befehl nicht aus und kehrt in die Warte-Position
+ zurück
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Die Charackteristik eines Gtk+ Interfaces wird Später noch geklärt.
+\end_layout
+
+\end_inset
+
+.
+ Dadurch ist das potenzielle Installieren fehlerhafter Software, oder frustriere
+nde abstürze des Programms geringer.
+ Ein Nachteil ist, dass man Funktionsfehler erst bei der Ausführung findet.
+ Das Testen wird dadurch aufwendiger.
+\end_layout
+
+\begin_layout Standard
+Der Dritte Grund ist Pythons Anbindung an das GTK+ Projekt.
+ Wie ich im nächsten Abschnitt beschreiben werde, nutze ich das GTK+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GTK+"
+description "kurz für \"GIMP Tool-Kit\" ist ein Sammlung an Programmen und Tools, die es einfach macht Programmoberflächen zu entwickeln. GTK+ ist die derzeit 3. Version. Sie zeichnet sich vorallem durch die Ünterstützung mehrerer Betriebsysteme und Programmiersprachen aus. Mehr Informationen: https://de.wikipedia.org/wiki/GTK%2B "
+
+\end_inset
+
+ um meine grafische Umsetzung zu realisieren.
+ Bei einem so grundlegenden Element ist es wichtig, dass die Anbindung an
+ die Programmiersprache gut ist.
+ Dies ist bei Python glücklicherweise gegeben.
+\end_layout
+
+\begin_layout Subsubsection
+Programmierumgebung
+\end_layout
+
+\begin_layout Standard
+Als Programmierumgebung (kurz IDE
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "IDE"
+description "kurz für \"integrierte Entwicklungsumgebung\" ist ein Hilfsprogramm um das Programmieren einfacher zugestalten. Eine IDE bietet meist verschiedene Werkzeuge um z. B. Ausführen und Kontrolieren von Programmen zu vereinfachen."
+
+\end_inset
+
+) nutze ich 
+\begin_inset Quotes gld
+\end_inset
+
+Anjuta
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Homepage: http://anjuta.org/ , 23.10.2016 , 19:46
+\end_layout
+
+\end_inset
+
+.
+ Diese IDE habe ich schon zuvor für verschiedene grafische Programme genutzt.
+ Einer der größten Vorteile ist die sehr gute Anbindung des 
+\begin_inset Quotes gld
+\end_inset
+
+Glade
+\begin_inset Quotes grd
+\end_inset
+
+ Hilfsprogramms.
+ Damit kann man sehr einfach Grafische GTK+ Oberflächen zusammenstellen
+ und Programmieranbindungen für Python festlegen.
+\end_layout
+
+\begin_layout Subsubsection
+Interface-Toolkit GTK+
+\end_layout
+
+\begin_layout Standard
+Das Interface-Toolkit
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+kurze Erklärung: https://de.wikipedia.org/wiki/Toolkit
+\end_layout
+
+\end_inset
+
+ ist auf Linux zu Verständigung zwischen dem Display-Server (z.B.
+ X11 oder Wayland) und dem Benutzer zuständig.
+ Es stellt verschiedene Elemente bereit, die zusammen das fertige Programm-Inter
+face ergeben (siehe Abb.1)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Quelle: https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Schema_der_Schic
+hten_der_grafischen_Benutzeroberfl%C3%A4che.svg/560px-Schema_der_Schichten_der_gr
+afischen_Benutzeroberfl%C3%A4che.svg.png , Shmuel Csaba Otto Traian, 29.10.2013
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\shape italic
+Schematische Darstellung der Beziehungen
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Scalebox
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Bilder/Schema_der_Schichten_der_grafischen_Benutzeroberflaeche.svg
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ich habe mich für GTK+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Englisch: http://www.gtk.org/ ,18.08.2016, 21:25
+\end_layout
+
+\end_inset
+
+ entscheiden.
+ Der wichtigste Grund wurde schon angeführt.
+ GTK+ hat eine exzellente Pythonanbindung (ab jetzt 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "API"
+description "Kurz für Application-Programming-Interface. Meint die Anbindung einer Software zu einer anderen. Oft werden so auch Programme verschiedener Programmiersprachen verbunden. Mehr dazu: https://de.wikipedia.org/wiki/Programmierschnittstelle"
+
+\end_inset
+
+).
+ Allerdings macht sich GTK+ durch weitere Vorteile prädestiniert für den
+ Einsatz in meinem Programm.
+\end_layout
+
+\begin_layout Standard
+Ein weiterer großer Vorteil ist die Lizenzierung.
+ GTK+ ist unter LGPL
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Englisch: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html , 18.08.2016
+ , 21:32
+\end_layout
+
+\end_inset
+
+ Lizenziert
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Englisch: http://www.gtk.org/ , 18.08.2016, 21:32
+\end_layout
+
+\end_inset
+
+.
+ Diese erlaubt es mir GTK+ ohne Restriktionen einzusetzen.
+ Die LGPL Lizenz ist eine der am weitesten verbreiteten Lizenzen in der
+ OpenSource-Welt.
+ Der Erfolg durch die Lizenz und die Qualität lässt sich auf Linux leicht
+ erkennen.
+ Es gibt sehr viele Programme die mit dem GTK+ erstellt wurden.
+ Des weiteren gibt es sogar eine ganze Desktop-Umgebung die auf GTK basiert.
+ Genannt 
+\begin_inset Quotes gld
+\end_inset
+
+Gnome
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Englische Referenz: https://www.gnome.org/
+\end_layout
+
+\end_inset
+
+, welche ich selbst benutze.
+ Das GTK Projekt ist eines der ältesten
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://www.gimp.org/about/ancient_history.html , 08.18.2016 , 21:47
+\end_layout
+
+\end_inset
+
+ und erfolgreichsten Linux-Projekte im grafischen Segment.
+ Mit dem Erfolg kommt eine weite Verbreitung im Linux-Anwenderbereich.
+ Der kommt mir insofern zugute, als das es auf fast allen Distributionen
+ die benötigten Pakete für mein Programm gibt.
+\end_layout
+
+\begin_layout Standard
+Der letzte Grund für das GTK+ ist meine Erfahrung.
+ Wie in 2.5 erwähnt habe ich schon einige Erfahrung auf dem Gebiet von Python.
+ Dazu gehört auch, dass ich Ostern 2016 ein Programm
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+siehe: https://github.com/SiebenCorgie/Beta-Launcher
+\end_layout
+
+\end_inset
+
+ zum Organisieren und Installieren der Unreal-Engine 4 auf Linux geschrieben
+ habe.
+ Dieses war auch mit GTK+ erstellt worden.
+ Ich habe während des Programmierens viel Erfahrung gesammelt.
+ Damals habe ich mehrere Toolkits miteinander verglichen (z.B.
+ Qt und wxWidgets).
+ Am Ende habe ich mich für das GTK+ entscheiden.
+ Das Ergebnis ist ein gefestigtes Anfängerwissen über ein Toolkit welches
+ ich mir bewusst gesucht habe.
+ 
+\end_layout
+
+\begin_layout Subsection
+Distributions Unterstützung des CPF
+\end_layout
+
+\begin_layout Standard
+Ich plane die Unterstützung des 
+\begin_inset Quotes gld
+\end_inset
+
+.deb
+\begin_inset Quotes grd
+\end_inset
+
+ Formates und des 
+\begin_inset Quotes gld
+\end_inset
+
+.tar.xz
+\begin_inset Quotes grd
+\end_inset
+
+ Formates.
+ Das heißt es gibt Unterstützung von Debian und dessen Distributionen sowie
+ Arch-Linux und dessen Distributionen.
+ 
+\end_layout
+
+\begin_layout Standard
+Dabei ist zu beachten, dass Ubuntu eine andere 
+\begin_inset Quotes gld
+\end_inset
+
+naming-convention
+\begin_inset Quotes grd
+\end_inset
+
+ hat als Debian, allerdings trotzdem auf dem .deb Format beruht.
+ Deshalb werde ich in meiner Programmdatenbank zwei verschiedene Speicherplätze
+ in einem Datensatz einrichten.
+ Einen für Debian und einen für Ubuntu.
+\end_layout
+
+\begin_layout Standard
+In der Linux-Welt gibt es noch ein anderes, sehr weit verbreitetes Format:
+ .rpm
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Kurze Erklärung: https://en.wikipedia.org/wiki/RPM_Package_Manager , 01.09.2016,
+ 16:49
+\end_layout
+
+\end_inset
+
+.
+ Mit diesem Format habe ich allerdings keine Erfahrung.
+ Deshalb werde ich es nicht benutzen.
+ Es wäre möglich sich mit dem Format zu beschäftigen.
+ Allerdings hängt es sehr stark von der gewählten Distribution ab wie man
+ das Paket erstellt.
+ Deshalb habe ich mich entschieden das Format auszulassen.
+ 
+\end_layout
+
+\begin_layout Subsection
+Arbeitsweise
+\end_layout
+
+\begin_layout Subsubsection
+Schreiben
+\end_layout
+
+\begin_layout Standard
+Ich werde die Dokumentation mit Lyx
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.lyx.org/ , 01.09.2016, 17:37
+\end_layout
+
+\end_inset
+
+ schreiben.
+ Das ist ein grafisches Programm zum LATEX-Framework
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "LATEX-Framework"
+description "LATEX ist eine Programmsamlung. Sie immitiert über verschiedene Befehle die frühere Schriftsetzung im Druck. Durch diese Methode kann man vergleichsweise einfach sehr gute Layouts erreichen. Mehr Informationen: https://de.wikibooks.org/wiki/LaTeX-Kompendium"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.latex-project.org/ , 01.09.2016, 17:35
+\end_layout
+
+\end_inset
+
+.
+ Der Grund dafür ist vor allem die gute Linux-Unterstützung sowie das exzellente
+ Schriftbild welches durch das LATEX Programm erstellt wird.
+ Des weiteren ist LATEX als Dokumentensprache in wissenschaftlichen Arbeiten
+ weit verbreitet.
+ Damit stellt die Arbeit auch eine gewissen Vorbereitung auf ein Studium
+ für mich dar.
+\end_layout
+
+\begin_layout Subsubsection
+Synchroniesierung über Git-Hub
+\end_layout
+
+\begin_layout Standard
+Das Programm sowie die Dokumentation kommen in eine Programm-Ordnerstruktur.
+ Diese soll mit einem Git-Hub Repositorium abgeglichen werden.
+ Dadurch erreiche ich maximale Transparenz was das Programm und dessen Fortschri
+tt angeht.
+ Außerdem ist das bearbeiten von Programmen über Git-Hub eine sehr weit
+ verbreitete Praxis in der Linux-Welt.
+ 
+\end_layout
+
+\begin_layout Standard
+Git-Hub ist eine Online-Platform, bei der man Programme hochladen kann.
+ Es hebt sich von normalen 
+\begin_inset Quotes gld
+\end_inset
+
+Web-Hosts
+\begin_inset Quotes grd
+\end_inset
+
+ in sofern ab, als das man als Administrator des Repositoriums Änderungen
+ anderer annehmen und prüfen kann.
+ Außerdem gibt es einen sehr ausgeklügelten Mechanismus um lokale Versionen
+ eines Programms mit der Onlineversion zu synchronisieren
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr Informationen über Git-Hub: https://de.wikipedia.org/wiki/GitHub , 01.09.2016,
+ 17:46
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Dokumentation meiner Projektrealisierung
+\end_layout
+
+\begin_layout Subsection
+Voranmerkung
+\end_layout
+
+\begin_layout Standard
+Die Dokumentation erfolgt in der Reihenfolge in der ich das Programm geschrieben
+ habe.
+ Es ist außerdem gut eine Version des Programm-Listings griffbereit zu haben.
+ Ich werde hin und wieder indirekt Bezug auf einzelne Stellen nehmen.
+ Insofern erforderlich baue ich auch Listing-Stellen in den Text ein.
+ 
+\end_layout
+
+\begin_layout Subsection
+Erstellung des Programms und seiner Verzeichnisstruktur
+\end_layout
+
+\begin_layout Standard
+Das Programm selbst lasse ich zuerst durch den Python-GTK-Wizard von Anjuta
+ erstellen.
+ Das ist schnell durch den Dialog 
+\begin_inset Quotes gld
+\end_inset
+
+Create New Project
+\begin_inset Quotes grd
+\end_inset
+
+ mit den Einstellung für ein Python-GTK-Projekt getan.
+ Dieser Wizard erstellt in einem Ordner die typische Ordnerstruktur eines
+ Linux-Programms.
+ Nach dem Hinzufügen meiner eigenen Ordner für Dokumentation und Referenzen
+ haben ich die Ordnerstruktur aus Abb.
+ 2.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\shape italic
+Grund Ordnerstruktur
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Bilder/DefaultDirectoryStructure.png
+	lyxscale 75
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dieser Ordnerstruktur soll mit einem Git-Hub Repositorium abgeglichen werden.
+ Dazu kreiere ich zuerst ein leeres Repositorium (ab jetzt Repo.) auf Git-Hub
+ mit meinem Benutzer.
+ Danach klone ich es auf meinen Computer.
+ In den zurzeit leeren Ordner kopiere ich das gerade erstellte Projekt.
+ Danach synchronisiere ich mithilfe der folgenden Kommandos:
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Dateien und Ordner zu lokalen Repo hinzufügen
+\end_layout
+
+\begin_layout Plain Layout
+
+git add *
+\end_layout
+
+\begin_layout Plain Layout
+
+# Dateien lokal Synchronisieren und Nachricht hinterlassen
+\end_layout
+
+\begin_layout Plain Layout
+
+git commit -a
+\end_layout
+
+\begin_layout Plain Layout
+
+# Lokale neue Version online synchronisieren
+\end_layout
+
+\begin_layout Plain Layout
+
+git push
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jetzt ist die Grundstruktur online hinterlegt.
+ Ich kann mir jederzeit eine Version der Struktur herunterladen, bearbeiten
+ und die neue Version hochladen.
+ Der erste 
+\begin_inset Quotes gld
+\end_inset
+
+commit
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Ist in diesem Zusammenhang das Synchronisieren eigener Änderungen mit dem
+ Repositorium.
+\end_layout
+
+\end_inset
+
+ hat die Nachricht: 
+\begin_inset Quotes gld
+\end_inset
+
+Initial commit
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Da ich als Administrator die Änderung hochlade, wird sie sofort übernommen.
+\end_layout
+
+\begin_layout Subsection
+Erstellung der Grafischen Oberfläche: Hauptfenster
+\end_layout
+
+\begin_layout Standard
+In Anjuta (die IDE) gibt es 
+\begin_inset Quotes gld
+\end_inset
+
+Glade
+\begin_inset Quotes grd
+\end_inset
+
+ den UI-Editor für mein GTK+-Interface.
+ Mit ihm kann ich mithilfe verschiedener vorgegebener UI-Elementen (in 
+\begin_inset Quotes gld
+\end_inset
+
+Palette
+\begin_inset Quotes grd
+\end_inset
+
+) mein Hauptfenster erstellen.
+ Die einzelnen Schritte beinhalten immer das einfügen des Widgets, die Namensgeb
+ung sowie die Einstellung gewünschter Parameter (siehe abb 3).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aufbau Anjuta mit Glade Integration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Scalebox
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Bilder/Anjuta_Galde_Pic.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ich entscheide mich für eine traditionelle 
+\begin_inset Quotes gld
+\end_inset
+
+Windowbar
+\begin_inset Quotes grd
+\end_inset
+
+ am oberen Fensterrand, sowie einem horizontales 
+\begin_inset Quotes gld
+\end_inset
+
+Notebook
+\begin_inset Quotes grd
+\end_inset
+
+.
+ In dem Notbook werden auf der ersten Position später die verschiedenen
+ Programmkategorien erscheinen (ausgewählt in Abb.
+ 4).
+ Auf der zweiten und dritten Position ist der 
+\begin_inset Quotes gld
+\end_inset
+
+Dokumentationbrowser
+\begin_inset Quotes grd
+\end_inset
+
+ und der 
+\begin_inset Quotes gld
+\end_inset
+
+Informationsbrowser
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Das fertige Ergebnis sieht wie in Abb.
+ 4 aus.
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Haupt-Fenster
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Flex Scalebox
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename Bilder/MainWindow_Show.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dokumetations- und Informationsbrowserfenster
+\end_layout
+
+\begin_layout Standard
+Die Browserfenster werden beim Programmstart eingebunden.
+ Dazu erstelle ich in dem Fenster von 
+\begin_inset Quotes gld
+\end_inset
+
+Documentation
+\begin_inset Quotes grd
+\end_inset
+
+ bzw.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Info
+\begin_inset Quotes grd
+\end_inset
+
+ ein WebKit-Browser.
+ Dieser lädt die 
+\begin_inset Quotes gld
+\end_inset
+
+Home
+\begin_inset Quotes grd
+\end_inset
+
+ Url.
+ Die 
+\begin_inset Quotes gld
+\end_inset
+
+Home
+\begin_inset Quotes grd
+\end_inset
+
+-Url wird aus der Konfikurationsdatei gelesen.
+ Es gibt eine für den Dokumentationsbrowser und eine für den Informationsbrowser.
+\end_layout
+
+\begin_layout Standard
+Wenn die Interaktion mit dem Internet in den Einstellungen deaktiviert ist
+ wird WebKit nicht eingebunden und stattdessen ein Fehler-Icon angezeigt.
+\end_layout
+
+\begin_layout Subsection
+Konfiguration des CPF
+\end_layout
+
+\begin_layout Subsubsection
+Konfigurationsdatei
+\end_layout
+
+\begin_layout Standard
+Zuerst erstelle ich mir eine eigene Konfigurationsdatei.
+ In ihre werden alle Konfigurationen gespeichert die das Programm über mehrere
+ Läufe hinweg behalten soll.
+ Die Datei ist in Überabschnitte geteilt.
+ Deren Namen sind in eckigen Klammern eingefasst.
+ Es folgen die Namen.
+ Nach einem Gleichheitszeichen kommt der Wert.
+ Eine Überkategorie mit Wertenamen und Wert sieht also wie folgt aus: 
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+[Ueberkategorie]
+\end_layout
+
+\begin_layout Plain Layout
+
+Name = Wert
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Diese Syntax kann von einem Modul in Python gelesen werten.
+ Dadurch ist es für mich einfachere die Werte auszulesen und zu ändern.
+\end_layout
+
+\begin_layout Subsubsection
+Lesen und Schreiben von Konfigurationseinträgen
+\end_layout
+
+\begin_layout Subparagraph
+Allgemeines
+\end_layout
+
+\begin_layout Standard
+Wie schon angekündigt, nehme ich zum Lesen und Schreiben der Werte ein Modul.
+ Dieses heißt 
+\begin_inset Quotes gld
+\end_inset
+
+Configparser
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Dokumentation: https://docs.python.org/3.5/library/configparser.html , 01.09.2016,
+ 18:35
+\end_layout
+
+\end_inset
+
+.
+ Mit der in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-7"
+
+\end_inset
+
+ beschriebenen API kann ich nun Dateien ein und auslesen, sowie Einträge
+ ändern.
+ Der Pfad zur Konfigurationsdatei ist im Programmierstatus noch lokal direkt
+ im Verzeichnis.
+ Im installierte zustand wird die Konfigurationsdatei immer im Home-Verzeichnis
+ des Nutzers liegen.
+\end_layout
+
+\begin_layout Standard
+Für die Konfiguration legen ich eine neue Pythondatei mit dem Namen CPFConfig
+ an.
+ Diese importiere ich in das Hauptprogramm unter dem Pseudonym 
+\begin_inset Quotes gld
+\end_inset
+
+conf
+\begin_inset Quotes grd
+\end_inset
+
+.
+ In der neuen Datei erstelle ich die Funktionen:
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+set_entry (auslesen eines Wertes)
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+get_entry (einlesen eines Wertes)
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+load_config (laden der Werte des Konfigurationsmenüs)
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+save_config (schreiben der Werte des Konfigurationsmenüs)
+\end_layout
+
+\begin_layout Standard
+Außerdem kommen vor die Funktionen an den anfang von 
+\begin_inset Quotes gld
+\end_inset
+
+CPFConfig
+\begin_inset Quotes grd
+\end_inset
+
+ die Befehle um die Konfigurationsdatei einzulesen.
+ Dabei wird die Datei in die Variable 
+\begin_inset Quotes gld
+\end_inset
+
+config
+\begin_inset Quotes grd
+\end_inset
+
+ als ConfigParser-Objekt gespeichert.
+ Damit kann ich auf 
+\begin_inset Quotes gld
+\end_inset
+
+config
+\begin_inset Quotes grd
+\end_inset
+
+ alle Funktionen des ConfigParser Objekts anwenden.
+ Danach lese ich mit dem Befehl 
+\begin_inset Quotes gld
+\end_inset
+
+read
+\begin_inset Quotes grd
+\end_inset
+
+ die Konfigurationsdatei ein.
+ Die Reihnfolge stellt sicher, dass die Befehle am Anfang ausgeführt werden,
+ sobald dieses Modul gestartet wird.
+ Erst danach werden meine Funktionen gelesen und bei Aktivierung ausgeführt.
+\end_layout
+
+\begin_layout Subparagraph
+Die Funktion set_entry -
+\end_layout
+
+\begin_layout Standard
+Die Funktion nimmt Werte für die Variablen 
+\begin_inset Quotes gld
+\end_inset
+
+section
+\begin_inset Quotes grd
+\end_inset
+
+, 
+\begin_inset Quotes gld
+\end_inset
+
+entry
+\begin_inset Quotes grd
+\end_inset
+
+ und 
+\begin_inset Quotes gld
+\end_inset
+
+newentry
+\begin_inset Quotes grd
+\end_inset
+
+ entgegen.
+ Danach wendet sie 
+\begin_inset Quotes gld
+\end_inset
+
+set
+\begin_inset Quotes grd
+\end_inset
+
+ auf das 
+\begin_inset Quotes gld
+\end_inset
+
+config
+\begin_inset Quotes grd
+\end_inset
+
+ Objekt an.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Set
+\begin_inset Quotes grd
+\end_inset
+
+ bekommt als Argumente die Kategorie des neuen Wertes (
+\begin_inset Quotes gld
+\end_inset
+
+section
+\begin_inset Quotes grd
+\end_inset
+
+) den Namen (
+\begin_inset Quotes gld
+\end_inset
+
+entry
+\begin_inset Quotes grd
+\end_inset
+
+) und den neuen Wert (
+\begin_inset Quotes gld
+\end_inset
+
+newentry
+\begin_inset Quotes grd
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Danach schreibt sie die neuen Werte in die Konfigurationsdatei.
+ 
+\end_layout
+
+\begin_layout Subparagraph
+Die Funktion get_entry -
+\end_layout
+
+\begin_layout Standard
+Die Funktion nimmt zwei Werte entgegen: 
+\begin_inset Quotes gld
+\end_inset
+
+section
+\begin_inset Quotes grd
+\end_inset
+
+ und 
+\begin_inset Quotes gld
+\end_inset
+
+entry
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Ähnlich wie bei set_entry werden die Werte auf das 
+\begin_inset Quotes gld
+\end_inset
+
+conf
+\begin_inset Quotes grd
+\end_inset
+
+-Objekt angewendet um mit den Argumenten 
+\begin_inset Quotes gld
+\end_inset
+
+section
+\begin_inset Quotes grd
+\end_inset
+
+ und 
+\begin_inset Quotes gld
+\end_inset
+
+entry
+\begin_inset Quotes grd
+\end_inset
+
+ den korrespondierenden Wert wieder zugeben.
+ Dabei steht diese Anweisung in der 
+\begin_inset Quotes gld
+\end_inset
+
+return
+\begin_inset Quotes grd
+\end_inset
+
+ Anweisung.
+ Dies sorgt dafür, dass der Aufrufer der Funktion den Wert in der Konfigurations
+datei zurück bekommt.
+ Diesen Wert kann man in einer Variable speichern oder sofort weiter verwenden.
+ 
+\end_layout
+
+\begin_layout Subparagraph
+Die Funktion load_config -
+\end_layout
+
+\begin_layout Standard
+Die Funktion ist dazu da, den Inhalt des Konfigurations-Dialogs festzulegen.
+ Sie nimmt als Argument nur den Konstruktor
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Der Konstruktor ist das PyGTK eigene Unterprogramm was die Verbindung zwischen
+ der GUI und dem Pythonprogramm übernimmt.
+\end_layout
+
+\end_inset
+
+ des GTK-Fensters (builder).
+ Dadurch kann man in der Funktion auch das grafische Interface aus der Klasse
+ 
+\begin_inset Quotes gld
+\end_inset
+
+GUI
+\begin_inset Quotes grd
+\end_inset
+
+ bearbeiten.
+ Dabei wird für jedes Widget der Wert aus der Konfigurationsdatei geladen.
+ Es handelt sich in fast allen Fällen um einen Text, der geladen wird.
+ Das ist relativ einfach:
+\end_layout
+
+\begin_layout Standard
+Zuerst legt man eine Variable mit dem Objekt an.
+ Anschließend wird der alte Wert des Textes mit dem neuen überschrieben.
+ Der neue Wert wird über die get_entry Funktion aus der Konfigurationsdatei
+ gelesen.
+\end_layout
+
+\begin_layout Standard
+Es gibt zwei Sonderfälle.
+ Einmal, 
+\begin_inset Quotes gld
+\end_inset
+
+Verzeichnis-Auswahlen
+\begin_inset Quotes grd
+\end_inset
+
+ und eine 
+\begin_inset Quotes gld
+\end_inset
+
+Ja/Nein
+\begin_inset Quotes grd
+\end_inset
+
+-Auswahl durch eine 
+\begin_inset Quotes gld
+\end_inset
+
+Tick-Box
+\begin_inset Quotes grd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Bei der Verzeichnis-Auswahl liest das Programm den gespeicherten Pfad aus
+ der Konfigurationsdatei.
+ Danach wird die Datei über 
+\begin_inset Quotes gld
+\end_inset
+
+set_filename
+\begin_inset Quotes grd
+\end_inset
+
+ ausgewählt.
+\end_layout
+
+\begin_layout Standard
+Bei den Tickboxen hat man nur die Auswahl zwischen gesetztem Hacken oder
+ leerem Feld.
+ Deshalb liest das Programm die Konfigurationsdatei ein.
+ Wenn an der Stelle 
+\begin_inset Quotes gld
+\end_inset
+
+True
+\begin_inset Quotes grd
+\end_inset
+
+ gespeichert ist, wird der Hacken aktiviert.
+ Ansonsten wird er deaktiviert.
+\end_layout
+
+\begin_layout Subparagraph
+Die Funktion save_config -
+\end_layout
+
+\begin_layout Standard
+Diese Funktion ist die Umkehrung der 
+\begin_inset Quotes gld
+\end_inset
+
+load_config
+\begin_inset Quotes grd
+\end_inset
+
+ Funktion.
+\end_layout
+
+\begin_layout Standard
+Sie liest über den 
+\begin_inset Quotes gld
+\end_inset
+
+Builder
+\begin_inset Quotes grd
+\end_inset
+
+ alle Anwendungs-Daten ein und speichert sie an ihrem Platz in der Konfiguration
+sdatei.
+ 
+\end_layout
+
+\begin_layout Standard
+Daten werden eingelesen, indem das GTK-Objekt als Variable speichert.
+ Danach wird dessen Textobjekt ausgelesen und der Wert an seiner Stelle
+ in der Konfigurationsdatei gespeichert.
+\end_layout
+
+\begin_layout Standard
+Bei der Auswahl eines Verzeichnisses gibt es ein eigenes Widget.
+ In diesem erfährt man den Pfad zum gewählten Verzeichnis durch die Methode
+ 
+\begin_inset Quotes gld
+\end_inset
+
+get_filename
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Diese gibt den Pfad als String aus.
+\end_layout
+
+\begin_layout Standard
+Wenn keine Veränderung vorgenommen wurde ist allerdings der Wert, der von
+ 
+\begin_inset Quotes gld
+\end_inset
+
+get_filename
+\begin_inset Quotes grd
+\end_inset
+
+ ausgeben wird 
+\begin_inset Quotes gld
+\end_inset
+
+None
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Um zu verhindern, dass in der Konfigurationsdatei 
+\begin_inset Quotes gld
+\end_inset
+
+None
+\begin_inset Quotes grd
+\end_inset
+
+ als Pfad gespeichert wird, liest das Programm den Pfad ein.
+ Wenn der Pfad 
+\begin_inset Quotes gld
+\end_inset
+
+None
+\begin_inset Quotes grd
+\end_inset
+
+ ist wird die Konfigurationsdatei nicht geändert.
+ Ansonsten wird der neue Wert von 
+\begin_inset Quotes gld
+\end_inset
+
+get_filename
+\begin_inset Quotes grd
+\end_inset
+
+ eingespeichert.
+\end_layout
+
+\begin_layout Standard
+Bei der Tick-Box hat man nur die Möglichkeit einen Hacken zusetzen, oder
+ ihn nicht zusetzen.
+ Dabei ist die Schwierigkeit, dass wenn der Hacken gesetzt wird der String
+ 
+\begin_inset Quotes gld
+\end_inset
+
+True
+\begin_inset Quotes grd
+\end_inset
+
+ eingespeichert wird.
+ Wenn er nicht gesetzt ist, wird 
+\begin_inset Quotes gld
+\end_inset
+
+False
+\begin_inset Quotes grd
+\end_inset
+
+ eingespeichert.
+\end_layout
+
+\begin_layout Subsubsection
+Konfigurationsmenu
+\end_layout
+
+\begin_layout Standard
+Das grafische Menü habe ich nach den Kategorien der Konfigurationsdatei
+ gegliedert:
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+Internet
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+Datenbank
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+Installation
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+MassInstall
+\end_layout
+
+\begin_layout Standard
+In den Kategorien gibt es eine Zwei-Spalten-Liste.
+ Jeweils mit links der Beschreibung der Einstellung und rechts dem Wert.
+ Also Text oder Auswahl-Dialog.
+\end_layout
+
+\begin_layout Standard
+Auf der untersten Menü-Leiste liegen die Knöpfe zum Speichern und Verwerfen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Einstellungsdialog
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Scalebox
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Bilder/PrefWin.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Datenbank
+\end_layout
+
+\begin_layout Subsubsection
+Algemeines über die Datenbank
+\end_layout
+
+\begin_layout Standard
+Die Datenbank schreibe ich über das Modul 
+\begin_inset Quotes gld
+\end_inset
+
+sqlite3
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Das ist eine einfachere Version der beliebten SQL-Datenbank mit Pythonitegratio
+n
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://docs.python.org/2/library/sqlite3.html, 06.09.2016, 19:06
+\end_layout
+
+\end_inset
+
+.
+ Mit diesem Modul kreiert oder läd man eine Datenbank-Datei.
+ Diese kann man anschließend über der 
+\begin_inset Quotes gld
+\end_inset
+
+Curser
+\begin_inset Quotes grd
+\end_inset
+
+, also eine Art Pfeil anpassen.
+ Nach der Manipulation werden die Änderungen ähnlich wie bei Git-Hub gesammelt
+ und die Datenbank mit den Änderungen aktualisiert.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Datenbankiteraktion
+\end_layout
+
+\begin_layout Standard
+Die Interaktion besteht aus mehreren Aktionen:
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Erstellen einer Datenbank und einer Liste
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Erstellen neuer Einträge
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Lesen der Einträge nach verschiedenen Aspekten
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Löschen einzelner Einträge
+\end_layout
+
+\begin_layout Standard
+Die Datenbank enthält nur eine Liste: 
+\begin_inset Quotes gld
+\end_inset
+
+CPFDB
+\begin_inset Quotes grd
+\end_inset
+
+.
+ In dieser Liste steht:
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Name
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Kurzbeschreibung
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Lange Beschreibung
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Name in den Ubuntu Repositorien
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Name in den Debian Repositorien
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Name in den Arch Repositorien
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Pfad zu einem Bildschirmfoto des Programms
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Pfad zu einem Symbol
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Überkategorie
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Unterkategorie
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Webseiten URL des Entwicklers
+\end_layout
+
+\begin_layout Subsubsection
+Tool: Erstellen einer neuen Datenbank
+\end_layout
+
+\begin_layout Standard
+Die Datenbank im Dateiensystem umfasst nur eine Datei, die Datenbank und
+ zwei Ordner.
+ Die Ordner beinhalten Symbole und Screenshots der Programme.
+\end_layout
+
+\begin_layout Standard
+Beim Erstellen werden die Ordner sowie die Datei erstellt.
+ Dabei kann bei bedarf die neue Datenbank direkt in die Konfigurationsdatei
+ eingetragen und damit aktiviert werden.
+ Der angegebene Name in dem Erstellungs-Dialog entspricht dem Name der erstellte
+n Datenbank.
+\end_layout
+
+\begin_layout Standard
+Es ist zu beachten, dass Namen auf Linux nicht die Art der Datei beinhalten
+ müssen.
+ Der Name: 
+\begin_inset Quotes gld
+\end_inset
+
+Datenbank.sh
+\begin_inset Quotes grd
+\end_inset
+
+ ist genauso zulässig wie 
+\begin_inset Quotes gld
+\end_inset
+
+Datenbank.txt
+\begin_inset Quotes grd
+\end_inset
+
+ oder einfach nur 
+\begin_inset Quotes gld
+\end_inset
+
+Datenbank
+\begin_inset Quotes grd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Tool: Erstellen eines neuen Datensatzes
+\end_layout
+
+\begin_layout Standard
+Das Erstellen neuer Datensätze ist denkbar einfach.
+ Man bekommt den Erstellungsdialog präsentiert.
+ In dem Dialog kann man für jedes Feld eines Datensatzes in der Datenbank
+ einen Wert angeben.
+ Vom Name, bis zur URL der Entwickler-Homepage.
+\end_layout
+
+\begin_layout Standard
+Eine Ausnahme machen hier die Auswahl des Screenshots und des Symbols.
+ Bei der Aktivierung kann man hier eine Datei auswählen.
+\end_layout
+
+\begin_layout Standard
+Eine weitere Besonderheit ist das Auswahlmenü der Unterkategorie.
+ Dieses wird über die Funktion:
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+update_sub_category(builder)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+in dem Modul 
+\begin_inset Quotes gld
+\end_inset
+
+CPFDatabase.py
+\begin_inset Quotes grd
+\end_inset
+
+ anhand des ausgewählten Eintrags in dem Auswahlmenü der Hauptkategorie
+ aktualisiert.
+ Dabei wird der aktive Eintrag gelesen.
+ Danach wird mithilfe des Eintrages in der Konfigurationsdatei nach allen
+ möglichen Unterkategorien gesucht.
+ Diese List an Unterkategorien wird dann in dem Menü dargestellt.
+ Es ist zu beachten, dass das Menü vor dieser Prozedur geleert wird, um
+ Mehrfacheinträge einer Kategorie im Auswahlmenü bzw.
+ falsche Einträge auszuschließen.
+\end_layout
+
+\begin_layout Standard
+Nachdem alle Einträge in dem Dialog einen Wert haben, kann man diesen Datensatz
+ der Datenbank hinzufügen.
+ Die Funktion hierfür heißt: 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+db_add_entry(builder)
+\end_layout
+
+\end_inset
+
+ in dem Modul 
+\begin_inset Quotes gld
+\end_inset
+
+CPFDatabase.py
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Sie ließt alle Werte des Dialogs aus, speichert sie in Variablen und fügt
+ diese über die SQL-Funktion 
+\begin_inset Quotes gld
+\end_inset
+
+INSERT
+\begin_inset Quotes grd
+\end_inset
+
+ in die Datenbank ein.
+ Die ID in der Datenbank wird automatisch eingefügt.
+\end_layout
+
+\begin_layout Standard
+Auch hier gibt es wieder eine Besonderheiten.
+ Die Erste ist, dass die Funktion versucht den Screenshot und das Symbol
+ in ihren jeweiligen Ordner zu verschieben.
+ Wenn dies schief läuft wird ein Fehler-Dialog angezeigt.
+ Fehler treten zum Beispiel auf, wenn man Bilder von einem Stick anwählt,
+ den Stick aber auswirft bevor man den Datensatz hinzufügt.
+ In diesem Fall versucht das Programm auf den nicht mehr vorhandenen Pfad
+ zuzugreifen.
+ Das Resultat ist ein Fehler beim Kopieren.
+\end_layout
+
+\begin_layout Standard
+Wird einen Datensatz hinzu gefügt und ein Feld nicht Spezifiziert ist, wird
+ auch ein Fehler-Dialog angezeigt.
+\end_layout
+
+\begin_layout Subsubsection
+Lesen der Einträge
+\end_layout
+
+\begin_layout Standard
+Beim Lesen von Einträgen habe ich mich dafür entschieden mehrere Funktionen
+ zu schreiben.
+ Die erste ist:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+db_read(subcategory)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+die Zweite ist:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+read_attributes(name)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Funktion 
+\begin_inset Quotes gld
+\end_inset
+
+db_read
+\begin_inset Quotes grd
+\end_inset
+
+ gibt alle Namen aller Programme wieder die eine gesuchte Unterkategorie
+ besitzen.
+ Diese Funktion wird nur in der Anzeige der Unterkategorien und ihrer Programme
+ benötigt.
+ Dazu später mehr in der Programmauswahl.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Funktion 
+\begin_inset Quotes gld
+\end_inset
+
+read_attributes
+\begin_inset Quotes grd
+\end_inset
+
+ hingegen liest einen gesamten Datensatz anhand seines Namens aus.
+ Diese wird für alle übrigen Operationen genutzt.
+ Der zurück gegebene Wert ist eine Liste.
+ Der Index an dem sich eine Information befindet ist dabei gleich der Reihenfolg
+e der Datensatznummern bei der Datenbankerstellung.
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+ID
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Name
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Kurze Beschreibung
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Lange Beschreibung
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Screenshot Ort
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Ubuntu-Name
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Debian-Name
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Arch-Name
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Symbol Ort
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Haupt-Kategorie
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Unter-Kategorie
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Entwickler-URL
+\end_layout
+
+\begin_layout Standard
+Achtung: Bei der Nutzung der Funktion 
+\begin_inset Quotes gld
+\end_inset
+
+db_add_entry
+\begin_inset Quotes grd
+\end_inset
+
+ werden die Daten in einer Anderen Reihenfolge angesteuert.
+ Die Reihenfolge innerhalb der Datenbank bleibt aber wie in der Liste beschriebe
+n.
+\end_layout
+
+\begin_layout Subsection
+Programmauswahl
+\end_layout
+
+\begin_layout Subsubsection
+Anmerkung
+\end_layout
+
+\begin_layout Standard
+Die Programmauswahl soll am Anfang die Hauptkategorien anzeigen.
+ Gezeigt werden Icons und ihre Namen.
+ Das Icon soll nativ aus dem System ausgelesen werden.
+ Dadurch sieht der Nutzer in meinem Programm zur Auswahl von z.
+ B.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Musik
+\begin_inset Quotes grd
+\end_inset
+
+ das gleiche Icon, wie wenn er im Startmenü das Icon 
+\begin_inset Quotes gld
+\end_inset
+
+Musik
+\begin_inset Quotes grd
+\end_inset
+
+ Auswählt.
+ Die Namen der Kategorien und Programme werden aus der Konfigurationsdatei
+ ausgelesen.
+\end_layout
+
+\begin_layout Subsubsection
+Menü Ebenen
+\end_layout
+
+\begin_layout Standard
+Das Programm fängt in der Hauptkategorie an.
+ Durch einen Klick auf die gewünschte Kategorie werden die Unterkategorien
+ angezeigt.
+\end_layout
+
+\begin_layout Standard
+Die Unterkategorien sind wie die Hauptkategorien in der Konfigurationsdatei
+ festgelegt.
+ Der Grund dafür ist, dass erstens die Übersetzung einfacher wird.
+ Zum zweiten kann man selbst einfacher die Kategorien abändern wenn man
+ eine eigene Datenbank aufbauen möchte.
+ Der Nachteil ist, dass man zu einer Datenbank die richtige Konfigurationsdatei
+ benötigt.
+ Wenn man die falsche Konfigurationsdatei hat, werden nicht alle Kategorien
+ bzw.
+ die falschen angezeigt.
+ 
+\end_layout
+
+\begin_layout Standard
+Wenn man die gewünschte Unterkategorie gewählt hat werden einem die Programme,
+ die mit dieser Kategorie und Unterkategorie in der Datenbank übereinstimmen
+ angezeigt.
+ Name und Pfad des Icons werden aus der Datenbank ausgelesen und als Icon
+ des Programms verwendet.
+\end_layout
+
+\begin_layout Standard
+Wenn man eines der angezeigten Programme anklickt öffnet sich der Programmdialog.
+\end_layout
+
+\begin_layout Standard
+Dadurch ergeben sich 4 Ebenen.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Hauptkategorien
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Unterkategorien
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Programmauswahl
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Programmdialog
+\end_layout
+
+\begin_layout Standard
+Die ersten drei Kategorien finden im Hauptfenster statt.
+ Der Programmdialog hat sein eigenes Fenster.
+\end_layout
+
+\begin_layout Subsubsection
+Inizialisierung
+\end_layout
+
+\begin_layout Standard
+In dem Modul 
+\begin_inset Quotes gld
+\end_inset
+
+Install_UI
+\begin_inset Quotes grd
+\end_inset
+
+ gibt es eine globale Variable mit dem Namen 
+\begin_inset Quotes gld
+\end_inset
+
+stage
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Diese bekommt je nach aktuell aktiver Kategorie einen String-Wert.
+ 
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+Hauptkategorie = root
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+Unterkategorie = sub
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+Programmauswahl = Prog
+\end_layout
+
+\begin_layout Standard
+Wenn das Programm gestartet wird, ist der 
+\begin_inset Quotes gld
+\end_inset
+
+stage
+\begin_inset Quotes grd
+\end_inset
+
+ wert auf 
+\begin_inset Quotes gld
+\end_inset
+
+root.
+ Es wird die Funktion 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def set_to_start(builder)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ausgeführt.
+ Sie hat als Argument wieder das Builder-Objekt aus dem Hauptprogramm.
+ Danach wird eine weitere globale Variable erstellt: 
+\begin_inset Quotes gld
+\end_inset
+
+Plist
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Sie wird immer eine Liste der Namen der Überkategorien beinhalten.
+ 
+\end_layout
+
+\begin_layout Standard
+Jetzt wird aus der Konfigurationsdatei Plist mit einer Liste der Hauptkategorien
+ besetzt.
+ Da man aus der Konfigurationsdatei nur einen String bekommt werden die
+ Objekte an dem Zeichen 
+\begin_inset Quotes gld
+\end_inset
+
+ , 
+\begin_inset Quotes grd
+\end_inset
+
+ per split() getrennt und in die Liste eingefügt.
+ Im Umkehrschluss müssen also alle Listenobjekte in der Konfigurationsdatei
+ per Komma getrennt werden.
+ 
+\end_layout
+
+\begin_layout Standard
+Nun wird ein Listenobjekt erstellt welches immer das Icon und den Namen
+ eines Objektes enthalten wird.
+ Dieses Objekt kann in einem Gtk-Iconview als Icon mit Namen dargestellt
+ werden.
+ 
+\end_layout
+
+\begin_layout Standard
+Als Programmlisting sieht das wie folgt aus:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Plist = conf.get_entry('DB','enmain')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Plist=Plist.split(',')
+\end_layout
+
+\begin_layout Plain Layout
+
+liststore = Gtk.ListStore(Pixbuf, str) 	
+\end_layout
+
+\begin_layout Plain Layout
+
+view = builder.get_object('PS_IconList')	 
+\end_layout
+
+\begin_layout Plain Layout
+
+view.set_model(liststore) 	
+\end_layout
+
+\begin_layout Plain Layout
+
+view.set_pixbuf_column(0) 
+\end_layout
+
+\begin_layout Plain Layout
+
+view.set_text_column(1)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Danach wird in einer for-Schleife für jedes Objekt in der Liste ein Icon
+ gesucht, als Pixbuf gespeichert und schließlich in die Liste des Iconview
+ gespeichert.
+ Wenn es kein Icon gibt wird das Standart-Fehler-Icon des Systems angezeigt.
+\end_layout
+
+\begin_layout Standard
+Nachdem die Schleife fertig ist wird das Ergebnis dem Nutzer gezeigt.
+\end_layout
+
+\begin_layout Standard
+Die Gesamte Funktion wird auch beim klick auf 
+\begin_inset Quotes gld
+\end_inset
+
+Home
+\begin_inset Quotes grd
+\end_inset
+
+ in der oberen Leiste der Programmauswahl wiederholt.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Von Hauptkategorie zu Unterkategorie
+\end_layout
+
+\begin_layout Standard
+Wenn ein beliebiges Icon in der Programmauswahl angeklickt wird, wird die
+ Funktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def Go_Down(builder,iconview,treepath)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ausgeführt.
+ Ihre Argumente sind wieder der Builder, zu Interaktion mit dem Interface,
+ die angeklickte Programmauswahl und sein Objekt-Baum 
+\begin_inset Quotes gld
+\end_inset
+
+treepath
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Letzterer hält die für uns wichtige Information welcher Index in der Liste
+ angeklickt wurde.
+ 
+\end_layout
+
+\begin_layout Standard
+Die globale Variable 
+\begin_inset Quotes gld
+\end_inset
+
+SelectedMain
+\begin_inset Quotes grd
+\end_inset
+
+ bekommt nun den Namen der gewählten Kategorie.
+ Der Wert kommt aus der Plist-Variable.
+ Wie schon erwähnt hält sie eine Liste der angezeigten Namen.
+ Über 
+\begin_inset Quotes gld
+\end_inset
+
+treepath
+\begin_inset Quotes grd
+\end_inset
+
+ finden wir den Index der angeklickt wurde.
+ Indem man mit dem angeklickten Index in 
+\begin_inset Quotes gld
+\end_inset
+
+Plist
+\begin_inset Quotes grd
+\end_inset
+
+ sucht, weiß man jetzt welche Kategorie angeklickt wurde.
+ Als Listing sieht das wie folgt aus:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SelectedMain = Plist[treepath.get_indices()[0]]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nun wird der Icon-View geleert, insfofern wir keine Auwahl an Programmen
+ haben.
+ 
+\end_layout
+
+\begin_layout Standard
+Wenn wir uns in der Hauptkategorie (
+\begin_inset Quotes gld
+\end_inset
+
+root
+\begin_inset Quotes grd
+\end_inset
+
+ in der variable 
+\begin_inset Quotes gld
+\end_inset
+
+stage
+\begin_inset Quotes grd
+\end_inset
+
+) befinden wird nun anhand der Variable 
+\begin_inset Quotes gld
+\end_inset
+
+SelectedMain
+\begin_inset Quotes grd
+\end_inset
+
+ (klein geschrieben) alle möglichen Unterkategorien aus der Konfigurationsdatei
+ gelesen.
+ Diese Liste wird in der globalen Variable 
+\begin_inset Quotes gld
+\end_inset
+
+SubCategoryList
+\begin_inset Quotes grd
+\end_inset
+
+ gespeichert.
+\end_layout
+
+\begin_layout Standard
+Im nächsten Schritt werdem jedem der Namen ein Icon für die neue Auswahl
+ herraus gesucht.
+ Dabei bietet es sich an, dass die Icon Namen im System die gleichen sind
+ wie die im System.
+ Das heist wenn man eine Unterkategorie namens 
+\begin_inset Quotes gld
+\end_inset
+
+Video
+\begin_inset Quotes grd
+\end_inset
+
+ hat, kann man die einfach mit dem Icon 
+\begin_inset Quotes gld
+\end_inset
+
+application-video
+\begin_inset Quotes grd
+\end_inset
+
+ belegen.
+ Wenn das nicht funktioniert wird automatisch das Icon 
+\begin_inset Quotes gld
+\end_inset
+
+application-other
+\begin_inset Quotes grd
+\end_inset
+
+ verwendet.
+\end_layout
+
+\begin_layout Standard
+Nachdem dem Namen ein Icon zugefürgt wird, werden beide wie bei der Initialisier
+ung dem 
+\begin_inset Quotes gld
+\end_inset
+
+liststore
+\begin_inset Quotes grd
+\end_inset
+
+ der Programmauswahl zugefügt.
+ 
+\end_layout
+
+\begin_layout Standard
+Wenn die Schleife fertig ist, werden die neuen Icons mit
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+iconview.show_all()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+dargestellt.
+\end_layout
+
+\begin_layout Subsubsection
+Von Unterkategorie zu Programmauswahl
+\end_layout
+
+\begin_layout Standard
+Wenn ein Icon angeklickt wird und 
+\begin_inset Quotes gld
+\end_inset
+
+stage
+\begin_inset Quotes grd
+\end_inset
+
+ den Wert 
+\begin_inset Quotes gld
+\end_inset
+
+sub
+\begin_inset Quotes grd
+\end_inset
+
+ hat wird die Funktion in der Funktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def Go_Down(builder,iconview,treepath)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+nicht das zufor beschriebene ausgeführt, sondern die Funktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+go_Sub(builder,iconview,treepath,SelectedMain)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ausgeführt.
+\end_layout
+
+\begin_layout Standard
+Über 
+\begin_inset Quotes gld
+\end_inset
+
+treepath
+\begin_inset Quotes grd
+\end_inset
+
+ und die Globale Variable 
+\begin_inset Quotes gld
+\end_inset
+
+SubCategoryList
+\begin_inset Quotes grd
+\end_inset
+
+ wird der Name der Ausgewählten Unterkategorie herausgefunden.
+\end_layout
+
+\begin_layout Standard
+Nun kommt die schon beschriebene Funktion 
+\begin_inset Quotes gld
+\end_inset
+
+db_read
+\begin_inset Quotes grd
+\end_inset
+
+ zum Einsatz.
+ Sie ließt alle Programm der Unterkategorie aus und gibt eine Liste ( Variable:
+ 
+\begin_inset Quotes gld
+\end_inset
+
+ProgramList
+\begin_inset Quotes grd
+\end_inset
+
+ ) mit ihnen zurück.
+\end_layout
+
+\begin_layout Standard
+Für diese Liste wird jeweils im 
+\begin_inset Quotes gld
+\end_inset
+
+Symbol
+\begin_inset Quotes grd
+\end_inset
+
+ Ordner der Datenbank nach dem Symbol des Eintrags gesucht.
+ Das Symbol stellt nun das Icon des Objektes dar.
+ Name und Programm-Icon werden als letztes wieder im Icon-View dargestellt.
+\end_layout
+
+\begin_layout Standard
+Als letztes wird 
+\begin_inset Quotes gld
+\end_inset
+
+stage
+\begin_inset Quotes grd
+\end_inset
+
+ auf 
+\begin_inset Quotes gld
+\end_inset
+
+Prog
+\begin_inset Quotes grd
+\end_inset
+
+ festgelegt, da wir nun eine Auswahl an Programmen sehen.
+\end_layout
+
+\begin_layout Subsubsection
+Programm-Dialog
+\end_layout
+
+\begin_layout Standard
+Wie schon erwähnt wird durch den Klick auf eines der angezeigten Programme
+ der Programmdialog geöffnet.
+\end_layout
+
+\begin_layout Standard
+Dabei wird die Funktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def show_app(builder,iconview,treepath)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ausgeführt.
+\end_layout
+
+\begin_layout Standard
+Anhand von 
+\begin_inset Quotes gld
+\end_inset
+
+treepath
+\begin_inset Quotes grd
+\end_inset
+
+ und 
+\begin_inset Quotes gld
+\end_inset
+
+ProgramList
+\begin_inset Quotes grd
+\end_inset
+
+ wird der Name des geöffneten Programm gefunden.
+ Dann wird der Gesamte Datensatz über
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+read_attributes(name)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+in die Variable 
+\begin_inset Quotes gld
+\end_inset
+
+Data
+\begin_inset Quotes grd
+\end_inset
+
+ gespeichert.
+\end_layout
+
+\begin_layout Standard
+Die Werte werden dann an die vorgesehen Stellen in der Programm-Dialog Maske
+ eingesetzt.
+ Der Vorteil von diesem Vorgehen ist, dass ich nur einen Dialog-Maske erstellen
+ muss, die in jedem Programm gleich angewandt wird.
+ Ein weiterer Vorteil ist, dass der Benutzer immer das gleiche Layout sieht
+ und sich so nicht immer wieder neu orientieren muss.
+\end_layout
+
+\begin_layout Standard
+Wenn er das getan hat, wird die Variable 
+\begin_inset Quotes gld
+\end_inset
+
+ProgramViewOpen
+\begin_inset Quotes grd
+\end_inset
+
+ auf 
+\begin_inset Quotes gld
+\end_inset
+
+True
+\begin_inset Quotes grd
+\end_inset
+
+ gesetzt.
+ Dadurch verhindert das Programm, dass die eine Maske mit anderem Inhalt
+ noch einmal geladen wird.
+ Man kann sich noch durch die Kategorien klicken.
+ Wenn man allerdings versucht ein Programm-Dialog zu öffnen bekommt man
+ einen Error-Dialog angezeigt.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Zurück Navigieren
+\end_layout
+
+\begin_layout Standard
+Um Zurück zu navigieren wird die Funktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def go_back(builder)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ausgeführt.
+ Wenn 
+\begin_inset Quotes gld
+\end_inset
+
+stage
+\begin_inset Quotes grd
+\end_inset
+
+ auf 
+\begin_inset Quotes gld
+\end_inset
+
+root
+\begin_inset Quotes grd
+\end_inset
+
+ ist, muss das Programm nichts tun, da man nicht weiter zurück kann.
+\end_layout
+
+\begin_layout Standard
+Wenn 
+\begin_inset Quotes gld
+\end_inset
+
+stage
+\begin_inset Quotes grd
+\end_inset
+
+ auf 
+\begin_inset Quotes gld
+\end_inset
+
+Sub
+\begin_inset Quotes grd
+\end_inset
+
+ ist, muss das Programm nur die Funktion 
+\begin_inset Quotes gld
+\end_inset
+
+set_to_start
+\begin_inset Quotes grd
+\end_inset
+
+ ausführen um damit die Wurzel zu laden.
+ Also die Ansicht der Hauptkategorien.
+\end_layout
+
+\begin_layout Standard
+Wenn 
+\begin_inset Quotes gld
+\end_inset
+
+stage
+\begin_inset Quotes grd
+\end_inset
+
+ auf 
+\begin_inset Quotes gld
+\end_inset
+
+Prog
+\begin_inset Quotes grd
+\end_inset
+
+ steht wird es etwas komplexer.
+ Dafür wird der Icon-View geleert.
+ Danach werden aus der globalen Variable 
+\begin_inset Quotes gld
+\end_inset
+
+SubCategoryList
+\begin_inset Quotes grd
+\end_inset
+
+ die Einträge der vorherigen Kategorie geladen.
+ Genauso wie bei 3.7.4 werden nun die Icons geladen und dargestellt.
+ Danach wird 
+\begin_inset Quotes gld
+\end_inset
+
+stage
+\begin_inset Quotes grd
+\end_inset
+
+ auf 
+\begin_inset Quotes gld
+\end_inset
+
+Sub
+\begin_inset Quotes grd
+\end_inset
+
+ gesetzt, da eine Unterkategorie angezeigt wird.
+\end_layout
+
+\begin_layout Subsection
+Installation
+\end_layout
+
+\begin_layout Subsubsection
+Einführung
+\end_layout
+
+\begin_layout Standard
+Der wichtigste Teil des CPF ist es, neue Programme zu installieren.
+ Wichtig dabei ist vorallem das es einfach funktionert.
+ 
+\end_layout
+
+\begin_layout Standard
+Wie in der Vorüberlgung schon angeführt, soll das Programm auf mehreren
+ Linux-Distributionen funktionieren.
+ Deshalb ist es wichtig, dass das CPF selbst herraus findet auf welchem
+ Linux es läuft, und dann den richtigen Datensatz verwendet um das Programm
+ zu installieren.
+ Desweiteren soll der gesamte Prozess grafisch ablaufen.
+\end_layout
+
+\begin_layout Subsubsection
+Erkennen der Distribution
+\end_layout
+
+\begin_layout Subsubsection
+Auswahl des Pakets
+\end_layout
+
+\begin_layout Subsubsection
+Installation und Passwort abfrage
+\end_layout
+
+\begin_layout Subsubsection
+Deinstallation
+\end_layout
+
+\begin_layout Subsection
+Masseninstallation
+\end_layout
+
+\begin_layout Subsubsection
+Erstellen einer Masseninstallations-Anweisung
+\end_layout
+
+\begin_layout Subsubsection
+Ausführen einer Masseninstallation
+\end_layout
+
+\begin_layout Subsection
+Interaktion mit Github
+\end_layout
+
+\begin_layout Subsubsection
+Hochladen von Datenbankänderungen
+\end_layout
+
+\begin_layout Subsubsection
+Herunterladen von Datenbanken
+\end_layout
+
+\begin_layout Subsubsection
+Aktualisieren von Datenbanken
+\end_layout
+
+\begin_layout Section
+Weitere Gedanken
+\end_layout
+
+\begin_layout Section
+Einschätzung
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Anmerkung zum Literaturverzeichnis
+\end_layout
+
+\begin_layout Standard
+Das Literaturverzeichnis kennzeichnet Quellen mit englischen Inhalt mit
+ 
+\begin_inset Quotes gld
+\end_inset
+
+EN
+\begin_inset Quotes grd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+EN: WebKit Hauptseite: https://webkit.org/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+EN: WebKit Lizens: https: https://webkit.org/licensing-webkit/ , gesamtes
+ Dokument
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+EN: Gtk Hauptseite: http://www.gtk.org/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+EN.
+ LGPL Lizenz Webseite: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+EN: Kurzfassung des GTK: https://www.gimp.org/about/ancient_history.html
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-6"
+
+\end_inset
+
+EN: Beta-Launcher, Mein erstes GTK-Projekt: https://github.com/SiebenCorgie/Beta-
+Launcher
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-7"
+
+\end_inset
+
+EN: Unreal-Engine-4 Hauptseite: https://www.unrealengine.com/what-is-unreal-engine
+-4 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-8"
+
+\end_inset
+
+EN: Configparser Dokumentation: https://docs.python.org/3.5/library/configparser.htm
+l
+\end_layout
+
+\end_body
+\end_document
