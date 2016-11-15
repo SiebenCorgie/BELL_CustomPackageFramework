@@ -24,10 +24,6 @@ def Install(ProgramName, Uninstall, Massinstall):
 	time.sleep(0.2)
 
 	
-	#read release information
-
-	Distribution = SI.execute('cat /etc/*-release',True)
-	Distribution = Distribution.split('\n')
 
 	#Teste in welchem der eintraege  'ID=' + Name einer supporteten Distribution
 	#stehe.
@@ -101,7 +97,7 @@ def MakeMassInstall(ProgramName, IDName):
 		output = SI.execute('pkexec --user ' + username +  ' apt-get install -y ' + InstallString, True)
 		
 	elif IDName == 'arch':
-		SI.execute('pkexec --user ' + username + ' pacman -S ' + InstallString + ' --noconfirm' , False)
+		output = SI.execute('pkexec --user ' + username + ' pacman -S ' + InstallString + ' --noconfirm' , True)
 
 	feedback.status_push(conf.get_entry('Status','installfinishedmass'))
 
@@ -155,13 +151,6 @@ def PrepareSingleInstall(ProgramName, Uninstall, IDName):
 
 
 
-
-
-def MassInstall(Name, IDName):
-	print('installing ' + Name + ' on ' + IDName)
-
-
-
 #Installation oder deinstallation anhand der Parameter
 def execute_install(Name, Distribution,Uninstall):
 
@@ -171,28 +160,19 @@ def execute_install(Name, Distribution,Uninstall):
 	if Uninstall == True:
 		print('Uninstalling: '  + Name)
 
-	#Debian
+	#Debian und Ubuntu
 	print('Name: ' + Name + ' AND Distribution is: ' + Distribution)
-	if Distribution == 'debian':
-		if Distribution == 'debian' and Uninstall == False:
+	if Distribution == 'debian' or ubuntu:
+		if Uninstall == False:
 			output = SI.execute('pkexec --user ' + username +  ' apt-get install -y ' + Name, True)
 		
-		elif Distribution == 'debian' and Uninstall == True:
+		elif Uninstall == True:
 			output = SI.execute('pkexec --user ' + username + ' apt-get remove -y ' + Name, True)
 		
 		else:
 			print('Dont uninstall or install')
 
-	#Ubuntu
-	elif Distribution == 'ubuntu':
-		if Distribution == 'ubuntu' and Uninstall == False:
-			output = SI.execute('pkexec --user ' + username + ' apt-get install -y ' + Name, True)
-		
-		elif Distribution == 'ubuntu' and Uninstall == True:
-			output = SI.execute('pkexec --user ' + username + ' apt-get remove -y ' + Name, True)	
-		
-		else:
-			print('Dont uninstall or install')
+
 
 	#Arch
 	elif Distribution == 'arch':
@@ -210,7 +190,7 @@ def execute_install(Name, Distribution,Uninstall):
 
 	#Interner Pacman Error auf Arch
 	if 'error: failed to init transaction (unable to lock database)' in output:
-		print('Could not lock database on Arch, please remove /var/lib/pacman/db.lck')
+		print('Could not lock database on Arch, check that no other program is \n using pacman or remove /var/lib/pacman/db.lck')
 
 	feedback.status_push(conf.get_entry('Status','installfinishedsingle'))
 	feedback.set_progress(True)

@@ -241,21 +241,21 @@ cftsetindents{section}{0cm}{1.2cm}
 
 
 \backslash
-cftsetindents{subsection}{1.2cm}{1.2cm} 
+cftsetindents{subsection}{0cm}{1.2cm} 
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-cftsetindents{subsubsection}{1.2cm}{1.2cm} 
+cftsetindents{subsubsection}{0cm}{1.2cm} 
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-cftsetindents{paragraph}{1.2cm}{1.2cm}
+cftsetindents{paragraph}{0cm}{1.2cm}
 \end_layout
 
 \end_inset
@@ -1033,9 +1033,13 @@ face ergeben (siehe Abb.1)
 status open
 
 \begin_layout Plain Layout
-Quelle: https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Schema_der_Schic
-hten_der_grafischen_Benutzeroberfl%C3%A4che.svg/560px-Schema_der_Schichten_der_gr
-afischen_Benutzeroberfl%C3%A4che.svg.png , Shmuel Csaba Otto Traian, 29.10.2013
+Quelle: https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/
+\end_layout
+
+\begin_layout Plain Layout
+Schema_der_Schichten_der_grafischen_Benutzeroberfl%C3%A4che.svg/560px-Schema_der_
+Schichten_der_grafischen_Benutzeroberfl%C3%A4che.svg.png , Shmuel Csaba Otto
+ Traian, 29.10.2013
 \end_layout
 
 \end_inset
@@ -1476,32 +1480,32 @@ status open
 
 \begin_layout Plain Layout
 
-# Dateien und Ordner zu lokalen Repo hinzufügen
+	# Dateien und Ordner zu lokalen Repo hinzufügen
 \end_layout
 
 \begin_layout Plain Layout
 
-git add *
+	git add *
 \end_layout
 
 \begin_layout Plain Layout
 
-# Dateien lokal Synchronisieren und Nachricht hinterlassen
+	# Dateien lokal Synchronisieren und Nachricht hinterlassen
 \end_layout
 
 \begin_layout Plain Layout
 
-git commit -a
+	git commit -a
 \end_layout
 
 \begin_layout Plain Layout
 
-# Lokale neue Version online synchronisieren
+	# Lokale neue Version online synchronisieren
 \end_layout
 
 \begin_layout Plain Layout
 
-git push
+	git push
 \end_layout
 
 \end_inset
@@ -1798,12 +1802,12 @@ status open
 
 \begin_layout Plain Layout
 
-[Ueberkategorie]
+	[Ueberkategorie]
 \end_layout
 
 \begin_layout Plain Layout
 
-Name = Wert
+	Name = Wert
 \end_layout
 
 \end_inset
@@ -2621,6 +2625,37 @@ Datenbank
 \end_layout
 
 \begin_layout Subsubsection
+Löschen von Einträgen
+\end_layout
+
+\begin_layout Standard
+Um einen Eintrag zu löschen gibt es kleines Formular.
+ In diesem kann man Über- und die davon abhängige Unterkategorie auswählen.
+ Danach ein Programm in dieser Unterkategorie.
+ Durch das drücken auf 
+\begin_inset Quotes gld
+\end_inset
+
+delete
+\begin_inset Quotes grd
+\end_inset
+
+ bzw.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+löschen
+\begin_inset Quotes grd
+\end_inset
+
+ wird der Datensatz gelöscht.
+ Das Symbol und das Icon bleiben erhalten, falls man den Datensatz nur ändern
+ will und wieder hinzu fügt kann man dadurch das gleiche Icon und den gleichen
+ Screenshot verwenden.
+\end_layout
+
+\begin_layout Subsubsection
 Tool: Erstellen eines neuen Datensatzes
 \end_layout
 
@@ -2646,7 +2681,7 @@ status open
 
 \begin_layout Plain Layout
 
-update_sub_category(builder)
+	update_sub_category(builder)
 \end_layout
 
 \end_inset
@@ -2684,7 +2719,7 @@ status open
 
 \begin_layout Plain Layout
 
-db_add_entry(builder)
+	db_add_entry(builder)
 \end_layout
 
 \end_inset
@@ -2745,7 +2780,7 @@ status open
 
 \begin_layout Plain Layout
 
-db_read(subcategory)
+	db_read(subcategory)
 \end_layout
 
 \end_inset
@@ -2764,7 +2799,7 @@ status open
 
 \begin_layout Plain Layout
 
-read_attributes(name)
+	read_attributes(name)
 \end_layout
 
 \end_inset
@@ -3061,7 +3096,7 @@ status open
 
 \begin_layout Plain Layout
 
-def set_to_start(builder)
+	def set_to_start(builder)
 \end_layout
 
 \end_inset
@@ -3122,7 +3157,7 @@ status open
 
 \begin_layout Plain Layout
 
-Plist = conf.get_entry('DB','enmain')
+	Plist = conf.get_entry('DB','enmain')
 \end_layout
 
 \begin_layout Plain Layout
@@ -3131,32 +3166,32 @@ Plist = conf.get_entry('DB','enmain')
 
 \begin_layout Plain Layout
 
-Plist=Plist.split(',')
+	Plist=Plist.split(',')
 \end_layout
 
 \begin_layout Plain Layout
 
-liststore = Gtk.ListStore(Pixbuf, str) 	
+	liststore = Gtk.ListStore(Pixbuf, str) 	
 \end_layout
 
 \begin_layout Plain Layout
 
-view = builder.get_object('PS_IconList')	 
+	view = builder.get_object('PS_IconList')	 
 \end_layout
 
 \begin_layout Plain Layout
 
-view.set_model(liststore) 	
+	view.set_model(liststore) 	
 \end_layout
 
 \begin_layout Plain Layout
 
-view.set_pixbuf_column(0) 
+	view.set_pixbuf_column(0) 
 \end_layout
 
 \begin_layout Plain Layout
 
-view.set_text_column(1)
+	view.set_text_column(1)
 \end_layout
 
 \end_inset
@@ -3204,7 +3239,7 @@ status open
 
 \begin_layout Plain Layout
 
-def Go_Down(builder,iconview,treepath)
+	def Go_Down(builder,iconview,treepath)
 \end_layout
 
 \end_inset
@@ -3269,7 +3304,7 @@ status open
 
 \begin_layout Plain Layout
 
-SelectedMain = Plist[treepath.get_indices()[0]]
+	SelectedMain = Plist[treepath.get_indices()[0]]
 \end_layout
 
 \end_inset
@@ -3379,7 +3414,7 @@ status open
 
 \begin_layout Plain Layout
 
-iconview.show_all()
+	iconview.show_all()
 \end_layout
 
 \end_inset
@@ -3422,7 +3457,7 @@ status open
 
 \begin_layout Plain Layout
 
-def Go_Down(builder,iconview,treepath)
+	def Go_Down(builder,iconview,treepath)
 \end_layout
 
 \end_inset
@@ -3441,7 +3476,7 @@ status open
 
 \begin_layout Plain Layout
 
-go_Sub(builder,iconview,treepath,SelectedMain)
+	go_Sub(builder,iconview,treepath,SelectedMain)
 \end_layout
 
 \end_inset
@@ -3549,7 +3584,7 @@ status open
 
 \begin_layout Plain Layout
 
-def show_app(builder,iconview,treepath)
+	def show_app(builder,iconview,treepath)
 \end_layout
 
 \end_inset
@@ -3589,7 +3624,7 @@ status open
 
 \begin_layout Plain Layout
 
-read_attributes(name)
+	read_attributes(name)
 \end_layout
 
 \end_inset
@@ -3659,7 +3694,7 @@ status open
 
 \begin_layout Plain Layout
 
-def go_back(builder)
+	def go_back(builder)
 \end_layout
 
 \end_inset
@@ -3808,7 +3843,7 @@ status open
 
 \begin_layout Plain Layout
 
-def set_builder(OffBuilder):
+	def set_builder(OffBuilder):
 \end_layout
 
 \end_inset
@@ -3845,7 +3880,7 @@ status open
 
 \begin_layout Plain Layout
 
-def status_push(text):
+	def status_push(text):
 \end_layout
 
 \end_inset
@@ -3904,7 +3939,7 @@ status open
 
 \begin_layout Plain Layout
 
-def set_progress(ammount):
+	def set_progress(ammount):
 \end_layout
 
 \end_inset
@@ -3970,21 +4005,21 @@ Einführung
 
 \begin_layout Standard
 Der wichtigste Teil des CPF ist es, neue Programme zu installieren.
- Wichtig dabei ist vorallem das es einfach funktionert.
+ Wichtig dabei ist vor allem das es einfach funktioniert.
  
 \end_layout
 
 \begin_layout Standard
-Wie in der Vorüberlgung schon angeführt, soll das Programm auf mehreren
+Wie in der Vorüberlegung schon angeführt, soll das Programm auf mehreren
  Linux-Distributionen funktionieren.
- Deshalb ist es wichtig, dass das CPF selbst herraus findet auf welchem
- Linux es läuft, und dann den richtigen Datensatz verwendet um das Programm
- zu installieren.
- Desweiteren soll der gesamte Prozess grafisch ablaufen.
+ Deshalb ist es wichtig, dass das CPF selbst heraus findet auf welchem Linux
+ es läuft, und dann den richtigen Datensatz verwendet um das Programm zu
+ installieren.
+ Des weiteren soll der gesamte Prozess grafisch ablaufen.
 \end_layout
 
 \begin_layout Standard
-Die installation ist in das Modul 
+Die Installation ist in das Modul 
 \begin_inset Quotes gld
 \end_inset
 
@@ -3999,16 +4034,600 @@ Install_System
 Erkennen der Distribution
 \end_layout
 
+\begin_layout Standard
+Im ersten Teil einer Installation muss heraus gefunden werden auf welcher
+ Distribution sich das Programm befindet.
+ 
+\end_layout
+
+\begin_layout Standard
+Dazu bekommt die Funktion 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+	def Install(ProgramName, Uninstall, Massinstall):
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Den einzelnen Namen, beziehungsweise eine Liste an Namen, die Information
+ ob es Installieren oder Deinstallieren soll und ob es ein 
+\begin_inset Quotes gld
+\end_inset
+
+Mass-Install
+\begin_inset Quotes grd
+\end_inset
+
+ Auftrag ist.
+\end_layout
+
+\begin_layout Standard
+Am Anfang des Moduls sind drei Listen definiert
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+SupportArch: Sie beinhaltet eine Liste aller Arch-basierten Distributionen
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+SupportUbuntu: Beinhaltet eine Liste aller Ubuntu-basierten Distributionen
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+SupportDebian: Beinhaltet eine Liste aller Ubuntu-basierten Distributionen
+\end_layout
+
+\begin_layout Standard
+Bei allen Linux-Systemen sind in der Datei 
+\begin_inset Quotes gld
+\end_inset
+
+/etc/os-release
+\begin_inset Quotes grd
+\end_inset
+
+ verschiedene Informationen zum System hinterlegt.
+ Dazu gehört auch der Trivialname des Systems.
+ Die Information stehen alle in einer Zeile.
+\end_layout
+
+\begin_layout Standard
+Über
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+	Distribution = SI.execute('cat /etc/os-release',True)  	Distribution = 	Distribu
+tion.split('
+\backslash
+n')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wird der Inhalt der Datei in 
+\begin_inset Quotes gld
+\end_inset
+
+Distribution
+\begin_inset Quotes grd
+\end_inset
+
+ gespeichert und die Informationen an den Zeilenumbrüchen ('
+\backslash
+n') gespeichert.
+ Danach wird über eine doppeltet Schleife für jede Zeile in 
+\begin_inset Quotes gld
+\end_inset
+
+Distribution
+\begin_inset Quotes grd
+\end_inset
+
+ geprüft ob es eine Zeile mit 
+\begin_inset Quotes gld
+\end_inset
+
+ID=
+\begin_inset Quotes grd
+\end_inset
+
+ und einem der Namen aus den 
+\begin_inset Quotes gld
+\end_inset
+
+Support
+\begin_inset Quotes grd
+\end_inset
+
+ Variablen gibt.
+ Wenn das der Fall ist wird in 
+\begin_inset Quotes gld
+\end_inset
+
+IDName
+\begin_inset Quotes grd
+\end_inset
+
+ der Name der Datenbank gespeichert.
+\end_layout
+
+\begin_layout Standard
+Wenn der Wert von 
+\begin_inset Quotes gld
+\end_inset
+
+Massinstall
+\begin_inset Quotes grd
+\end_inset
+
+ falsch ist werden jetzt der Programmname, der Wert von 
+\begin_inset Quotes gld
+\end_inset
+
+Uninstall
+\begin_inset Quotes grd
+\end_inset
+
+ und die Variable 
+\begin_inset Quotes gld
+\end_inset
+
+IDName
+\begin_inset Quotes grd
+\end_inset
+
+ an die Funktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+	def PrepareSingleInstall(ProgramName, Uninstall, IDName):
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Weitergegeben.
+\end_layout
+
+\begin_layout Standard
+Ansonsten werden die Programmnamen und 
+\begin_inset Quotes gld
+\end_inset
+
+IDName
+\begin_inset Quotes grd
+\end_inset
+
+ an die Funktion 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+	def MakeMassInstall(ProgramName, IDName):
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Weitergeben.
+\end_layout
+
 \begin_layout Subsubsection
-Auswahl des Pakets
+Einzelinstallation-Vorbereitung
+\end_layout
+
+\begin_layout Standard
+In der Vorbereitung wird in die Variable 
+\begin_inset Quotes gld
+\end_inset
+
+ProgramData
+\begin_inset Quotes grd
+\end_inset
+
+ der Datensatz des Programms anhand des Namens eingelesen.
+\end_layout
+
+\begin_layout Standard
+Je nach dem welchen Wert die Variable 
+\begin_inset Quotes gld
+\end_inset
+
+IDName
+\begin_inset Quotes grd
+\end_inset
+
+ hat wird dann der richtige name in der betreffenden Spiegelserver-Datenbank
+ herrausgesucht.
+ 
+\end_layout
+
+\begin_layout Standard
+Beispiel: Für 
+\begin_inset Quotes gld
+\end_inset
+
+arch
+\begin_inset Quotes grd
+\end_inset
+
+ wird der wert aus Spalte 5 genutzt, für 
+\begin_inset Quotes gld
+\end_inset
+
+debian
+\begin_inset Quotes grd
+\end_inset
+
+ aus Spalte 5.
+\end_layout
+
+\begin_layout Standard
+Danach wird anhand des richtigen, Distributions abhängigen Namens und der
+ information ob installiert oder deinstalliert werden soll die Funktion
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+def execute_install(Name, Distribution,Uninstall):
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ausgeführt.
+\end_layout
+
+\begin_layout Subsubsection
+Einzelinstallation-Ausführung
+\end_layout
+
+\begin_layout Standard
+Die Funktion 
+\begin_inset Quotes gld
+\end_inset
+
+execute_install
+\begin_inset Quotes grd
+\end_inset
+
+ speichert zuerst in der variable 
+\begin_inset Quotes gld
+\end_inset
+
+username
+\begin_inset Quotes grd
+\end_inset
+
+ als welcher Benutzer installiert werden soll.
+ Der wert kommt aus der Konfigurationsdatei.
+\end_layout
+
+\begin_layout Standard
+Wenn 
+\begin_inset Quotes gld
+\end_inset
+
+distribution
+\begin_inset Quotes grd
+\end_inset
+
+ 
+\begin_inset Quotes gld
+\end_inset
+
+ubuntu
+\begin_inset Quotes grd
+\end_inset
+
+ oder 
+\begin_inset Quotes gld
+\end_inset
+
+debian
+\begin_inset Quotes grd
+\end_inset
+
+ ist wird der 
+\begin_inset Quotes gld
+\end_inset
+
+APT-Package-Manager
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Ein Packet-Manager ist ein Programm um Programme von Spiegelservern herunter
+ zu laden und zu installieren.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+APT ist der Packetmanager von Ubuntu und Debian basierten Systemen.
+\end_layout
+
+\end_inset
+
+ genutzt um das Programm aus 
+\begin_inset Quotes gld
+\end_inset
+
+Name
+\begin_inset Quotes grd
+\end_inset
+
+ zuinstallieren bzw.
+ wenn 
+\begin_inset Quotes gld
+\end_inset
+
+Uninstall
+\begin_inset Quotes grd
+\end_inset
+
+ 
+\begin_inset Quotes gld
+\end_inset
+
+True
+\begin_inset Quotes grd
+\end_inset
+
+ ist zu deinsallieren.
+\end_layout
+
+\begin_layout Standard
+Wenn 
+\begin_inset Quotes gld
+\end_inset
+
+distribution
+\begin_inset Quotes grd
+\end_inset
+
+ 
+\begin_inset Quotes gld
+\end_inset
+
+arch
+\begin_inset Quotes grd
+\end_inset
+
+ ist wird statdessen der 
+\begin_inset Quotes gld
+\end_inset
+
+Pacman-Package-Manager
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Pacman ist der Packet-Managert vom Arch basierten Systemen
+\end_layout
+
+\end_inset
+
+ genutzt.
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset Quotes gld
+\end_inset
+
+output
+\begin_inset Quotes grd
+\end_inset
+
+ wird der zurückgebene Wert gespeichert.
+ An dieser Stelle kann der Programmierer bekannte Fehlernachrichten zurückgeben.
+\end_layout
+
+\begin_layout Standard
+Ein bekannter Fehler ist 
+\begin_inset Quotes gld
+\end_inset
+
+
+\series bold
+error: failed to init transaction (unable to lock database)
+\series default
+
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dieser weist darauf hin das die lokale Datenbank von Pacman schon geöffnet
+ ist.
+ Das Programm wird jetzt eine Nachrricht zurück geben das man sicher stellen
+ soll das kein anderes Programm auf Pacman zurgreift.
+\end_layout
+
+\begin_layout Subsubsection
+Masseninstallation
+\end_layout
+
+\begin_layout Standard
+Die Masseninstallation funktioniert wie die Einzelinstallation nur das es
+ nicht einen Programmnamen gibt sondern der Name eine Liste der Programme
+ die installieren soll.
+ Glücklicherweise können auch die packet-Manager mehrere Programme gleichzeitig
+ installieren.
+ Deshalb wird anhand der Distribution eine Liste der richtigen Programmnamen
+ zusammengestellt und dann wie in der Einzelinstalation and die Packet-Manager
+ weite gegeben.
+ 
 \end_layout
 
 \begin_layout Subsubsection
 Installation und Passwort abfrage
 \end_layout
 
-\begin_layout Subsubsection
-Deinstallation
+\begin_layout Standard
+Die installation soll vollautomatisch sein.
+ Ausserdem soll die Passwortabfrage grafisch passieren.
+ Folgendes ist die Lösung:
+\end_layout
+
+\begin_layout Standard
+Die Passwortabfrage wird über 
+\begin_inset Quotes gld
+\end_inset
+
+pkexec
+\begin_inset Quotes grd
+\end_inset
+
+ ausgeführt.
+ Das ist ein weit verbreitetes Programm für Passwortabfragen im Terminal
+ die grafisch sein sollen.
+ Danach wird mit 
+\begin_inset Quotes gld
+\end_inset
+
+- -user
+\begin_inset Quotes grd
+\end_inset
+
+ angegben nach welchem Benutzer gefragt wird.
+ Danach wird der Packet-Manager auferufen, mit 
+\begin_inset Quotes gld
+\end_inset
+
+-y
+\begin_inset Quotes grd
+\end_inset
+
+ bei Ubuntu/Debian-basiert und 
+\begin_inset Quotes gld
+\end_inset
+
+- - noconfirm
+\begin_inset Quotes grd
+\end_inset
+
+ bei Arch-basierten Systemen wird sichergestellt das die installation ohne
+ Nachfragen ausgeführt wird.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Listingstellen sehen wir folgt aus:
+\end_layout
+
+\begin_layout Standard
+Debian/Ubuntu-basiert
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+output = SI.execute('pkexec --user ' + username +  
+\end_layout
+
+\begin_layout Plain Layout
+
+' apt-get install -y ' + InstallString, True)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Arch-basiert
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+output = SI.execute('pkexec --user ' + username + ' pacman -S ' + 
+\end_layout
+
+\begin_layout Plain Layout
+
+InstallString + ' --noconfirm' , True)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -4019,8 +4638,96 @@ Masseninstallation
 Erstellen einer Masseninstallations-Anweisung
 \end_layout
 
+\begin_layout Standard
+Beim erstellen einer Massinstallation wird im Ordner der Datenbank eine
+ Datei mit dem angegebenen Namen und der Endung 
+\begin_inset Quotes gld
+\end_inset
+
+.mass
+\begin_inset Quotes grd
+\end_inset
+
+ erstellt, sobald man den ersten Eintrag hinzufügt.
+\end_layout
+
+\begin_layout Standard
+Danach kann man wie beim Löschen von Datensätzen ein Programm ausgewählt
+ und durch 
+\begin_inset Quotes gld
+\end_inset
+
+Add
+\begin_inset Quotes grd
+\end_inset
+
+ bzw.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Hinzufügen
+\begin_inset Quotes grd
+\end_inset
+
+ hinzugefügt.
+ In die Datei wird der Name des Programms und ein Komma danach eingefügt.
+ Der Eintrag wird wieder in die angegebene Datei geschrieben.
+\end_layout
+
+\begin_layout Standard
+Das ergebnis ist eine Datei mit dem Inhalt der Form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+	name,name,name,name,
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Ausführen einer Masseninstallation
+\end_layout
+
+\begin_layout Standard
+Beim ausführen wird zuerst der Inhalt der ausgewählten Datei eingelesen.
+ Der inhalt wird dann an den Kommas getrennt in einer Liste gespeichert.
+ Dadurch, dass das letzt Zeichen immer ein Komma ist, und wir dadurch ein
+ lehres Feld in der Liste haben wird über 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+	MassNames.pop(len(MassNames) - 1)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das letzte Feld gelöscht.
+ 
+\end_layout
+
+\begin_layout Standard
+Danach wird die Liste an die Masseninstallation im Modul Install_System
+ weitergegeben.
 \end_layout
 
 \begin_layout Subsection
