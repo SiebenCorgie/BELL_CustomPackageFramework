@@ -4736,7 +4736,218 @@ Interaktion mit Github
 \end_layout
 
 \begin_layout Subsubsection
+Einführung
+\end_layout
+
+\begin_layout Standard
+Der Benutzer soll möglichst einfach seine Datenbank mit anderen abgleichen
+ können.
+ Der Author wählte Github, da die Interaktion mit Github sehr einfach ist.
+ 
+\end_layout
+
+\begin_layout Standard
+In der Theorie wird ein Repositorium für eine Datenbank angelegt.
+ Jeder kann sich diese Datenbank herrunterladen, Änderung vornehmen und
+ wieder als 
+\begin_inset Quotes gld
+\end_inset
+
+pull-request
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Der 
+\begin_inset Quotes gld
+\end_inset
+
+Pull-Request
+\begin_inset Quotes grd
+\end_inset
+
+ ist eine Anfrage auf Änderungen innerhalb des Repositoriums.
+\end_layout
+
+\end_inset
+
+ hochladen.
+ Dieser 
+\begin_inset Quotes gld
+\end_inset
+
+request
+\begin_inset Quotes grd
+\end_inset
+
+ kann vom Administrator des Repositoriums angesehen und bei bedarf integriert
+ werden.
+ Durch das Aktuallisieren innerhalb des Programms wird das Repositorium
+ mit der Lokalen Version abgeglichen.
+ Wenn das Lokale älter ist als das auf Github, werden die änderungen herrunterge
+laden.
+ 
+\end_layout
+
+\begin_layout Standard
+Da die Änderungsnachricht in einem Terminal verfasst werden müssen, hat
+ sich der Autor dazu entschieden die gesamte Interaktion innerhalb eines
+ Fensters, welches den Terminal enthält zu gestalten.
+ Es wurde ein neues Modul mit dem Namen 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+	VTE_Interaction.py
+\end_layout
+
+\end_inset
+
+angelegt.
+\end_layout
+
+\begin_layout Subsubsection
 Hochladen von Datenbankänderungen
+\end_layout
+
+\begin_layout Standard
+Beim Hochladen der Datenbank wird die Funktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+	def upload_database(builder)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+innherhalb des VTE_Interaction Moduls ausgeführt.
+\end_layout
+
+\begin_layout Standard
+Diese prüft zuerst, ob in der Konfigurationsdatei festgelegt ist, dass die
+ Datenbank mit Github interagieren soll.
+ Wenn nicht wird die Funktion sofort abgebrochen.
+\end_layout
+
+\begin_layout Standard
+Wenn sie interagieren soll wird, insofern nötig der Terminal mit der Funktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+	def Init_VTE(builder):
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+iniziert.
+ Diese Funktion prüft nur welche Version von VTE
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "VTE"
+description "VTE steht für \"Virtual Terminal Emulator\". Es ist ein Modul welches einfach benutzt werden kann um einen Terminal in eine GTK+ Oberfläche einzubinden.  \\\\Des weiteren bietet es eine einfache API um mit dem Terminal zu interagieren."
+
+\end_inset
+
+ importierbar ist und bettet den Terminal dann in das gegebene Fenster ein.
+\end_layout
+
+\begin_layout Standard
+Danch wird das Fenster mit dem Terminal angezeigt.
+\end_layout
+
+\begin_layout Standard
+Als letzten Schritt wird in den Terminal das Kommando zum Sammeln aller
+ Unterschiede sowie dem 
+\begin_inset Quotes gld
+\end_inset
+
+pull-request
+\begin_inset Quotes grd
+\end_inset
+
+ erstellen gegeben.
+ Er baut sich wie folgt zusammen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+## Wechseln in das Datenbankverzeichnis	
+\end_layout
+
+\begin_layout Plain Layout
+
+	'cd ' + conf.get_entry('DB','dblocation') &&
+\end_layout
+
+\begin_layout Plain Layout
+
+## Hinzufügen aller Dateien
+\end_layout
+
+\begin_layout Plain Layout
+
+	git add* &&
+\end_layout
+
+\begin_layout Plain Layout
+
+## Erstellen des "pull-request" (Die Nachricht
+\end_layout
+
+\begin_layout Plain Layout
+
+## wird vom Benutzer geschrieben)
+\end_layout
+
+\begin_layout Plain Layout
+
+	git commit -a &&
+\end_layout
+
+\begin_layout Plain Layout
+
+## Kommando zum Hochladen
+\end_layout
+
+\begin_layout Plain Layout
+
+	git push
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
