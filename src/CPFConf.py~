@@ -32,19 +32,6 @@ def load_config(builder):
 	else:
 		OnlineStatus.set_active(False)
 
-	#CheckOnline
-	CheckCheckBox = builder.get_object('Pref_NB_Internet_CheckCB')
-	if get_entry('Internet', 'CheckRepo') == 'True':
-		CheckCheckBox.set_active(True)
-	else:
-		CheckCheckBox.set_active(False)
-
-	#Runterladen Erlauben
-	DownloadBox = builder.get_object('Pref_NB_Internet_DLCB')
-	if get_entry('Internet', 'AllowDownload') == 'True':
-		DownloadBox.set_active(True)
-	else:
-		DownloadBox.set_active(False)
 
 	#Dokumentations und Info URL Auslesen
 	DocURL = builder.get_object('Pref_NB_Internet_DBE')
@@ -142,7 +129,6 @@ def save_config(builder):
 		print('DontWriteFile')
 	else:
 		set_entry('DB','dblocation', str(DBFileChooser.get_current_folder()))
-		print('CurrentFolderIs::::: ' + str(DBFileChooser.get_current_folder()))
 		
 	#Setzte wert ob nicht-GitHub Quelle genutzt wird
 	NoGitSource = builder.get_object('Pref_NB_DB_NotGitCB')

@@ -32,19 +32,6 @@ def load_config(builder):
 	else:
 		OnlineStatus.set_active(False)
 
-	#CheckOnline
-	CheckCheckBox = builder.get_object('Pref_NB_Internet_CheckCB')
-	if get_entry('Internet', 'CheckRepo') == 'True':
-		CheckCheckBox.set_active(True)
-	else:
-		CheckCheckBox.set_active(False)
-
-	#Runterladen Erlauben
-	DownloadBox = builder.get_object('Pref_NB_Internet_DLCB')
-	if get_entry('Internet', 'AllowDownload') == 'True':
-		DownloadBox.set_active(True)
-	else:
-		DownloadBox.set_active(False)
 
 	#Dokumentations und Info URL Auslesen
 	DocURL = builder.get_object('Pref_NB_Internet_DBE')
@@ -71,12 +58,6 @@ def load_config(builder):
 
 
 	#Installation
-	#Terminal bei Installation anzeigen
-	InstallTerm = builder.get_object('Pref_NB_Inst_TerminalCB')
-	if get_entry('Installation','ShowInstTerminal') == 'True':
-		InstallTerm.set_active(True)
-	else:
-		InstallTerm.set_active(False)
 
 	#Der Installierende benutzer
 	InstallUserName = builder.get_object('Pref_NB_Inst_NameEdit')
@@ -84,11 +65,6 @@ def load_config(builder):
 
 
 	#Massen Installation
-	MassInstallTerm = builder.get_object('Pref_NB_Mass_TermWin_CB')
-	if get_entry('MassInstall', 'ShowMassTerminal') == 'True':
-		MassInstallTerm.set_active(True)
-	else:
-		MassInstallTerm.set_active(False)
 
 	#Zeige Erfolgsnachricht
 	SuccessDisplay = builder.get_object('Pref_NB_Mass_SuccesCB')
@@ -105,17 +81,6 @@ def save_config(builder):
 	#online status
 	OnlineStatus = builder.get_object('Pref_NB_Internet_CBOnline')
 	set_entry('Internet', 'Online', str(OnlineStatus.get_active()))
-
-
-	#CheckOnline
-	CheckCheckBox = builder.get_object('Pref_NB_Internet_CheckCB')
-	set_entry('Internet', 'CheckRepo', str(CheckCheckBox.get_active()))
-
-
-	#Runterladen Erlauben
-	DownloadBox = builder.get_object('Pref_NB_Internet_DLCB')
-	set_entry('Internet', 'AllowDownload', str(DownloadBox.get_active()))
-
 
 	#Dokumentations und Info URL Auslesen
 	DocURL = builder.get_object('Pref_NB_Internet_DBE')
@@ -150,9 +115,6 @@ def save_config(builder):
 
 	
 	#Installation
-	#Terminal bei Installation anzeigen
-	InstallTerm = builder.get_object('Pref_NB_Inst_TerminalCB')
-	set_entry('Installation','ShowInstTerminal', str(InstallTerm.get_active()))
 
 	#Der Installierende benutzer
 	InstallUserName = builder.get_object('Pref_NB_Inst_NameEdit')
@@ -160,8 +122,6 @@ def save_config(builder):
 
 
 	#Massen Installation
-	MassInstallTerm = builder.get_object('Pref_NB_Mass_TermWin_CB')
-	set_entry('MassInstall', 'ShowMassTerminal', str(MassInstallTerm.get_active()))
 
 	#Zeige Erfolgsnachricht
 	SuccessDisplay = builder.get_object('Pref_NB_Mass_SuccesCB')

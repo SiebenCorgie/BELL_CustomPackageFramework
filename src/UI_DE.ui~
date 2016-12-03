@@ -73,7 +73,7 @@
               <object class="GtkLabel" id="MIADD_LFile">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Mass Install File Name</property>
+                <property name="label" translatable="yes">Massen Installations Datei</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -84,7 +84,7 @@
               <object class="GtkEntry" id="MIADD_FileName">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="text" translatable="yes">FileName</property>
+                <property name="text" translatable="yes">DateiName</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -107,7 +107,7 @@
               <object class="GtkLabel" id="MIADD_LMainCategory">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Main Category</property>
+                <property name="label" translatable="yes">Hauptkategorie</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -131,7 +131,7 @@
               <object class="GtkLabel" id="MIADD_LSubCategory">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Sub Category</property>
+                <property name="label" translatable="yes">Unterkategorie</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -155,7 +155,7 @@
               <object class="GtkLabel" id="MIADD_LProgram">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Program</property>
+                <property name="label" translatable="yes">Programm</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -249,7 +249,7 @@
               <object class="GtkLabel" id="MIInstall_Label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Select the MassInstall script you want to use.</property>
+                <property name="label" translatable="yes">Wählen sie ihr Massen-Installations-Datei aus</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -304,7 +304,7 @@
               <object class="GtkMenuItem" id="M_File">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">File</property>
+                <property name="label" translatable="yes">Datei</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
                   <object class="GtkMenu" id="M_File_MenuChild">
@@ -323,7 +323,7 @@
                       <object class="GtkMenuItem" id="M_File_Preferences">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Preferences</property>
+                        <property name="label" translatable="yes">Einstellungen</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_M_File_Preferences_activate" swapped="no"/>
                       </object>
@@ -332,7 +332,7 @@
                       <object class="GtkMenuItem" id="M_File_Quit">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Quit</property>
+                        <property name="label" translatable="yes">Beenden</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_M_File_Quit_activate" swapped="no"/>
                       </object>
@@ -345,7 +345,7 @@
               <object class="GtkMenuItem" id="M_Tools">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Tools</property>
+                <property name="label" translatable="yes">Werkzeuge</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
                   <object class="GtkMenu" id="M_Tools_MenuChild">
@@ -361,7 +361,7 @@
                       <object class="GtkMenuItem" id="M_Tools_CreateMass">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Create A Mass-Install-File</property>
+                        <property name="label" translatable="yes">Massen-Installions-Datei Erstellen</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_M_Tools_CreateMass_activate" swapped="no"/>
                       </object>
@@ -370,7 +370,7 @@
                       <object class="GtkMenuItem" id="M_Tools_MassInstall">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Install from Mass-Install-File</property>
+                        <property name="label" translatable="yes">Von Massen-Installions-Datei Installieren</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_M_Tools_MassInstall_activate" swapped="no"/>
                       </object>
@@ -391,7 +391,7 @@
                       <object class="GtkMenuItem" id="M_Tools_AddDatabaseEntry">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Add Database Entry</property>
+                        <property name="label" translatable="yes">Datensatz Hinzufügen</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_M_Tools_AddDatabaseEntry_activate" swapped="no"/>
                       </object>
@@ -400,7 +400,7 @@
                       <object class="GtkMenuItem" id="M_Tools_Remove_Entry">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Remove Database Entry</property>
+                        <property name="label" translatable="yes">Datensatz Löschen</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_M_Tools_Remove_Entry_activate" swapped="no"/>
                       </object>
@@ -409,7 +409,7 @@
                       <object class="GtkMenuItem" id="M_Tools_AddDB">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Create New Database</property>
+                        <property name="label" translatable="yes">Neue Datenbank Erstellen</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_M_Tools_AddDB_activate" swapped="no"/>
                       </object>
@@ -418,7 +418,7 @@
                       <object class="GtkMenuItem" id="M_Tools_UploadDatabase">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Upload Database</property>
+                        <property name="label" translatable="yes">Datenbank Hochladen</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_M_Tools_UploadDatabase_activate" swapped="no"/>
                       </object>
@@ -427,7 +427,7 @@
                       <object class="GtkMenuItem" id="M_Tools_DownloadNewDatabase">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Download New Database</property>
+                        <property name="label" translatable="yes">Neue Datenbank Runterladen</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_M_Tools_DownloadNewDatabase_activate" swapped="no"/>
                       </object>
@@ -440,7 +440,7 @@
               <object class="GtkMenuItem" id="M_View">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">View</property>
+                <property name="label" translatable="yes">Ansicht</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
                   <object class="GtkMenu" id="M_View_MenuChild">
@@ -451,7 +451,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="tooltip_text" translatable="yes">Resets the app-view back to the root</property>
-                        <property name="label" translatable="yes">Reset View</property>
+                        <property name="label" translatable="yes">Ansicht Zurücksetzen</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_M_View_Reset_select" swapped="no"/>
                       </object>
@@ -464,7 +464,7 @@
               <object class="GtkMenuItem" id="M_Help">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Help</property>
+                <property name="label" translatable="yes">Hilfe</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
                   <object class="GtkMenu" id="M_Help_MenuChild">
@@ -475,7 +475,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="tooltip_text" translatable="yes">Opens custom documentation in the default browser</property>
-                        <property name="label" translatable="yes">Open Custom Documentation</property>
+                        <property name="label" translatable="yes">Öffne Eigene Dokumentation</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_M_Help_OpenCustomDocs_activate" swapped="no"/>
                       </object>
@@ -485,7 +485,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="tooltip_text" translatable="yes">Opens CPF documentation in the default browser</property>
-                        <property name="label" translatable="yes">Open CPF Documentation</property>
+                        <property name="label" translatable="yes">Öffne Eigene Dokumentation</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_M_Help_OpenCPFDocs_activate" swapped="no"/>
                       </object>
@@ -494,7 +494,7 @@
                       <object class="GtkMenuItem" id="AboutDialogButton">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">About Dialog</property>
+                        <property name="label" translatable="yes">Über Das Programm</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_AboutDialogButton_activate" swapped="no"/>
                       </object>
@@ -606,7 +606,7 @@
               <object class="GtkLabel" id="MainNotebook_L_Appstore">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Package Store</property>
+                <property name="label" translatable="yes">Paket-Auswahl</property>
                 <attributes>
                   <attribute name="scale" value="2"/>
                 </attributes>
@@ -701,7 +701,7 @@
               <object class="GtkLabel" id="MainNotebook_L_Documentation">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Documentation</property>
+                <property name="label" translatable="yes">Dokumentation</property>
                 <attributes>
                   <attribute name="scale" value="2"/>
                 </attributes>
@@ -862,6 +862,7 @@
   </object>
   <object class="GtkDialog" id="AD_AVIsOpen">
     <property name="can_focus">False</property>
+    <property name="type">popup</property>
     <property name="title" translatable="yes">Delete Entry from Database</property>
     <property name="resizable">False</property>
     <property name="icon_name">x-office-spreadsheet</property>
@@ -904,8 +905,8 @@
           <object class="GtkLabel" id="ADAV_Sorry">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">You already have a App-View open.
-Please close it to open a new one</property>
+            <property name="label" translatable="yes">Sie haben bereits eine Programmansicht offen.
+Bitte schließen sie diese.</property>
             <property name="justify">center</property>
             <property name="wrap">True</property>
             <property name="ellipsize">middle</property>
@@ -935,7 +936,7 @@ Please close it to open a new one</property>
     <property name="program_name">Custom Packaging Framework</property>
     <property name="version">0.1</property>
     <property name="copyright" translatable="yes">copyright @Tendsin Mende</property>
-    <property name="comments" translatable="yes">A framework to give clients a custom database of programms. You can include entrys for debian, ubuntu and arch based distributions.</property>
+    <property name="comments" translatable="yes">Eine Ramenprogramm das dem Nutzer eine Auswahl an Programmen gibt, um diese einfach zu installieren. Es werden Arch und Debian basierte Programme unterstützt.</property>
     <property name="authors">Tendsin Mende</property>
     <property name="documenters">Tendsin Mende</property>
     <property name="translator_credits" translatable="yes">Tendsin Mende</property>
@@ -1128,7 +1129,7 @@ Please close it to open a new one</property>
                         <property name="spacing">6</property>
                         <child>
                           <object class="GtkButton" id="AD_DevLink">
-                            <property name="label" translatable="yes">Visit Developer Page</property>
+                            <property name="label" translatable="yes">Entwickler-Webseite Besuchen</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
@@ -1149,7 +1150,7 @@ Please close it to open a new one</property>
                             <property name="column_homogeneous">True</property>
                             <child>
                               <object class="GtkButton" id="AD_B_Install">
-                                <property name="label" translatable="yes">Install</property>
+                                <property name="label" translatable="yes">Installieren</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">True</property>
@@ -1162,7 +1163,7 @@ Please close it to open a new one</property>
                             </child>
                             <child>
                               <object class="GtkButton" id="AD_B_Uninstall">
-                                <property name="label" translatable="yes">Uninstall</property>
+                                <property name="label" translatable="yes">Deinstallieren</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">True</property>
@@ -1308,7 +1309,7 @@ Please close it to open a new one</property>
               <object class="GtkLabel" id="CND_Location">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Location</property>
+                <property name="label" translatable="yes">Ort</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -1341,7 +1342,7 @@ Please close it to open a new one</property>
               <object class="GtkLabel" id="CND_UseDB">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Use New Database?</property>
+                <property name="label" translatable="yes">Neue Datenbank Benutzen?</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -1350,7 +1351,7 @@ Please close it to open a new one</property>
             </child>
             <child>
               <object class="GtkCheckButton" id="CND_bUseNew">
-                <property name="label" translatable="yes">Yes</property>
+                <property name="label" translatable="yes">Ja</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -1431,7 +1432,7 @@ Please close it to open a new one</property>
           <object class="GtkLabel" id="DB_A_Title">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Add Item</property>
+            <property name="label" translatable="yes">Datensatz hinzufügen</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -1460,7 +1461,7 @@ Please close it to open a new one</property>
               <object class="GtkLabel" id="DB_A_L_Ubuntu">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Ubuntu repo. name</property>
+                <property name="label" translatable="yes">Ubuntu Name</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -1471,7 +1472,7 @@ Please close it to open a new one</property>
               <object class="GtkLabel" id="DB_A_L_Debian">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Debian rebo. name</property>
+                <property name="label" translatable="yes">Debian Name</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -1482,7 +1483,7 @@ Please close it to open a new one</property>
               <object class="GtkLabel" id="DB_A_L_Arch">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Arch repo. name</property>
+                <property name="label" translatable="yes">Arch Name</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -1515,7 +1516,7 @@ Please close it to open a new one</property>
               <object class="GtkLabel" id="DB_A_L_Category">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Main Category</property>
+                <property name="label" translatable="yes">Hauptkategorie</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -1566,7 +1567,7 @@ Please close it to open a new one</property>
               <object class="GtkAccelLabel" id="DB_A_L_SubCategory">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Sub Category</property>
+                <property name="label" translatable="yes">Unterkategorie</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -1601,7 +1602,7 @@ Please close it to open a new one</property>
               <object class="GtkLabel" id="DB_A_DescS">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Short Description</property>
+                <property name="label" translatable="yes">Kurze Beschreibung</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -1612,7 +1613,7 @@ Please close it to open a new one</property>
               <object class="GtkLabel" id="DB_A_DescL">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Long Description</property>
+                <property name="label" translatable="yes">Lange Beschreibung</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -1665,7 +1666,7 @@ Please close it to open a new one</property>
               <object class="GtkLabel" id="DB_A_DevURL">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">URL of Developer</property>
+                <property name="label" translatable="yes">URL der Entwickler</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -1736,7 +1737,7 @@ Please close it to open a new one</property>
           <object class="GtkLabel" id="DB_EM_Titel">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Sorry!</property>
+            <property name="label" translatable="yes">Entschuldigung!</property>
             <attributes>
               <attribute name="scale" value="2"/>
             </attributes>
@@ -1764,11 +1765,10 @@ Please close it to open a new one</property>
           <object class="GtkLabel" id="DB_EM_Text">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Please make sure that every field has a entry.
+            <property name="label" translatable="yes">Bitte gehen Sie sicher das jedes Feld einen Eintrag hat.
 
-Make sure as well, that you don't 
-use a item from the "favorits" list in you
-filemanager. This can cause bugs.</property>
+Gehen sie auch sicher da sie keinen Eintrag aus ihren Favoriten benutzen,
+das kann Fehler verursachen.</property>
             <property name="justify">center</property>
           </object>
           <packing>
@@ -1812,7 +1812,7 @@ filemanager. This can cause bugs.</property>
                   <object class="GtkLabel" id="Pref_NB_Internet_L_Online">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Be Online</property>
+                    <property name="label" translatable="yes">Online Sein</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
@@ -1821,7 +1821,7 @@ filemanager. This can cause bugs.</property>
                 </child>
                 <child>
                   <object class="GtkCheckButton" id="Pref_NB_Internet_CBOnline">
-                    <property name="label" translatable="yes">Yes</property>
+                    <property name="label" translatable="yes">Ja</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
@@ -1837,7 +1837,7 @@ filemanager. This can cause bugs.</property>
                   <object class="GtkLabel" id="Pref_NB_Internet_DocBL">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Documentation Browser URL</property>
+                    <property name="label" translatable="yes">Dokumentation Browser URL</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
@@ -1848,7 +1848,7 @@ filemanager. This can cause bugs.</property>
                   <object class="GtkLabel" id="Pref_NB_Internet_Help">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Help Browser URL</property>
+                    <property name="label" translatable="yes">Hilfe Browser URL</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
@@ -2035,7 +2035,7 @@ filemanager. This can cause bugs.</property>
               <object class="GtkLabel" id="Pref_NB_DatabaseL">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Database</property>
+                <property name="label" translatable="yes">Datenbank</property>
               </object>
               <packing>
                 <property name="position">1</property>
@@ -2179,7 +2179,7 @@ filemanager. This can cause bugs.</property>
               <object class="GtkLabel" id="Pref_NB_MassInstallL">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">MassInstall</property>
+                <property name="label" translatable="yes">Massen-Installation</property>
               </object>
               <packing>
                 <property name="position">3</property>
@@ -2197,7 +2197,8 @@ filemanager. This can cause bugs.</property>
           <object class="GtkLabel" id="Pref_Info">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">To let all changes become active, please restart the program!</property>
+            <property name="label" translatable="yes">Um alle Einstellungen aktiv werden zulassen, 
+starten sie das Programm neu!</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -2311,7 +2312,7 @@ filemanager. This can cause bugs.</property>
               <object class="GtkLabel" id="GE_MainCat">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Main Category</property>
+                <property name="label" translatable="yes">Hauptkategorie</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -2322,7 +2323,7 @@ filemanager. This can cause bugs.</property>
               <object class="GtkLabel" id="GE_SubCat">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Sub Category</property>
+                <property name="label" translatable="yes">Unterkategorie</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -2333,7 +2334,7 @@ filemanager. This can cause bugs.</property>
               <object class="GtkLabel" id="GE_Progname">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Program Name</property>
+                <property name="label" translatable="yes">Programmname</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>

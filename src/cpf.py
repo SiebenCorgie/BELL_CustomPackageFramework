@@ -18,6 +18,17 @@
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 #______________________________________________________________________________
 
+
+#Sprache Festlegen
+import locale
+
+#locale.setlocale(locale.LC_ALL, locale.getlocale())
+#locale.bindtextdomain("cpf", "/usr/share/locale")
+
+print(locale.getlocale())
+
+
+
 #Richtige Gtk Version (3) importieren
 import gi.repository
 gi.require_version('Gtk', '3.0')
@@ -46,7 +57,17 @@ else:
 
 #Comment the first line and uncomment the second before installing
 #or making the tarball (alternatively, use project variables)
-UI_FILE = "src/cpf.ui"
+
+print("Locale: " + locale.getlocale()[0])
+
+if locale.getlocale()[0] == 'de_DE':
+	UI_FILE = "src/UI_DE.ui"
+	print('Using DE')
+else:
+	UI_FILE = "src/cpf.ui"
+	print("Using EN")
+
+#UI_FILE = "src/cpf.ui"
 #UI_FILE = "/usr/local/share/cpf/ui/cpf.ui"
 
 
@@ -56,6 +77,8 @@ class GUI:
 		self.builder = Gtk.Builder()
 		self.builder.add_from_file(UI_FILE)
 		self.builder.connect_signals(self)
+		self.builder.set_translation_domain('cpf')
+
 
 		window = self.builder.get_object('window')
 
@@ -125,6 +148,12 @@ class GUI:
 #Refresh
 	def on_MN_PS_Reload_clicked (self, button):
 		vte.refresh_database(self.builder)
+#Reset View
+	def on_M_View_Reset_select (self, menuitem):
+		print("Reset")
+		InstUI.go_home(self.builder)
+
+
 
 
 #Close ViewError

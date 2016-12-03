@@ -94,7 +94,7 @@ graphicboxes
 \quotes_language german
 \papercolumns 1
 \papersides 1
-\paperpagestyle default
+\paperpagestyle fancy
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -1119,7 +1119,7 @@ Englisch: http://www.gtk.org/ ,18.08.2016, 21:25
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "API"
-description "Kurz für Application-Programming-Interface. Meint die Anbindung einer Software zu einer anderen. Oft werden so auch Programme verschiedener Programmiersprachen verbunden. Mehr dazu: https://de.wikipedia.org/wiki/Programmierschnittstelle"
+description "Kurz für Application-Programming-Interface. Meint die Anbindung einer Software zu einer anderen. Oft werden so auch Programme verschiedener Programmiersprachen verbunden. \\\\Mehr dazu: \\\\https://de.wikipedia.org/wiki/Programmierschnittstelle"
 
 \end_inset
 
@@ -1309,7 +1309,7 @@ http://www.lyx.org/ , 01.09.2016, 17:37
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "LATEX-Framework"
-description "LATEX ist eine Programmsamlung. Sie immitiert über verschiedene Befehle die frühere Schriftsetzung im Druck. Durch diese Methode kann man vergleichsweise einfach sehr gute Layouts erreichen. Mehr Informationen: https://de.wikibooks.org/wiki/LaTeX-Kompendium"
+description "LATEX ist eine Programmsamlung. Sie immitiert über verschiedene Befehle die frühere Schriftsetzung im Druck. Durch diese Methode kann man vergleichsweise einfach sehr gute Layouts erreichen. \\\\Mehr Informationen: https://de.wikibooks.org/wiki/LaTeX-Kompendium"
 
 \end_inset
 
@@ -4742,14 +4742,14 @@ Einführung
 \begin_layout Standard
 Der Benutzer soll möglichst einfach seine Datenbank mit anderen abgleichen
  können.
- Der Author wählte Github, da die Interaktion mit Github sehr einfach ist.
+ Der Autor wählte Github, da die Interaktion mit Github sehr einfach ist.
  
 \end_layout
 
 \begin_layout Standard
 In der Theorie wird ein Repositorium für eine Datenbank angelegt.
- Jeder kann sich diese Datenbank herrunterladen, Änderung vornehmen und
- wieder als 
+ Jeder kann sich diese Datenbank herunterladen, Änderung vornehmen und wieder
+ als 
 \begin_inset Quotes gld
 \end_inset
 
@@ -4788,8 +4788,8 @@ request
  werden.
  Durch das Aktuallisieren innerhalb des Programms wird das Repositorium
  mit der Lokalen Version abgeglichen.
- Wenn das Lokale älter ist als das auf Github, werden die änderungen herrunterge
-laden.
+ Wenn das Lokale älter ist als das auf Github, werden die Änderungen heruntergel
+aden.
  
 \end_layout
 
@@ -4836,7 +4836,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-innherhalb des VTE_Interaction Moduls ausgeführt.
+innerhalbdes VTE_Interaction Moduls ausgeführt.
 \end_layout
 
 \begin_layout Standard
@@ -4865,7 +4865,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-iniziert.
+initiiert.
  Diese Funktion prüft nur welche Version von VTE
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
@@ -4878,7 +4878,7 @@ description "VTE steht für \"Virtual Terminal Emulator\". Es ist ein Modul welc
 \end_layout
 
 \begin_layout Standard
-Danch wird das Fenster mit dem Terminal angezeigt.
+Danach wird das Fenster mit dem Terminal angezeigt.
 \end_layout
 
 \begin_layout Standard
@@ -4954,16 +4954,284 @@ status open
 Herunterladen von Datenbanken
 \end_layout
 
+\begin_layout Standard
+Beim downloaden der Datenbank wird zuerst geprüft ob die Datenbank Github-basier
+t ist.
+ Wenn sie das ist wird wieder falls nötig der Terminal initialisiert.
+ danach wird falls benötigt im Wurzel-Verzeichnis des Benutzers unter 
+\begin_inset Quotes gld
+\end_inset
+
+share
+\begin_inset Quotes grd
+\end_inset
+
+ ein Ordner 
+\begin_inset Quotes gld
+\end_inset
+
+cpf
+\begin_inset Quotes grd
+\end_inset
+
+ angelegt in den die Datenbank heruntergeladen wird.
+ Der Link kommt aus der Konfigurationsdatei.
+ Im Programmlisting sieht das wie folgt aus:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+	SI.execute('cd ~/.local/share/ && mkdir cpf',False)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	VTE_execute('cd ~/.local/share/cpf/' + ' && git clone ' + 
+\end_layout
+
+\begin_layout Plain Layout
+
+	conf.get_entry('DB','databasegiturl'))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Github-Interaktion wird im Terminal ausgeführt da man bei manchen Repositori
+en registriert sein muss.
+ Die Anmeldung kann so im Terminal vorgenommen werden.
+\end_layout
+
 \begin_layout Subsubsection
 Aktualisieren von Datenbanken
+\end_layout
+
+\begin_layout Standard
+Beim Aktualisieren wird die derzeit aktive Datenbank in ihrem Verzeichnis
+ mithilfe des Kommandos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+	git pull
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+auf Änderungen im Online-Repositorium geprüft und bei bedarf die Unterschiede
+ ausgeglichen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 Weitere Gedanken
 \end_layout
 
+\begin_layout Subsection
+Verbesserungsvorschläge
+\end_layout
+
+\begin_layout Subsubsection
+Ladebalken
+\end_layout
+
+\begin_layout Standard
+Das Programm sollte eigentlich einen Ladebalken besitzen der den Fortschritt
+ von den verschiedenen Aktionen anzeigt.
+ Der Autor versuchte auch einen solchen zu integrieren (das Element ist
+ auch noch in der grafischen Oberfläche enthalten, wird aber nicht genutzt).
+ Da das Programm allerdings als ein Prozess läuft, kann man die Benutzeroberfläc
+he nicht wärend des Ausführens einer anderen Aufgabe verändern.
+ Nur davor oder danach.
+ Die Lösung ist Multitasking.
+ Dies ist aber Programmiertechnisch ein ganzes Stück aufwendiger
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+EN: http://www.python-course.eu/threads.php, Bernd Klein, 03.12.16, 11:55
+\end_layout
+
+\end_inset
+
+.
+ Deswegen hat sich der Autor dafür entschieden den Ladebalken nicht zu integrier
+en.
+ Dadurch wird das Programm ein kleines bisschen benutzer - unfreundlicher.
+ Der Benutzer hat ein nicht so genaue Rückmeldung was das Programm gerade
+ macht.
+ Der Programmieraufwand wird aber viel kleiner.
+\end_layout
+
+\begin_layout Subsubsection
+Übersetzung
+\end_layout
+
+\begin_layout Standard
+Um zwischen der deutschen und englischen Version zu entscheiden ließt das
+ Programm aus welche Sprache das System hat.
+ Wenn es deutsch ist wird eine deutsche Version der grafischen Oberfläche
+ geladen.
+ Sonst wird die englische Version genommen.
+ 
+\end_layout
+
+\begin_layout Standard
+Das Funktioniert, ist aber nicht die eigentlich gängige Version für Übersetzunge
+n eines Programms.
+ Normalerweise kann man eine Datei erstellen lassen, in der die englischen
+ Zeichenketten enthalten sind, diese kann man dann zB.
+ in deutsch übersetzen.
+ Dadurch hat man pro Übersetzung nur noch eine einzige Datei die sich auch
+ leicht ändern lässt.
+ Leider hat das aus einem nicht geklärten Grund nicht funktioniert.
+ Deswegen hat sich der Autor für die nicht ganz so elegante Version entschieden.
+\end_layout
+
+\begin_layout Subsection
+Weiter Ideen
+\end_layout
+
+\begin_layout Subsubsection
+Suche
+\end_layout
+
+\begin_layout Standard
+Eine gute Erweiterung der Paket-Auswahl wäre eine Suche-Funktion.
+ Auch wenn der Anspruch des Programms ist: das Finden von Software ohne
+ den Namen zu kennen zu erleichtern, ist es gut ein Programm anhand seines
+ Namens zu finden.
+ Ein Anwendungsbeispiel wäre vielleicht, das Person 
+\begin_inset Quotes gld
+\end_inset
+
+A
+\begin_inset Quotes grd
+\end_inset
+
+ Person 
+\begin_inset Quotes gld
+\end_inset
+
+B
+\begin_inset Quotes grd
+\end_inset
+
+ ein Programm zeigen will, dessen Namen sie sich gemerkt hat, allerdings
+ nicht mehr weiß ob es ein Spiel oder ein Multimediaprogramm ist.
+\end_layout
+
+\begin_layout Standard
+Die Suche wäre Datenbanktechnisch auch einfach zu realisieren, fällt aber
+ wie schon angemerkt etwas aus dem Rahmen des Programms.
+ Deshalb hat der Autor die Idee erst einmal nicht Umgesetzt.
+\end_layout
+
+\begin_layout Subsubsection
+Passwortspeicher für Browser
+\end_layout
+
+\begin_layout Standard
+Eine weitere gute Erweiterung wäre das Speicher von Passwörtern in dem Dokumenta
+tions- und Informationsbrowsern.
+ Dadurch würde man es dem Benutzer ersparen sich jedes mal neu anzumelden.
+\end_layout
+
+\begin_layout Standard
+Dafür hätte sich der Autor aber ein ganzes Stück eingehender mit dem WebKit-Modu
+l auseinandersetzen müssen.
+ Des weiteren müsste man einen Sicheren Weg finden die Passwörter zuspeichern
+ und wieder aufzurufen.
+ Das würde z.
+ B.
+ eine Art der Verschlüsslung beinhalten die wieder weitere Arbeit bedeuten
+ würde.
+ Deswegen hat der Autor diese Idee auch nicht Umgesetzt.
+\end_layout
+
 \begin_layout Section
-Einschätzung
+Zusammenfassung
+\end_layout
+
+\begin_layout Subsection
+Fazit
+\end_layout
+
+\begin_layout Standard
+Das Programm ist eine gute Orientierung für einfache Navigation und Installation
+ geworden.
+ 
+\end_layout
+
+\begin_layout Standard
+Der Funktionsufang ist größer geworden als sich der Autor zuerst gedacht
+ hatte.
+ Es ist möglich eine ganze Datenbank zu administrieren und mit dem Internet
+ abzugleichen.
+ Man kann über zwei Browser von vordefinierten Internetseiten Informationen
+ beziehen.
+ Das Kernstück ist aber die Programm suche selbst.
+ Diese gestaltet sich durch eine intuitive verschmelzung der bekannten Icons
+ und des Textes möglich einfach.
+ So kommt der unerfahrene Benutzer einfach zu Programmen obwohl er vorher
+ keine Information über sie hatte.
+ 
+\end_layout
+
+\begin_layout Standard
+Anders als bei herkömmlichen 
+\begin_inset Quotes gld
+\end_inset
+
+App-Stores
+\begin_inset Quotes grd
+\end_inset
+
+ wird der Benutzer aber nicht mit einer unermesslich großen Auswahl konfrontiert
+, sondern mit einer vom Administrator der Datenbank gewählten kleinen Auswahl.
+ Dadurch fällt es einfacher in der Welt des Linux Fuß zufassen und Alternativen
+ für sonst genutze Programme zufinden.
+ 
+\end_layout
+
+\begin_layout Subsection
+Probleme
+\end_layout
+
+\begin_layout Standard
+Bei der Erarbeitung gab es nur zwei große Probleme.
+ Die schon erwänte Übersetzung mit den Übersetzungsdateien und das Multitasking.
+ Ansonsten verlief die Programmierung und auch die Dokumentation reibungslos.
+ Kleinere Probleme und Bugs hat der Autor schnell finden und ausbessern
+ können.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -5091,7 +5359,7 @@ key "key-6"
 
 \end_inset
 
-EN: Beta-Launcher, Erstes Programm des Authors unter verwendung von GTK:
+EN: Beta-Launcher, Erstes Programm des Autors unter verwendung von GTK:
  https://github.com/SiebenCorgie/Beta-Launcher
 \end_layout
 
@@ -5115,6 +5383,71 @@ key "key-8"
 
 EN: Configparser Dokumentation: https://docs.python.org/3.5/library/configparser.htm
 l
+\end_layout
+
+\begin_layout Section*
+Eigenständigkeitserklärung
+\end_layout
+
+\begin_layout Standard
+Hiermit versichere ich, dass ich die vorliegende Belegarbeit selbstständig
+ und unter Benutzung keiner anderen Quellen als der genannten gedruckten
+ Werke, oder Daten und Textteile aus dem Internet verfasst habe.
+ Alle aus diesen Quellen wörtlich oder sinngemäß übernommenen Passagen habe
+ ich im Einzelnen unter genauer Angabe des Fundortes gekennzeichnet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+____________			____________
+\end_layout
+
+\begin_layout Plain Layout
+
+Ort, Datum			Unterschrift
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Abtretung der Nutzungsrechte 
+\end_layout
+
+\begin_layout Standard
+Ich räume der Montessorieschule Dresden die zum Gebrauch meiner Belegarbeit
+ erforderlichen Nutzungsrechte ein.
+ Diese verstehen sich als einfache, unentgeltliche, zeitlich, örtlich und
+ inhaltlich unbeschränkte und widerrufliche Nutzungsrechte.
+ Sie umfassen das Vervielfältigungsrecht, das Verarbeitungsrecht, das Ausstellun
+gsrecht und das Recht der öffentlichen Wiedergabe.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+____________			____________
+\end_layout
+
+\begin_layout Plain Layout
+
+Ort, Datum			Unterschrift
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

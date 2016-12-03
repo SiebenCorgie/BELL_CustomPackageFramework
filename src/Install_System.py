@@ -162,7 +162,7 @@ def execute_install(Name, Distribution,Uninstall):
 
 	#Debian und Ubuntu
 	print('Name: ' + Name + ' AND Distribution is: ' + Distribution)
-	if Distribution == 'debian' or ubuntu:
+	if Distribution == 'debian' or Distribution == 'ubuntu':
 		if Uninstall == False:
 			output = SI.execute('pkexec --user ' + username +  ' apt-get install -y ' + Name, True)
 		

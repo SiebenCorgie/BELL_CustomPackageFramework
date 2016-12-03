@@ -110,7 +110,7 @@ def refresh_database(builder):
 		VTEDialog = builder.get_object('VTE_Dialog')
 		VTEDialog.show_all()
 
-	SI.execute('cd ~/.local/share/ && mkdir cpf',False)
+	#SI.execute('cd ~/.local/share/ && mkdir cpf',False)
 
 	feedback.status_push(conf.get_entry("Status","refreshdb"))
 
