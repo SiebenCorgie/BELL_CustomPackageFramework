@@ -1,6 +1,5 @@
-import cpf
+
 import CPFConf as conf
-import CPFWeb as web
 import SystemInteraction as SI
 import CPFFeedback as feedback
 

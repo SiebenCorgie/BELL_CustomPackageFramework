@@ -1,7 +1,4 @@
-import cpf
 import CPFConf as conf
-import CPFWeb as web
-
 import subprocess
 
 def get_folder_content(directory):
@@ -16,7 +13,7 @@ def get_folder_content(directory):
 		#trenne byte-string stream an leerzeichen
 		bytelist = output.split()
 		
-		#convertiere byte items zu strin liste
+		#convertiere byte items zu string liste
 		#muss eigene aufzeilung nehmen
 		for entry in range(len(bytelist)):
 			bytesring = bytelist[entry]

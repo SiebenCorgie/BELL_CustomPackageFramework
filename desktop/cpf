@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /usr/share/cpf
+python3 src/cpf.py

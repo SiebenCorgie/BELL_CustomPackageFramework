@@ -39,7 +39,7 @@ from gi.repository import Gtk, GdkPixbuf, Gdk
 import os, sys
 
 #Eigene Module Importieren
-import CPFWeb as web
+#import CPFWeb as web
 import CPFConf as conf
 import SystemInteraction as SI
 import CPFDatabase as db

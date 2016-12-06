@@ -1,14 +1,27 @@
-import cpf
 import subprocess
 import configparser
 import SystemInteraction as SI
 
-#Konfiguration einlesen und schreiben
 
-configpath = 'CPFConfig.conf'
+
+print("ReadConf")
+#Konfiguration einlesen und schreiben
+#Aboluter Pfad wird ueber "pwd" herrausgefunden
+
+configpath = SI.execute('cd ~/.local/share/cpf/ && pwd', True)
+configpath = configpath + '/CPFConfig.conf'
+print("ConfigPath: " + configpath)
+
+if 'CPFConfig.conf' not in SI.get_folder_content('~/.local/share/cpf'):
+	print("Writing New !!")
+	SI.execute("cp /usr/share/cpf/CPFConfig.conf ~/.local/share/cpf/CPFConfig.conf", False)	
+
+
 
 config = configparser.ConfigParser()
+
 config.read(configpath)
+
 
 #in konfiguration schreiben
 def set_entry(section, entry, newentry):
