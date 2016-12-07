@@ -1,0 +1,11 @@
+Package: cpf
+Version: 0.2
+Section: utilites
+Priority: optional
+Installed-Size: 1049
+Source: cpf
+Maintainer: siebencorgie <officialsiebencorgie@gmail.com>
+Homepage: <https://github.com/SiebenCorgie/BELL_CustomPackageFramework>
+Architecture: all
+Depends: libgtk-3-dev, python-webkit, python-vte, git, python3
+Description: A framework for new users to easyly find new software and install it. The keypoint is to provide the new user just a small ammount of programms. You can also modifie the database within the program, as well as upload chages to a git-repository.

@@ -1,0 +1,73 @@
+#!/bin/bash
+
+#Script to make an new debian package of the beta-launcher
+
+#setting some variables
+PKGNAME=cpf-0.2-1
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+#creating the building environment
+echo "started building the building environment"
+git clone https://github.com/SiebenCorgie/BELL_CustomPackageFramework.git
+echo "cloned backage"
+echo "starting to make the fakeroot structure"
+mkdir $PKGNAME
+cd $PKGNAME
+mkdir DEBIAN
+mkdir etc
+cd etc
+mkdir cpf
+cd ..
+mkdir usr
+cd usr
+mkdir bin
+mkdir share
+cd share
+mkdir cpf
+mkdir applications
+mkdir pixmaps
+cd ..
+cd ..
+cd ..
+echo "Ended makeing the building environment"
+
+#starting the copying
+echo "starting to copy all files"
+cp -rf BELL_CustomPackageFramework/* $DIR/$PKGNAME/usr/share/cpf
+echo "removing unwanted files from github"
+cd $DIR/$PKGNAME/usr/share/cpf
+rm *.tar.xz
+rm *.deb
+rm PKGBUILD
+echo "unwanted files removed!"
+
+#copying the correct files to theit folders
+mv $DIR/$PKGNAME/usr/share/cpf/desktop/cpf $DIR/$PKGNAME/usr/bin/cpf
+mv $DIR/$PKGNAME/usr/share/cpf/desktop/cpf.desktop $DIR/$PKGNAME/usr/share/applications/
+mv $DIR/$PKGNAME/usr/share/cpf/desktop/cpf_icon.png $DIR/$PKGNAME/usr/share/pixmaps
+cd ..
+cd ..
+cd ..
+
+echo "copying the controll files of the environment to DEBIAN"
+cp $DIR/compat $DIR/$PKGNAME/DEBIAN/
+cp $DIR/control $DIR/$PKGNAME/DEBIAN/
+cp $DIR/copyright $DIR/$PKGNAME/DEBIAN/
+cp $DIR/docs $DIR/$PKGNAME/DEBIAN/
+cd $DIR/
+
+echo "giving launcher execute permission"
+cd $DIR/$PKGNAME/usr/bin/
+echo "setting launcher to be ROOT: rwx, rest is rx"
+chmod 755 ./cpf
+
+cd $DIR/
+
+#starting the .deb building
+echo "building .deb"
+
+fakeroot dpkg-deb --build $PKGNAME/
+
+echo "****END****"
+
+
