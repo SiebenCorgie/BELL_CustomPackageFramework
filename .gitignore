@@ -92,3 +92,7 @@ ENV/
 # Rope project settings
 .ropeproject
 Dokumente/DIN5008_Textverarbeitung.pdf
+
+
+#git 
+.git/
